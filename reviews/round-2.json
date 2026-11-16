@@ -199,6 +199,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "59ada846b9e2738535bd13d40fc5608f7fe495bd"
+  },
+  {
+    "round": 2,
+    "profile_id": 4,
+    "profile": "Diseño web senior",
+    "title": "Hacer visible la ruta para contratación",
+    "points": [
+      {
+        "observation": "La ruta Para equipos falta en el menú principal.",
+        "location": "build.py shell nav_items",
+        "decision": "Añadir acceso persistente."
+      },
+      {
+        "observation": "Para equipos muestra Inicio como página activa.",
+        "location": "build.py teams_page shell",
+        "decision": "Asignar navkey correcto."
+      },
+      {
+        "observation": "El menú ya usa enlaces nativos.",
+        "location": "build.py shell",
+        "decision": "Conservar navegación sin JavaScript."
+      },
+      {
+        "observation": "Una sexta entrada aumenta el ancho del menú.",
+        "location": "assets/style.css .header-inner",
+        "decision": "Distribuirlo en dos filas en tablet."
+      },
+      {
+        "observation": "En móvil existe un botón de despliegue.",
+        "location": "assets/app.js setMenu",
+        "decision": "Conservar su funcionamiento."
+      },
+      {
+        "observation": "La marca conserva un subtítulo identificativo.",
+        "location": "build.py shell brand",
+        "decision": "Mantenerlo."
+      },
+      {
+        "observation": "La ruta tiene versión inglesa equivalente.",
+        "location": "build.py teams_page",
+        "decision": "Incluir For teams en navegación inglesa."
+      },
+      {
+        "observation": "La cabecera fija de dos filas consume altura.",
+        "location": "assets/style.css tablet",
+        "decision": "Hacer estática la cabecera intermedia."
+      },
+      {
+        "observation": "La portada ya enlaza el encaje profesional.",
+        "location": "build.py home",
+        "decision": "Preservar ese acceso contextual."
+      },
+      {
+        "observation": "El menú marca el estado con texto y borde.",
+        "location": "assets/style.css aria-current",
+        "decision": "Aplicar el mismo tratamiento a la ruta nueva."
+      }
+    ],
+    "prompt": "Incorpora Para equipos al menú bilingüe, corrige su indicador de página activa y adapta el ancho de la navegación en tablet sin producir desbordamiento.",
+    "before_commit": "59ada846b9e2738535bd13d40fc5608f7fe495bd",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
