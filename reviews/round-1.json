@@ -1,0 +1,67 @@
+[
+  {
+    "round": 1,
+    "profile_id": 1,
+    "profile": "Art director",
+    "title": "Identidad visual coherente y centrada en la persona",
+    "before_commit": "8a9eb02cb5e5bb583223fd506a574d88c737e219",
+    "points": [
+      {
+        "observation": "La portada combina retrato y objetos con una jerarquía clara.",
+        "location": "qa/published-home.png",
+        "decision": "Conservar el retrato como referencia humana."
+      },
+      {
+        "observation": "La imagen ambiental compite en los bordes con el texto.",
+        "location": "assets/style.css .hero:before",
+        "decision": "Reducir el contraste de la decoración."
+      },
+      {
+        "observation": "Los azules se repiten como valores dispersos.",
+        "location": "assets/style.css",
+        "decision": "Introducir seis tokens cromáticos con funciones definidas."
+      },
+      {
+        "observation": "El borde curvo del retrato tiene más protagonismo que su contexto.",
+        "location": "assets/style.css .portrait img",
+        "decision": "Simplificar la silueta."
+      },
+      {
+        "observation": "La tipografía editorial distingue al perfil del SaaS genérico.",
+        "location": "assets/style.css h1,h2",
+        "decision": "Conservar el contraste serif/sans."
+      },
+      {
+        "observation": "El color verde funciona como señal de acción.",
+        "location": "assets/style.css .button",
+        "decision": "Mantenerlo reservado a acciones y datos."
+      },
+      {
+        "observation": "La cabecera identifica a Antonio sin logotipos ajenos.",
+        "location": "build.py shell",
+        "decision": "Conservar la firma nominal."
+      },
+      {
+        "observation": "La fotografía ya tiene un fondo compatible con el azul.",
+        "location": "assets/portrait.webp",
+        "decision": "Conservar imagen e identidad."
+      },
+      {
+        "observation": "No hay testimonios ni cifras comerciales decorativas.",
+        "location": "build.py home",
+        "decision": "Conservar la sobriedad probatoria."
+      },
+      {
+        "observation": "El sistema carece de una intención visual documentada.",
+        "location": "reviews/round-1.json",
+        "decision": "Registrar persona, evidencia y navegación como prioridades."
+      }
+    ],
+    "prompt": "Unifica la paleta azul y verde mediante tokens semánticos, baja el protagonismo del fondo y simplifica el marco fotográfico. Conserva la personalidad editorial y el contenido verificado; no agregues decoración ni métricas.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": null
+  }
+]
