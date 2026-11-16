@@ -784,6 +784,71 @@
       "build.py"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "5c78f69e01f090e880cd7f5fd6a8aa84bbe20408"
+  },
+  {
+    "round": 3,
+    "profile_id": 13,
+    "profile": "Redacción publicitaria y UX writing senior",
+    "title": "Enlaces bibliográficos sin opciones duplicadas",
+    "before_commit": "5c78f69e01f090e880cd7f5fd6a8aa84bbe20408",
+    "points": [
+      {
+        "observation": "Delay muestra DOI y texto abierto con exactamente el mismo destino.",
+        "location": "data/publications.json delay links",
+        "decision": "Fusionar en un enlace que conserve ambas informaciones."
+      },
+      {
+        "observation": "Otros artículos abiertos repiten el patrón de destino DOI.",
+        "location": "build.py publication_page actions",
+        "decision": "Aplicar criterio común por URL."
+      },
+      {
+        "observation": "La etiqueta DOI aislada describe mecanismo, no contenido.",
+        "location": "build.py publication_page actions",
+        "decision": "Usar Artículo · DOI cuando no hay etiqueta abierta."
+      },
+      {
+        "observation": "El título del artículo también enlaza al DOI por convención bibliográfica.",
+        "location": "build.py publication_page h2",
+        "decision": "Preservar esa navegación de lectura."
+      },
+      {
+        "observation": "Las versiones institucionales tienen destinos distintos y valor propio.",
+        "location": "data/publications.json links",
+        "decision": "Preservar enlaces y etiquetas."
+      },
+      {
+        "observation": "Las notas distinguen preprints de versiones editoriales.",
+        "location": "build.py publication_page version",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "La descarga de cita tiene verbo explícito.",
+        "location": "build.py publication_page BibTeX",
+        "decision": "Preservar Citar."
+      },
+      {
+        "observation": "La 404 ahora ofrece una explicación y salidas concretas.",
+        "location": "build.py 404",
+        "decision": "Preservar tono directo."
+      },
+      {
+        "observation": "La copia de correo ofrece recuperación en caso de error.",
+        "location": "assets/app.js copy-email",
+        "decision": "Preservar instrucción accionable."
+      },
+      {
+        "observation": "La fusión debe funcionar también en inglés.",
+        "location": "build.py publication_page doi_label",
+        "decision": "Generar etiqueta con loc/t existentes."
+      }
+    ],
+    "prompt": "Fusiona las acciones bibliográficas cuyo destino es el mismo DOI, conservando la etiqueta de acceso abierto y añadiendo DOI. Para el resto usa Artículo · DOI/Paper · DOI. Conserva todas las versiones con URL distinta.",
+    "changes": [
+      "build.py"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
