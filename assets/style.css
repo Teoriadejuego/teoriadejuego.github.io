@@ -69,3 +69,5 @@ html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-he
 .not-found{max-width:800px;padding-top:clamp(40px,10vh,100px);padding-bottom:60px}.not-found .brand{display:inline-block;margin-bottom:48px}.not-found h1{max-width:16ch}.not-found .status-label{font-variant-numeric:tabular-nums}
 
 @media screen and (max-height:550px){.site-header{position:relative}.case-aside{position:static}html{scroll-padding-top:20px}[id]{scroll-margin-top:20px}}
+
+html:not(.js) .menu-toggle{display:none}html:not(.js) .site-header{position:relative}

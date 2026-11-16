@@ -194,6 +194,72 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "bd605199a1321c58122ab4470eeec6c8b5305503"
+  },
+  {
+    "round": 3,
+    "profile_id": 4,
+    "profile": "Diseño web senior",
+    "title": "Navegación honesta sin JavaScript",
+    "before_commit": "bd605199a1321c58122ab4470eeec6c8b5305503",
+    "points": [
+      {
+        "observation": "Sin JavaScript el menú es visible pero permanece un botón inoperante.",
+        "location": "assets/style.css .menu-toggle",
+        "decision": "Defecto: ocultar solo el control que requiere JS."
+      },
+      {
+        "observation": "Con todos los enlaces visibles, la cabecera fija ocupa más altura.",
+        "location": "assets/style.css .site-header",
+        "decision": "Devolverla al flujo en modo sin JS."
+      },
+      {
+        "observation": "La navegación nativa ya permite llegar a cada sección sin JS.",
+        "location": "build.py shell",
+        "decision": "Fortaleza: preservar enlaces."
+      },
+      {
+        "observation": "Los filtros no funcionales ya se ocultan sin JS.",
+        "location": "assets/style.css html:not(.js) .filters",
+        "decision": "Preservar mejora progresiva."
+      },
+      {
+        "observation": "Los detalles de recursos funcionan nativamente.",
+        "location": "build.py lab_page",
+        "decision": "Preservar details/summary."
+      },
+      {
+        "observation": "El correo mantiene enlace mailto junto a la copia.",
+        "location": "build.py contact",
+        "decision": "Preservar alternativa nativa."
+      },
+      {
+        "observation": "El botón de impresión ya se oculta sin JS.",
+        "location": "assets/style.css .print-button",
+        "decision": "Preservar comportamiento."
+      },
+      {
+        "observation": "El cambio de idioma es un enlace real.",
+        "location": "build.py shell a.lang",
+        "decision": "Preservar acceso independiente de scripts."
+      },
+      {
+        "observation": "La regla de altura recién añadida necesita prueba de render.",
+        "location": "tests/round3_check.py",
+        "decision": "Probar 740×390 en un caso."
+      },
+      {
+        "observation": "La paleta del caso ahora depende de atributos generados.",
+        "location": "tests/round3_check.py",
+        "decision": "Probar atributo y color de ARCO."
+      }
+    ],
+    "prompt": "Oculta el botón de menú y evita una cabecera pegajosa sin JavaScript, conservando todos los enlaces visibles. Añade una prueba headless de este estado y de los ajustes de altura y paleta de esta ronda.",
+    "changes": [
+      "assets/style.css",
+      "tests/round3_check.py"
+    ],
+    "validation": "Prueba headless: 740×390, posiciones estáticas correctas, color ARCO y navegación 390px sin JavaScript. Compilación y 27 páginas estáticas correctas.",
     "commit": ""
   }
 ]
