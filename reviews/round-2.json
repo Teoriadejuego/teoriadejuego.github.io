@@ -65,6 +65,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "98f213ac00d2bd20478da5236d36c25400359ae4"
+  },
+  {
+    "round": 2,
+    "profile_id": 2,
+    "profile": "Diseño gráfico senior",
+    "title": "Vincular el color visual al proyecto",
+    "points": [
+      {
+        "observation": "El color de ARCO depende de ser la segunda tarjeta.",
+        "location": "assets/style.css .work:nth-child(2)",
+        "decision": "Usar el identificador del proyecto."
+      },
+      {
+        "observation": "El color de PBIS depende de ser tercero.",
+        "location": "assets/style.css .work:nth-child(3)",
+        "decision": "Hacer estable su asociación cromática."
+      },
+      {
+        "observation": "Los grupos de investigación reutilizan colores por posición.",
+        "location": "assets/style.css .work-grid",
+        "decision": "Darles una base común discreta."
+      },
+      {
+        "observation": "El tipo ya está escrito en cada tarjeta.",
+        "location": "build.py work_card",
+        "decision": "Preservar esa distinción textual."
+      },
+      {
+        "observation": "Los dibujos tienen contraste suficiente.",
+        "location": "assets/style.css .schematic",
+        "decision": "Mantener trazos y etiquetas."
+      },
+      {
+        "observation": "La captura de PBIS ya ofrece evidencia visual.",
+        "location": "build.py case_page",
+        "decision": "No repetirla en todas las tarjetas."
+      },
+      {
+        "observation": "Los bordes inferiores permiten lectura continua.",
+        "location": "assets/style.css .work",
+        "decision": "Conservar su función de separación."
+      },
+      {
+        "observation": "El verde identifica acciones además de gráficos.",
+        "location": "assets/style.css .button",
+        "decision": "No añadir una nueva paleta."
+      },
+      {
+        "observation": "Las tarjetas no tienen identificador visual estable en HTML.",
+        "location": "build.py work_card",
+        "decision": "Añadir data-project desde datos existentes."
+      },
+      {
+        "observation": "El texto de investigación puede diferenciarse sin depender del color.",
+        "location": "assets/style.css .work-type",
+        "decision": "Añadir un borde discreto junto al tipo."
+      }
+    ],
+    "prompt": "Sustituye las reglas cromáticas por posición por selectores semánticos de proyecto; conserva textos de tipo y da a investigación una identificación visual consistente.",
+    "before_commit": "98f213ac00d2bd20478da5236d36c25400359ae4",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
