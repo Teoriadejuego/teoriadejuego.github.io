@@ -2,7 +2,7 @@
   {
     "round": 1,
     "profile_id": 1,
-    "profile": "Art director",
+    "profile": "Dirección de arte senior",
     "title": "Identidad visual coherente y centrada en la persona",
     "before_commit": "8a9eb02cb5e5bb583223fd506a574d88c737e219",
     "points": [
@@ -67,7 +67,7 @@
   {
     "round": 1,
     "profile_id": 2,
-    "profile": "Senior graphic designer",
+    "profile": "Diseño gráfico senior",
     "title": "Distinguir software e investigación sin depender del color",
     "before_commit": "1cc352847927f06fafc287638099982b0d5b6386",
     "points": [
@@ -126,6 +126,72 @@
     "changes": [
       "assets/style.css",
       "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "3a0aa53c522d2926c31be9b47312df4a3aab4ed5"
+  },
+  {
+    "round": 1,
+    "profile_id": 3,
+    "profile": "Arquitectura espacial y composición",
+    "title": "Ritmo, proporciones y recorridos de lectura",
+    "before_commit": "3a0aa53c522d2926c31be9b47312df4a3aab4ed5",
+    "points": [
+      {
+        "observation": "La portada consume casi toda la altura de escritorio antes de mostrar evidencia.",
+        "location": "qa/published-home.png",
+        "decision": "Reducir el aire vertical del hero."
+      },
+      {
+        "observation": "El retrato es reconocible con un tamaño ligeramente menor.",
+        "location": "assets/style.css .portrait",
+        "decision": "Equilibrar superficie de texto y fotografía."
+      },
+      {
+        "observation": "Las cabeceras de sección compiten horizontalmente cuando el enlace es largo.",
+        "location": "assets/style.css .section-head",
+        "decision": "Permitir enlaces que se ajusten al ancho."
+      },
+      {
+        "observation": "Los casos mantienen una columna lateral útil.",
+        "location": "assets/style.css .case-body",
+        "decision": "Conservar la participación junto a la evidencia."
+      },
+      {
+        "observation": "El cuerpo de los casos puede extenderse demasiado en pantallas anchas.",
+        "location": "assets/style.css .case-body",
+        "decision": "Limitar la medida de lectura."
+      },
+      {
+        "observation": "Las bandas alternas ayudan a distinguir capítulos.",
+        "location": "assets/style.css .section.tint",
+        "decision": "Conservar sin añadir nuevas bandas."
+      },
+      {
+        "observation": "La navegación fija ocupa espacio que se repite en móvil.",
+        "location": "assets/style.css .header-inner",
+        "decision": "Reducir solo la cabecera de escritorio."
+      },
+      {
+        "observation": "El contenido móvil ya sigue un orden vertical coherente.",
+        "location": "assets/style.css @media",
+        "decision": "Mantener las reglas móviles."
+      },
+      {
+        "observation": "Las tarjetas necesitan margen vertical pero no otra caja exterior.",
+        "location": "assets/style.css .work",
+        "decision": "Conservar la composición abierta."
+      },
+      {
+        "observation": "El pie contiene enlaces suficientes sin un mapa redundante.",
+        "location": "build.py shell footer",
+        "decision": "Conservar la estructura compacta."
+      }
+    ],
+    "prompt": "Reequilibra la portada para que la evidencia aparezca antes, conserva la importancia del retrato y limita el ancho de lectura de los casos. Permite que los enlaces de sección se ajusten sin desbordar.",
+    "changes": [
+      "assets/style.css",
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
