@@ -129,6 +129,71 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "9c1d95d9ce0b1cbab50ab87dad4a350beace4205"
+  },
+  {
+    "round": 3,
+    "profile_id": 3,
+    "profile": "Arquitectura espacial y composición",
+    "title": "Liberar espacio en pantallas de poca altura",
+    "before_commit": "9c1d95d9ce0b1cbab50ab87dad4a350beace4205",
+    "points": [
+      {
+        "observation": "El encabezado fijo consume espacio de lectura en horizontal.",
+        "location": "assets/style.css .site-header",
+        "decision": "Tradeoff: convertirlo en normal cuando altura ≤550px."
+      },
+      {
+        "observation": "El lateral fijo del caso puede superar la altura útil.",
+        "location": "assets/style.css .case-aside",
+        "decision": "Desactivar fijación en pantallas bajas."
+      },
+      {
+        "observation": "El desplazamiento de anclas reserva 105px incluso sin cabecera fija.",
+        "location": "assets/style.css [id]",
+        "decision": "Reducir reserva en el mismo contexto."
+      },
+      {
+        "observation": "El menú se distribuye en filas al reducir anchura.",
+        "location": "assets/style.css @media max-width:760px",
+        "decision": "Preservar distribución."
+      },
+      {
+        "observation": "La rejilla de proyectos pasa a dos columnas a 1000px.",
+        "location": "assets/style.css .work-grid",
+        "decision": "Preservar adaptación existente."
+      },
+      {
+        "observation": "La vista estrecha mantiene una sola columna de casos.",
+        "location": "assets/style.css .case-body",
+        "decision": "Preservar flujo vertical."
+      },
+      {
+        "observation": "El ancho máximo de lectura del caso evita líneas largas.",
+        "location": "assets/style.css .case-body>div",
+        "decision": "Preservar 74ch."
+      },
+      {
+        "observation": "Las tarjetas tienen altura visual uniforme tras R2.",
+        "location": "assets/style.css .work .visual",
+        "decision": "Preservar comparabilidad."
+      },
+      {
+        "observation": "El error recién diseñado conserva márgenes flexibles.",
+        "location": "assets/style.css .not-found",
+        "decision": "Preservar clamp para pantallas bajas."
+      },
+      {
+        "observation": "La impresión tiene reglas independientes de pantalla.",
+        "location": "assets/style.css @media print",
+        "decision": "Limitar el ajuste a screen."
+      }
+    ],
+    "prompt": "En pantallas de altura máxima de 550px, devuelve cabecera y lateral al flujo y reduce el espacio reservado para anclas. Mantén las reglas de impresión y de escritorio alto.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]

@@ -67,3 +67,5 @@ html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-he
 .case-top[data-project=arco] .visual{background:#e9f3f1;color:#13625e}.case-top[data-project=pbis] .visual{background:#eff0f8;color:#485d87}.case-top[data-kind=research] .visual{background:#edf1f4}
 
 .not-found{max-width:800px;padding-top:clamp(40px,10vh,100px);padding-bottom:60px}.not-found .brand{display:inline-block;margin-bottom:48px}.not-found h1{max-width:16ch}.not-found .status-label{font-variant-numeric:tabular-nums}
+
+@media screen and (max-height:550px){.site-header{position:relative}.case-aside{position:static}html{scroll-padding-top:20px}[id]{scroll-margin-top:20px}}
