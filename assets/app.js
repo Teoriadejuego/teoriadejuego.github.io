@@ -27,6 +27,9 @@ if(lab){
  const en=document.documentElement.lang==='en',n=document.querySelector('#sample'),delta=document.querySelector('#effect'),noise=document.querySelector('#noise');
  const format=(x,d=1)=>Number(x).toLocaleString(en?'en-GB':'es-ES',{minimumFractionDigits:d,maximumFractionDigits:d});
  const bound=x=>format(x,x!==0&&Math.abs(x)<0.05?Math.min(8,Math.ceil(-Math.log10(Math.abs(x)))):1);
+ const controls=[[n,'n',200],[delta,'delta',3],[noise,'sd',15]],languageLink=document.querySelector('a.lang');
+ const readLab=()=>{const params=new URLSearchParams(location.search);for(const [el,key,fallback] of controls){const raw=params.get(key),value=raw===null||raw.trim()===''?fallback:Number(raw),min=Number(el.min),max=Number(el.max),step=Number(el.step);el.value=String(Number.isFinite(value)?Math.min(max,Math.max(min,min+Math.round((value-min)/step)*step)):fallback)}};
+ const syncLab=()=>{const url=new URL(location.href);for(const [el,key,fallback] of controls){if(Number(el.value)===fallback)url.searchParams.delete(key);else url.searchParams.set(key,el.value)}history.replaceState(null,'',url);if(languageLink){const target=new URL(languageLink.href);target.search='';for(const [,key] of controls)if(url.searchParams.has(key))target.searchParams.set(key,url.searchParams.get(key));target.hash=url.hash;languageLink.href=target.href}};
  const update=()=>{
   const size=Number(n.value),effect=Number(delta.value),sd=Number(noise.value),half=1.96*Math.sqrt(2*sd*sd/size),lo=effect-half,hi=effect+half;
   document.querySelector('#sample-value').textContent=format(size,0);document.querySelector('#effect-value').textContent=format(effect);document.querySelector('#noise-value').textContent=format(sd,0);
@@ -39,7 +42,7 @@ if(lab){
   document.querySelector('#point').setAttribute('cx',x(effect));
   document.querySelector('#chart-title').textContent=en?`Illustrative effect ${format(effect)}, approximate 95% interval ${bound(lo)} to ${bound(hi)}`:`Efecto ilustrativo ${format(effect)}, intervalo aproximado del 95% entre ${bound(lo)} y ${bound(hi)}`;
  };
- [n,delta,noise].forEach(el=>el.addEventListener('input',update));document.querySelector('#lab-reset')?.addEventListener('click',()=>{n.value='200';delta.value='3';noise.value='15';update();n.focus()});update();
+ [n,delta,noise].forEach(el=>el.addEventListener('input',()=>{update();syncLab()}));document.querySelector('#lab-reset')?.addEventListener('click',()=>{for(const [el,,fallback] of controls)el.value=String(fallback);update();syncLab();n.focus()});window.addEventListener('popstate',()=>{readLab();update();syncLab()});window.addEventListener('hashchange',syncLab);readLab();update();syncLab();
 }
 
 document.querySelectorAll('[data-copy-email]').forEach(button=>button.addEventListener('click',async()=>{

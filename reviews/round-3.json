@@ -521,6 +521,72 @@
       "build.py"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "378ed1b5fdb2e333e3fb1f05520c092e7225d003"
+  },
+  {
+    "round": 3,
+    "profile_id": 9,
+    "profile": "Diseño de interacción",
+    "title": "Supuestos del laboratorio compartibles y saneados",
+    "before_commit": "378ed1b5fdb2e333e3fb1f05520c092e7225d003",
+    "points": [
+      {
+        "observation": "Recargar el laboratorio descarta los supuestos elegidos.",
+        "location": "assets/app.js lab update",
+        "decision": "Añadir lectura de parámetros de URL."
+      },
+      {
+        "observation": "El cambio de idioma pierde los valores del ejemplo.",
+        "location": "assets/app.js a.lang",
+        "decision": "Propagar únicamente parámetros del laboratorio."
+      },
+      {
+        "observation": "Un rango debe rechazar NaN e Infinity procedentes de URL.",
+        "location": "assets/app.js readLab",
+        "decision": "Usar valor inicial cuando no sea finito."
+      },
+      {
+        "observation": "Los números externos pueden exceder límites del control.",
+        "location": "assets/app.js readLab",
+        "decision": "Limitar a min/max y ajustar al paso."
+      },
+      {
+        "observation": "Mover un rango no debe llenar el historial.",
+        "location": "assets/app.js syncLab",
+        "decision": "Usar replaceState."
+      },
+      {
+        "observation": "Los valores iniciales no necesitan ruido en la dirección.",
+        "location": "assets/app.js syncLab",
+        "decision": "Eliminar parámetros que coinciden con defaults."
+      },
+      {
+        "observation": "Restablecer ya devuelve el foco al primer control.",
+        "location": "assets/app.js lab-reset",
+        "decision": "Preservar y limpiar la URL."
+      },
+      {
+        "observation": "Las nuevas anclas permiten señalar la demo.",
+        "location": "build.py lab_page #demo",
+        "decision": "Conservar hash al cambiar idioma."
+      },
+      {
+        "observation": "La fórmula y la visualización no necesitan cambiar.",
+        "location": "assets/app.js update",
+        "decision": "Preservar cálculo."
+      },
+      {
+        "observation": "Los límites numéricos son un caso de regresión significativo.",
+        "location": "tests/round3_check.py",
+        "decision": "Probar extremos, inválidos, pasos, idioma e historial."
+      }
+    ],
+    "prompt": "Persistir n, delta y sd en la URL del laboratorio mediante replaceState, con validación finita, límites y ajuste al paso. Mantener valores y ancla al cambiar idioma, limpiar defaults al restablecer y probar casos inválidos y extremos.",
+    "changes": [
+      "assets/app.js",
+      "tests/round3_check.py"
+    ],
+    "validation": "Headless correcto: NaN/Infinity, límites negativos y superiores, ajuste al paso, historial estable, idioma y restablecimiento; 27 páginas estáticas correctas.",
     "commit": ""
   }
 ]

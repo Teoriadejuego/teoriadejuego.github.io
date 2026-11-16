@@ -17,5 +17,18 @@ with sync_playwright() as p:
  assert not np.locator('.menu-toggle').is_visible()
  assert np.locator('#navigation').is_visible()
  nojs.close()
+ page.goto(BASE+'/lab/?n=Infinity&delta=NaN&sd=-100#demo',wait_until='networkidle')
+ assert [page.locator('#'+x).input_value() for x in ['sample','effect','noise']]==['200','3','5']
+ page.goto(BASE+'/lab/?n=99999&delta=-999&sd=999',wait_until='networkidle')
+ assert [page.locator('#'+x).input_value() for x in ['sample','effect','noise']]==['2000','-15','40']
+ page.goto(BASE+'/lab/?n=21&delta=0.26&sd=5.5#demo',wait_until='networkidle')
+ assert [page.locator('#'+x).input_value() for x in ['sample','effect','noise']]==['20','0.5','6']
+ before=page.evaluate('history.length')
+ page.locator('#effect').fill('2.5')
+ assert page.evaluate('history.length')==before
+ href=page.locator('a.lang').get_attribute('href');assert 'delta=2.5' in href and '#demo' in href
+ page.goto(href,wait_until='networkidle');assert page.locator('#effect').input_value()=='2.5'
+ page.locator('#lab-reset').click();assert '?' not in page.url
+ assert page.locator('#sample').evaluate('(e)=>e===document.activeElement')
  browser.close()
 print('Round 3 browser checks passed.')
