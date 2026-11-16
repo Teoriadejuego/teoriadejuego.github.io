@@ -26,17 +26,18 @@ const lab=document.querySelector('#experiment-lab');
 if(lab){
  const en=document.documentElement.lang==='en',n=document.querySelector('#sample'),delta=document.querySelector('#effect'),noise=document.querySelector('#noise');
  const format=(x,d=1)=>Number(x).toLocaleString(en?'en-GB':'es-ES',{minimumFractionDigits:d,maximumFractionDigits:d});
+ const bound=x=>format(x,x!==0&&Math.abs(x)<0.05?Math.min(8,Math.ceil(-Math.log10(Math.abs(x)))):1);
  const update=()=>{
   const size=Number(n.value),effect=Number(delta.value),sd=Number(noise.value),half=1.96*Math.sqrt(2*sd*sd/size),lo=effect-half,hi=effect+half;
   document.querySelector('#sample-value').textContent=format(size,0);document.querySelector('#effect-value').textContent=format(effect);document.querySelector('#noise-value').textContent=format(sd,0);
   document.querySelector('#estimate').textContent=`${format(effect)} ${en?'points':'puntos'}`;
-  document.querySelector('#interval').textContent=`[${format(lo)}; ${format(hi)}]`;
+  document.querySelector('#interval').textContent=`[${bound(lo)}; ${bound(hi)}]`;
   document.querySelector('#interpretation').textContent=hi<0?(en?'Under these assumptions, the interval lies below zero. Whether a negative difference is useful depends on the outcome being measured.':'Bajo estos supuestos, el intervalo queda por debajo de cero. Que una diferencia negativa sea útil depende del indicador medido.'):lo>0?(en?'Under these assumptions, the interval lies above zero. Statistical separation alone does not establish business value.':'Bajo estos supuestos, el intervalo queda por encima de cero. La separación estadística no demuestra por sí sola valor para el negocio.'):(en?'The interval includes zero: these inputs leave substantial uncertainty about the direction of the effect.':'El intervalo incluye el cero: con estos valores persiste incertidumbre sobre la dirección del efecto.');
   const scale=Math.max(20,Math.ceil(Math.max(Math.abs(lo),Math.abs(hi))/10)*10),x=v=>250+200*v/scale;
   document.querySelector('#ci-negative').textContent='−'+format(scale,0);document.querySelector('#ci-positive').textContent='+'+format(scale,0);
   document.querySelector('#ci-line').setAttribute('x1',x(lo));document.querySelector('#ci-line').setAttribute('x2',x(hi));
   document.querySelector('#point').setAttribute('cx',x(effect));
-  document.querySelector('#chart-title').textContent=en?`Illustrative effect ${format(effect)}, approximate 95% interval ${format(lo)} to ${format(hi)}`:`Efecto ilustrativo ${format(effect)}, intervalo aproximado del 95% entre ${format(lo)} y ${format(hi)}`;
+  document.querySelector('#chart-title').textContent=en?`Illustrative effect ${format(effect)}, approximate 95% interval ${bound(lo)} to ${bound(hi)}`:`Efecto ilustrativo ${format(effect)}, intervalo aproximado del 95% entre ${bound(lo)} y ${bound(hi)}`;
  };
  [n,delta,noise].forEach(el=>el.addEventListener('input',update));document.querySelector('#lab-reset')?.addEventListener('click',()=>{n.value='200';delta.value='3';noise.value='15';update();n.focus()});update();
 }

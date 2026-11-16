@@ -1203,6 +1203,73 @@
       "data/publications.json",
       "reviews/round-2.json"
     ],
+    "commit": "8b2c4a91d92f29fbed1ec007299f9ca3e2fa490b"
+  },
+  {
+    "round": 2,
+    "profile_id": 19,
+    "profile": "Métodos estadísticos y visualización",
+    "title": "Evitar ceros aparentes en intervalos próximos al límite",
+    "points": [
+      {
+        "observation": "Un límite positivo menor de 0,05 se redondea a cero.",
+        "location": "assets/app.js format(lo)",
+        "decision": "Aumentar precisión solo cerca de cero."
+      },
+      {
+        "observation": "La interpretación usa el límite sin redondear.",
+        "location": "assets/app.js interpretation",
+        "decision": "Conservar el cálculo exacto."
+      },
+      {
+        "observation": "Con n=20, SD=8 y diferencia 5 el límite es aproximadamente 0,042.",
+        "location": "Fórmula del laboratorio",
+        "decision": "Mostrar un valor positivo visible."
+      },
+      {
+        "observation": "El caso negativo puede mostrar -0,0.",
+        "location": "assets/app.js interval",
+        "decision": "Aplicar la misma precisión a ambos signos."
+      },
+      {
+        "observation": "El título accesible del gráfico usa el mismo redondeo anterior.",
+        "location": "assets/app.js chart-title",
+        "decision": "Compartir el formateador de límites."
+      },
+      {
+        "observation": "El valor predeterminado ya es legible a un decimal.",
+        "location": "tests/browser_check.py",
+        "decision": "Preservar su formato."
+      },
+      {
+        "observation": "La escala cambia según los extremos.",
+        "location": "assets/app.js scale",
+        "decision": "Explicarlo en la leyenda."
+      },
+      {
+        "observation": "La fórmula inglesa conserva coma española y sigla IC.",
+        "location": "build.py lab details",
+        "decision": "Localizar como 1.96 y CI."
+      },
+      {
+        "observation": "La demostración no calcula potencia ni causalidad.",
+        "location": "build.py demo-note",
+        "decision": "Conservar sus supuestos explícitos."
+      },
+      {
+        "observation": "Una precisión limitada evita cadenas numéricas largas.",
+        "location": "assets/app.js bound",
+        "decision": "Acotar a ocho decimales."
+      }
+    ],
+    "prompt": "Haz que los límites pequeños conserven su signo visible mediante precisión adaptativa, usa el mismo formato en la descripción accesible y aclara escala/redondeo; localiza la fórmula inglesa.",
+    "before_commit": "8b2c4a91d92f29fbed1ec007299f9ca3e2fa490b",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/app.js",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
