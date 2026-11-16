@@ -328,6 +328,71 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "d6cd1d8cd2134d623338126e7a652e7bc1b5770f"
+  },
+  {
+    "round": 1,
+    "profile_id": 6,
+    "profile": "Arte visual y diseño de diagramas",
+    "title": "Cada caso necesita una imagen conceptual propia",
+    "before_commit": "d6cd1d8cd2134d623338126e7a652e7bc1b5770f",
+    "points": [
+      {
+        "observation": "PBIS, redes y cooperación comparten exactamente el mismo grafo.",
+        "location": "build.py visual",
+        "decision": "Diseñar esquemas diferentes según el problema."
+      },
+      {
+        "observation": "PBIS describe niveles de centro, aula y estudiante.",
+        "location": "data/projects.json pbis",
+        "decision": "Representar jerarquía, no una red genérica."
+      },
+      {
+        "observation": "Cooperación compara soluciones públicas y privadas.",
+        "location": "data/projects.json collective-action",
+        "decision": "Mostrar dos alternativas sin porcentajes ficticios."
+      },
+      {
+        "observation": "TeensLab trata de documentación y reutilización de datos.",
+        "location": "data/projects.json teenslab",
+        "decision": "Usar una matriz documental esquemática."
+      },
+      {
+        "observation": "El grafo sí es pertinente para el estudio de redes.",
+        "location": "build.py network",
+        "decision": "Conservarlo en su caso específico."
+      },
+      {
+        "observation": "ARCO ya diferencia tres piezas por nombre.",
+        "location": "build.py visual arco",
+        "decision": "Conservar sus nombres propios."
+      },
+      {
+        "observation": "SONAR comunica una secuencia metodológica.",
+        "location": "build.py visual sonar",
+        "decision": "Conservar protocolo, experimento y evidencia."
+      },
+      {
+        "observation": "Los gráficos conceptuales no deben parecer resultados cuantificados.",
+        "location": "build.py visual",
+        "decision": "Evitar ejes, porcentajes o pesos simulados no explicados."
+      },
+      {
+        "observation": "Los diagramas repiten información disponible en el texto.",
+        "location": "build.py visual",
+        "decision": "Mantenerlos decorativos para lectores de pantalla."
+      },
+      {
+        "observation": "Las etiquetas deben caber también en tarjetas móviles.",
+        "location": "assets/style.css .visual",
+        "decision": "Usar viewBox y tipografía legible sin recortes."
+      }
+    ],
+    "prompt": "Reemplaza los grafos repetidos de PBIS y cooperación por diagramas propios: jerarquía de consulta y alternativas de decisión. Dibuja TeensLab como datos documentados. Mantén coherencia cromática y ninguna cifra inventada.",
+    "changes": [
+      "build.py"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]

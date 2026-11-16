@@ -28,7 +28,16 @@ def network():
  return s+'</svg>'
 def visual(p,lang):
  id=p['id']
- if id in ['networks','pbis','collective-action']:return network()
+ if id=='networks':return network()
+ if id=='pbis':
+  labels=t(['Centro','Aulas','Estudiantes'],['School','Classes','Students'],lang)
+  return f'<svg class="schematic" viewBox="0 0 380 190" aria-hidden="true"><path d="M190 48 V75 M85 75 H295 M85 75 V100 M295 75 V100 M85 130 V154 M295 130 V154"/><rect x="130" y="12" width="120" height="36" rx="4"/><rect x="25" y="95" width="120" height="36" rx="4"/><rect x="235" y="95" width="120" height="36" rx="4"/><text x="190" y="36">{labels[0]}</text><text x="85" y="119">{labels[1]}</text><text x="295" y="119">{labels[1]}</text><text x="85" y="179">{labels[2]}</text><text x="295" y="179">{labels[2]}</text></svg>'
+ if id=='collective-action':
+  labels=t(['Decisión','Solución común','Alternativa privada'],['Decision','Shared solution','Private alternative'],lang)
+  return f'<svg class="schematic" viewBox="0 0 380 190" aria-hidden="true"><path d="M190 60 V92 M90 92 H290 M90 92 V120 M290 92 V120"/><circle cx="190" cy="35" r="24"/><rect x="5" y="118" width="170" height="47" rx="4"/><rect x="205" y="118" width="170" height="47" rx="4"/><text x="90" y="147">{labels[1]}</text><text x="290" y="147">{labels[2]}</text><text x="190" y="84">{labels[0]}</text></svg>'
+ if id=='teenslab':
+  labels=t(['Datos','Variables','Protocolo'],['Data','Variables','Protocol'],lang)
+  return '<svg class="schematic" viewBox="0 0 380 190" aria-hidden="true">'+''.join(f'<rect x="{12+i*125}" y="20" width="110" height="115" rx="4"/><path d="M{29+i*125} 52 H{105+i*125} M{29+i*125} 76 H{105+i*125} M{29+i*125} 100 H{86+i*125}"/><text x="{67+i*125}" y="165">{label}</text>' for i,label in enumerate(labels))+'</svg>'
  labels={'sonar':t(['Protocolo','Experimento','Evidencia'],['Protocol','Experiment','Evidence'],lang),'arco':['SALMER','DOVELA','CLAVE'],'teenslab':t(['Medir','Documentar','Reutilizar'],['Measure','Document','Reuse'],lang)}
  return '<div class="pipeline" aria-hidden="true">'+''.join('<span>'+s+'</span>' for s in labels.get(id,[]))+'</div>'
 def shell(lang,key,title,description,body,navkey='',extra_schema=None):

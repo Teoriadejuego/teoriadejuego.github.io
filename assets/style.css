@@ -13,3 +13,5 @@
 .proof-inner>a{text-decoration:none;padding:8px 10px;margin:-8px -10px;border-radius:3px}.proof-inner>a:hover{background:#e1edf2}.proof-inner>a:hover strong{text-decoration:underline;text-underline-offset:4px}
 
 h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}.year,.timeline time,.demo-results,.lab output{font-variant-numeric:tabular-nums}.venue{overflow-wrap:break-word}
+
+.schematic{width:100%;height:175px;overflow:visible}.schematic path{fill:none;stroke:#537f91;stroke-width:2}.schematic rect{fill:#f7fbfc;stroke:#80a8b4;stroke-width:1.5}.schematic circle{fill:#197983;stroke:#fff;stroke-width:3}.schematic text{text-anchor:middle;fill:#204b63;font-family:inherit;font-size:14px;font-weight:600}
