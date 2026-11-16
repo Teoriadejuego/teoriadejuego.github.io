@@ -11,7 +11,9 @@ class Page(HTMLParser):
   if a.get('srcset'):self.links.extend(v.strip().split()[0] for v in a['srcset'].split(','))
   if tag=='html':self.lang=a.get('lang')
   if tag=='h1':self.h1+=1
-  if a.get('id'):self.ids.add(a['id'])
+  if a.get('id'):
+   assert a['id'] not in self.ids,('Duplicate element ID',a['id'])
+   self.ids.add(a['id'])
   if tag=='a' and a.get('href'):self.links.append(a['href'])
   if tag in ['img','script'] and a.get('src'):self.links.append(a['src'])
   if tag=='link' and a.get('href'):

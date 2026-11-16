@@ -1249,6 +1249,74 @@
       "tests/round3_check.py"
     ],
     "validation": "Pruebas headless de sensibilidad n/SD, signo, cero y persistencia correctas; 27 páginas, sitemap y bibliografía validados.",
+    "commit": "1b03d00eb8cd1c29097491840745824bf5775476"
+  },
+  {
+    "round": 3,
+    "profile_id": 20,
+    "profile": "Rendimiento y aseguramiento de calidad",
+    "title": "Regresión completa y corrección de texto ampliado",
+    "before_commit": "1b03d00eb8cd1c29097491840745824bf5775476",
+    "points": [
+      {
+        "observation": "La marca desborda a 320px con texto al 200% por white-space:nowrap.",
+        "location": "qa/text-zoom-before-r3.png / assets/style.css .brand",
+        "decision": "Defecto observado: permitir ajuste de línea y limitar ancho."
+      },
+      {
+        "observation": "La formación doctoral desborda en la columna de trayectoria ampliada.",
+        "location": "assets/style.css .timeline li>div",
+        "decision": "Defecto observado: min-width:0 y ruptura de palabras largas."
+      },
+      {
+        "observation": "Los IDs duplicados no se detectaban en el parser estático.",
+        "location": "tests/check_static.py Page",
+        "decision": "Añadir aserción antes de incorporar IDs."
+      },
+      {
+        "observation": "La prueba R3 inicial tenía una ruta local de navegador fija.",
+        "location": "tests/round3_check.py EXE",
+        "decision": "Usar variable de entorno opcional, como R2."
+      },
+      {
+        "observation": "El 404 usa URLs absolutas de producción y necesita activos locales para QA exacta.",
+        "location": "tests/round3_check.py route",
+        "decision": "Interceptar solo esos activos y renderizar página local."
+      },
+      {
+        "observation": "Las tarjetas sociales incrementan activos, pero el total es 486353 bytes.",
+        "location": "qa/round3-results.json",
+        "decision": "Mantener presupuesto de 550000 bytes."
+      },
+      {
+        "observation": "Las siete páginas comprobadas con axe presentan cero infracciones automáticas.",
+        "location": "qa/round2-results.json axe",
+        "decision": "Registrar resultado sin equipararlo a conformidad total."
+      },
+      {
+        "observation": "Los recorridos previos siguen necesitando regresión tras cambiar citas y navegación.",
+        "location": "tests/browser_check.py / tests/round2_check.py",
+        "decision": "Ejecutar ambas baterías completas."
+      },
+      {
+        "observation": "La impresión CSS pasa la batería previa; la paginación A4 será verificada en el cierre global.",
+        "location": "tests/round2_check.py print",
+        "decision": "Declarar ese límite, no afirmar una paginación aún no observada."
+      },
+      {
+        "observation": "Las capturas finales de contratación, laboratorio, error y colores forzados son legibles.",
+        "location": "qa/*-r3.png",
+        "decision": "Conservar evidencias visuales y resultados de la ronda."
+      }
+    ],
+    "prompt": "Cierra la ronda con las tres baterías de regresión. Corrige los desbordamientos observados al ampliar texto, comprueba 404 con activos locales, colores forzados, movimiento reducido, errores JS y presupuesto; elimina rutas privadas de herramientas y detecta IDs duplicados. Registra límites reales de la validación.",
+    "changes": [
+      "assets/style.css",
+      "tests/check_static.py",
+      "tests/round3_check.py",
+      "SOURCES.md"
+    ],
+    "validation": "Pasaron tests/check_static.py (27 páginas, 26 URLs, pares ES/EN, 12 citas y apellidos), tests/browser_check.py (26 rutas a 1440/768/390), tests/round2_check.py (320/810, ES/EN, clipboard simulado, límites ±0,04, impresión CSS, sin JS, axe en 7 rutas: 0 infracciones) y tests/round3_check.py (URL lab inválidos/extremos/pasos, sensibilidad, foco responsive, 200% texto a 320px, 404 local, colores forzados, movimiento reducido). Sin errores JS. Activos 486353 bytes. Capturas finales inspeccionadas; paginación A4 y despliegue quedan para cierre global.",
     "commit": ""
   }
 ]
