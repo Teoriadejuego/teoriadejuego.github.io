@@ -8,7 +8,10 @@
       "React",
       "FastAPI",
       "Python",
-      "Experimentación"
+      {
+        "es": "Experimentación",
+        "en": "Experimentation"
+      }
     ],
     "status": {
       "es": "Proyecto de investigación · 2026",
@@ -53,7 +56,11 @@
         "Check how the server resolves treatments and which records the protocol produces."
       ]
     },
-    "related": "collective-action"
+    "related": "collective-action",
+    "seo_title": {
+      "es": "SONAR: diseño de experimentos digitales",
+      "en": "SONAR: digital experiment design"
+    }
   },
   {
     "id": "arco",
@@ -63,8 +70,14 @@
     "demo": "https://teoriadejuego.github.io/arco/DEMO.html",
     "tags": [
       "JavaScript",
-      "Visualización",
-      "Flujos de datos"
+      {
+        "es": "Visualización",
+        "en": "Visualisation"
+      },
+      {
+        "es": "Flujos de datos",
+        "en": "Data workflows"
+      }
     ],
     "status": {
       "es": "Herramientas en evaluación · datos simulados",
@@ -108,7 +121,11 @@
         "Inspect how data and views change between collection, preparation and exploration. The example uses simulated data."
       ]
     },
-    "related": "pbis"
+    "related": "pbis",
+    "seo_title": {
+      "es": "ARCO: visualización de datos educativos",
+      "en": "ARCO: educational data visualisation"
+    }
   },
   {
     "id": "pbis",
@@ -118,8 +135,14 @@
     "demo": "https://teoriadejuego.github.io/pbis-poc/DEMO.html#guia",
     "tags": [
       "HTML / JavaScript",
-      "Redes",
-      "Visualización"
+      {
+        "es": "Redes",
+        "en": "Networks"
+      },
+      {
+        "es": "Visualización",
+        "en": "Visualisation"
+      }
     ],
     "status": {
       "es": "Prototipo en evaluación · demo sintética",
@@ -163,7 +186,11 @@
         "Compare school, class and student views; review filters, denominators and missing data. These are synthetic examples."
       ]
     },
-    "related": "networks"
+    "related": "networks",
+    "seo_title": {
+      "es": "PBIS: indicadores y redes educativas",
+      "en": "PBIS: school indicators and networks"
+    }
   },
   {
     "id": "networks",
@@ -174,8 +201,14 @@
     "kind": "research",
     "doi": "10.1073/pnas.2215041120",
     "tags": [
-      "Network science",
-      "Predicción",
+      {
+        "es": "Ciencia de redes",
+        "en": "Network science"
+      },
+      {
+        "es": "Predicción",
+        "en": "Prediction"
+      },
       "PNAS"
     ],
     "status": {
@@ -220,7 +253,11 @@
         "Review the sample, comparison models and each author’s contribution."
       ]
     },
-    "related": "teenslab"
+    "related": "teenslab",
+    "seo_title": {
+      "es": "Redes sociales y predicción en PNAS",
+      "en": "Social networks and prediction in PNAS"
+    }
   },
   {
     "id": "collective-action",
@@ -231,8 +268,14 @@
     "kind": "research",
     "doi": "10.1073/pnas.2504632123",
     "tags": [
-      "Experimentos",
-      "Incentivos",
+      {
+        "es": "Experimentos",
+        "en": "Experiments"
+      },
+      {
+        "es": "Incentivos",
+        "en": "Incentives"
+      },
       "PNAS"
     ],
     "status": {
@@ -277,7 +320,11 @@
         "Distinguish the experiment’s observed findings from potential applications in other contexts."
       ]
     },
-    "related": "sonar"
+    "related": "sonar",
+    "seo_title": {
+      "es": "Experimentos e incentivos en 34 países",
+      "en": "Experiments and incentives across 34 countries"
+    }
   },
   {
     "id": "teenslab",
@@ -285,8 +332,14 @@
     "kind": "research",
     "doi": "10.1038/s41597-024-04298-6",
     "tags": [
-      "Datos abiertos",
-      "Medición",
+      {
+        "es": "Datos abiertos",
+        "en": "Open data"
+      },
+      {
+        "es": "Medición",
+        "en": "Measurement"
+      },
       "Scientific Data"
     ],
     "status": {
@@ -331,6 +384,10 @@
         "Check the available sample for each measure before reusing results."
       ]
     },
-    "related": "arco"
+    "related": "arco",
+    "seo_title": {
+      "es": "TeensLab: datos abiertos y medición",
+      "en": "TeensLab: open data and measurement"
+    }
   }
 ]

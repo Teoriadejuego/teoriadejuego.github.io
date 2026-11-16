@@ -1065,6 +1065,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "f277992f9f5bf76617c8ebf4ad03c25763f18d39"
+  },
+  {
+    "round": 1,
+    "profile_id": 17,
+    "profile": "SEO semántico y edición web senior",
+    "title": "Títulos descriptivos y lenguaje consistente por idioma",
+    "before_commit": "f277992f9f5bf76617c8ebf4ad03c25763f18d39",
+    "points": [
+      {
+        "observation": "Las páginas de caso solo usan la sigla del proyecto en el title.",
+        "location": "build.py case_page shell",
+        "decision": "Añadir el problema concreto junto al nombre."
+      },
+      {
+        "observation": "ARCO y PBIS no explican su función a quien llega desde un buscador.",
+        "location": "data/projects.json",
+        "decision": "Nombrar visualización e indicadores en sus títulos SEO."
+      },
+      {
+        "observation": "Los casos científicos permiten descriptores precisos sin exagerar.",
+        "location": "data/projects.json",
+        "decision": "Usar redes, incentivos y datos abiertos."
+      },
+      {
+        "observation": "Algunas etiquetas españolas aparecen también en páginas inglesas.",
+        "location": "data/projects.json tags",
+        "decision": "Localizar términos descriptivos."
+      },
+      {
+        "observation": "Los nombres de tecnologías y revistas no se deben traducir.",
+        "location": "data/projects.json tags",
+        "decision": "Mantener React, FastAPI, Python, PNAS y Scientific Data."
+      },
+      {
+        "observation": "Los títulos editoriales de artículos identifican obras concretas.",
+        "location": "data/publications.json title",
+        "decision": "Conservarlos literalmente."
+      },
+      {
+        "observation": "Los metadatos deben coincidir con el contenido visible.",
+        "location": "build.py case_page",
+        "decision": "Derivarlos de funciones ya explicadas."
+      },
+      {
+        "observation": "El perfil ya incluye nombre completo y afiliación real.",
+        "location": "build.py profile",
+        "decision": "Conservar las entidades personales verificadas."
+      },
+      {
+        "observation": "No hace falta repetir consultoría tecnológica en todas las tarjetas.",
+        "location": "build.py home/projects",
+        "decision": "Evitar saturación de palabras clave."
+      },
+      {
+        "observation": "Las rutas cortas existentes favorecen enlaces estables.",
+        "location": "build.py route",
+        "decision": "Mejorar títulos sin cambiar las URLs."
+      }
+    ],
+    "prompt": "Escribe títulos SEO específicos para cada caso que combinen nombre y función demostrada. Localiza las etiquetas descriptivas en español e inglés y conserva tecnologías, DOI y títulos científicos sin cambios.",
+    "changes": [
+      "build.py",
+      "data/projects.json",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
