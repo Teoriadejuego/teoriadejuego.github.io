@@ -719,6 +719,71 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "5be36646ce5f4a288b9accd9ec28d8f8718a0ada"
+  },
+  {
+    "round": 3,
+    "profile_id": 12,
+    "profile": "Responsable de contratación en consultoría de datos",
+    "title": "Madurez de la evidencia visible para contratación",
+    "before_commit": "5be36646ce5f4a288b9accd9ec28d8f8718a0ada",
+    "points": [
+      {
+        "observation": "La página para equipos muestra aportación y artefacto, pero no estado en cada opción.",
+        "location": "build.py teams_page cards",
+        "decision": "Añadir estado obtenido del mismo dato del caso."
+      },
+      {
+        "observation": "Una demo sintética puede confundirse con una implantación real en lectura rápida.",
+        "location": "data/projects.json arco status",
+        "decision": "Exponer el estado antes de abrir el caso."
+      },
+      {
+        "observation": "SONAR es proyecto de investigación, no cliente comercial inventado.",
+        "location": "data/projects.json sonar status",
+        "decision": "Conservar la denominación verificada."
+      },
+      {
+        "observation": "TeensLab ofrece evidencia de investigación publicada.",
+        "location": "data/projects.json teenslab status",
+        "decision": "Mostrar su estado como contrapartida a prototipos."
+      },
+      {
+        "observation": "Las tres áreas corresponden a capacidades distintas.",
+        "location": "build.py teams_page areas",
+        "decision": "Preservar encaje sin añadir puestos falsos."
+      },
+      {
+        "observation": "La aportación individual está diferenciada del resultado del equipo.",
+        "location": "build.py teams_page proof",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "El proceso está redactado como propuesta condicional.",
+        "location": "build.py teams_page approach",
+        "decision": "Preservar sin transformarlo en experiencia contratada."
+      },
+      {
+        "observation": "El CTA invita a conversar sin prometer disponibilidad inmediata.",
+        "location": "build.py teams_page actions",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "La ficha de formación permite filtrar encaje académico.",
+        "location": "build.py teams_page hiring-facts",
+        "decision": "Preservar denominaciones oficiales."
+      },
+      {
+        "observation": "Repetir estado a mano introduciría divergencia editorial.",
+        "location": "build.py teams_page cards",
+        "decision": "Leer PROJECTS para la etiqueta bilingüe."
+      }
+    ],
+    "prompt": "Añade Estado de la evidencia a cada bloque de encaje para equipos, tomando el valor del proyecto correspondiente. Haz visibles investigación, publicación y demo sintética sin inventar implantación, clientes o resultados comerciales.",
+    "changes": [
+      "build.py"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
