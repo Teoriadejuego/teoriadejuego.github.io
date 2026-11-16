@@ -164,7 +164,11 @@ for lang in ['es','en']:
 bib='\n\n'.join('@article{alfonso_'+p['id'].replace('-','_')+',\n  title={'+p['title']+'},\n  author={'+' and '.join(p['authors'])+'},\n  journal={'+p['journal']+'},\n  year={'+str(p['year'])+'},\n  doi={'+p['doi']+'},\n  volume={'+p['volume']+'},\n  number={'+p['issue']+'},\n  pages={'+p['pages']+'}\n}' for p in PUBS)
 (OUT/'downloads'/'publications.bib').write_text(bib,encoding='utf8')
 for p,entry in zip(PUBS,bib.split('\n\n')):(OUT/'downloads'/(p['id']+'.bib')).write_text(entry+'\n',encoding='utf8')
-(OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc><lastmod>'+DATE+'</lastmod></url>' for url in pages)+'</urlset>',encoding='utf8')
+def sitemap_entry(url):
+ key=url[len(BASE)+1:];key=key[3:] if key.startswith('en/') else key
+ alternates=''.join('<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+esc(BASE+'/'+route(lang,key),quote=True)+'"/>' for lang in ['es','en'])
+ return '<url><loc>'+esc(url)+'</loc><lastmod>'+DATE+'</lastmod>'+alternates+'</url>'
+(OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+''.join(sitemap_entry(url) for url in pages)+'</urlset>',encoding='utf8')
 (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'/sitemap.xml\n',encoding='utf8')
 (OUT/'.nojekyll').touch()
 (OUT/'404.html').write_text(f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Página no encontrada | Antonio Alfonso</title><meta name="robots" content="noindex"><link rel="stylesheet" href="{BASE}/assets/style.css"><link rel="icon" href="{BASE}/assets/favicon.svg" type="image/svg+xml"></head><body><main id="main" class="not-found wrap"><a class="brand" href="{BASE}/">Antonio Alfonso</a><p class="status-label">404</p><h1>Esta página no está aquí.</h1><p>El enlace puede haber cambiado. Puedes buscar el trabajo desde estas secciones.</p><div class="actions"><a class="button" href="{BASE}/">Inicio</a><a class="button outline" href="{BASE}/projects/">Proyectos</a><a class="button outline" href="{BASE}/publications/">Publicaciones</a></div><p lang="en">Page not found. <a href="{BASE}/en/">Explore the portfolio in English</a>.</p></main></body></html>''',encoding='utf8')

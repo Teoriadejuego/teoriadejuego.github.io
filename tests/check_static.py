@@ -53,3 +53,14 @@ for s in ROOT.rglob('*.html'):
  assert 'C:\\Users' not in text
  assert 'TODO' not in text
 print(f'Static checks passed: {len(pages)} pages; links, anchors, structured data, images and publication completeness.')
+
+# Every sitemap URL declares the same reciprocal language pair.
+import xml.etree.ElementTree as ET
+site=ET.parse(ROOT/'sitemap.xml');ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9','x':'http://www.w3.org/1999/xhtml'}
+entries=site.findall('s:url',ns);listed={e.find('s:loc',ns).text for e in entries}
+assert len(entries)==26 and len(listed)==26
+pairs={e.find('s:loc',ns).text:{a.attrib['hreflang']:a.attrib['href'] for a in e.findall('x:link',ns)} for e in entries}
+for url,pair in pairs.items():
+ assert set(pair)=={'es','en'} and url in pair.values()
+ for target in pair.values():assert target in listed and pairs[target]==pair
+print('Sitemap: 26 URLs, reciprocal ES/EN alternates verified.')

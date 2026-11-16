@@ -982,6 +982,72 @@
       "build.py"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "6f20d61c4cfd408257829d81ffa4cfd4c03febfc"
+  },
+  {
+    "round": 3,
+    "profile_id": 16,
+    "profile": "SEO técnico senior",
+    "title": "Alternativas bilingües verificadas en el sitemap",
+    "before_commit": "6f20d61c4cfd408257829d81ffa4cfd4c03febfc",
+    "points": [
+      {
+        "observation": "El HTML declara alternativas de idioma recíprocas.",
+        "location": "build.py shell hreflang",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "El sitemap solo contiene loc y lastmod.",
+        "location": "build.py sitemap.xml",
+        "decision": "Añadir la pareja ES/EN a cada URL."
+      },
+      {
+        "observation": "Cada variante debe incluirse a sí misma y a su alternativa.",
+        "location": "build.py sitemap_entry",
+        "decision": "Generar ambas para las 26 rutas."
+      },
+      {
+        "observation": "El 404 no debe entrar en el sitemap.",
+        "location": "build.py pages",
+        "decision": "Preservar exclusión."
+      },
+      {
+        "observation": "Los filtros y valores del laboratorio producen variantes de consulta.",
+        "location": "build.py shell canonical",
+        "decision": "Conservar canonical limpio de parámetros."
+      },
+      {
+        "observation": "La raíz española y /en/ son rutas diferentes.",
+        "location": "build.py route",
+        "decision": "Mantener reciprocidad también en portada."
+      },
+      {
+        "observation": "Las rutas de directorio conservan barra final.",
+        "location": "build.py rel",
+        "decision": "Preservar normalización."
+      },
+      {
+        "observation": "La imagen social ya declara dimensiones y formato.",
+        "location": "build.py shell OG",
+        "decision": "Preservar mejora del perfil 14."
+      },
+      {
+        "observation": "La validez XML no asegura que las parejas coincidan.",
+        "location": "tests/check_static.py",
+        "decision": "Probar simetría y pertenencia al sitemap."
+      },
+      {
+        "observation": "Un sitemap no prueba indexación real.",
+        "location": "SOURCES.md buscadores",
+        "decision": "Conservar limitación sin prometer posiciones."
+      }
+    ],
+    "prompt": "Añade alternativas xhtml:link ES/EN recíprocas para cada URL del sitemap, siguiendo la documentación de Google. Prueba 26 URLs únicas, autopertenencia, reciprocidad y exclusión de páginas de error.",
+    "changes": [
+      "build.py",
+      "tests/check_static.py"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
