@@ -1132,6 +1132,75 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "536f9c94c34f44ccde4d85c9b047ad021c8b190b"
+  },
+  {
+    "round": 1,
+    "profile_id": 18,
+    "profile": "Edición de revistas científicas senior",
+    "title": "Autoría, versiones y referencias completas",
+    "before_commit": "536f9c94c34f44ccde4d85c9b047ad021c8b190b",
+    "points": [
+      {
+        "observation": "La ficha bibliográfica omite número y páginas aunque existen en los datos.",
+        "location": "build.py publication_page venue",
+        "decision": "Mostrar referencia editorial completa."
+      },
+      {
+        "observation": "Las autorías extensas se abrevian sin expansión visible.",
+        "location": "build.py publication_page authors",
+        "decision": "Permitir consultar todos los autores."
+      },
+      {
+        "observation": "La búsqueda no incluye autores omitidos del resumen.",
+        "location": "build.py data-search",
+        "decision": "Indexar la autoría completa localmente."
+      },
+      {
+        "observation": "La versión editorial de TeensLab está disponible en un repositorio institucional adicional.",
+        "location": "data/publications.json teenslab",
+        "decision": "Añadir el PDF ZCU verificado."
+      },
+      {
+        "observation": "La copia de Triadic de Loyola tiene portada añadida de ResearchGate.",
+        "location": "data/publications.json triadic",
+        "decision": "Priorizar la versión editorial de Zaragoza y conservar la alternativa."
+      },
+      {
+        "observation": "Las contribuciones publicadas de Antonio en TeensLab son más precisas que coautor genérico.",
+        "location": "data/projects.json teenslab role",
+        "decision": "Indicar diseño, realización, análisis y revisión en equipo."
+      },
+      {
+        "observation": "Triadic atribuye a Antonio recogida de datos y escritura, no desarrollo de modelos.",
+        "location": "data/projects.json networks role",
+        "decision": "Ajustar la descripción a las contribuciones publicadas."
+      },
+      {
+        "observation": "La muestra inicial de TeensLab no equivale a respuestas completas en todas las tareas.",
+        "location": "data/projects.json teenslab work",
+        "decision": "Precisar5890 iniciales y609 cuestionarios incompletos."
+      },
+      {
+        "observation": "El dataset de TeensLab tiene DOI y materiales reproducibles en Zenodo.",
+        "location": "data/publications.json/TeensLab",
+        "decision": "Enlazar el registro de datos, sin copiar registros individuales."
+      },
+      {
+        "observation": "El BibTeX exportado carece de volumen, número y páginas.",
+        "location": "build.py bibliography",
+        "decision": "Completar la exportación con metadatos existentes."
+      }
+    ],
+    "prompt": "Completa referencias y autorías, incorpora los PDFs editoriales institucionales verificados y el dataset de TeensLab. Ajusta contribuciones individuales y denominadores al texto publicado. Mantén manuscritos alternativos claramente etiquetados y exporta metadatos bibliográficos completos.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "data/projects.json",
+      "data/publications.json",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]

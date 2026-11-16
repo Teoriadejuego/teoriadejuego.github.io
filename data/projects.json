@@ -216,8 +216,8 @@
       "en": "Published research · 2023"
     },
     "role": {
-      "es": "Coautor del estudio con un equipo interdisciplinar.",
-      "en": "Study co-author in an interdisciplinary team."
+      "es": "Recogida de datos y coautoría del artículo, según las contribuciones publicadas. El desarrollo de modelos y el análisis corresponden a otros miembros del equipo.",
+      "en": "Data collection and manuscript co-authorship, according to the published contributions. Model development and analysis were undertaken by other team members."
     },
     "heading": {
       "es": "Cuando la estructura explica las relaciones.",
@@ -347,8 +347,8 @@
       "en": "Published data and article"
     },
     "role": {
-      "es": "Coautor del trabajo de documentación del conjunto de datos.",
-      "en": "Co-author of the dataset documentation study."
+      "es": "Participación en el diseño y la realización del experimento, el análisis de datos y la revisión del artículo, según las contribuciones publicadas.",
+      "en": "Contributed to experiment design and implementation, data analysis and paper review, according to the published contributions."
     },
     "heading": {
       "es": "Medir bien para poder reutilizar.",
@@ -363,12 +363,12 @@
       "en": "Comparisons across people and contexts require defined measures and data that can be interpreted outside the original team."
     },
     "work": {
-      "es": "El trabajo reúne tareas experimentales y variables complementarias en una fuente documentada. La versión de repositorio describe 5.890 estudiantes de 33 centros.",
-      "en": "The work brings experimental tasks and supplementary variables together in a documented resource. The repository version describes 5,890 students across 33 institutions."
+      "es": "El estudio reúne tareas experimentales y variables complementarias en una fuente documentada: 5.890 participantes iniciales de 33 centros. 609 no completaron todo el cuestionario; la muestra disponible varía por medida.",
+      "en": "The study brings experimental tasks and supplementary variables together in a documented resource: 5,890 initial participants across 33 institutions. 609 did not complete the full questionnaire; the available sample varies by measure."
     },
     "evidence": {
-      "es": "Artículo en Scientific Data y versión abierta en el repositorio Loyola. Las cifras corresponden al conjunto descrito, no a usuarios de un producto comercial.",
-      "en": "Scientific Data article and an open version in the Loyola repository. These figures describe the dataset, not users of a commercial product."
+      "es": "Artículo en Scientific Data, versiones editoriales e institucionales abiertas y dataset con variables, tareas y código de análisis en Zenodo.",
+      "en": "Scientific Data paper, open published and institutional versions, and a dataset with variables, tasks and analysis code on Zenodo."
     },
     "value": {
       "es": "Conectar diseño de medición, calidad de datos y documentación para que otros equipos puedan analizar y reutilizar la evidencia.",
@@ -388,6 +388,15 @@
     "seo_title": {
       "es": "TeensLab: datos abiertos y medición",
       "en": "TeensLab: open data and measurement"
-    }
+    },
+    "additional_links": [
+      {
+        "label": {
+          "es": "Consultar datos y documentación",
+          "en": "Inspect data and documentation"
+        },
+        "url": "https://zenodo.org/records/13720112"
+      }
+    ]
   }
 ]

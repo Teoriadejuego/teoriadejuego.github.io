@@ -250,6 +250,13 @@
     "links": [
       {
         "label": {
+          "es": "PDF editorial · Universidad de Bohemia Occidental",
+          "en": "Published PDF · University of West Bohemia"
+        },
+        "url": "https://naos-be.zcu.cz/server/api/core/bitstreams/c46eb5a5-2445-41dc-9aa1-bcc531a0edf9/content"
+      },
+      {
+        "label": {
           "es": "Repositorio Loyola",
           "en": "Loyola repository"
         },
@@ -268,11 +275,18 @@
           "en": "Open publisher article"
         },
         "url": "https://www.nature.com/articles/s41597-024-04298-6"
+      },
+      {
+        "label": {
+          "es": "Datos y documentación · Zenodo",
+          "en": "Data and documentation · Zenodo"
+        },
+        "url": "https://zenodo.org/records/13720112"
       }
     ],
     "version": {
-      "es": "El repositorio Loyola conserva la versión de 2024 con el título TeensLab dataset. La versión editorial de 2025 está en acceso abierto.",
-      "en": "Loyola hosts the 2024 version titled TeensLab dataset. The 2025 version of record is open access."
+      "es": "Versión editorial de 2025 en el repositorio de la Universidad de Bohemia Occidental. Loyola conserva el manuscrito de 2024 titulado TeensLab dataset.",
+      "en": "2025 version of record in the University of West Bohemia repository. Loyola hosts the 2024 manuscript titled TeensLab dataset."
     }
   },
   {
@@ -402,6 +416,13 @@
     "links": [
       {
         "label": {
+          "es": "PDF editorial · Universidad de Zaragoza",
+          "en": "Published PDF · University of Zaragoza"
+        },
+        "url": "https://zaguan.unizar.es/record/128014/files/texto_completo.pdf"
+      },
+      {
+        "label": {
           "es": "Repositorio Loyola",
           "en": "Loyola repository"
         },
@@ -416,8 +437,8 @@
       }
     ],
     "version": {
-      "es": "Copia del artículo depositada en Loyola, con portada de ResearchGate.",
-      "en": "Article copy deposited at Loyola, with a ResearchGate cover sheet."
+      "es": "Versión editorial de 2023 en Zaragoza; la copia alternativa de Loyola incorpora una portada de ResearchGate.",
+      "en": "2023 version of record at Zaragoza; the alternative Loyola copy includes a ResearchGate cover sheet."
     }
   },
   {
