@@ -37,3 +37,5 @@ html:not(.js) .lab,html:not(.js) .print-button{display:none}
 .product-capture{margin:28px 0}.product-capture img{width:100%;border:1px solid #c4d6df;border-radius:4px}.product-capture figcaption{font-size:.82rem;line-height:1.6;color:var(--muted);margin-top:12px}
 
 .work[data-kind=research] .visual{background:#edf1f4}.work[data-kind=research] .work-type{border-left:3px solid #687b91;padding-left:9px}
+
+.case-nav{display:grid;gap:3px;margin-top:24px;border-top:1px solid #c4d6df;padding-top:12px}.case-nav a{padding:7px 0;min-height:40px}@media(max-width:760px){.case-nav{display:flex;flex-wrap:wrap;gap:4px 22px}}

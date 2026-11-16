@@ -132,6 +132,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "4465594f8662d9c30b174edd530bb6ebb5c902dd"
+  },
+  {
+    "round": 2,
+    "profile_id": 3,
+    "profile": "Arquitectura espacial y composición",
+    "title": "Añadir recorridos de lectura dentro de los casos",
+    "points": [
+      {
+        "observation": "Los casos tienen cuatro etapas sin acceso directo.",
+        "location": "build.py case_page",
+        "decision": "Añadir anclas a problema, trabajo, evidencia y comprobación."
+      },
+      {
+        "observation": "La columna lateral permanece visible en escritorio.",
+        "location": "assets/style.css .case-aside",
+        "decision": "Usarla como índice local."
+      },
+      {
+        "observation": "El móvil apila la participación antes del contenido.",
+        "location": "assets/style.css .case-body",
+        "decision": "Disponer el índice en varias líneas compactas."
+      },
+      {
+        "observation": "La captura PBIS alarga la lectura del caso.",
+        "location": "build.py case_page capture",
+        "decision": "Permitir saltar a las acciones finales."
+      },
+      {
+        "observation": "Las anclas ya tienen compensación de cabecera.",
+        "location": "assets/style.css [id]",
+        "decision": "Conservar scroll-margin."
+      },
+      {
+        "observation": "La atribución de funciones es esencial en casos colectivos.",
+        "location": "build.py case_page aside",
+        "decision": "Mantenerla antes del índice."
+      },
+      {
+        "observation": "Los títulos siguen un orden lógico.",
+        "location": "build.py case_page",
+        "decision": "No reorganizar el argumento científico."
+      },
+      {
+        "observation": "El enlace al proyecto relacionado cierra el recorrido.",
+        "location": "build.py .related-case",
+        "decision": "Preservarlo."
+      },
+      {
+        "observation": "La cuadrícula limita correctamente la longitud del texto.",
+        "location": "assets/style.css .case-body>div",
+        "decision": "Conservar 74ch."
+      },
+      {
+        "observation": "El índice requiere un nombre distinguible de la navegación global.",
+        "location": "build.py case_page nav",
+        "decision": "Usar Secciones del caso en ambos idiomas."
+      }
+    ],
+    "prompt": "Convierte las cuatro partes de cada caso en destinos enlazables y añade un índice lateral que se compacte en móvil, manteniendo atribución y jerarquía.",
+    "before_commit": "4465594f8662d9c30b174edd530bb6ebb5c902dd",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
