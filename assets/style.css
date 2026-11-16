@@ -59,3 +59,7 @@ html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-he
 .copy-email{display:block;color:#fff;background:transparent;border:1px solid #94b3c7;border-radius:3px;padding:7px 12px;min-height:44px;margin-top:14px;cursor:pointer;font-size:.88rem}.copy-email:hover{background:#254a60}.copy-status{min-height:1.5em;margin:8px 0}html:not(.js) .copy-email,html:not(.js) .copy-status{display:none}
 
 .resource-group{border-top:1px solid #c4d6df;padding:10px 0}.resource-group summary{font-weight:650}.resource-group .resource-list{margin:22px 0 0}.resource-group[open]{padding-bottom:20px}
+
+.print-source{display:none}@media print{.print-source{display:block;font-size:9pt}.case-nav,.copy-email,.copy-status{display:none!important}.product-capture{break-inside:avoid}}
+
+.work .visual{height:250px;flex:0 0 250px}@media print{#contact{display:none!important}.section.tint,.section.dark{background:#fff;color:#111}.page-heading h1{font-size:28pt}.lead{font-size:11pt}}

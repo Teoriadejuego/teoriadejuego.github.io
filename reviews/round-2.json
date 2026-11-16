@@ -1270,6 +1270,74 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "c3a2ba8b2f73397d2323d1dbc067987e6b599de4"
+  },
+  {
+    "round": 2,
+    "profile_id": 20,
+    "profile": "Rendimiento y aseguramiento de calidad",
+    "title": "Proteger impresión y recorridos con pruebas de regresión",
+    "points": [
+      {
+        "observation": "El perfil impreso carecía de URL y fecha visibles.",
+        "location": "build.py profile",
+        "decision": "Añadir procedencia solo para impresión."
+      },
+      {
+        "observation": "Ocultar contact-panel deja su sección oscura vacía al imprimir.",
+        "location": "assets/style.css print",
+        "decision": "Ocultar toda la sección de contacto."
+      },
+      {
+        "observation": "section.tint gana a la regla genérica de fondo de impresión.",
+        "location": "assets/style.css print",
+        "decision": "Especificar fondo blanco en secciones tintadas."
+      },
+      {
+        "observation": "El h1 de page-heading conserva el tamaño de pantalla al imprimir.",
+        "location": "assets/style.css print",
+        "decision": "Aplicar tamaño de 28pt al selector real."
+      },
+      {
+        "observation": "Las nuevas etiquetas ARCO hacen desiguales los paneles de tarjetas.",
+        "location": "qa/home-desktop-r2.png",
+        "decision": "Unificar altura de paneles visuales."
+      },
+      {
+        "observation": "Los recorridos nuevos requieren pruebas de continuidad.",
+        "location": "tests/round2_check.py",
+        "decision": "Comprobar filtros ES/EN y ancla."
+      },
+      {
+        "observation": "Copiar correo no debe alterar el portapapeles durante QA.",
+        "location": "tests/round2_check.py",
+        "decision": "Simular éxito y rechazo."
+      },
+      {
+        "observation": "El límite estadístico próximo a cero necesita regresión explícita.",
+        "location": "tests/round2_check.py",
+        "decision": "Probar ambos signos con n20, SD8 y efecto±5."
+      },
+      {
+        "observation": "El tamaño estrecho y el modo sin JavaScript tienen riesgos distintos.",
+        "location": "tests/round2_check.py",
+        "decision": "Verificar 320/810px y colecciones nativas."
+      },
+      {
+        "observation": "El peso total sigue por debajo de 550KB y axe no encuentra infracciones.",
+        "location": "qa/round2-results.json",
+        "decision": "Fijar presupuesto y guardar resultados sin prometer conformidad total."
+      }
+    ],
+    "prompt": "Cierra la ronda con pruebas de los recorridos nuevos, precisión numérica y portapapeles simulado. Corrige los defectos observados en impresión y alturas de tarjetas, incluye procedencia impresa y comprueba peso y accesibilidad automática.",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness. Batería headless original: 26 rutas a 1440/768/390, filtros, menú, laboratorio y sin JavaScript; batería R2: 26 rutas a 320/810, continuidad ES/EN, 12 citas completas, 72 autores, clipboard simulado éxito/rechazo, límites ±0,04, impresión y colecciones sin JS. Axe-core 4.14.1: 7 rutas, 0 infracciones automáticas WCAG A/AA. Inspección visual de portada, contratación, PBIS e impresión; correcciones de paneles y fondos revalidadas. Assets <550000 bytes.",
+    "before_commit": "c3a2ba8b2f73397d2323d1dbc067987e6b599de4",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json",
+      "tests/round2_check.py"
+    ],
     "commit": "pending"
   }
 ]
