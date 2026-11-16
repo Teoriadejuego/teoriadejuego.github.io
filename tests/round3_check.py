@@ -30,5 +30,11 @@ with sync_playwright() as p:
  page.goto(href,wait_until='networkidle');assert page.locator('#effect').input_value()=='2.5'
  page.locator('#lab-reset').click();assert '?' not in page.url
  assert page.locator('#sample').evaluate('(e)=>e===document.activeElement')
+ page.set_viewport_size({'width':1440,'height':900});page.goto(BASE+'/',wait_until='networkidle')
+ page.locator('#navigation a').first.focus()
+ page.set_viewport_size({'width':390,'height':844});page.wait_for_timeout(100)
+ assert page.locator('.menu-toggle').evaluate('(e)=>e===document.activeElement')
+ page.set_viewport_size({'width':1440,'height':900});page.wait_for_timeout(100)
+ assert page.locator('#navigation a').first.evaluate('(e)=>e===document.activeElement')
  browser.close()
 print('Round 3 browser checks passed.')

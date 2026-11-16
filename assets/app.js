@@ -4,7 +4,8 @@ const setMenu=(open,restore=false)=>{menu?.setAttribute('aria-expanded',String(o
 menu?.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu?.getAttribute('aria-expanded')==='true'){setMenu(false,true)}});
 nav?.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
-window.matchMedia('(max-width:760px)').addEventListener('change',()=>setMenu(false));
+let lastFocused=document.activeElement;document.addEventListener('focusin',e=>{lastFocused=e.target});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.nav,.menu-toggle'))lastFocused=null});
+window.matchMedia('(max-width:760px)').addEventListener('change',e=>{const active=document.activeElement===document.body?lastFocused:document.activeElement;if(e.matches)setMenu(false,!!nav?.contains(active));else{setMenu(false);if(active===menu)nav?.querySelector('a')?.focus()}});
 document.querySelector('.print-button')?.addEventListener('click',()=>window.print());
 const search=document.querySelector('#pub-search'),topic=document.querySelector('#pub-topic'),year=document.querySelector('#pub-year');
 if(search){

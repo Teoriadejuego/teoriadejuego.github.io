@@ -587,6 +587,72 @@
       "tests/round3_check.py"
     ],
     "validation": "Headless correcto: NaN/Infinity, límites negativos y superiores, ajuste al paso, historial estable, idioma y restablecimiento; 27 páginas estáticas correctas.",
+    "commit": "1d717ef9f8436af2e4f51e63946e61b98f742fb7"
+  },
+  {
+    "round": 3,
+    "profile_id": 10,
+    "profile": "Accesibilidad web",
+    "title": "Conservar foco visible al cambiar de anchura",
+    "before_commit": "1d717ef9f8436af2e4f51e63946e61b98f742fb7",
+    "points": [
+      {
+        "observation": "Al estrechar escritorio, un enlace enfocado queda oculto y el navegador desenfoca.",
+        "location": "assets/app.js matchMedia change",
+        "decision": "Defecto observado: recordar el último foco relevante."
+      },
+      {
+        "observation": "Al ampliar móvil, el botón enfocado pasa a display:none.",
+        "location": "assets/app.js matchMedia change",
+        "decision": "Mover foco al primer enlace visible."
+      },
+      {
+        "observation": "Un clic fuera de navegación no debe provocar recuperación posterior.",
+        "location": "assets/app.js pointerdown",
+        "decision": "Borrar memoria de foco al interactuar fuera."
+      },
+      {
+        "observation": "El foco de contenido ajeno a la navegación no debe desplazarse.",
+        "location": "assets/app.js matchMedia change",
+        "decision": "Actuar solo sobre nav o menú."
+      },
+      {
+        "observation": "Escape ya cierra el menú y restaura el foco.",
+        "location": "assets/app.js keydown",
+        "decision": "Preservar comportamiento."
+      },
+      {
+        "observation": "El botón comunica aria-expanded.",
+        "location": "assets/app.js setMenu",
+        "decision": "Preservar estado."
+      },
+      {
+        "observation": "El enlace de salto sitúa el foco en main.",
+        "location": "build.py shell main",
+        "decision": "Preservar tabindex -1 y contorno."
+      },
+      {
+        "observation": "La navegación sin JS elimina el control inútil.",
+        "location": "assets/style.css html:not(.js)",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "Axe no prueba la continuidad de foco al redimensionar.",
+        "location": "tests/round2_check.py",
+        "decision": "Añadir interacción específica."
+      },
+      {
+        "observation": "La corrección debe cubrir ambos sentidos del cambio.",
+        "location": "tests/round3_check.py",
+        "decision": "Probar 1440→390→1440 headless."
+      }
+    ],
+    "prompt": "Conserva foco visible al cambiar el breakpoint: botón al pasar a móvil y primer enlace al pasar a escritorio, únicamente si se ocultaría el control enfocado. Recuerda el foco anterior porque el navegador puede borrarlo antes del evento y cancela esa memoria al pulsar fuera. Prueba ambos sentidos.",
+    "changes": [
+      "assets/app.js",
+      "tests/round3_check.py"
+    ],
+    "validation": "La primera prueba detectó desenfoque previo al evento; corregido recordando foco y validado headless 1440→390→1440. Laboratorio, modo sin JS y estática correctos.",
     "commit": ""
   }
 ]
