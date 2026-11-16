@@ -40,3 +40,9 @@ if(lab){
  };
  [n,delta,noise].forEach(el=>el.addEventListener('input',update));document.querySelector('#lab-reset')?.addEventListener('click',()=>{n.value='200';delta.value='3';noise.value='15';update();n.focus()});update();
 }
+
+document.querySelectorAll('[data-copy-email]').forEach(button=>button.addEventListener('click',async()=>{
+ const en=document.documentElement.lang==='en',status=button.nextElementSibling;
+ try{await navigator.clipboard.writeText(button.dataset.copyEmail);status.textContent=en?'Email address copied.':'Correo copiado.'}
+ catch{status.textContent=en?'Select the email address above and copy it with your browser.':'Selecciona la dirección de arriba y cópiala con tu navegador.'}
+}));

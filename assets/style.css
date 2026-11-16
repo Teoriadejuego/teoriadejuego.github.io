@@ -55,3 +55,5 @@ html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-he
 .fit-evidence{font-size:.9rem;margin:22px 0}.fit-evidence dt{font-weight:650;margin-top:14px}.fit-evidence dd{margin:4px 0 0;color:var(--muted)}.fit-grid article{display:flex;flex-direction:column}.fit-grid article>a{margin-top:auto}
 
 .case-actions{margin:24px 0 12px;gap:12px}.case-actions .button{font-size:.88rem;padding:10px 15px}
+
+.copy-email{display:block;color:#fff;background:transparent;border:1px solid #94b3c7;border-radius:3px;padding:7px 12px;min-height:44px;margin-top:14px;cursor:pointer;font-size:.88rem}.copy-email:hover{background:#254a60}.copy-status{min-height:1.5em;margin:8px 0}html:not(.js) .copy-email,html:not(.js) .copy-status{display:none}

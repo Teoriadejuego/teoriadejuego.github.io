@@ -801,6 +801,74 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "f315837dc2c48d6e3d9d5debbafdb85fefc6c77d"
+  },
+  {
+    "round": 2,
+    "profile_id": 13,
+    "profile": "Redacción publicitaria y UX writing senior",
+    "title": "Dar una alternativa directa al enlace de correo",
+    "points": [
+      {
+        "observation": "El contacto depende de una aplicación mailto.",
+        "location": "build.py contact",
+        "decision": "Añadir Copiar correo."
+      },
+      {
+        "observation": "La dirección ya se muestra como texto legible.",
+        "location": "build.py contact-link",
+        "decision": "Conservar copia manual."
+      },
+      {
+        "observation": "La acción de copiar necesita una confirmación concreta.",
+        "location": "assets/app.js copy handler",
+        "decision": "Mostrar Correo copiado."
+      },
+      {
+        "observation": "El acceso al portapapeles puede fallar.",
+        "location": "assets/app.js clipboard",
+        "decision": "Dar una alternativa manual útil."
+      },
+      {
+        "observation": "El estado debe anunciarse sin interrumpir.",
+        "location": "build.py copy-status",
+        "decision": "Usar role status y aria-live polite."
+      },
+      {
+        "observation": "El botón no debe fingir envío.",
+        "location": "build.py contact",
+        "decision": "Nombrar exactamente Copiar correo."
+      },
+      {
+        "observation": "La operación solo debe ocurrir por acción del visitante.",
+        "location": "assets/app.js click",
+        "decision": "Invocar clipboard al pulsar."
+      },
+      {
+        "observation": "Sin JavaScript el botón no funcionaría.",
+        "location": "assets/style.css no-js",
+        "decision": "Ocultarlo conservando email."
+      },
+      {
+        "observation": "El bloque de contacto aparece en ambos idiomas.",
+        "location": "build.py contact",
+        "decision": "Traducir acción y resultado."
+      },
+      {
+        "observation": "Una confirmación vacía puede mover el contenido al aparecer.",
+        "location": "assets/style.css copy-status",
+        "decision": "Reservar una línea discreta."
+      }
+    ],
+    "prompt": "Añade un botón Copiar correo junto a la dirección, con confirmación accesible y alternativa manual si falla el portapapeles; no envíes mensajes ni cambies el enlace mailto.",
+    "before_commit": "f315837dc2c48d6e3d9d5debbafdb85fefc6c77d",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/app.js",
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
