@@ -1135,6 +1135,74 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "f0ee9451e57e26ce7e99ac62445354316d28e6c7"
+  },
+  {
+    "round": 2,
+    "profile_id": 18,
+    "profile": "Edición de revista científica",
+    "title": "Precisar procedencia y permitir citar cada artículo",
+    "points": [
+      {
+        "observation": "La descarga RIO se afirma como disponible sin confirmación actual.",
+        "location": "data/publications.json voting.version",
+        "decision": "Expresar disponibilidad según repositorio."
+      },
+      {
+        "observation": "El volumen 2026 difiere del primer online 2025.",
+        "location": "data/publications.json voting",
+        "decision": "Mantener ambos hitos."
+      },
+      {
+        "observation": "Solo se puede descargar la bibliografía completa.",
+        "location": "build.py publication actions",
+        "decision": "Añadir BibTeX individual."
+      },
+      {
+        "observation": "Los doce registros ya tienen metadatos bibliográficos.",
+        "location": "data/publications.json",
+        "decision": "Generar citas desde la misma fuente."
+      },
+      {
+        "observation": "El BibTeX individual no debe omitir coautores.",
+        "location": "build.py bib",
+        "decision": "Reutilizar la entrada completa."
+      },
+      {
+        "observation": "SOURCES conserva una descripción anterior de TeensLab.",
+        "location": "SOURCES.md tabla",
+        "decision": "Añadir versión editorial ZCU y Zenodo."
+      },
+      {
+        "observation": "SOURCES conserva solo la copia Loyola de redes.",
+        "location": "SOURCES.md tabla",
+        "decision": "Documentar también Zaragoza."
+      },
+      {
+        "observation": "La última comprobación RIO produjo 403 y HTML.",
+        "location": "Revisión independiente comunicada por agente principal",
+        "decision": "Registrar la limitación sin borrar el artículo."
+      },
+      {
+        "observation": "La imagen PBIS tiene una procedencia nueva.",
+        "location": "assets/pbis-product.webp",
+        "decision": "Documentar demo sintética y fecha."
+      },
+      {
+        "observation": "Preprints y artículos ya están separados.",
+        "location": "build.py publication_page",
+        "decision": "No mezclar sus estados en la exportación de artículos."
+      }
+    ],
+    "prompt": "Añade una cita BibTeX individual por artículo a partir de la bibliografía completa; corrige la promesa de descarga de RIO y actualiza el registro de fuentes para ZCU, Zaragoza, Zenodo y la captura sintética.",
+    "before_commit": "f0ee9451e57e26ce7e99ac62445354316d28e6c7",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "SOURCES.md",
+      "build.py",
+      "data/publications.json",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]

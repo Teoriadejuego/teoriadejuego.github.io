@@ -21,11 +21,11 @@ El doctorado se identifica por su denominación oficial, Administración y Direc
 | Private solution trap | [LSE](https://researchonline.lse.ac.uk/id/eprint/137840/) | PDF institucional verificado |
 | Voting with dissatisfaction | [RIO, Universidad Pablo de Olavide](https://hdl.handle.net/10433/26388) | Ficha institucional; primer online 2025, volumen 2026 |
 | Baking of preferences | [Loyola 5445](https://repositorio.uloyola.es/handle/20.500.12412/5445) | Manuscrito de marzo de 2024, previo al artículo de 2025 |
-| TeensLab | [Loyola 5492](https://repositorio.uloyola.es/handle/20.500.12412/5492) | Manuscrito de 2024; se enlaza además el artículo editorial de 2025 |
+| TeensLab | [Universidad de Bohemia Occidental](https://naos-be.zcu.cz/server/api/core/bitstreams/c46eb5a5-2445-41dc-9aa1-bcc531a0edf9/content), [Loyola 5492](https://repositorio.uloyola.es/handle/20.500.12412/5492), [Zenodo](https://zenodo.org/records/13720112) | Versión editorial de 2025; manuscrito de 2024 en Loyola; datos, documentación y código en Zenodo |
 | Paper airplanes | [Frontiers](https://doi.org/10.3389/feduc.2024.1301952), [MPRA](https://mpra.ub.uni-muenchen.de/108541/) | Artículo abierto y preprint diferenciados |
 | Climate change mitigation | [IOP](https://doi.org/10.1088/2632-072X/ad2372) | Artículo abierto del editor |
 | Adventure in the classroom | [PsyArXiv](https://osf.io/preprints/psyarxiv/zphx9) | Preprint diferenciado del artículo |
-| Triadic influence | [Loyola 4102](https://repositorio.uloyola.es/handle/20.500.12412/4102) | Copia con portada de ResearchGate |
+| Triadic influence | [Zaragoza](https://zaguan.unizar.es/record/128014/files/texto_completo.pdf), [Loyola 4102](https://repositorio.uloyola.es/handle/20.500.12412/4102) | Versión editorial de 2023 en Zaragoza; copia alternativa de Loyola con portada de ResearchGate |
 | Die-under-the-cup | [Loyola 4444](https://repositorio.uloyola.es/handle/20.500.12412/4444) | Manuscrito depositado |
 | COVID-19 and generosity | [Loyola 4110](https://repositorio.uloyola.es/handle/20.500.12412/4110) | Versión editorial de 2022 |
 | Volunteering | [Loyola 7550](https://repositorio.uloyola.es/handle/20.500.12412/7550) | Documento MPRA de noviembre de 2020, previo al artículo de 2021 |
@@ -35,7 +35,7 @@ El doctorado se identifica por su denominación oficial, Administración y Direc
 
 Se comprobó la respuesta HTTP y la firma `%PDF` de ocho descargas de artículos/documentos de trabajo en LSE y Loyola y de catorce materiales docentes de Loyola. Se inspeccionó el texto inicial de seis PDFs para ajustar las etiquetas de versión. Los PDF se sirven desde sus instituciones; no se almacenan ni redistribuyen en este repositorio.
 
-Limitaciones de comprobación: SSRN respondió 403 al cliente automatizado; se conserva el DOI aportado en el registro de investigación. Nature devolvió una página intermedia en su ruta PDF: se utiliza el artículo HTML y se mantiene el PDF institucional de Loyola. La ficha RIO responde, pero su interfaz JavaScript requiere consulta en el repositorio para descargar. Los registros de `data/resources.json` conservan el enlace a la ficha y al material original.
+Limitaciones de comprobación: SSRN respondió 403 al cliente automatizado; se conserva el DOI aportado en el registro de investigación. Nature devolvió una página intermedia en su ruta PDF: se utiliza el artículo HTML y se mantiene el PDF institucional de Loyola. La ficha RIO y su acceso al texto no pudieron confirmarse en la última comprobación: el navegador automatizado recibió 403 y una ruta de descarga anterior devolvió HTML. Se conserva el identificador institucional estable, sin prometer descarga. Los PDF editoriales de Bohemia Occidental y Zaragoza fueron verificados en la comprobación independiente de la primera ronda. Los registros de `data/resources.json` conservan el enlace a la ficha y al material original.
 
 ## Proyectos y selección
 
@@ -51,3 +51,5 @@ Se destacan PNAS, Scientific Data y el experimento de honestidad por alcance, m�
 La web de [Pablo Brañas-Garza](https://economiaexperimental.es/) orienta la jerarquía: identificación inmediata, biografía compacta, selección de publicaciones y acceso abierto. El diseño, la redacción y los diagramas de este portfolio son propios. El retrato procede de una fotografía facilitada por el titular, con fondo e iluminación editados; la cabecera es una ilustración generada. Prompts en `PROMPTS.md`.
 
 Implementación y SEO según [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [requisitos técnicos de Google](https://developers.google.com/search/docs/essentials/technical) y [ProfilePage](https://developers.google.com/search/docs/appearance/structured-data/profile-page). La preparación técnica facilita el rastreo; no acredita que Google ya haya indexado o posicionado la web.
+
+La captura de PBIS incorporada en la segunda ronda procede de la demo pública, cargada con datos sintéticos el 16 de noviembre de 2026. Se conserva íntegra y se comprime en WebP; no contiene datos de participantes reales.

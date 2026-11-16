@@ -88,7 +88,7 @@ def publication_page(lang):
    if name in short:authorhtml=authorhtml.replace(esc(name),'<strong>'+esc(name)+'</strong>',1);break
   venue=f"{p['journal']} · {p['year']}"+(f" · {p['volume']}" if p['volume'] else '')+(f"({p['issue']})" if p['issue'] else '')+(f", {p['pages']}" if p['pages'] else '')
   fullauthors=('<details class="author-details"><summary>'+t('Ver autoría completa','View all authors',lang)+f' ({len(authors)})</summary><ol class="authors-list">'+''.join('<li>'+esc(a)+'</li>' for a in authors)+'</ol></details>') if len(authors)>=10 else ''
-  actions=[link('https://doi.org/'+p['doi'],'DOI')]+[link(a['url'],loc(a['label'],lang)) for a in p['links']]
+  actions=[link('https://doi.org/'+p['doi'],'DOI')]+[link(a['url'],loc(a['label'],lang)) for a in p['links']]+[link(rel(c,'downloads/'+p['id']+'.bib'),t('Citar · BibTeX','Cite · BibTeX',lang))]
   entries.append(f'''<article class="publication" id="{p['id']}" data-search="{esc(p['doi']+' '+' '.join(authors),quote=True)}" data-topic="{p['topic']}" data-year="{p['year']}"><div class="year">{p['year']}</div><div><h2>{link('https://doi.org/'+p['doi'],p['title'])}</h2><p class="authors">{authorhtml}</p>{fullauthors}<p class="venue">{esc(venue)}</p><p class="summary">{esc(p['summary'][lang])}</p><div class="pub-links">{''.join(actions)}</div>{'<p class="version">'+esc(loc(p['version'],lang))+'</p>' if p.get('version') else ''}</div></article>''')
   schemas.append({'@context':'https://schema.org','@type':'ScholarlyArticle','@id':'https://doi.org/'+p['doi'],'name':p['title'],'identifier':{'@type':'PropertyValue','propertyID':'DOI','value':p['doi']},'url':'https://doi.org/'+p['doi'],'author':[dict({'@type':'Person','name':a},**({'@id':BASE+'/#antonio-alfonso'} if a in ['Antonio Alfonso','Antonio Alfonso-Costillo','A. Alfonso'] else {})) for a in authors],'isPartOf':{'@type':'Periodical','name':p['journal']}})
  opts=[('experiments',t('Experimentos','Experiments',lang)),('networks',t('Redes','Networks',lang)),('data',t('Datos abiertos','Open data',lang)),('behavior',t('Comportamiento','Behaviour',lang))]
@@ -157,6 +157,7 @@ for lang in ['es','en']:
 (OUT/'downloads').mkdir(exist_ok=True)
 bib='\n\n'.join('@article{alfonso_'+p['id'].replace('-','_')+',\n  title={'+p['title']+'},\n  author={'+' and '.join(p['authors'])+'},\n  journal={'+p['journal']+'},\n  year={'+str(p['year'])+'},\n  doi={'+p['doi']+'},\n  volume={'+p['volume']+'},\n  number={'+p['issue']+'},\n  pages={'+p['pages']+'}\n}' for p in PUBS)
 (OUT/'downloads'/'publications.bib').write_text(bib,encoding='utf8')
+for p,entry in zip(PUBS,bib.split('\n\n')):(OUT/'downloads'/(p['id']+'.bib')).write_text(entry+'\n',encoding='utf8')
 (OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+esc(url)+'</loc><lastmod>'+DATE+'</lastmod></url>' for url in pages)+'</urlset>',encoding='utf8')
 (OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+BASE+'/sitemap.xml\n',encoding='utf8')
 (OUT/'.nojekyll').touch()
