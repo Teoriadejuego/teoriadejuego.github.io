@@ -4,10 +4,15 @@ menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded'
 document.querySelector('.print-button')?.addEventListener('click',()=>window.print());
 const search=document.querySelector('#pub-search'),topic=document.querySelector('#pub-topic'),year=document.querySelector('#pub-year');
 if(search){
- const rows=[...document.querySelectorAll('.publication')],count=document.querySelector('#pub-count'),empty=document.querySelector('#pub-empty'),en=document.documentElement.lang==='en';
+ const rows=[...document.querySelectorAll('.publication')],count=document.querySelector('#pub-count'),empty=document.querySelector('#pub-empty'),reset=document.querySelector('#pub-reset'),en=document.documentElement.lang==='en';
  const normal=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
- const filter=()=>{let n=0;for(const row of rows){const show=normal(row.textContent+' '+row.dataset.search).includes(normal(search.value.trim()))&&(!topic.value||row.dataset.topic===topic.value)&&(!year.value||row.dataset.year===year.value);row.hidden=!show;if(show)n++}count.textContent=en?`${n} of ${rows.length} articles`:`${n} de ${rows.length} artículos`;empty.hidden=n!==0};
- [search,topic,year].forEach(el=>el.addEventListener(el===search?'input':'change',filter));filter();
+ const read=()=>{const q=new URLSearchParams(location.search);search.value=q.get('q')||'';for(const [control,key] of [[topic,'topic'],[year,'year']]){const value=q.get(key)||'';control.value=[...control.options].some(o=>o.value===value)?value:''}};
+ const filter=(sync=true)=>{let n=0;for(const row of rows){const show=normal(row.textContent+' '+(row.dataset.search||'')).includes(normal(search.value.trim()))&&(!topic.value||row.dataset.topic===topic.value)&&(!year.value||row.dataset.year===year.value);row.hidden=!show;if(show)n++}count.textContent=en?`${n} of ${rows.length} articles`:`${n} de ${rows.length} artículos`;empty.hidden=n!==0;reset.hidden=!search.value&&!topic.value&&!year.value;
+  if(sync){const url=new URL(location.href);for(const [key,value] of [['q',search.value.trim()],['topic',topic.value],['year',year.value]]){if(value)url.searchParams.set(key,value);else url.searchParams.delete(key)}history.replaceState(null,'',url)}
+ };
+ [search,topic,year].forEach(el=>el.addEventListener(el===search?'input':'change',()=>filter()));
+ reset.addEventListener('click',()=>{search.value='';topic.value='';year.value='';filter();search.focus()});
+ window.addEventListener('popstate',()=>{read();filter(false)});read();filter(false);
 }
 const lab=document.querySelector('#experiment-lab');
 if(lab){

@@ -527,6 +527,74 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "a2d5455eb7ea81f69095622f7d9215309d4e09e1"
+  },
+  {
+    "round": 1,
+    "profile_id": 9,
+    "profile": "Diseño de interacción senior",
+    "title": "Búsqueda compartible y estados recuperables",
+    "before_commit": "a2d5455eb7ea81f69095622f7d9215309d4e09e1",
+    "points": [
+      {
+        "observation": "Los filtros de publicaciones desaparecen al recargar.",
+        "location": "assets/app.js filter",
+        "decision": "Sincronizar búsqueda, tema y año con la URL."
+      },
+      {
+        "observation": "No hay una acción directa para limpiar tres controles.",
+        "location": "build.py publication_page",
+        "decision": "Añadir un botón de restablecimiento."
+      },
+      {
+        "observation": "El estado sin resultados explica el problema pero exige cambios manuales.",
+        "location": "build.py pub-empty",
+        "decision": "Hacer visible la acción de limpiar cuando corresponde."
+      },
+      {
+        "observation": "El resultado se anuncia a lectores de pantalla.",
+        "location": "build.py pub-count",
+        "decision": "Conservar role status y aria-live."
+      },
+      {
+        "observation": "Los filtros funcionan sin enviar información a un servidor.",
+        "location": "assets/app.js",
+        "decision": "Conservar procesamiento local."
+      },
+      {
+        "observation": "Parámetros de tema o año desconocidos deben tener salida razonable.",
+        "location": "assets/app.js",
+        "decision": "Validar opciones y usar todos como alternativa."
+      },
+      {
+        "observation": "El ancla a un artículo debe conservarse al filtrar.",
+        "location": "assets/app.js",
+        "decision": "Actualizar query sin destruir el fragmento."
+      },
+      {
+        "observation": "Las tarjetas repiten una acción genérica.",
+        "location": "build.py work_card",
+        "decision": "Incluir el nombre del caso en el enlace."
+      },
+      {
+        "observation": "Los controles HTML nativos ofrecen teclado y tacto.",
+        "location": "build.py filters",
+        "decision": "Conservar input y select nativos."
+      },
+      {
+        "observation": "Sin JavaScript la bibliografía completa ya es consultable.",
+        "location": "build.py noscript",
+        "decision": "Mantener la mejora progresiva."
+      }
+    ],
+    "prompt": "Haz que los filtros de artículos se recuperen desde q, tema y año en la URL y puedan restablecerse con un botón. Conserva las anclas y el estado accesible. Da nombre específico a los enlaces de casos.",
+    "changes": [
+      "assets/app.js",
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
