@@ -917,6 +917,71 @@
       "assets/social-en.jpg"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "3d3850e715f638584b8aea84c4cf06053bd27581"
+  },
+  {
+    "round": 3,
+    "profile_id": 15,
+    "profile": "Estrategia de contenidos",
+    "title": "Selección editorial estable al actualizar el catálogo",
+    "before_commit": "3d3850e715f638584b8aea84c4cf06053bd27581",
+    "points": [
+      {
+        "observation": "La selección científica de portada depende de índices numéricos.",
+        "location": "build.py home selected",
+        "decision": "Defecto de mantenimiento: sustituir por IDs explícitos."
+      },
+      {
+        "observation": "Añadir una publicación al principio cambiaría los trabajos destacados.",
+        "location": "build.py PUBS",
+        "decision": "Evitar cambio editorial accidental."
+      },
+      {
+        "observation": "Los tres proyectos destacados dependen de las primeras posiciones.",
+        "location": "build.py home PROJECTS[:3]",
+        "decision": "Declarar IDs de SONAR, ARCO y PBIS."
+      },
+      {
+        "observation": "La justificación pública de selección es alcance, método y relevancia.",
+        "location": "SOURCES.md Proyectos y selección",
+        "decision": "Preservar selección actual coherente."
+      },
+      {
+        "observation": "La selección no se presenta como ranking de citas.",
+        "location": "build.py home research intro",
+        "decision": "Preservar límite."
+      },
+      {
+        "observation": "El catálogo completo conserva doce artículos.",
+        "location": "data/publications.json",
+        "decision": "No retirar ni reordenar registros por esta mejora."
+      },
+      {
+        "observation": "Los documentos de trabajo están separados.",
+        "location": "data/working-papers.json",
+        "decision": "Preservar criterio editorial."
+      },
+      {
+        "observation": "Las fichas tienen identificadores estables para anclas y citas.",
+        "location": "data/publications.json id",
+        "decision": "Reutilizarlos como clave de selección."
+      },
+      {
+        "observation": "La página de contratación busca proyectos por iteración.",
+        "location": "build.py teams_page status",
+        "decision": "Reutilizar índice estable de proyectos."
+      },
+      {
+        "observation": "Una referencia editorial inexistente debe fallar al compilar.",
+        "location": "build.py HOME_RESEARCH",
+        "decision": "Usar acceso explícito por clave, sin sustituciones silenciosas."
+      }
+    ],
+    "prompt": "Sustituye los índices posicionales de selección de portada por listas de IDs estables de publicaciones y proyectos. Conserva exactamente la selección actual y reutiliza un índice por ID para los estados de contratación.",
+    "changes": [
+      "build.py"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
