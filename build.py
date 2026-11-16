@@ -15,7 +15,8 @@ def t(es,en,lang):return en if lang=='en' else es
 def loc(v,lang):return v.get(lang,v.get('es','')) if isinstance(v,dict) else v
 def route(lang,key=''):return ('en/' if lang=='en' else '')+key
 def rel(current,target):
- return os.path.relpath(OUT/target, (OUT/current).parent).replace('\\','/') if target else os.path.relpath(OUT,(OUT/current).parent).replace('\\','/')+'/'
+ path=os.path.relpath(OUT/target, (OUT/current).parent).replace('\\','/')
+ return path.rstrip('/')+'/' if not target or target.endswith('/') else path
 def link(url,label,cls=''):
  return f'<a href="{esc(url,quote=True)}"'+(f' class="{cls}"' if cls else '')+f'>{esc(label)}</a>'
 def button(current,lang,key,label,style=''):return link(rel(current,route(lang,key)),label,'button '+style)

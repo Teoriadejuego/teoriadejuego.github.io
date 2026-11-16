@@ -1002,6 +1002,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "0ecefb85e84a074027cb745a4518e6bfcf7af56d"
+  },
+  {
+    "round": 2,
+    "profile_id": 16,
+    "profile": "SEO técnico senior",
+    "title": "Evitar redirecciones en enlaces de directorio",
+    "points": [
+      {
+        "observation": "rel elimina la barra final de destinos de directorio.",
+        "location": "build.py rel",
+        "decision": "Conservarla cuando la ruta la declara."
+      },
+      {
+        "observation": "Las URL canónicas ya incluyen barra final.",
+        "location": "build.py shell canon",
+        "decision": "Alinear los enlaces internos."
+      },
+      {
+        "observation": "El servidor estático redirige directorios sin barra.",
+        "location": "build.py rel output",
+        "decision": "Evitar ese salto innecesario."
+      },
+      {
+        "observation": "Los destinos de archivo no deben ganar una barra.",
+        "location": "build.py asset/download links",
+        "decision": "Mantener rutas de archivo intactas."
+      },
+      {
+        "observation": "La ruta raíz usa una rama diferente del helper.",
+        "location": "build.py rel",
+        "decision": "Unificar el cálculo conservando ./."
+      },
+      {
+        "observation": "Los enlaces anclados concatenan el fragmento después de rel.",
+        "location": "build.py publication links",
+        "decision": "Mantener /#id como destino correcto."
+      },
+      {
+        "observation": "Los enlaces entre idiomas también usan rel.",
+        "location": "build.py shell counterpart",
+        "decision": "Aplicar la corrección global."
+      },
+      {
+        "observation": "El test comprueba existencia pero no forma de directorio.",
+        "location": "tests/check_static.py",
+        "decision": "Añadir una aserción de barra."
+      },
+      {
+        "observation": "Los enlaces externos no pasan por rel.",
+        "location": "build.py link",
+        "decision": "No modificar sus URL."
+      },
+      {
+        "observation": "El sitemap ya enumera destinos canónicos.",
+        "location": "build.py sitemap",
+        "decision": "Conservarlo."
+      }
+    ],
+    "prompt": "Corrige rel para preservar la barra final de directorios en todas las rutas relativas, manteniendo archivos y fragmentos; añade una comprobación estática que impida la regresión.",
+    "before_commit": "0ecefb85e84a074027cb745a4518e6bfcf7af56d",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "build.py",
+      "reviews/round-2.json",
+      "tests/check_static.py"
+    ],
     "commit": "pending"
   }
 ]

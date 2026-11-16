@@ -38,7 +38,9 @@ for f,p in pages.items():
   u=urlsplit(href)
   if u.scheme or u.netloc:continue
   target=(f.parent/unquote(u.path)).resolve() if u.path else f
-  if target.is_dir():target=target/'index.html'
+  if target.is_dir():
+   assert u.path.endswith('/'),(f,'Directory link without trailing slash',href)
+   target=target/'index.html'
   assert target.exists(),(f,href,target)
   if u.fragment and target in pages:assert unquote(u.fragment) in pages[target].ids,(f,href)
 for locale in ['', 'en/']:
