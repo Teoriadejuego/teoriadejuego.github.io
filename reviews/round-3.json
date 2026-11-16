@@ -390,6 +390,72 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "31f39342d56c1707ce6dd7b09118f040ee5dbbe8"
+  },
+  {
+    "round": 3,
+    "profile_id": 7,
+    "profile": "Fotografía de retrato profesional",
+    "title": "Procedencia del retrato también desde la portada",
+    "before_commit": "31f39342d56c1707ce6dd7b09118f040ee5dbbe8",
+    "points": [
+      {
+        "observation": "El retrato del perfil enlaza a su procedencia, el de portada no.",
+        "location": "build.py home figcaption",
+        "decision": "Añadir acceso directo a los mismos créditos."
+      },
+      {
+        "observation": "La foto identifica a la persona y coincide con la del perfil.",
+        "location": "assets/portrait-800.webp",
+        "decision": "Preservar identidad; no regenerar rostro."
+      },
+      {
+        "observation": "El recorte vertical deja ver rostro y hombros.",
+        "location": "assets/style.css .portrait img",
+        "decision": "Preservar object-position."
+      },
+      {
+        "observation": "La cabecera usa variantes responsive existentes.",
+        "location": "build.py home srcset",
+        "decision": "Preservar tamaños y prioridad."
+      },
+      {
+        "observation": "La edición del fondo e iluminación ya se declara.",
+        "location": "build.py privacy",
+        "decision": "Reutilizar el texto factual existente."
+      },
+      {
+        "observation": "El cargo real acompaña al retrato.",
+        "location": "build.py home figcaption",
+        "decision": "Preservar Profesor Ayudante Doctor."
+      },
+      {
+        "observation": "En móvil el retrato acompaña al pie en horizontal.",
+        "location": "assets/style.css .portrait",
+        "decision": "Mantener crédito de tamaño secundario."
+      },
+      {
+        "observation": "Los créditos deben seguir legibles sobre azul oscuro.",
+        "location": "assets/style.css .portrait figcaption a",
+        "decision": "Usar el color claro del pie."
+      },
+      {
+        "observation": "El texto alternativo identifica sin describir rasgos innecesarios.",
+        "location": "build.py home img alt",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "La foto no pretende acreditar clientes ni resultados.",
+        "location": "build.py home portrait",
+        "decision": "Preservar uso profesional sobrio."
+      }
+    ],
+    "prompt": "Enlaza los créditos existentes del retrato desde su pie en portada, en ambos idiomas, con tratamiento secundario legible. No alteres la imagen ni su identidad.",
+    "changes": [
+      "build.py",
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
