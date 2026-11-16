@@ -534,6 +534,72 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "779a77167f1bda1df63501a741c8fb56dc619371"
+  },
+  {
+    "round": 2,
+    "profile_id": 9,
+    "profile": "Diseño de interacción",
+    "title": "Conservar la consulta al cambiar de idioma",
+    "points": [
+      {
+        "observation": "Los filtros persisten en la URL actual.",
+        "location": "assets/app.js filter",
+        "decision": "Conservar ese contrato."
+      },
+      {
+        "observation": "El enlace de idioma descarta q, topic y year.",
+        "location": "assets/app.js publication filter",
+        "decision": "Sincronizar su URL con los controles."
+      },
+      {
+        "observation": "El año y el tema usan valores idénticos entre idiomas.",
+        "location": "build.py publication options",
+        "decision": "Transportarlos sin traducción."
+      },
+      {
+        "observation": "Una búsqueda libre puede contener nombres y DOI.",
+        "location": "assets/app.js search",
+        "decision": "Conservar exactamente el término escrito."
+      },
+      {
+        "observation": "Los IDs de artículos coinciden en ambos idiomas.",
+        "location": "build.py publication entries",
+        "decision": "Mantener el fragmento al cambiar."
+      },
+      {
+        "observation": "Restablecer filtros ya limpia la URL.",
+        "location": "assets/app.js reset",
+        "decision": "Actualizar también el enlace de idioma."
+      },
+      {
+        "observation": "Popstate vuelve a leer controles.",
+        "location": "assets/app.js popstate",
+        "decision": "Sincronizar el enlace después de restaurarlos."
+      },
+      {
+        "observation": "Solo deben copiarse parámetros de búsqueda conocidos.",
+        "location": "assets/app.js syncLanguage",
+        "decision": "No propagar parámetros ajenos."
+      },
+      {
+        "observation": "Los enlaces de idioma siguen siendo enlaces reales.",
+        "location": "build.py shell a.lang",
+        "decision": "Permitir abrir en otra pestaña."
+      },
+      {
+        "observation": "El contenido traducido puede cambiar coincidencias de texto libre.",
+        "location": "build.py summary",
+        "decision": "No prometer igual número de resultados entre idiomas."
+      }
+    ],
+    "prompt": "Conserva q, topic, year y el ancla de artículo en el enlace ES/EN, actualizándolo al filtrar, restablecer o restaurar historial, sin copiar parámetros ajenos.",
+    "before_commit": "779a77167f1bda1df63501a741c8fb56dc619371",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/app.js",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
