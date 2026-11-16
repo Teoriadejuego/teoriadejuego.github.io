@@ -1069,6 +1069,72 @@
       "reviews/round-2.json",
       "tests/check_static.py"
     ],
+    "commit": "85ddaa119ac42f01c4752e6a528bfa701c068636"
+  },
+  {
+    "round": 2,
+    "profile_id": 17,
+    "profile": "SEO semántico y edición web senior",
+    "title": "Conectar identidad, DOI y jerarquía semántica",
+    "points": [
+      {
+        "observation": "El perfil enlaza ORCID pero omite dos perfiles institucionales en sameAs.",
+        "location": "build.py shell person",
+        "decision": "Añadir las fuentes ya verificadas."
+      },
+      {
+        "observation": "Los artículos tienen DOI como texto sin tipo de identificador.",
+        "location": "build.py publication schema",
+        "decision": "Usar PropertyValue DOI."
+      },
+      {
+        "observation": "Cada artículo carece de @id estable propio.",
+        "location": "build.py ScholarlyArticle",
+        "decision": "Usar la URL DOI."
+      },
+      {
+        "observation": "Antonio aparece con tres variantes bibliográficas.",
+        "location": "data/publications.json authors",
+        "decision": "Vincular solo esas variantes a su identidad."
+      },
+      {
+        "observation": "La autoría de colaboradores no debe fusionarse.",
+        "location": "build.py author schema",
+        "decision": "Conservar objetos independientes."
+      },
+      {
+        "observation": "La jerarquía de caso empieza en Proyectos.",
+        "location": "build.py BreadcrumbList",
+        "decision": "Incluir Inicio como primer nivel."
+      },
+      {
+        "observation": "Las rutas españolas e inglesas están separadas.",
+        "location": "build.py route",
+        "decision": "Usar la raíz localizada en la jerarquía."
+      },
+      {
+        "observation": "Los títulos publicados deben coincidir con los visibles.",
+        "location": "build.py ScholarlyArticle name",
+        "decision": "Mantenerlos sin palabras clave añadidas."
+      },
+      {
+        "observation": "No hay fechas de publicación completas en todos los registros.",
+        "location": "data/publications.json",
+        "decision": "No inventar día o mes."
+      },
+      {
+        "observation": "El esquema válido no garantiza resultados enriquecidos.",
+        "location": "SOURCES.md SEO",
+        "decision": "Conservar esa precisión editorial."
+      }
+    ],
+    "prompt": "Refuerza los datos estructurados con identidad institucional verificada, DOI tipado e IDs estables; enlaza las firmas de Antonio a su Person y completa la jerarquía Inicio/Proyectos/Caso sin inventar metadatos.",
+    "before_commit": "85ddaa119ac42f01c4752e6a528bfa701c068636",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
