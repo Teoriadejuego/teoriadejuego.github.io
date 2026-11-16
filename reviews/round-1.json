@@ -195,6 +195,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "2f03445ac0dd37711f7ecce8b8a7087364230a73"
+  },
+  {
+    "round": 1,
+    "profile_id": 4,
+    "profile": "Diseño web senior",
+    "title": "Convertir las señales de confianza en accesos útiles",
+    "before_commit": "2f03445ac0dd37711f7ecce8b8a7087364230a73",
+    "points": [
+      {
+        "observation": "La franja de evidencia menciona revistas pero no permite abrir los artículos.",
+        "location": "build.py home proof",
+        "decision": "Convertirla en un enlace al catálogo."
+      },
+      {
+        "observation": "Los nombres de herramientas son texto estático en la portada.",
+        "location": "build.py home proof",
+        "decision": "Enlazar al índice de casos."
+      },
+      {
+        "observation": "El listado de lenguajes no ofrece el contexto de experiencia.",
+        "location": "build.py home proof",
+        "decision": "Enlazar al perfil."
+      },
+      {
+        "observation": "Los enlaces nativos conservan apertura en otra pestaña.",
+        "location": "build.py link",
+        "decision": "Usar anclas, no eventos sobre contenedores."
+      },
+      {
+        "observation": "La franja no necesita nuevos números de impacto.",
+        "location": "build.py home proof",
+        "decision": "Mantener nombres y evidencia verificable."
+      },
+      {
+        "observation": "El menú ya cubre las cinco áreas del sitio.",
+        "location": "build.py shell",
+        "decision": "Evitar un sexto destino sin contenido específico."
+      },
+      {
+        "observation": "Los bloques de evidencia tienen contraste suficiente sobre fondo claro.",
+        "location": "assets/style.css .proof",
+        "decision": "Conservar el fondo."
+      },
+      {
+        "observation": "El estado hover debe comunicar que toda la zona es navegable.",
+        "location": "assets/style.css .proof",
+        "decision": "Añadir respuesta visual discreta."
+      },
+      {
+        "observation": "Los tres accesos deben seguir siendo cómodos en móvil.",
+        "location": "assets/style.css .proof-inner",
+        "decision": "Conservar apilado y superficie táctil."
+      },
+      {
+        "observation": "Las tarjetas ya llevan a casos completos.",
+        "location": "build.py work_card",
+        "decision": "No duplicar sus botones en la franja."
+      }
+    ],
+    "prompt": "Transforma los tres bloques de evidencia de portada en accesos semánticos a publicaciones, proyectos y perfil. Mantén textos precisos, aspecto sobrio y estados de foco/hover visibles.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
