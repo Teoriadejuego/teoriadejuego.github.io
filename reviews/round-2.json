@@ -935,6 +935,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "09ae5fd3db9e227c322d235d829a04a1c706ae87"
+  },
+  {
+    "round": 2,
+    "profile_id": 15,
+    "profile": "Estrategia de contenidos",
+    "title": "Organizar los materiales en colecciones reconocibles",
+    "points": [
+      {
+        "observation": "El laboratorio lista catorce materiales heterogéneos.",
+        "location": "data/resources.json",
+        "decision": "Agruparlos por función documental."
+      },
+      {
+        "observation": "Nueve títulos pertenecen a Mapeo de competencias.",
+        "location": "data/resources.json titles",
+        "decision": "Reunir cuestionarios y documentación."
+      },
+      {
+        "observation": "Otros materiales son juegos, instrucciones y docencia.",
+        "location": "data/resources.json",
+        "decision": "Crear una segunda colección."
+      },
+      {
+        "observation": "Los títulos originales facilitan identificar las fichas.",
+        "location": "build.py lab resources",
+        "decision": "Conservar su idioma."
+      },
+      {
+        "observation": "La traducción de la interfaz no debe alterar el título editorial.",
+        "location": "build.py lab_page",
+        "decision": "Explicar que se mantiene el original."
+      },
+      {
+        "observation": "Las catorce fichas ya tienen PDF institucional.",
+        "location": "data/resources.json pdf",
+        "decision": "Preservar todos los destinos."
+      },
+      {
+        "observation": "El listado largo compite con el laboratorio interactivo.",
+        "location": "build.py lab_page",
+        "decision": "Usar colecciones desplegables."
+      },
+      {
+        "observation": "Los grupos necesitan mostrar su tamaño.",
+        "location": "build.py groups",
+        "decision": "Calcular recuentos desde los datos."
+      },
+      {
+        "observation": "Los desplegables deben funcionar sin JavaScript.",
+        "location": "HTML details",
+        "decision": "Usar elementos nativos."
+      },
+      {
+        "observation": "Las descargas son PDF, no un formato indeterminado.",
+        "location": "build.py resource links",
+        "decision": "Nombrar Descargar PDF."
+      }
+    ],
+    "prompt": "Agrupa los catorce materiales en dos colecciones nativas desplegables basadas en sus títulos, con recuentos y enlaces a ficha/PDF; conserva todos los títulos originales y destinos.",
+    "before_commit": "09ae5fd3db9e227c322d235d829a04a1c706ae87",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
