@@ -4,9 +4,11 @@ from urllib.parse import urlsplit,unquote
 import json
 ROOT=Path(__file__).resolve().parents[1]/'public'
 class Page(HTMLParser):
- def __init__(self):super().__init__();self.links=[];self.ids=set();self.h1=0;self.canonical=[];self.jsons=[];self.injson=False;self.buf='';self.lang=None;self.images=[]
+ def __init__(self):super().__init__();self.links=[];self.ids=set();self.h1=0;self.canonical=[];self.jsons=[];self.injson=False;self.buf='';self.lang=None;self.images=[];self.title="";self.intitle=False
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
+  if tag=='title':self.intitle=True
+  if a.get('srcset'):self.links.extend(v.strip().split()[0] for v in a['srcset'].split(','))
   if tag=='html':self.lang=a.get('lang')
   if tag=='h1':self.h1+=1
   if a.get('id'):self.ids.add(a['id'])
@@ -18,8 +20,10 @@ class Page(HTMLParser):
   if tag=='img':self.images.append(a)
   if tag=='script' and a.get('type')=='application/ld+json':self.injson=True;self.buf=''
  def handle_data(self,d):
+  if self.intitle:self.title+=d
   if self.injson:self.buf+=d
  def handle_endtag(self,t):
+  if t=='title':self.intitle=False
   if t=='script' and self.injson:self.jsons.append(json.loads(self.buf));self.injson=False
 pages={}
 for f in ROOT.rglob('*.html'):
@@ -28,6 +32,7 @@ for f in ROOT.rglob('*.html'):
  assert p.lang in ['es','en'],f
  if f.name!='404.html':assert len(p.canonical)==1 and p.jsons,f
  for a in p.images:assert 'alt' in a and a.get('width') and a.get('height'),(f,a)
+assert len({p.title for p in pages.values()})==len(pages),'Duplicate page titles'
 for f,p in pages.items():
  for href in p.links:
   u=urlsplit(href)

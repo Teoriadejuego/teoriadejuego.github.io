@@ -59,7 +59,8 @@
     ],
     "prompt": "Unifica la paleta azul y verde mediante tokens semánticos, baja el protagonismo del fondo y simplifica el marco fotográfico. Conserva la personalidad editorial y el contenido verificado; no agregues decoración ni métricas.",
     "changes": [
-      "assets/style.css"
+      "assets/style.css",
+      "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": "1cc352847927f06fafc287638099982b0d5b6386"
@@ -390,7 +391,9 @@
     ],
     "prompt": "Reemplaza los grafos repetidos de PBIS y cooperación por diagramas propios: jerarquía de consulta y alternativas de decisión. Dibuja TeensLab como datos documentados. Mantén coherencia cromática y ninguna cifra inventada.",
     "changes": [
-      "build.py"
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": "bea062cc3d6ddbb2395272de7993ff89f1a4095e"
@@ -455,6 +458,8 @@
     ],
     "prompt": "Mantén el retrato existente y optimiza únicamente su entrega: variantes WebP de400 y800px, srcset/sizes correctos y encuadre CSS estable. Mejora su presencia en móvil sin alterar rasgos ni vestimenta.",
     "changes": [
+      "assets/portrait-400.webp",
+      "assets/portrait-800.webp",
       "assets/style.css",
       "build.py",
       "reviews/round-1.json"
@@ -1267,6 +1272,74 @@
       "build.py",
       "reviews/round-1.json",
       "tests/browser_check.py"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "d9de082dc4d17fadbee929c47d08c52ab28c4ab4"
+  },
+  {
+    "round": 1,
+    "profile_id": 20,
+    "profile": "Ingeniería de rendimiento y QA senior",
+    "title": "Cerrar la ronda con pruebas de los cambios reales",
+    "before_commit": "d9de082dc4d17fadbee929c47d08c52ab28c4ab4",
+    "points": [
+      {
+        "observation": "El informe del navegador conserva un recuento fijo de24 páginas.",
+        "location": "tests/browser_check.py",
+        "decision": "Calcular el número desde la salida construida."
+      },
+      {
+        "observation": "Los nuevos srcset no se comprueban en las pruebas estáticas.",
+        "location": "tests/check_static.py",
+        "decision": "Validar los destinos de cada variante."
+      },
+      {
+        "observation": "Los títulos únicos son importantes tras ampliar el catálogo.",
+        "location": "tests/check_static.py",
+        "decision": "Añadir una comprobación de unicidad."
+      },
+      {
+        "observation": "Los filtros compartibles necesitan una prueba de recarga.",
+        "location": "tests/browser_check.py",
+        "decision": "Comprobar query, recarga y limpieza."
+      },
+      {
+        "observation": "El cierre del menú con Escape requiere validación de foco.",
+        "location": "tests/browser_check.py",
+        "decision": "Añadir una interacción real con teclado."
+      },
+      {
+        "observation": "El laboratorio ya incluye la prueba de efecto negativo.",
+        "location": "tests/browser_check.py",
+        "decision": "Ejecutarla junto con las pruebas existentes."
+      },
+      {
+        "observation": "Las variantes fotográficas reducen transferencia en tamaños pequeños.",
+        "location": "assets/portrait-400.webp",
+        "decision": "Conservar los archivos optimizados y comprobar su carga."
+      },
+      {
+        "observation": "Los controles dependientes de JavaScript no aportan valor sin ejecución.",
+        "location": "assets/style.css lab/print-button",
+        "decision": "Ocultar el laboratorio interactivo y botón de impresión sin JS, conservando noscript y recursos."
+      },
+      {
+        "observation": "Los cambios de diseño necesitan una inspección de capturas, no solo DOM.",
+        "location": "qa capturas",
+        "decision": "Revisar portada, equipos y publicaciones en escritorio y móvil."
+      },
+      {
+        "observation": "La preparación de la web no demuestra posicionamiento ni resultados de contratación.",
+        "location": "reviews/round-1.json",
+        "decision": "Registrar pruebas funcionales, sin inventar métricas comerciales."
+      }
+    ],
+    "prompt": "Amplía las comprobaciones para las nuevas rutas, títulos, srcset, filtros compartibles y menú accesible. Ejecuta el recorrido completo en navegador headless, corrige los fallos reales y revisa capturas. Mantén los presupuestos de carga contenidos y la lectura sin JavaScript.",
+    "changes": [
+      "assets/style.css",
+      "reviews/round-1.json",
+      "tests/browser_check.py",
+      "tests/check_static.py"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null

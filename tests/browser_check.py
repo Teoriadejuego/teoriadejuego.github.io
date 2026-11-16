@@ -16,10 +16,12 @@ with sync_playwright() as p:
   assert page.locator('h1').count()==1,route
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1'),route
   assert page.locator('img').evaluate_all('(els)=>els.every(i=>i.complete&&i.naturalWidth>0)'),route
- for route,name in [('', 'home'),('projects/','projects'),('publications/','publications'),('projects/sonar/','sonar'),('profile/','profile'),('lab/','lab'),('en/','home-en')]:
+ for route,name in [('', 'home'),('projects/','projects'),('publications/','publications'),('projects/sonar/','sonar'),('profile/','profile'),('lab/','lab'),('en/','home-en'),('for-teams/','for-teams')]:
   page.goto(BASE+route,wait_until='networkidle');page.screenshot(path=str(QA/(name+'-desktop.png')),full_page=True)
  page.goto(BASE+'publications/',wait_until='networkidle')
  page.locator('#pub-search').fill('PNAS');assert page.locator('.publication:visible').count()==2
+ assert 'q=PNAS' in page.url;page.reload(wait_until='networkidle');assert page.locator('.publication:visible').count()==2
+ page.locator('#pub-reset').click();assert page.locator('.publication:visible').count()==12;assert 'q=' not in page.url
  page.locator('#pub-search').fill('National Academy');assert page.locator('.publication:visible').count()==2
  page.locator('#pub-search').fill('');page.locator('#pub-topic').select_option('networks');assert page.locator('.publication:visible').count()==1
  page.locator('#pub-year').select_option('2021');assert page.locator('#pub-empty').is_visible()
@@ -44,6 +46,8 @@ with sync_playwright() as p:
    page.goto(BASE+route,wait_until='networkidle');page.screenshot(path=str(QA/(name+f'-{width}.png')),full_page=True)
  page.set_viewport_size({'width':390,'height':844});page.goto(BASE,wait_until='networkidle')
  page.get_by_role('button',name='Menú',exact=True).click();assert page.locator('#navigation').is_visible()
+ page.keyboard.press('Escape');assert not page.locator('#navigation').is_visible();assert page.locator('.menu-toggle').evaluate('(e)=>e===document.activeElement')
+ page.get_by_role('button',name='Menú',exact=True).click()
  page.get_by_role('link',name='English',exact=True).click();assert '/en/' in page.url
  page.goto(BASE+'profile/');page.emulate_media(media='print');assert not page.locator('.site-header').is_visible();assert page.locator('h1').is_visible();page.emulate_media(media='screen')
  keyboard=browser.new_page();keyboard.goto(BASE);keyboard.keyboard.press('Tab');assert keyboard.locator('.skip').evaluate('(e)=>e===document.activeElement')
@@ -52,5 +56,5 @@ with sync_playwright() as p:
  context=browser.new_context(java_script_enabled=False);nojs=context.new_page()
  nojs.goto(BASE+'publications/');assert nojs.locator('.publication:visible').count()==12
  browser.close()
- (QA/'browser-results.json').write_text(json.dumps({'pages':24,'viewports':[1440,768,390],'publication_filter':True,'lab_calculation':True,'no_javascript':True,'page_errors':errors},indent=2),encoding='utf8')
+ (QA/'browser-results.json').write_text(json.dumps({'pages':len(list((ROOT/'public').rglob('index.html'))),'viewports':[1440,768,390],'publication_filter':True,'lab_calculation':True,'no_javascript':True,'page_errors':errors},indent=2),encoding='utf8')
  print('Browser checks passed: all routes, three viewport widths, filters, bilingual navigation, synthetic calculation and no-JavaScript content.')
