@@ -74,3 +74,12 @@ for f,p in pages.items():
   assert [x['item']['@id'] for x in items]==[a['@id'] for a in articles]
   assert all(a['description'] for a in articles)
 print('Publication collection: 12 linked article entities in each language.')
+
+# Preserve publisher author order and compound family names in machine-readable output.
+source_pubs=json.loads((ROOT.parent/'data/publications.json').read_text(encoding='utf8'))
+for pub in source_pubs:
+ assert [a['given']+' '+a['family'] for a in pub['author_parts']]==pub['authors']
+ citation=(ROOT/'downloads'/(pub['id']+'.bib')).read_text(encoding='utf8')
+ assert 'author={'+' and '.join(a['family']+', '+a['given'] for a in pub['author_parts'])+'}' in citation
+assert 'Hernando de Larramendi, Miguel' in (ROOT/'downloads/publications.bib').read_text(encoding='utf8')
+print('Bibliography: author order and compound family names verified for all 12 papers.')

@@ -53,3 +53,5 @@ La web de [Pablo Brañas-Garza](https://economiaexperimental.es/) orienta la jer
 Implementación y SEO según [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [requisitos técnicos de Google](https://developers.google.com/search/docs/essentials/technical) y [ProfilePage](https://developers.google.com/search/docs/appearance/structured-data/profile-page). La preparación técnica facilita el rastreo; no acredita que Google ya haya indexado o posicionado la web.
 
 La captura de PBIS incorporada en la segunda ronda procede de la demo pública, cargada con datos sintéticos el 16 de noviembre de 2026. Se conserva íntegra y se comprime en WebP; no contiene datos de participantes reales.
+
+La tercera ronda incorpora `author_parts` (given/family) desde los metadatos Crossref originales de los doce DOI. Se comprobó que su concatenación coincide exactamente con los nombres visibles y en el mismo orden; no se infieren apellidos dividiendo cadenas. BibTeX utiliza «apellidos, nombre» y JSON-LD conserva ambos campos, incluidos apellidos compuestos como Hernando de Larramendi.

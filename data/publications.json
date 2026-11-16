@@ -30,7 +30,21 @@
     "version": {
       "es": "Disponible online; asignado al número de diciembre de 2026 (125, 102668).",
       "en": "Available online; assigned to the December 2026 issue (125, 102668)."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "A.",
+        "family": "Alfonso"
+      },
+      {
+        "given": "G.",
+        "family": "Gonzales"
+      },
+      {
+        "given": "M.P.",
+        "family": "Ramos-Sosa"
+      }
+    ]
   },
   {
     "id": "private-solutions",
@@ -135,6 +149,296 @@
         },
         "url": "https://researchonline.lse.ac.uk/id/eprint/137840/1/pnas.202504632.pdf"
       }
+    ],
+    "author_parts": [
+      {
+        "given": "Eugene",
+        "family": "Malthouse"
+      },
+      {
+        "given": "Charlie",
+        "family": "Pilgrim"
+      },
+      {
+        "given": "Daniel",
+        "family": "Sgroi"
+      },
+      {
+        "given": "Michela",
+        "family": "Accerenzi"
+      },
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Rana Umair",
+        "family": "Ashraf"
+      },
+      {
+        "given": "Max",
+        "family": "Baard"
+      },
+      {
+        "given": "Sanchayan",
+        "family": "Banerjee"
+      },
+      {
+        "given": "Alexis",
+        "family": "Belianin"
+      },
+      {
+        "given": "Swagata",
+        "family": "Bhattacharjee"
+      },
+      {
+        "given": "Mihir",
+        "family": "Bhattacharya"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "Juan-Camilo",
+        "family": "Cárdenas"
+      },
+      {
+        "given": "Miguel",
+        "family": "Carriquiry"
+      },
+      {
+        "given": "Syngjoo",
+        "family": "Choi"
+      },
+      {
+        "given": "Gwen-Jiro",
+        "family": "Clochard"
+      },
+      {
+        "given": "Eduardo Ezekiel",
+        "family": "Denzon"
+      },
+      {
+        "given": "Bartlomiej",
+        "family": "Dessoulavy-Sliwinski"
+      },
+      {
+        "given": "Giorgio",
+        "family": "Dini"
+      },
+      {
+        "given": "Lu",
+        "family": "Dong"
+      },
+      {
+        "given": "Antal",
+        "family": "Ertl"
+      },
+      {
+        "given": "Filippos",
+        "family": "Exadaktylos"
+      },
+      {
+        "given": "Emel",
+        "family": "Filiz-Ozbay"
+      },
+      {
+        "given": "Sarah Lynn",
+        "family": "Flecke"
+      },
+      {
+        "given": "Fabio",
+        "family": "Galeotti"
+      },
+      {
+        "given": "Teresa",
+        "family": "Garcia-Muñoz"
+      },
+      {
+        "given": "Nobuyuki",
+        "family": "Hanaki"
+      },
+      {
+        "given": "Guillaume",
+        "family": "Hollard"
+      },
+      {
+        "given": "Daniel",
+        "family": "Horn"
+      },
+      {
+        "given": "Lingbo",
+        "family": "Huang"
+      },
+      {
+        "given": "Doruk",
+        "family": "İriş"
+      },
+      {
+        "given": "Hubert Janos",
+        "family": "Kiss"
+      },
+      {
+        "given": "Juliane",
+        "family": "Koch"
+      },
+      {
+        "given": "Jaromír",
+        "family": "Kovářík"
+      },
+      {
+        "given": "Osbert Kwabena Boadi",
+        "family": "Kwarteng"
+      },
+      {
+        "given": "Andreas",
+        "family": "Lange"
+      },
+      {
+        "given": "Martin",
+        "family": "Leites"
+      },
+      {
+        "given": "Thomas Ho-Fung",
+        "family": "Leung"
+      },
+      {
+        "given": "Wooyoung",
+        "family": "Lim"
+      },
+      {
+        "given": "Meike",
+        "family": "Morren"
+      },
+      {
+        "given": "Laila",
+        "family": "Nockur"
+      },
+      {
+        "given": "Charles Yaw",
+        "family": "Okyere"
+      },
+      {
+        "given": "Mayada",
+        "family": "Oudah"
+      },
+      {
+        "given": "Ali I.",
+        "family": "Ozkes"
+      },
+      {
+        "given": "Lionel",
+        "family": "Page"
+      },
+      {
+        "given": "Junghyun",
+        "family": "Park"
+      },
+      {
+        "given": "Stefan",
+        "family": "Pfattheicher"
+      },
+      {
+        "given": "Antonios",
+        "family": "Proestakis"
+      },
+      {
+        "given": "Carlos",
+        "family": "Ramos"
+      },
+      {
+        "given": "Mapi",
+        "family": "Ramos-Sosa"
+      },
+      {
+        "given": "Muhammad Saeed",
+        "family": "Ashraf"
+      },
+      {
+        "given": "Muhammad Ryan",
+        "family": "Sanjaya"
+      },
+      {
+        "given": "Rene",
+        "family": "Schwaiger"
+      },
+      {
+        "given": "Omar",
+        "family": "Sene"
+      },
+      {
+        "given": "Fei",
+        "family": "Song"
+      },
+      {
+        "given": "Sarah",
+        "family": "Spycher"
+      },
+      {
+        "given": "Rostislav",
+        "family": "Staněk"
+      },
+      {
+        "given": "Norman",
+        "family": "Tanchingco"
+      },
+      {
+        "given": "Alessandro",
+        "family": "Tavoni"
+      },
+      {
+        "given": "Vera",
+        "family": "te Velde"
+      },
+      {
+        "given": "María José",
+        "family": "Vázquez-De Francisco"
+      },
+      {
+        "given": "Martine",
+        "family": "Visser"
+      },
+      {
+        "given": "Joseph Tao-Yi",
+        "family": "Wang"
+      },
+      {
+        "given": "Willy",
+        "family": "Wang"
+      },
+      {
+        "given": "Wei-Chien",
+        "family": "Weng"
+      },
+      {
+        "given": "Katharina",
+        "family": "Werner"
+      },
+      {
+        "given": "Amanda",
+        "family": "Wijayanti"
+      },
+      {
+        "given": "Ralph",
+        "family": "Winkler"
+      },
+      {
+        "given": "John",
+        "family": "Wooders"
+      },
+      {
+        "given": "Li",
+        "family": "Ying"
+      },
+      {
+        "given": "Wei",
+        "family": "Zhen"
+      },
+      {
+        "given": "Thomas",
+        "family": "Hills"
+      }
     ]
   },
   {
@@ -168,7 +472,21 @@
     "version": {
       "es": "Publicado online en 2025; volumen 33(2), 392–421, de 2026. Ficha institucional; disponibilidad del texto según repositorio.",
       "en": "First published online in 2025; 2026 volume 33(2), 392–421. Institutional record; full-text availability depends on the repository."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Bosco",
+        "family": "Govantes"
+      },
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Miguel",
+        "family": "Hernando de Larramendi"
+      }
+    ]
   },
   {
     "id": "baking",
@@ -210,7 +528,29 @@
     "version": {
       "es": "Manuscrito de marzo de 2024 depositado en Loyola, previo al artículo de 2025.",
       "en": "March 2024 manuscript deposited at Loyola, preceding the 2025 article."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "Diego",
+        "family": "Jorrat"
+      },
+      {
+        "given": "Benjamin",
+        "family": "Prissé"
+      },
+      {
+        "given": "María José Vázquez-De",
+        "family": "Francisco"
+      }
+    ]
   },
   {
     "id": "teenslab",
@@ -287,7 +627,85 @@
     "version": {
       "es": "Versión editorial de 2025 en el repositorio de la Universidad de Bohemia Occidental. Loyola conserva el manuscrito de 2024 titulado TeensLab dataset.",
       "en": "2025 version of record in the University of West Bohemia repository. Loyola hosts the 2024 manuscript titled TeensLab dataset."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Mónica",
+        "family": "Vasco"
+      },
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Andreu",
+        "family": "Arenas"
+      },
+      {
+        "given": "Antonio",
+        "family": "Cabrales"
+      },
+      {
+        "given": "José A.",
+        "family": "Cuesta"
+      },
+      {
+        "given": "Antonio M.",
+        "family": "Espín"
+      },
+      {
+        "given": "María Paz",
+        "family": "Espinosa"
+      },
+      {
+        "given": "Teresa",
+        "family": "García-Muñoz"
+      },
+      {
+        "given": "Àlex",
+        "family": "Izquierdo Nofuentes"
+      },
+      {
+        "given": "Diego",
+        "family": "Jorrat"
+      },
+      {
+        "given": "Jaromír",
+        "family": "Kovářík"
+      },
+      {
+        "given": "Pablo",
+        "family": "Lomas"
+      },
+      {
+        "given": "Alfonso Carlos",
+        "family": "Martínez-Estudillo"
+      },
+      {
+        "given": "Daniel",
+        "family": "Montolio"
+      },
+      {
+        "given": "María del Pino",
+        "family": "Ramos-Sosa"
+      },
+      {
+        "given": "Patricia",
+        "family": "Román"
+      },
+      {
+        "given": "Ángel",
+        "family": "Sánchez"
+      },
+      {
+        "given": "María José",
+        "family": "Vázquez-De Francisco"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      }
+    ]
   },
   {
     "id": "airplanes",
@@ -321,6 +739,12 @@
         },
         "url": "https://mpra.ub.uni-muenchen.de/108541/"
       }
+    ],
+    "author_parts": [
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      }
     ]
   },
   {
@@ -350,6 +774,24 @@
           "en": "Open full text"
         },
         "url": "https://doi.org/10.1088/2632-072X/ad2372"
+      }
+    ],
+    "author_parts": [
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "Antonio",
+        "family": "Cabrales"
+      },
+      {
+        "given": "Angel",
+        "family": "Sánchez"
       }
     ]
   },
@@ -388,7 +830,37 @@
     "version": {
       "es": "Versión previa a la publicación, disponible en PsyArXiv.",
       "en": "Pre-publication version available on PsyArXiv."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "Diego",
+        "family": "Jorrat"
+      },
+      {
+        "given": "Pablo",
+        "family": "Lomas"
+      },
+      {
+        "given": "Benjamin",
+        "family": "Prissé"
+      },
+      {
+        "given": "Mónica",
+        "family": "Vasco"
+      },
+      {
+        "given": "María J.",
+        "family": "Vázquez-De Francisco"
+      }
+    ]
   },
   {
     "id": "triadic",
@@ -439,7 +911,37 @@
     "version": {
       "es": "Versión editorial de 2023 en Zaragoza; la copia alternativa de Loyola incorpora una portada de ResearchGate.",
       "en": "2023 version of record at Zaragoza; the alternative Loyola copy includes a ResearchGate cover sheet."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Miguel",
+        "family": "Ruiz-García"
+      },
+      {
+        "given": "Juan",
+        "family": "Ozaita"
+      },
+      {
+        "given": "María",
+        "family": "Pereda"
+      },
+      {
+        "given": "Antonio",
+        "family": "Alfonso"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "José A.",
+        "family": "Cuesta"
+      },
+      {
+        "given": "Angel",
+        "family": "Sánchez"
+      }
+    ]
   },
   {
     "id": "honesty",
@@ -479,7 +981,21 @@
     "version": {
       "es": "Manuscrito depositado en repositorio; puede diferir de la versión editorial.",
       "en": "Repository manuscript; it may differ from the version of record."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Antonio",
+        "family": "Alfonso-Costillo"
+      },
+      {
+        "given": "Pablo",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "Ma Carmen",
+        "family": "López-Martín"
+      }
+    ]
   },
   {
     "id": "generosity",
@@ -522,7 +1038,33 @@
     "version": {
       "es": "Versión editorial de 2022 depositada en el repositorio Loyola.",
       "en": "2022 version of record deposited in the Loyola repository."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "P.",
+        "family": "Brañas-Garza"
+      },
+      {
+        "given": "D.",
+        "family": "Jorrat"
+      },
+      {
+        "given": "A.",
+        "family": "Alfonso"
+      },
+      {
+        "given": "A. M.",
+        "family": "Espín"
+      },
+      {
+        "given": "T. García",
+        "family": "Muñoz"
+      },
+      {
+        "given": "J.",
+        "family": "Kovářík"
+      }
+    ]
   },
   {
     "id": "volunteering",
@@ -562,6 +1104,20 @@
     "version": {
       "es": "Documento de trabajo MPRA de noviembre de 2020, previo al artículo de 2021. Copia depositada en Loyola.",
       "en": "November 2020 MPRA working paper, preceding the 2021 article. Copy deposited at Loyola."
-    }
+    },
+    "author_parts": [
+      {
+        "given": "Antonio",
+        "family": "Alfonso-Costillo"
+      },
+      {
+        "given": "Rafael",
+        "family": "Morales-Sánchez"
+      },
+      {
+        "given": "Dunia",
+        "family": "López-Pintado"
+      }
+    ]
   }
 ]

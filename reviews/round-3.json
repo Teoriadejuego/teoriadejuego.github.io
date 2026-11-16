@@ -1114,6 +1114,75 @@
       "tests/check_static.py"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "a16925fd39c27fb9fd5fd1f2ab9f36c87cb326c5"
+  },
+  {
+    "round": 3,
+    "profile_id": 18,
+    "profile": "Edición de revista científica",
+    "title": "Apellidos compuestos correctos en citas y metadatos",
+    "before_commit": "a16925fd39c27fb9fd5fd1f2ab9f36c87cb326c5",
+    "points": [
+      {
+        "observation": "BibTeX exporta nombres en forma nombre apellidos sin separación explícita.",
+        "location": "build.py bib",
+        "decision": "Riesgo real de interpretar apellidos compuestos: usar family, given."
+      },
+      {
+        "observation": "Miguel Hernando de Larramendi requiere conservar el apellido completo.",
+        "location": "data/publications.json author_parts",
+        "decision": "Usar family original de Crossref."
+      },
+      {
+        "observation": "Los nombres con iniciales no deben ampliarse por conjetura.",
+        "location": "data/publications.json delay authors",
+        "decision": "Conservar A., G. y M.P. de la fuente."
+      },
+      {
+        "observation": "El orden completo de los 72 autores de Private solution trap está preservado.",
+        "location": "data/publications.json private-solutions",
+        "decision": "Mantener exactamente ese orden."
+      },
+      {
+        "observation": "Los metadatos JSON-LD solo ofrecen name.",
+        "location": "build.py publication_page schema author",
+        "decision": "Añadir givenName y familyName verificados."
+      },
+      {
+        "observation": "Los nombres visibles no necesitan cambiar.",
+        "location": "build.py publication_page authors",
+        "decision": "Preservar presentación."
+      },
+      {
+        "observation": "El mapeo original contiene ORCID públicos adicionales.",
+        "location": "tmp/cv_2026/review_author_parts.json",
+        "decision": "Importar solo los campos necesarios para esta corrección."
+      },
+      {
+        "observation": "La prueba anterior busca nombres concatenados en BibTeX.",
+        "location": "tests/round2_check.py",
+        "decision": "Actualizar a formato bibliográfico correcto."
+      },
+      {
+        "observation": "El archivo conjunto y las doce citas individuales comparten generador.",
+        "location": "build.py bib",
+        "decision": "Corregir una vez para ambos formatos."
+      },
+      {
+        "observation": "La procedencia del nuevo campo debe quedar documentada.",
+        "location": "SOURCES.md",
+        "decision": "Añadir origen y comprobación de equivalencia exacta."
+      }
+    ],
+    "prompt": "Importa given/family exclusivamente de los metadatos originales de los doce DOI, comprobando igualdad y orden con los nombres visibles. Emite BibTeX en formato family, given y añade givenName/familyName a JSON-LD. Verifica el apellido compuesto Hernando de Larramendi y actualiza documentación y pruebas.",
+    "changes": [
+      "data/publications.json",
+      "build.py",
+      "tests/round2_check.py",
+      "tests/check_static.py",
+      "SOURCES.md"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]

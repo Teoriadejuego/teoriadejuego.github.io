@@ -25,7 +25,7 @@ with sync_playwright() as p:
  for item in json.loads((ROOT/'data/publications.json').read_text(encoding='utf8')):
   bib=(ROOT/'public/downloads'/(item['id']+'.bib')).read_text(encoding='utf8')
   assert item['doi'] in bib and item['title'] in bib
-  assert all(author in bib for author in item['authors'])
+  assert all(author['family']+', '+author['given'] in bib for author in item['author_parts'])
  page.goto(BASE+'for-teams/',wait_until='networkidle')
  assert page.locator('.nav [aria-current="page"]').inner_text()=='Para equipos'
  assert page.locator('.fit-grid h3').count()==3 and page.locator('.fit-grid h2').count()==0
