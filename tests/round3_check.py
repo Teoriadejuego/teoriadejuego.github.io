@@ -36,5 +36,13 @@ with sync_playwright() as p:
  assert page.locator('.menu-toggle').evaluate('(e)=>e===document.activeElement')
  page.set_viewport_size({'width':1440,'height':900});page.wait_for_timeout(100)
  assert page.locator('#navigation a').first.evaluate('(e)=>e===document.activeElement')
+ # The plotted width must narrow with n, widen with SD and reflect negative effects.
+ page.goto(BASE+'/lab/',wait_until='networkidle')
+ def width():return page.locator('#ci-line').evaluate('(e)=>Number(e.getAttribute("x2"))-Number(e.getAttribute("x1"))')
+ initial=width();page.locator('#sample').fill('800');assert width()<initial
+ narrow=width();page.locator('#noise').fill('30');assert width()>narrow
+ page.locator('#effect').fill('-3');assert float(page.locator('#point').get_attribute('cx'))<250
+ page.locator('#effect').fill('0');assert float(page.locator('#point').get_attribute('cx'))==250
+ assert page.locator('#interval').inner_text().startswith('[')
  browser.close()
 print('Round 3 browser checks passed.')

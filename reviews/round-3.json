@@ -1183,6 +1183,72 @@
       "SOURCES.md"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "1a8e8fd477e9d87d3821c21fc04948bea853d887"
+  },
+  {
+    "round": 3,
+    "profile_id": 19,
+    "profile": "Métodos estadísticos y visualización",
+    "title": "Interpretación frecuentista y sensibilidad comprobadas",
+    "before_commit": "1a8e8fd477e9d87d3821c21fc04948bea853d887",
+    "points": [
+      {
+        "observation": "La demo muestra 95% sin explicar qué significa cobertura.",
+        "location": "build.py lab_page Supuestos y cálculo",
+        "decision": "Añadir interpretación de muestreo repetido."
+      },
+      {
+        "observation": "No debe confundirse cobertura con probabilidad del parámetro en este intervalo.",
+        "location": "build.py lab_page details",
+        "decision": "Explicitar distinción en ambos idiomas."
+      },
+      {
+        "observation": "La igualdad de tamaños y desviaciones ya se declara.",
+        "location": "build.py lab_page demo-note",
+        "decision": "Preservar supuestos."
+      },
+      {
+        "observation": "El ejemplo no genera muestras ni calcula potencia.",
+        "location": "build.py lab_page",
+        "decision": "Preservar límites."
+      },
+      {
+        "observation": "La separación de cero no demuestra valor empresarial.",
+        "location": "assets/app.js interpretation",
+        "decision": "Preservar advertencia contextual."
+      },
+      {
+        "observation": "Los efectos negativos se representan hacia la izquierda.",
+        "location": "assets/app.js point",
+        "decision": "Añadir comprobación geométrica."
+      },
+      {
+        "observation": "Aumentar n debe estrechar el intervalo si lo demás queda fijo.",
+        "location": "assets/app.js update",
+        "decision": "Probar monotonicidad en rango de escala estable."
+      },
+      {
+        "observation": "Aumentar SD debe ampliar el intervalo.",
+        "location": "assets/app.js update",
+        "decision": "Probar sensibilidad en el mismo rango."
+      },
+      {
+        "observation": "El punto debe coincidir con el cero para diferencia nula.",
+        "location": "assets/app.js point",
+        "decision": "Probar alineación central."
+      },
+      {
+        "observation": "La escala adaptable está indicada junto al gráfico.",
+        "location": "build.py lab_page chart-legend",
+        "decision": "Preservar para evitar comparar anchos de escalas diferentes."
+      }
+    ],
+    "prompt": "Añade en Supuestos y cálculo una explicación breve y correcta de cobertura frecuentista del 95%, sin interpretación probabilística del parámetro. Prueba que el intervalo responde a n y SD y que efectos negativos y nulos ocupan la posición esperada.",
+    "changes": [
+      "build.py",
+      "tests/round3_check.py"
+    ],
+    "validation": "Pruebas headless de sensibilidad n/SD, signo, cero y persistencia correctas; 27 páginas, sitemap y bibliografía validados.",
     "commit": ""
   }
 ]
