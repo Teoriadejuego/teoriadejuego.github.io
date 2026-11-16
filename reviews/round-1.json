@@ -797,6 +797,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "02581c311120100f1bbe202cbe75bc50d43a8825"
+  },
+  {
+    "round": 1,
+    "profile_id": 13,
+    "profile": "Redacción publicitaria y UX writing senior",
+    "title": "Verbos concretos y menos lenguaje defensivo",
+    "before_commit": "02581c311120100f1bbe202cbe75bc50d43a8825",
+    "points": [
+      {
+        "observation": "La introducción acumula verbos abstractos como conectar.",
+        "location": "build.py home lead",
+        "decision": "Explicar diseño, análisis y desarrollo con verbos directos."
+      },
+      {
+        "observation": "La frase sobre tu acceso a la evidencia resulta poco natural.",
+        "location": "build.py home section-head",
+        "decision": "Decir qué encontrará la persona que visita."
+      },
+      {
+        "observation": "La selección científica se justifica con una negación comercial innecesaria.",
+        "location": "build.py home research",
+        "decision": "Sustituirla por una explicación afirmativa de las fuentes."
+      },
+      {
+        "observation": "Capacidad transferible se repite como fórmula en varios casos.",
+        "location": "data/projects.json value",
+        "decision": "Mantener la idea sin repetir el rótulo."
+      },
+      {
+        "observation": "La evidencia de ARCO incluye una defensa extensa sobre validación.",
+        "location": "data/projects.json arco",
+        "decision": "Expresar con claridad que es una versión en evaluación."
+      },
+      {
+        "observation": "PBIS necesita conservar que los datos son sintéticos.",
+        "location": "data/projects.json pbis",
+        "decision": "Mantener ese hecho y describir qué se puede inspeccionar."
+      },
+      {
+        "observation": "SONAR explica arquitectura pero cierra con una ausencia de métricas.",
+        "location": "data/projects.json sonar",
+        "decision": "Cerrar con metodología y trazabilidad disponibles."
+      },
+      {
+        "observation": "Los títulos de artículos deben seguir en su idioma original.",
+        "location": "data/publications.json",
+        "decision": "No convertirlos en slogans."
+      },
+      {
+        "observation": "El interés en contratación aparece explícito.",
+        "location": "build.py contact",
+        "decision": "Conservar esa intención sin eufemismos."
+      },
+      {
+        "observation": "Las limitaciones metodológicas sí ayudan a decidir.",
+        "location": "build.py lab_page",
+        "decision": "No retirar supuestos o incertidumbre científica."
+      }
+    ],
+    "prompt": "Reescribe los mensajes principales con verbos concretos y evidencia positiva. Elimina fórmulas repetidas y negaciones defensivas; conserva madurez de prototipos, datos sintéticos y límites científicos relevantes.",
+    "changes": [
+      "build.py",
+      "data/projects.json",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]

@@ -35,12 +35,12 @@
       "en": "The repository documents a React frontend, a FastAPI backend and server-controlled experimental logic. The flow connects consent, comprehension, the task, reporting and exit."
     },
     "evidence": {
-      "es": "Proyecto de transferencia FIUS–Cotec y repositorio público con metodología y arquitectura. No se publican aquí resultados de participantes ni métricas de impacto comercial.",
-      "en": "FIUS–Cotec research-transfer project and a public repository documenting methodology and architecture. No participant outcomes or commercial impact metrics are published here."
+      "es": "Proyecto de transferencia FIUS–Cotec y repositorio público con metodología, arquitectura y lógica experimental documentadas.",
+      "en": "FIUS–Cotec research-transfer project and a public repository documenting methodology, architecture and experimental logic."
     },
     "value": {
-      "es": "Capacidad transferible: convertir un diseño de evaluación en una herramienta operativa, con coherencia entre producto, datos y análisis.",
-      "en": "Transferable capability: turning an evaluation design into an operational tool, aligning product, data and analysis."
+      "es": "Convertir un diseño de evaluación en una herramienta operativa, con coherencia entre producto, datos y análisis.",
+      "en": "Turning an evaluation design into an operational tool, aligning product, data and analysis."
     },
     "source": "https://investigacion.us.es/sisius/sis_showpub.php?idpers=45496"
   },
@@ -80,12 +80,12 @@
       "en": "Three tools with a guided journey, data review, role-based reports and network visualisation. The public example runs in the browser using simulated data."
     },
     "evidence": {
-      "es": "Demostración pública y código inspeccionable. La edición está destinada a evaluación; no equivale a una validación externa ni a una implantación acreditada.",
-      "en": "Public demonstration and inspectable code. This edition is for evaluation; it is not evidence of external validation or certified deployment."
+      "es": "Demostración pública y código inspeccionable. Versión de evaluación con datos simulados para revisar el recorrido de consulta.",
+      "en": "Public demonstration and inspectable code. An evaluation version using simulated data to review the exploration workflow."
     },
     "value": {
-      "es": "Capacidad transferible: diseñar interfaces de consulta que acerquen los modelos y los datos al trabajo cotidiano de especialistas.",
-      "en": "Transferable capability: designing interfaces that bring models and data into specialists’ everyday work."
+      "es": "Diseñar interfaces de consulta que acerquen los modelos y los datos al trabajo cotidiano de especialistas.",
+      "en": "Designing interfaces that bring models and data into specialists’ everyday work."
     }
   },
   {
@@ -124,12 +124,12 @@
       "en": "Hierarchical exploration, relationship networks, local import and a guided demonstration with 1,512 simulated students. The information supports professional judgement."
     },
     "evidence": {
-      "es": "Código y demo pública; estudiantes y respuestas del ejemplo son sintéticos. El prototipo no se presenta como sistema de diagnóstico ni como evaluación de impacto.",
-      "en": "Public code and demo; example students and responses are synthetic. The prototype is not presented as a diagnostic system or an impact evaluation."
+      "es": "Código y demo pública con estudiantes y respuestas sintéticos. Permite inspeccionar filtros, niveles de consulta y contexto de los indicadores.",
+      "en": "Public code and demonstration with synthetic students and responses. It supports inspection of filters, exploration levels and indicator context."
     },
     "value": {
-      "es": "Capacidad transferible: transformar indicadores complejos en recorridos de análisis claros, conservando denominadores y datos pendientes.",
-      "en": "Transferable capability: turning complex indicators into clear analytical journeys while preserving denominators and missing-data distinctions."
+      "es": "Transformar indicadores complejos en recorridos de análisis claros, conservando denominadores y datos pendientes.",
+      "en": "Turning complex indicators into clear analytical journeys while preserving denominators and missing-data distinctions."
     }
   },
   {
@@ -263,8 +263,8 @@
       "en": "Scientific Data article and an open version in the Loyola repository. These figures describe the dataset, not users of a commercial product."
     },
     "value": {
-      "es": "Capacidad transferible: conectar diseño de medición, calidad de datos y documentación para que otros equipos puedan analizar y reutilizar la evidencia.",
-      "en": "Transferable capability: connecting measurement design, data quality and documentation so other teams can analyse and reuse the evidence."
+      "es": "Conectar diseño de medición, calidad de datos y documentación para que otros equipos puedan analizar y reutilizar la evidencia.",
+      "en": "Connecting measurement design, data quality and documentation so other teams can analyse and reuse the evidence."
     }
   }
 ]
