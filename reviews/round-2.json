@@ -266,6 +266,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "9373e38114d4b6ca11fe0f713ee6701fa2ad2bd8"
+  },
+  {
+    "round": 2,
+    "profile_id": 5,
+    "profile": "Tipografía editorial senior",
+    "title": "Facilitar la lectura de autorías extensas",
+    "points": [
+      {
+        "observation": "El trabajo de acción colectiva tiene 72 autores.",
+        "location": "data/publications.json private-solutions",
+        "decision": "Mantener la autoría completa."
+      },
+      {
+        "observation": "Los 72 nombres se expanden en un párrafo continuo.",
+        "location": "build.py fullauthors",
+        "decision": "Convertirlo en lista legible."
+      },
+      {
+        "observation": "El orden de firmas forma parte de la referencia.",
+        "location": "data/publications.json authors",
+        "decision": "Usar lista ordenada conservando la secuencia."
+      },
+      {
+        "observation": "TeensLab también supera el umbral de abreviación.",
+        "location": "build.py publication_page",
+        "decision": "Aplicar el mismo patrón."
+      },
+      {
+        "observation": "La lista completa solo se abre a petición.",
+        "location": "build.py author-details",
+        "decision": "Conservar details nativo."
+      },
+      {
+        "observation": "El resumen abreviado ya identifica a Antonio.",
+        "location": "build.py authorhtml",
+        "decision": "No cambiar nombres ni iniciales."
+      },
+      {
+        "observation": "Dos columnas reducen la altura en escritorio.",
+        "location": "assets/style.css authors-list",
+        "decision": "Permitir columnas sin cortar nombres."
+      },
+      {
+        "observation": "Dos columnas estrechas perjudicarían el móvil.",
+        "location": "assets/style.css media 760",
+        "decision": "Pasar a una columna."
+      },
+      {
+        "observation": "Los marcadores deben distinguirse del texto.",
+        "location": "assets/style.css authors-list li::marker",
+        "decision": "Usar cifras tabulares y color secundario."
+      },
+      {
+        "observation": "Los datos no tienen espacios duplicados al comprobarlos.",
+        "location": "data/publications.json authors",
+        "decision": "No inventar una normalización necesaria."
+      }
+    ],
+    "prompt": "Maqueta las autorías extensas como listas ordenadas desplegables, con dos columnas en escritorio y una en móvil, preservando exactamente nombres y orden de firma.",
+    "before_commit": "9373e38114d4b6ca11fe0f713ee6701fa2ad2bd8",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]

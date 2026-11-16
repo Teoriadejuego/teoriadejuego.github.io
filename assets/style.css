@@ -41,3 +41,5 @@ html:not(.js) .lab,html:not(.js) .print-button{display:none}
 .case-nav{display:grid;gap:3px;margin-top:24px;border-top:1px solid #c4d6df;padding-top:12px}.case-nav a{padding:7px 0;min-height:40px}@media(max-width:760px){.case-nav{display:flex;flex-wrap:wrap;gap:4px 22px}}
 
 @media(min-width:761px) and (max-width:1100px){.header-inner{flex-wrap:wrap;gap:5px;padding:10px 0}.nav{width:100%;justify-content:space-between;gap:12px}.site-header{position:relative}}
+
+.authors-list{columns:2;column-gap:38px;padding:16px 24px 16px 38px;background:var(--paper);line-height:1.7}.authors-list li{break-inside:avoid;padding:3px 0 3px 5px}.authors-list li::marker{color:var(--muted);font-variant-numeric:tabular-nums}@media(max-width:760px){.authors-list{columns:1}}
