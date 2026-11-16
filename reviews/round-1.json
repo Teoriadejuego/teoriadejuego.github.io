@@ -460,6 +460,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "05176a644446ea1a65553f0ccc09264605d79d96"
+  },
+  {
+    "round": 1,
+    "profile_id": 8,
+    "profile": "Arquitectura de información y UX",
+    "title": "Recorridos claros dentro del catálogo de proyectos",
+    "before_commit": "05176a644446ea1a65553f0ccc09264605d79d96",
+    "points": [
+      {
+        "observation": "El índice mezcla software y estudios en una sola cuadrícula.",
+        "location": "build.py projects_page",
+        "decision": "Separar dos grupos con títulos."
+      },
+      {
+        "observation": "Las tarjetas del índice saltan directamente de h1 a h3.",
+        "location": "build.py projects_page/work_card",
+        "decision": "Introducir h2 que describan cada grupo."
+      },
+      {
+        "observation": "El usuario no puede saltar directamente a investigación.",
+        "location": "build.py projects_page",
+        "decision": "Añadir navegación local por anclas."
+      },
+      {
+        "observation": "Las herramientas complementarias quedan lejos del encabezado.",
+        "location": "build.py projects_page",
+        "decision": "Añadir un acceso directo a materiales."
+      },
+      {
+        "observation": "Las páginas de caso ya ofrecen vuelta al índice.",
+        "location": "build.py case_page breadcrumb",
+        "decision": "Conservar la ruta de retorno."
+      },
+      {
+        "observation": "El menú global corto evita sobrecarga.",
+        "location": "build.py shell nav_items",
+        "decision": "No añadir categorías al menú global."
+      },
+      {
+        "observation": "Las anclas deben sobrevivir sin JavaScript.",
+        "location": "build.py projects_page",
+        "decision": "Usar enlaces HTML nativos."
+      },
+      {
+        "observation": "La posición fija de cabecera puede ocultar destinos.",
+        "location": "assets/style.css",
+        "decision": "Aplicar scroll-margin a secciones identificadas."
+      },
+      {
+        "observation": "La página ofrece todos los repositorios en un enlace externo.",
+        "location": "build.py projects_page",
+        "decision": "Conservar ese acceso al archivo completo."
+      },
+      {
+        "observation": "El grupo de investigación debe explicar por qué se incluye.",
+        "location": "build.py projects_page",
+        "decision": "Aclarar su relación con datos, medición y decisiones."
+      }
+    ],
+    "prompt": "Agrupa el índice en Software y herramientas, Investigación aplicada y Más recursos, con navegación interna y encabezados h2. Conserva todos los casos y las rutas públicas; mejora el acceso sin añadir JavaScript.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
