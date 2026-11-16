@@ -393,6 +393,73 @@
       "build.py"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "bea062cc3d6ddbb2395272de7993ff89f1a4095e"
+  },
+  {
+    "round": 1,
+    "profile_id": 7,
+    "profile": "Fotografía de retrato senior",
+    "title": "Dirección de encuadre y entrega fotográfica",
+    "before_commit": "bea062cc3d6ddbb2395272de7993ff89f1a4095e",
+    "points": [
+      {
+        "observation": "El retrato conserva una expresión natural y una identidad reconocible.",
+        "location": "assets/portrait.webp",
+        "decision": "Conservarlo sin regenerar rasgos."
+      },
+      {
+        "observation": "El archivo grande se sirve también para un retrato de móvil muy pequeño.",
+        "location": "build.py home portrait",
+        "decision": "Añadir variantes de resolución."
+      },
+      {
+        "observation": "El encuadre móvil reduce demasiado la presencia de la persona.",
+        "location": "assets/style.css .portrait img",
+        "decision": "Aumentar de forma adaptable su tamaño."
+      },
+      {
+        "observation": "La iluminación y el fondo azulado ya son coherentes.",
+        "location": "assets/portrait.webp",
+        "decision": "No volver a retocar la fotografía."
+      },
+      {
+        "observation": "La posición centrada puede variar la zona recortada al cambiar de proporción.",
+        "location": "assets/style.css .portrait img",
+        "decision": "Fijar un punto de interés ligeramente elevado."
+      },
+      {
+        "observation": "El perfil usa el mismo retrato, aportando continuidad.",
+        "location": "build.py profile",
+        "decision": "Conservar imagen y añadir srcset propio."
+      },
+      {
+        "observation": "El texto alternativo identifica a la persona.",
+        "location": "build.py img alt",
+        "decision": "Conservar un alt conciso."
+      },
+      {
+        "observation": "Las dimensiones declaradas evitan saltos de composición.",
+        "location": "build.py img",
+        "decision": "Mantener proporción y dimensiones verificadas."
+      },
+      {
+        "observation": "La portada necesita prioridad de carga y el perfil no requiere una segunda foto.",
+        "location": "build.py home/profile",
+        "decision": "Mantener fetchpriority solo en la portada."
+      },
+      {
+        "observation": "Los créditos explican la edición del fondo.",
+        "location": "build.py privacy",
+        "decision": "Conservar transparencia sobre el tratamiento."
+      }
+    ],
+    "prompt": "Mantén el retrato existente y optimiza únicamente su entrega: variantes WebP de400 y800px, srcset/sizes correctos y encuadre CSS estable. Mejora su presencia en móvil sin alterar rasgos ni vestimenta.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
