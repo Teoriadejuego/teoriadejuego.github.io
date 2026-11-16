@@ -333,6 +333,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "1c905d4de06a70a85662e2b0d8fafa02c342b216"
+  },
+  {
+    "round": 2,
+    "profile_id": 6,
+    "profile": "Arte visual y diagramas",
+    "title": "Explicar las etapas del esquema ARCO",
+    "points": [
+      {
+        "observation": "El diagrama ARCO solo enumera nombres propios.",
+        "location": "build.py visual arco",
+        "decision": "Añadir el propósito de cada etapa."
+      },
+      {
+        "observation": "SALMER aparece primero en el flujo documentado.",
+        "location": "data/projects.json arco",
+        "decision": "Vincularlo a recoger."
+      },
+      {
+        "observation": "DOVELA corresponde a preparación intermedia.",
+        "location": "data/projects.json arco",
+        "decision": "Rotular Preparar."
+      },
+      {
+        "observation": "CLAVE cierra el recorrido con consulta.",
+        "location": "data/projects.json arco",
+        "decision": "Rotular Consultar."
+      },
+      {
+        "observation": "Las flechas representan una secuencia real.",
+        "location": "assets/style.css .pipeline",
+        "decision": "Conservar la dirección."
+      },
+      {
+        "observation": "Los esquemas son explicativos, no resultados.",
+        "location": "build.py case_page nota",
+        "decision": "Mantener esa distinción."
+      },
+      {
+        "observation": "Las etiquetas se repiten en tarjeta y caso.",
+        "location": "build.py visual",
+        "decision": "Resolverlo en el componente compartido."
+      },
+      {
+        "observation": "Los nombres de producto no deben traducirse.",
+        "location": "build.py visual arco",
+        "decision": "Conservar SALMER, DOVELA y CLAVE."
+      },
+      {
+        "observation": "Las funciones sí necesitan traducción inglesa.",
+        "location": "build.py visual stages",
+        "decision": "Usar Collect, Prepare y Explore."
+      },
+      {
+        "observation": "Las nuevas etiquetas necesitan menor jerarquía que el nombre.",
+        "location": "assets/style.css pipeline small",
+        "decision": "Separar tamaño y peso sin añadir color."
+      }
+    ],
+    "prompt": "Aclara el flujo ARCO con una función breve bajo cada nombre de herramienta, bilingüe y basada en el recorrido ya descrito, sin convertirlo en un gráfico de resultados.",
+    "before_commit": "1c905d4de06a70a85662e2b0d8fafa02c342b216",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]

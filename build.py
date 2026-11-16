@@ -29,6 +29,9 @@ def network():
 def visual(p,lang):
  id=p['id']
  if id=='networks':return network()
+ if id=='arco':
+  stages=t(['Recoger','Preparar','Consultar'],['Collect','Prepare','Explore'],lang)
+  return '<div class="pipeline" aria-hidden="true">'+''.join('<span>'+name+'<small>'+stage+'</small></span>' for name,stage in zip(['SALMER','DOVELA','CLAVE'],stages))+'</div>'
  if id=='pbis':
   labels=t(['Centro','Aulas','Estudiantes'],['School','Classes','Students'],lang)
   return f'<svg class="schematic" viewBox="0 0 380 190" aria-hidden="true"><path d="M190 48 V75 M85 75 H295 M85 75 V100 M295 75 V100 M85 130 V154 M295 130 V154"/><rect x="130" y="12" width="120" height="36" rx="4"/><rect x="25" y="95" width="120" height="36" rx="4"/><rect x="235" y="95" width="120" height="36" rx="4"/><text x="190" y="36">{labels[0]}</text><text x="85" y="119">{labels[1]}</text><text x="295" y="119">{labels[1]}</text><text x="85" y="179">{labels[2]}</text><text x="295" y="179">{labels[2]}</text></svg>'
