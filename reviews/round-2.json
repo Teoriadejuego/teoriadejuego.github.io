@@ -1338,6 +1338,6 @@
       "reviews/round-2.json",
       "tests/round2_check.py"
     ],
-    "commit": "pending"
+    "commit": "7fb984d51681e5673d043ebb9f7e37cd3cd7c751"
   }
 ]
