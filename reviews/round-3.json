@@ -63,6 +63,72 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "e8e76c468d40cdb70da7632a8f5f894ba7af880b"
+  },
+  {
+    "round": 3,
+    "profile_id": 2,
+    "profile": "Diseño gráfico senior",
+    "title": "Recuperación 404 con identidad y destinos útiles",
+    "before_commit": "e8e76c468d40cdb70da7632a8f5f894ba7af880b",
+    "points": [
+      {
+        "observation": "La página 404 utiliza estilo inline ajeno al portfolio.",
+        "location": "build.py 404",
+        "decision": "Defecto: usar la hoja visual común."
+      },
+      {
+        "observation": "La marca no aparece en la página de error.",
+        "location": "build.py 404",
+        "decision": "Añadir identidad enlazada al inicio."
+      },
+      {
+        "observation": "Un único enlace al inicio obliga a reconstruir el recorrido.",
+        "location": "build.py 404",
+        "decision": "Añadir proyectos y publicaciones."
+      },
+      {
+        "observation": "El aviso mezcla español e inglés en una única etiqueta.",
+        "location": "build.py 404",
+        "decision": "Separar un mensaje inglés con lang correcto."
+      },
+      {
+        "observation": "El estado HTTP se explica sin código visual.",
+        "location": "build.py 404",
+        "decision": "Añadir 404 como información secundaria."
+      },
+      {
+        "observation": "El favicon es un monograma legible y ligero.",
+        "location": "assets/favicon.svg",
+        "decision": "Preservar y reutilizar en el error."
+      },
+      {
+        "observation": "Los botones del sitio tienen jerarquía primaria/secundaria.",
+        "location": "assets/style.css .button",
+        "decision": "Reutilizar sin crear otra familia."
+      },
+      {
+        "observation": "Los enlaces del error deben funcionar desde rutas profundas.",
+        "location": "build.py 404",
+        "decision": "Conservar URLs absolutas del sitio."
+      },
+      {
+        "observation": "La exclusión de indexación ya está presente.",
+        "location": "build.py 404 robots",
+        "decision": "Preservar noindex."
+      },
+      {
+        "observation": "El blanco y el azul editorial bastan para orientar.",
+        "location": "assets/style.css :root",
+        "decision": "Evitar ilustración adicional en error."
+      }
+    ],
+    "prompt": "Diseña la página 404 con la marca y estilos existentes, enlaces directos a inicio, proyectos y publicaciones y una salida inglesa identificada. Usa rutas absolutas y conserva noindex.",
+    "changes": [
+      "build.py",
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
