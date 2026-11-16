@@ -999,6 +999,72 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "85b25f14be8d5baac4c4d93439f7cf4866d0fc39"
+  },
+  {
+    "round": 1,
+    "profile_id": 16,
+    "profile": "SEO técnico senior",
+    "title": "Metadatos coherentes con la función de cada página",
+    "before_commit": "85b25f14be8d5baac4c4d93439f7cf4866d0fc39",
+    "points": [
+      {
+        "observation": "Las páginas de proyectos declaran como entidad principal a una persona aunque describen un caso.",
+        "location": "build.py shell schema",
+        "decision": "Reservar mainEntity Person para portada y perfil."
+      },
+      {
+        "observation": "Las páginas internas pueden referirse al autor sin confundir su contenido central.",
+        "location": "build.py shell schema",
+        "decision": "Usar about para el perfil profesional."
+      },
+      {
+        "observation": "Los casos ya tienen una ruta visible de vuelta a proyectos.",
+        "location": "build.py case_page breadcrumb",
+        "decision": "Añadir BreadcrumbList equivalente."
+      },
+      {
+        "observation": "El sitemap incluye las nuevas rutas al generarse desde el constructor.",
+        "location": "build.py pages/sitemap",
+        "decision": "Conservar la generación automática."
+      },
+      {
+        "observation": "Las versiones española e inglesa declaran hreflang equivalente.",
+        "location": "build.py shell head",
+        "decision": "Mantener URLs específicas por idioma."
+      },
+      {
+        "observation": "La imagen social carece de descripción alternativa.",
+        "location": "build.py shell og:image",
+        "decision": "Añadir texto alternativo bilingüe."
+      },
+      {
+        "observation": "La página404 no necesita solicitar indexación.",
+        "location": "build.py 404",
+        "decision": "Declarar noindex de forma explícita."
+      },
+      {
+        "observation": "El contacto de for-teams enlaza al mismo recorrido que el visitante ya está viendo.",
+        "location": "build.py contact",
+        "decision": "Ofrecer el perfil como siguiente paso en esa página."
+      },
+      {
+        "observation": "Los títulos y descripciones ya son HTML estático.",
+        "location": "build.py shell",
+        "decision": "Conservar accesibilidad sin ejecutar JavaScript."
+      },
+      {
+        "observation": "Los metadatos no acreditan presencia actual en Google.",
+        "location": "README.md SEO",
+        "decision": "Mantener la distinción entre preparación e indexación."
+      }
+    ],
+    "prompt": "Corrige la semántica JSON-LD de las páginas internas, añade las migas estructuradas de los casos y una descripción de la imagen social. Marca404 noindex y elimina el CTA autorreferente del recorrido de selección.",
+    "changes": [
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
