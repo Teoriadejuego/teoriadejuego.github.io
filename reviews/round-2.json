@@ -600,6 +600,73 @@
       "assets/app.js",
       "reviews/round-2.json"
     ],
+    "commit": "056f566f07bef63ff6651ff9ced21fc7be329e00"
+  },
+  {
+    "round": 2,
+    "profile_id": 10,
+    "profile": "Accesibilidad web",
+    "title": "Mejorar estructura y foco de la lectura accesible",
+    "points": [
+      {
+        "observation": "El destino del salto al contenido elimina el contorno.",
+        "location": "assets/style.css main:focus",
+        "decision": "Añadir un foco visible dentro del borde."
+      },
+      {
+        "observation": "Los encabezados de encaje son hermanos h2 de su sección.",
+        "location": "build.py teams_page cards",
+        "decision": "Convertirlos en h3 subordinados."
+      },
+      {
+        "observation": "Los filtros no identifican el bloque que controlan.",
+        "location": "build.py publication inputs",
+        "decision": "Añadir aria-controls a resultados."
+      },
+      {
+        "observation": "Los filtros no funcionan sin JavaScript.",
+        "location": "build.py publication_page noscript",
+        "decision": "Ocultarlos en ese modo conservando catálogo y aviso."
+      },
+      {
+        "observation": "El contador vacío tampoco sirve sin JavaScript.",
+        "location": "assets/style.css filter-summary",
+        "decision": "Ocultarlo junto a los filtros."
+      },
+      {
+        "observation": "El cálculo del laboratorio ya desaparece sin JavaScript.",
+        "location": "assets/style.css html:not(.js)",
+        "decision": "Preservar esa degradación honesta."
+      },
+      {
+        "observation": "Los desplegables de supuestos necesitan un objetivo cómodo.",
+        "location": "build.py lab details",
+        "decision": "Dar a summary altura mínima de 44px."
+      },
+      {
+        "observation": "El menú tiene Escape y retorno de foco.",
+        "location": "assets/app.js setMenu",
+        "decision": "Conservarlo."
+      },
+      {
+        "observation": "Las imágenes ya llevan dimensiones y alternativas.",
+        "location": "tests/check_static.py",
+        "decision": "Mantener la verificación."
+      },
+      {
+        "observation": "El esquema visual no debe duplicar lectura del contenido.",
+        "location": "build.py visual aria-hidden",
+        "decision": "Conservarlo como apoyo decorativo."
+      }
+    ],
+    "prompt": "Corrige niveles h3 de las capacidades, devuelve foco visible al salto principal, conecta filtros con su región y elimina controles inertes sin JavaScript; conserva toda la evidencia accesible.",
+    "before_commit": "056f566f07bef63ff6651ff9ced21fc7be329e00",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
