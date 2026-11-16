@@ -27,12 +27,12 @@ if(lab){
   document.querySelector('#sample-value').textContent=format(size,0);document.querySelector('#effect-value').textContent=format(effect);document.querySelector('#noise-value').textContent=format(sd,0);
   document.querySelector('#estimate').textContent=`${format(effect)} ${en?'points':'puntos'}`;
   document.querySelector('#interval').textContent=`[${format(lo)}; ${format(hi)}]`;
-  document.querySelector('#interpretation').textContent=lo>0?(en?'Under these assumptions, the interval lies above zero. Statistical separation alone does not establish business value.':'Bajo estos supuestos, el intervalo queda por encima de cero. La separación estadística no demuestra por sí sola valor para el negocio.'):(en?'The interval includes zero: these inputs leave substantial uncertainty about the direction of the effect.':'El intervalo incluye el cero: con estos valores persiste incertidumbre sobre la dirección del efecto.');
+  document.querySelector('#interpretation').textContent=hi<0?(en?'Under these assumptions, the interval lies below zero. Whether a negative difference is useful depends on the outcome being measured.':'Bajo estos supuestos, el intervalo queda por debajo de cero. Que una diferencia negativa sea útil depende del indicador medido.'):lo>0?(en?'Under these assumptions, the interval lies above zero. Statistical separation alone does not establish business value.':'Bajo estos supuestos, el intervalo queda por encima de cero. La separación estadística no demuestra por sí sola valor para el negocio.'):(en?'The interval includes zero: these inputs leave substantial uncertainty about the direction of the effect.':'El intervalo incluye el cero: con estos valores persiste incertidumbre sobre la dirección del efecto.');
   const scale=Math.max(20,Math.ceil(Math.max(Math.abs(lo),Math.abs(hi))/10)*10),x=v=>250+200*v/scale;
   document.querySelector('#ci-negative').textContent='−'+format(scale,0);document.querySelector('#ci-positive').textContent='+'+format(scale,0);
   document.querySelector('#ci-line').setAttribute('x1',x(lo));document.querySelector('#ci-line').setAttribute('x2',x(hi));
   document.querySelector('#point').setAttribute('cx',x(effect));
   document.querySelector('#chart-title').textContent=en?`Illustrative effect ${format(effect)}, approximate 95% interval ${format(lo)} to ${format(hi)}`:`Efecto ilustrativo ${format(effect)}, intervalo aproximado del 95% entre ${format(lo)} y ${format(hi)}`;
  };
- [n,delta,noise].forEach(el=>el.addEventListener('input',update));update();
+ [n,delta,noise].forEach(el=>el.addEventListener('input',update));document.querySelector('#lab-reset')?.addEventListener('click',()=>{n.value='200';delta.value='3';noise.value='15';update();n.focus()});update();
 }

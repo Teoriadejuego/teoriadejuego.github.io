@@ -31,6 +31,10 @@ with sync_playwright() as p:
  page.locator('#noise').fill('40');page.locator('#effect').fill('15');page.locator('#effect').dispatch_event('input')
  assert page.locator('#ci-positive').text_content()=='+40'
  assert 30<float(page.locator('#ci-line').get_attribute('x2'))<470
+ page.locator('#lab-reset').click();page.locator('#effect').fill('-3');page.locator('#effect').dispatch_event('input')
+ assert '[-5,9; -0,1]' in page.locator('#interval').inner_text()
+ assert 'debajo de cero' in page.locator('#interpretation').inner_text()
+ page.locator('#lab-reset').click();assert '[0,1; 5,9]' in page.locator('#interval').inner_text()
  for width in [390,768]:
   page.set_viewport_size({'width':width,'height':844})
   for file in (ROOT/'public').rglob('index.html'):

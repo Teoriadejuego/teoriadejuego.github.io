@@ -1201,6 +1201,74 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "f7327aaa68208202218b2a74adf174998fb0aa4c"
+  },
+  {
+    "round": 1,
+    "profile_id": 19,
+    "profile": "Métodos estadísticos y visualización de datos",
+    "title": "Comparaciones con efectos positivos, negativos o inciertos",
+    "before_commit": "f7327aaa68208202218b2a74adf174998fb0aa4c",
+    "points": [
+      {
+        "observation": "El control de diferencia solo permite efectos no negativos.",
+        "location": "build.py lab effect",
+        "decision": "min -15 para explorar ambas direcciones."
+      },
+      {
+        "observation": "La interpretación tiene dos ramas y no contempla un intervalo totalmente negativo.",
+        "location": "assets/app.js lab update",
+        "decision": "Añadir la rama hi menor que cero."
+      },
+      {
+        "observation": "El significado de una diferencia negativa depende del indicador.",
+        "location": "assets/app.js interpretation",
+        "decision": "Evitar identificar automáticamente signo con mejora."
+      },
+      {
+        "observation": "El eje ya adapta su escala al intervalo completo.",
+        "location": "assets/app.js scale",
+        "decision": "Conservar escala simétrica y sin recorte."
+      },
+      {
+        "observation": "El punto y el segmento no tienen una leyenda visible.",
+        "location": "build.py demo-chart",
+        "decision": "Explicar estimación e intervalo en texto."
+      },
+      {
+        "observation": "Los supuestos de grupos independientes y varianza común están presentes.",
+        "location": "build.py lab_page",
+        "decision": "Conservarlos junto al control."
+      },
+      {
+        "observation": "El ejemplo no estima potencia ni demuestra causalidad.",
+        "location": "build.py lab details",
+        "decision": "Conservar esa delimitación metodológica."
+      },
+      {
+        "observation": "La precisión no basta para establecer valor práctico.",
+        "location": "assets/app.js interpretation",
+        "decision": "Mantener la separación entre estadística y utilidad."
+      },
+      {
+        "observation": "El cálculo puede comprobarse por valores conocidos.",
+        "location": "tests/browser_check.py",
+        "decision": "Añadir un caso negativo simétrico."
+      },
+      {
+        "observation": "Una persona puede perder la configuración inicial al explorar.",
+        "location": "build.py lab controls",
+        "decision": "Ofrecer restaurar el ejemplo inicial."
+      }
+    ],
+    "prompt": "Amplía el laboratorio para efectos de ambos signos, interpreta correctamente intervalos negativos y añade una leyenda visible. Conserva los supuestos y el carácter sintético. Incluye restablecimiento y prueba de simetría para el caso negativo.",
+    "changes": [
+      "assets/app.js",
+      "build.py",
+      "reviews/round-1.json",
+      "tests/browser_check.py"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
