@@ -653,6 +653,72 @@
       "tests/round3_check.py"
     ],
     "validation": "La primera prueba detectó desenfoque previo al evento; corregido recordando foco y validado headless 1440→390→1440. Laboratorio, modo sin JS y estática correctos.",
+    "commit": "3423626162361a7b692e417e86bdd0406bc7b59f"
+  },
+  {
+    "round": 3,
+    "profile_id": 11,
+    "profile": "Selección de talento tecnológico senior",
+    "title": "Evidencia técnica portátil en el perfil",
+    "before_commit": "3423626162361a7b692e417e86bdd0406bc7b59f",
+    "points": [
+      {
+        "observation": "El perfil enumera tecnologías sin enlazar desde ese bloque a ejemplos.",
+        "location": "build.py profile Implementación",
+        "decision": "Añadir tres casos con código consultable."
+      },
+      {
+        "observation": "El perfil impreso conserva solo un enlace general al portfolio.",
+        "location": "build.py profile print-source",
+        "decision": "Mostrar URLs de los casos al imprimir."
+      },
+      {
+        "observation": "SONAR permite revisar React, FastAPI y Python.",
+        "location": "data/projects.json sonar",
+        "decision": "Vincular esta evidencia sin afirmar seniority laboral."
+      },
+      {
+        "observation": "ARCO demuestra implementación JavaScript.",
+        "location": "data/projects.json arco",
+        "decision": "Enlazar con tecnología explícita."
+      },
+      {
+        "observation": "PBIS conserva estado de prototipo en su caso.",
+        "location": "data/projects.json pbis",
+        "decision": "Enlazar al contexto completo, no ocultar estado."
+      },
+      {
+        "observation": "La titulación doctoral está expresada por su nombre oficial.",
+        "location": "build.py profile edu",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "Los cargos de Loyola aparecen como periodos sucesivos.",
+        "location": "build.py profile jobs",
+        "decision": "Preservar sin inventar duración individual."
+      },
+      {
+        "observation": "La ubicación Sevilla aparece de forma directa.",
+        "location": "build.py profile .small",
+        "decision": "Preservar sin añadir movilidad no confirmada."
+      },
+      {
+        "observation": "No existen niveles lingüísticos ni salario verificados.",
+        "location": "build.py profile",
+        "decision": "No inventar atributos de contratación."
+      },
+      {
+        "observation": "La ficha ya permite imprimir desde el navegador.",
+        "location": "build.py profile .print-button",
+        "decision": "Mejorar esa vía sin crear otro CV divergente."
+      }
+    ],
+    "prompt": "Añade al bloque de implementación del perfil tres referencias compactas a SONAR, ARCO y PBIS con su tecnología verificada. En impresión, muestra las URLs completas para conservar evidencia portable sin duplicar un CV.",
+    "changes": [
+      "build.py",
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]

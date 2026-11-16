@@ -77,3 +77,5 @@ h1,h2,h3{overflow-wrap:anywhere}.publication .authors{max-width:78ch}.publicatio
 .schematic path,.schematic rect,.network .edge{vector-effect:non-scaling-stroke}@media(forced-colors:active){.schematic path,.schematic rect,.network .edge{stroke:CanvasText}.schematic rect{fill:Canvas}.schematic text{fill:CanvasText}.schematic circle,.network .node{fill:CanvasText;stroke:Canvas}.demo-chart line{stroke:CanvasText}.demo-chart circle{fill:CanvasText}.demo-chart text{fill:CanvasText}}
 
 .portrait figcaption a{display:inline-block;color:#d5e2ec;font-size:.75rem;margin-top:6px;padding:4px 0}
+
+.profile-projects{padding-left:20px;font-size:.86rem}.profile-projects li{margin:7px 0}@media print{.profile-projects a:after{content:" (" attr(href) ")";font-size:8pt;overflow-wrap:anywhere}.profile-projects li{break-inside:avoid}}
