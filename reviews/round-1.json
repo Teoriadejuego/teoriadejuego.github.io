@@ -730,6 +730,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "3373885b464be2314eabc09a9aa9973aeee0be28"
+  },
+  {
+    "round": 1,
+    "profile_id": 12,
+    "profile": "Responsable de contratación en consultoría de datos",
+    "title": "Hacer visibles las decisiones y los entregables posibles",
+    "before_commit": "3373885b464be2314eabc09a9aa9973aeee0be28",
+    "points": [
+      {
+        "observation": "El nuevo recorrido de selección explica áreas, pero no un proceso de trabajo.",
+        "location": "build.py teams_page",
+        "decision": "Añadir un enfoque propuesto con entregables."
+      },
+      {
+        "observation": "Una empresa necesita saber cómo se empieza ante un problema ambiguo.",
+        "location": "build.py teams_page",
+        "decision": "Comenzar por decisión, usuarios y criterio de éxito."
+      },
+      {
+        "observation": "La evaluación debe preceder al diseño de una herramienta.",
+        "location": "build.py teams_page",
+        "decision": "Explicitar protocolo y calidad de datos."
+      },
+      {
+        "observation": "El software debe terminar en algo que otra persona pueda revisar.",
+        "location": "build.py teams_page",
+        "decision": "Nombrar prototipo, análisis y documentación."
+      },
+      {
+        "observation": "Los plazos y resultados comerciales no están acreditados.",
+        "location": "SOURCES.md",
+        "decision": "No prometer tiempos ni retornos."
+      },
+      {
+        "observation": "El resumen educativo puede interpretarse como doctorado en Economía Cuantitativa.",
+        "location": "build.py hiring-facts",
+        "decision": "Usar las dos denominaciones oficiales por separado."
+      },
+      {
+        "observation": "Los artículos demuestran trabajo colaborativo, no propiedad de todas las técnicas.",
+        "location": "data/projects.json role",
+        "decision": "Mantener distinción de contribuciones."
+      },
+      {
+        "observation": "La madurez del código varía entre proyectos.",
+        "location": "data/projects.json status",
+        "decision": "Conservar estados de evaluación y demo."
+      },
+      {
+        "observation": "El recorrido ya permite contactar directamente.",
+        "location": "build.py teams_page actions",
+        "decision": "Conservar la acción de oportunidad."
+      },
+      {
+        "observation": "La contratación exige ajustar responsabilidades al equipo real.",
+        "location": "build.py teams_page",
+        "decision": "Presentar el enfoque como propuesta, no como contrato cerrado."
+      }
+    ],
+    "prompt": "Completa la página para equipos con una propuesta concreta de trabajo: decisión a resolver, protocolo y datos, análisis/prototipo, entrega documentada. Distingue claramente propuesta de experiencia acreditada y precisa las titulaciones oficiales.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
