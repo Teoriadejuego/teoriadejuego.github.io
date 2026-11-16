@@ -64,3 +64,13 @@ for url,pair in pairs.items():
  assert set(pair)=={'es','en'} and url in pair.values()
  for target in pair.values():assert target in listed and pairs[target]==pair
 print('Sitemap: 26 URLs, reciprocal ES/EN alternates verified.')
+
+for f,p in pages.items():
+ if f.parent.name=='publications':
+  collection=next(s for s in p.jsons if s.get('@type')=='CollectionPage')
+  articles=[s for s in p.jsons if s.get('@type')=='ScholarlyArticle']
+  items=collection['mainEntity']['itemListElement']
+  assert collection['mainEntity']['numberOfItems']==len(articles)==len(items)==12
+  assert [x['item']['@id'] for x in items]==[a['@id'] for a in articles]
+  assert all(a['description'] for a in articles)
+print('Publication collection: 12 linked article entities in each language.')

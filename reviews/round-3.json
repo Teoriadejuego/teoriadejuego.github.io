@@ -1048,6 +1048,72 @@
       "tests/check_static.py"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "1fcd3eec34f8e0a28531f9646b56f75bd2d36f7b"
+  },
+  {
+    "round": 3,
+    "profile_id": 17,
+    "profile": "SEO semántico y edición web senior",
+    "title": "Catálogo semántico vinculado a sus artículos",
+    "before_commit": "1fcd3eec34f8e0a28531f9646b56f75bd2d36f7b",
+    "points": [
+      {
+        "observation": "El catálogo se declara WebPage aunque contiene una colección de artículos.",
+        "location": "build.py shell schema",
+        "decision": "Declarar CollectionPage con ItemList."
+      },
+      {
+        "observation": "Los doce nodos ScholarlyArticle no están unidos a una lista principal.",
+        "location": "build.py publication_page schemas",
+        "decision": "Relacionarlos mediante sus IDs DOI."
+      },
+      {
+        "observation": "El orden visible es editorial y debe reflejarse en la lista.",
+        "location": "build.py publication_page PUBS",
+        "decision": "Conservar posiciones 1–12."
+      },
+      {
+        "observation": "Los resúmenes de lectura no figuran en los nodos semánticos.",
+        "location": "build.py publication_page schema",
+        "decision": "Añadir description localizada, sin llamarla abstract original."
+      },
+      {
+        "observation": "Los títulos originales en inglés se leen dentro de una página española.",
+        "location": "build.py publication_page h2",
+        "decision": "Marcar lang=en en esos títulos."
+      },
+      {
+        "observation": "Los documentos de trabajo no deben mezclarse como artículos publicados.",
+        "location": "build.py publication_page working",
+        "decision": "Mantener fuera de esta ItemList."
+      },
+      {
+        "observation": "El DOI ya actúa como identidad estable de artículo.",
+        "location": "build.py publication_page @id",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "La identidad personal usa un ID común a ambas lenguas.",
+        "location": "build.py shell person",
+        "decision": "Preservar sin duplicar personas."
+      },
+      {
+        "observation": "La descripción no necesita repetir credenciales ni palabras clave.",
+        "location": "data/publications.json summary",
+        "decision": "Usar resumen editorial existente."
+      },
+      {
+        "observation": "El número y la correspondencia de nodos pueden divergir al editar.",
+        "location": "tests/check_static.py",
+        "decision": "Verificar cantidad, orden e identidad de los 12 artículos."
+      }
+    ],
+    "prompt": "Declara el catálogo como CollectionPage con una ItemList de los doce artículos publicados, enlazados a sus nodos DOI y en el orden visible. Añade descripción localizada y marca los títulos originales en inglés. Verifica correspondencia en ambos idiomas.",
+    "changes": [
+      "build.py",
+      "tests/check_static.py"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
