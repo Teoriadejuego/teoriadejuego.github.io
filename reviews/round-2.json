@@ -467,6 +467,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "e0a46c34ff8eed39942db363d654bcc60cb5c094"
+  },
+  {
+    "round": 2,
+    "profile_id": 8,
+    "profile": "Arquitectura de información UX",
+    "title": "Separar los recorridos de la bibliografía",
+    "points": [
+      {
+        "observation": "Los documentos de trabajo están después de doce artículos.",
+        "location": "build.py publication_page",
+        "decision": "Ofrecer un acceso directo."
+      },
+      {
+        "observation": "Las reglas de versiones quedan al final de una página larga.",
+        "location": "build.py publication_page",
+        "decision": "Crear enlace a Versiones y descargas."
+      },
+      {
+        "observation": "Los filtros solo afectan a artículos.",
+        "location": "assets/app.js rows",
+        "decision": "Hacer explícito el título Artículos publicados."
+      },
+      {
+        "observation": "La página ya separa publicaciones y preprints.",
+        "location": "build.py working",
+        "decision": "Conservar esa distinción."
+      },
+      {
+        "observation": "El índice de proyectos aporta un patrón conocido.",
+        "location": "assets/style.css .subnav",
+        "decision": "Reutilizarlo."
+      },
+      {
+        "observation": "Los artículos tienen enlaces individuales por ID.",
+        "location": "build.py publication entries",
+        "decision": "Preservar esos destinos."
+      },
+      {
+        "observation": "La búsqueda y la bibliografía BibTeX tienen funciones distintas.",
+        "location": "build.py publication_page actions",
+        "decision": "Mantener ambas."
+      },
+      {
+        "observation": "Los enlaces a secciones funcionan sin JavaScript.",
+        "location": "HTML anchors",
+        "decision": "Preferir navegación nativa."
+      },
+      {
+        "observation": "Las etiquetas inglesas deben describir el mismo alcance.",
+        "location": "build.py publication_page",
+        "decision": "Traducir las tres entradas."
+      },
+      {
+        "observation": "Un nuevo título de sección no necesita competir con el h1.",
+        "location": "assets/style.css .catalogue-heading",
+        "decision": "Usar tamaño editorial intermedio."
+      }
+    ],
+    "prompt": "Añade un índice de artículos, documentos de trabajo y versiones, con destinos nativos y un rótulo que deje claro que la búsqueda filtra únicamente artículos.",
+    "before_commit": "e0a46c34ff8eed39942db363d654bcc60cb5c094",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]

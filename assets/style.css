@@ -47,3 +47,5 @@ html:not(.js) .lab,html:not(.js) .print-button{display:none}
 .pipeline small{display:block;font-weight:400;font-size:.76rem;line-height:1.3;margin-top:3px}.pipeline span+span:before{line-height:1}
 
 .profile-portrait{margin:0;max-width:270px}.profile-portrait figcaption{margin-top:12px;font-size:.78rem;line-height:1.5}@media(max-width:760px){.profile-portrait{max-width:180px}}@media print{.profile-portrait figcaption{display:none}}
+
+.catalogue-heading{font-size:1.65rem;margin-bottom:24px}
