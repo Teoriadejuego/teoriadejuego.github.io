@@ -864,6 +864,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "0e12cad7714cfc8414f7e97f3d83c59aa6494c67"
+  },
+  {
+    "round": 1,
+    "profile_id": 14,
+    "profile": "Estrategia de posicionamiento y marketing",
+    "title": "Una promesa de valor conectada con pruebas",
+    "before_commit": "0e12cad7714cfc8414f7e97f3d83c59aa6494c67",
+    "points": [
+      {
+        "observation": "Las tres capacidades de portada no enlazan directamente a evidencia.",
+        "location": "build.py home capabilities",
+        "decision": "Asignar un caso verificable a cada capacidad."
+      },
+      {
+        "observation": "La firma Datos, experimentos y decisiones describe una actividad amplia.",
+        "location": "build.py shell brand",
+        "decision": "Precisar ciencia de datos y experimentación."
+      },
+      {
+        "observation": "El interés en consultoría es explícito y adecuado al objetivo.",
+        "location": "build.py home fine",
+        "decision": "Conservarlo sin prometer experiencia no acreditada."
+      },
+      {
+        "observation": "El perfil combina método científico y construcción de herramientas.",
+        "location": "data/projects.json",
+        "decision": "Mantener ambas dimensiones como diferenciación."
+      },
+      {
+        "observation": "La docencia no debe ocultarse ni sustituirse por un cargo ficticio.",
+        "location": "build.py hero figcaption",
+        "decision": "Conservar el puesto real."
+      },
+      {
+        "observation": "Los nombres de revistas aportan contexto, no una garantía de resultados.",
+        "location": "build.py proof",
+        "decision": "Mantener enlace al catálogo en lugar de claims de autoridad."
+      },
+      {
+        "observation": "La portada ofrece varios puntos de contacto sin formulario invasivo.",
+        "location": "build.py contact",
+        "decision": "Conservar la comunicación por correo."
+      },
+      {
+        "observation": "La página para equipos ya explica áreas de interés.",
+        "location": "build.py teams_page",
+        "decision": "No duplicar ese detalle completo en portada."
+      },
+      {
+        "observation": "Una capacidad sin ejemplo exige esfuerzo al evaluador.",
+        "location": "build.py capabilities",
+        "decision": "Acortar el camino de afirmación a demostración."
+      },
+      {
+        "observation": "La orientación empresarial debe descansar en problemas aplicados.",
+        "location": "build.py home",
+        "decision": "Usar etiquetas de acción concretas al enlazar los casos."
+      }
+    ],
+    "prompt": "Conecta cada capacidad de portada con un caso que la sostenga y afina la firma del sitio a ciencia de datos y experimentación. Mantén visible el puesto académico real y evita claims comerciales no demostrados.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
