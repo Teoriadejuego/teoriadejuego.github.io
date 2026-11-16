@@ -62,6 +62,73 @@
       "assets/style.css"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "1cc352847927f06fafc287638099982b0d5b6386"
+  },
+  {
+    "round": 1,
+    "profile_id": 2,
+    "profile": "Senior graphic designer",
+    "title": "Distinguir software e investigación sin depender del color",
+    "before_commit": "1cc352847927f06fafc287638099982b0d5b6386",
+    "points": [
+      {
+        "observation": "Las seis tarjetas usan el mismo patrón aunque representan entregables diferentes.",
+        "location": "build.py work_card",
+        "decision": "Añadir una categoría textual."
+      },
+      {
+        "observation": "El estado del proyecto es útil pero pequeño.",
+        "location": "assets/style.css .work .meta",
+        "decision": "Separar categoría de estado."
+      },
+      {
+        "observation": "La investigación y el software necesitan señales distintas.",
+        "location": "data/projects.json kind",
+        "decision": "Usar el campo existente, sin inventar categorías."
+      },
+      {
+        "observation": "Las etiquetas tecnológicas son legibles y concretas.",
+        "location": "build.py work_card tags",
+        "decision": "Conservar las tecnologías verificadas."
+      },
+      {
+        "observation": "Los títulos largos tienen más altura que las siglas.",
+        "location": "assets/style.css .work",
+        "decision": "Alinear el enlace final con flex."
+      },
+      {
+        "observation": "Los bordes inferiores ordenan la lectura sin sombras.",
+        "location": "assets/style.css .work",
+        "decision": "Conservar la separación discreta."
+      },
+      {
+        "observation": "Los diagramas usan un lenguaje cromático compatible.",
+        "location": "assets/style.css .visual",
+        "decision": "Mantener la paleta."
+      },
+      {
+        "observation": "El tipo de evidencia no debe depender de verde o azul.",
+        "location": "build.py work_card",
+        "decision": "Incluir nombres visibles de las categorías."
+      },
+      {
+        "observation": "Los enlaces repetidos carecen de contexto fuera de su tarjeta.",
+        "location": "build.py work_card",
+        "decision": "Reservar nombres de acción para revisión de interacción."
+      },
+      {
+        "observation": "Una categoría no equivale a nivel de madurez.",
+        "location": "data/projects.json status",
+        "decision": "Mantener el estado completo junto a la categoría."
+      }
+    ],
+    "prompt": "Añade categorías visibles Software y herramientas / Investigación publicada en las tarjetas, usando kind. Conserva la madurez declarada y alinea las llamadas de cada tarjeta para una lectura consistente.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
