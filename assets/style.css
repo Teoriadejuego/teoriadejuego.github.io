@@ -19,3 +19,5 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}.year,.timeline time,.demo-results
 .subnav{display:flex;flex-wrap:wrap;gap:12px 25px;padding-top:25px;font-size:.95rem}.subnav a{padding:8px 0}.project-group+.project-group{margin-top:75px}.project-group>h2{margin-bottom:28px}[id]{scroll-margin-top:105px}
 
 .filter-summary{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:14px 0 25px}.filter-summary .count{margin:0;color:#526b7d;font-size:.9rem}.filter-summary button[hidden]{display:none}.filter-summary .button{font-size:.85rem;min-height:42px;padding:6px 12px}
+
+.nav a{display:inline-flex;align-items:center;min-height:40px;padding-top:8px;padding-bottom:8px}.pub-links a{display:inline-flex;align-items:center;min-height:44px}.footer-links a{min-height:32px;display:inline-flex;align-items:center}main:focus{outline:none}@media(forced-colors:active){.button,.tag{border:1px solid ButtonText}:focus-visible{outline:3px solid Highlight}.work{border-color:CanvasText}}

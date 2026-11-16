@@ -1,6 +1,10 @@
 document.documentElement.classList.add('js');
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');
-menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open)});
+const setMenu=(open,restore=false)=>{menu?.setAttribute('aria-expanded',String(open));nav?.classList.toggle('open',open);if(restore)menu?.focus()};
+menu?.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu?.getAttribute('aria-expanded')==='true'){setMenu(false,true)}});
+nav?.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+window.matchMedia('(max-width:760px)').addEventListener('change',()=>setMenu(false));
 document.querySelector('.print-button')?.addEventListener('click',()=>window.print());
 const search=document.querySelector('#pub-search'),topic=document.querySelector('#pub-topic'),year=document.querySelector('#pub-year');
 if(search){

@@ -595,6 +595,74 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "20158cbbe2aac6538399fa2a613682d5e5ab2d09"
+  },
+  {
+    "round": 1,
+    "profile_id": 10,
+    "profile": "Accesibilidad digital senior",
+    "title": "Cerrar el menú y seguir el recorrido con teclado",
+    "before_commit": "20158cbbe2aac6538399fa2a613682d5e5ab2d09",
+    "points": [
+      {
+        "observation": "El menú móvil no responde a Escape.",
+        "location": "assets/app.js menu",
+        "decision": "Añadir cierre y devolución de foco."
+      },
+      {
+        "observation": "El botón informa correctamente si el menú está abierto.",
+        "location": "build.py menu-toggle",
+        "decision": "Conservar aria-expanded y sincronizarlo al cerrar."
+      },
+      {
+        "observation": "El salto al contenido no declara un destino enfocable.",
+        "location": "build.py main",
+        "decision": "Añadir tabindex negativo al destino."
+      },
+      {
+        "observation": "Los enlaces bibliográficos tienen superficies táctiles pequeñas.",
+        "location": "assets/style.css .pub-links a",
+        "decision": "Aumentar la altura de interacción."
+      },
+      {
+        "observation": "Los enlaces del menú también admiten mayor área de contacto.",
+        "location": "assets/style.css .nav a",
+        "decision": "Añadir espacio vertical sin cambiar su etiqueta."
+      },
+      {
+        "observation": "Los filtros tienen etiquetas visibles.",
+        "location": "build.py filters",
+        "decision": "Conservar asociaciones label/for y añadir name."
+      },
+      {
+        "observation": "Los gráficos conceptuales son redundantes con el texto.",
+        "location": "build.py visual",
+        "decision": "Conservar aria-hidden en los esquemas."
+      },
+      {
+        "observation": "El foco visible ya usa un contorno contrastado.",
+        "location": "assets/style.css :focus-visible",
+        "decision": "Mantenerlo y respetar colores forzados."
+      },
+      {
+        "observation": "La guía automatizada inicial no detectó violaciones axe.",
+        "location": "qa externa de referencia",
+        "decision": "No presentar un defecto inexistente ni una certificación."
+      },
+      {
+        "observation": "El diseño sin animación continua evita una barrera frecuente.",
+        "location": "assets/style.css reduced-motion",
+        "decision": "Conservar la preferencia de movimiento reducido."
+      }
+    ],
+    "prompt": "Completa el comportamiento del menú móvil con Escape y retorno de foco, haz enfocable el destino del enlace de salto y mejora superficies táctiles de navegación y bibliografía. Conserva semántica nativa, etiquetas y foco visible.",
+    "changes": [
+      "assets/app.js",
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
