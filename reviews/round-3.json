@@ -325,6 +325,71 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "62e3c4a9dc575f67db447f46fb01eca8a869edc1"
+  },
+  {
+    "round": 3,
+    "profile_id": 6,
+    "profile": "Arte visual y diagramas",
+    "title": "Diagramas legibles con colores forzados",
+    "before_commit": "62e3c4a9dc575f67db447f46fb01eca8a869edc1",
+    "points": [
+      {
+        "observation": "Las líneas de diagramas se reducen junto al viewBox.",
+        "location": "assets/style.css .schematic path",
+        "decision": "Mantener grosor físico con vector-effect."
+      },
+      {
+        "observation": "Las aristas de redes sufren la misma reducción en móvil.",
+        "location": "assets/style.css .network .edge",
+        "decision": "Aplicar non-scaling-stroke."
+      },
+      {
+        "observation": "La regla de colores forzados cubre botones, no diagramas.",
+        "location": "assets/style.css forced-colors",
+        "decision": "Añadir colores de sistema a SVG."
+      },
+      {
+        "observation": "El relleno oscuro y borde blanco de nodos necesitan contraste contextual.",
+        "location": "assets/style.css .network .node",
+        "decision": "Usar CanvasText y Canvas en ese modo."
+      },
+      {
+        "observation": "El laboratorio utiliza trazos SVG con colores definidos en atributos.",
+        "location": "build.py lab_page svg",
+        "decision": "Sobrescribir trazos con colores de sistema."
+      },
+      {
+        "observation": "Los textos de los esquemas son contenido del SVG.",
+        "location": "build.py visual",
+        "decision": "Mantener sus etiquetas visibles."
+      },
+      {
+        "observation": "Los esquemas decorativos se ocultan a tecnologías asistivas.",
+        "location": "build.py visual aria-hidden",
+        "decision": "Preservar; la explicación está en el texto del caso."
+      },
+      {
+        "observation": "El gráfico del laboratorio sí tiene título accesible dinámico.",
+        "location": "assets/app.js chart-title",
+        "decision": "Preservar distinción."
+      },
+      {
+        "observation": "La jerarquía de PBIS se diferencia por posición y líneas.",
+        "location": "build.py visual pbis",
+        "decision": "Fortaleza: no depende del color."
+      },
+      {
+        "observation": "Las advertencias explican que los esquemas no son resultados adicionales.",
+        "location": "build.py case_page",
+        "decision": "Preservar precisión epistemológica."
+      }
+    ],
+    "prompt": "Mantén el grosor de las líneas al escalar diagramas y añade una variante con colores del sistema para SVG en forced-colors. Conserva títulos, etiquetas, estructura y tratamiento accesible.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]

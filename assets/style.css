@@ -73,3 +73,5 @@ html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-he
 html:not(.js) .menu-toggle{display:none}html:not(.js) .site-header{position:relative}
 
 h1,h2,h3{overflow-wrap:anywhere}.publication .authors{max-width:78ch}.publication .version{max-width:78ch}.tag{overflow-wrap:anywhere;max-width:100%}
+
+.schematic path,.schematic rect,.network .edge{vector-effect:non-scaling-stroke}@media(forced-colors:active){.schematic path,.schematic rect,.network .edge{stroke:CanvasText}.schematic rect{fill:Canvas}.schematic text{fill:CanvasText}.schematic circle,.network .node{fill:CanvasText;stroke:Canvas}.demo-chart line{stroke:CanvasText}.demo-chart circle{fill:CanvasText}.demo-chart text{fill:CanvasText}}
