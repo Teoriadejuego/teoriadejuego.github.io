@@ -663,6 +663,73 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "4f0dcd1e769907191294cd974897ec35b1475134"
+  },
+  {
+    "round": 1,
+    "profile_id": 11,
+    "profile": "Selección de talento tecnológico senior",
+    "title": "Un recorrido específico para evaluar la candidatura",
+    "before_commit": "4f0dcd1e769907191294cd974897ec35b1475134",
+    "points": [
+      {
+        "observation": "La web expresa interés en contratación, pero obliga a deducir el encaje.",
+        "location": "build.py home/profile",
+        "decision": "Crear una página para equipos y selección."
+      },
+      {
+        "observation": "El perfil académico es completo pero no organiza funciones de interés.",
+        "location": "build.py profile",
+        "decision": "Vincular competencias a problemas del equipo."
+      },
+      {
+        "observation": "La ubicación y el puesto actual están verificados.",
+        "location": "build.py profile",
+        "decision": "Reutilizarlos como contexto profesional."
+      },
+      {
+        "observation": "No hay datos de disponibilidad, salario ni modalidad laboral.",
+        "location": "SOURCES.md",
+        "decision": "No inventarlos para llenar huecos."
+      },
+      {
+        "observation": "Los casos permiten contrastar competencias.",
+        "location": "data/projects.json",
+        "decision": "Enlazar evidencia para cada área de encaje."
+      },
+      {
+        "observation": "La experiencia docente puede servir para explicar comunicación técnica.",
+        "location": "build.py profile",
+        "decision": "Describir esa capacidad sin convertirla en experiencia empresarial."
+      },
+      {
+        "observation": "El correo profesional de contacto ya está visible.",
+        "location": "build.py contact",
+        "decision": "Conservarlo y ofrecer una propuesta por email."
+      },
+      {
+        "observation": "El perfil imprimible es útil para selección.",
+        "location": "build.py profile print-button",
+        "decision": "Enlazarlo desde el nuevo recorrido."
+      },
+      {
+        "observation": "Un nuevo destino no debe saturar el menú global.",
+        "location": "build.py shell nav",
+        "decision": "Usar accesos contextuales en portada y contacto."
+      },
+      {
+        "observation": "El idioma inglés debe conservar exactamente los mismos datos.",
+        "location": "build.py t",
+        "decision": "Construir las dos versiones a la vez."
+      }
+    ],
+    "prompt": "Crea un recorrido bilingüe para responsables de contratación que explique áreas de encaje, contexto actual y pruebas concretas. Enlaza a casos, perfil imprimible y correo; no inventes disponibilidad, salario, clientes ni experiencia comercial.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
