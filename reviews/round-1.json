@@ -931,6 +931,74 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "80bd3d95deb7c294275f2e58d425f7424b38fcdd"
+  },
+  {
+    "round": 1,
+    "profile_id": 15,
+    "profile": "Estrategia de contenidos senior",
+    "title": "Ayudar a inspeccionar cada caso y continuar la lectura",
+    "before_commit": "80bd3d95deb7c294275f2e58d425f7424b38fcdd",
+    "points": [
+      {
+        "observation": "Los casos enlazan fuentes, pero no sugieren qué comprobar primero.",
+        "location": "build.py case_page",
+        "decision": "Añadir una guía breve de inspección."
+      },
+      {
+        "observation": "La demo de PBIS empieza en un acceso de demostración.",
+        "location": "data/projects.json pbis",
+        "decision": "Explicar la entrada sin prometer un panel inmediato."
+      },
+      {
+        "observation": "ARCO ofrece un recorrido por tres piezas.",
+        "location": "data/projects.json arco",
+        "decision": "Orientar la prueba por SALMER, DOVELA y CLAVE."
+      },
+      {
+        "observation": "SONAR ofrece código y protocolo, no una demo de contratación.",
+        "location": "data/projects.json sonar",
+        "decision": "Guiar hacia documentación y lógica experimental."
+      },
+      {
+        "observation": "Los estudios requieren leer método y contribuciones, no solo el resumen.",
+        "location": "build.py case_page",
+        "decision": "Proponer criterios de lectura científica."
+      },
+      {
+        "observation": "Un caso termina en contacto sin sugerir otro trabajo relacionado.",
+        "location": "build.py case_page",
+        "decision": "Añadir un caso complementario."
+      },
+      {
+        "observation": "Las rutas públicas existentes no necesitan cambiar.",
+        "location": "build.py case_page",
+        "decision": "Conservar slugs y enlaces."
+      },
+      {
+        "observation": "Las guías deben evitar activar experimentos o enviar datos reales.",
+        "location": "data/projects.json inspect",
+        "decision": "Indicar lectura y demos sintéticas."
+      },
+      {
+        "observation": "La longitud puede controlarse con dos indicaciones por caso.",
+        "location": "data/projects.json",
+        "decision": "Mantener una guía breve y específica."
+      },
+      {
+        "observation": "El contenido bilingüe se mantiene en datos reutilizables.",
+        "location": "data/projects.json",
+        "decision": "Guardar instrucciones y relación junto al caso."
+      }
+    ],
+    "prompt": "Añade dos indicaciones concretas para inspeccionar cada caso y un enlace a un trabajo relacionado. Explica la entrada de las demos de ARCO/PBIS, conserva la distinción entre código, prototipo y artículo, y no solicites datos personales.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "data/projects.json",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]

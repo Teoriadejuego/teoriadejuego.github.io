@@ -42,7 +42,18 @@
       "es": "Convertir un diseño de evaluación en una herramienta operativa, con coherencia entre producto, datos y análisis.",
       "en": "Turning an evaluation design into an operational tool, aligning product, data and analysis."
     },
-    "source": "https://investigacion.us.es/sisius/sis_showpub.php?idpers=45496"
+    "source": "https://investigacion.us.es/sisius/sis_showpub.php?idpers=45496",
+    "inspect": {
+      "es": [
+        "Revisa en el repositorio el recorrido de consentimiento, comprensión, tarea y salida.",
+        "Contrasta cómo el servidor resuelve los tratamientos y qué registros produce el protocolo."
+      ],
+      "en": [
+        "Review the repository’s consent, comprehension, task and exit flow.",
+        "Check how the server resolves treatments and which records the protocol produces."
+      ]
+    },
+    "related": "collective-action"
   },
   {
     "id": "arco",
@@ -86,7 +97,18 @@
     "value": {
       "es": "Diseñar interfaces de consulta que acerquen los modelos y los datos al trabajo cotidiano de especialistas.",
       "en": "Designing interfaces that bring models and data into specialists’ everyday work."
-    }
+    },
+    "inspect": {
+      "es": [
+        "Abre la demostración guiada y recorre SALMER, DOVELA y CLAVE.",
+        "Observa cómo cambian los datos y las vistas entre recogida, preparación y consulta. El ejemplo usa datos simulados."
+      ],
+      "en": [
+        "Open the guided demonstration and explore SALMER, DOVELA and CLAVE.",
+        "Inspect how data and views change between collection, preparation and exploration. The example uses simulated data."
+      ]
+    },
+    "related": "pbis"
   },
   {
     "id": "pbis",
@@ -130,7 +152,18 @@
     "value": {
       "es": "Transformar indicadores complejos en recorridos de análisis claros, conservando denominadores y datos pendientes.",
       "en": "Turning complex indicators into clear analytical journeys while preserving denominators and missing-data distinctions."
-    }
+    },
+    "inspect": {
+      "es": [
+        "Sigue el acceso de demostración indicado en la guía y carga los datos demo desde la aplicación.",
+        "Compara las vistas de centro, aula y estudiante; revisa filtros, denominadores y datos pendientes. Son ejemplos sintéticos."
+      ],
+      "en": [
+        "Follow the demo access shown in the guide and load the application’s demo data.",
+        "Compare school, class and student views; review filters, denominators and missing data. These are synthetic examples."
+      ]
+    },
+    "related": "networks"
   },
   {
     "id": "networks",
@@ -176,7 +209,18 @@
     "value": {
       "es": "Aplicación potencial: comparar modelos complejos con señales estructurales interpretables antes de decidir qué información adicional merece recogerse.",
       "en": "Potential application: compare complex models with interpretable structural signals before deciding what additional information is worth collecting."
-    }
+    },
+    "inspect": {
+      "es": [
+        "Consulta cómo el artículo compara señales estructurales y atributos individuales.",
+        "Revisa la muestra, los modelos de comparación y la contribución de cada autor."
+      ],
+      "en": [
+        "Read how the paper compares structural signals and individual attributes.",
+        "Review the sample, comparison models and each author’s contribution."
+      ]
+    },
+    "related": "teenslab"
   },
   {
     "id": "collective-action",
@@ -222,7 +266,18 @@
     "value": {
       "es": "Aplicación potencial: evaluar si el diseño de incentivos de una política, plataforma o servicio favorece el objetivo colectivo perseguido.",
       "en": "Potential application: evaluate whether the incentive design of a policy, platform or service supports its intended collective objective."
-    }
+    },
+    "inspect": {
+      "es": [
+        "Consulta el diseño de soluciones públicas y privadas y las diferencias de dotación.",
+        "Distingue resultados observados en el experimento de posibles aplicaciones en otros contextos."
+      ],
+      "en": [
+        "Inspect the public/private solution design and differences in endowments.",
+        "Distinguish the experiment’s observed findings from potential applications in other contexts."
+      ]
+    },
+    "related": "sonar"
   },
   {
     "id": "teenslab",
@@ -265,6 +320,17 @@
     "value": {
       "es": "Conectar diseño de medición, calidad de datos y documentación para que otros equipos puedan analizar y reutilizar la evidencia.",
       "en": "Connecting measurement design, data quality and documentation so other teams can analyse and reuse the evidence."
-    }
+    },
+    "inspect": {
+      "es": [
+        "Consulta las tareas, las variables y la documentación del conjunto de datos.",
+        "Comprueba la muestra disponible para cada medida antes de reutilizar los resultados."
+      ],
+      "en": [
+        "Review the tasks, variables and dataset documentation.",
+        "Check the available sample for each measure before reusing results."
+      ]
+    },
+    "related": "arco"
   }
 ]

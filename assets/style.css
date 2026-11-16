@@ -27,3 +27,5 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}.year,.timeline time,.demo-results
 .approach{display:grid;grid-template-columns:1fr 1fr;gap:25px 50px;list-style:none;counter-reset:approach;padding:0}.approach li{counter-increment:approach;position:relative;padding:22px 0 0 48px;border-top:1px solid #c4d6df}.approach li:before{content:counter(approach);position:absolute;left:0;top:20px;font-family:Georgia,serif;font-size:1.65rem;color:#1d747a}.approach h3{font-size:1.1rem;margin-bottom:10px}@media(max-width:760px){.approach{grid-template-columns:1fr}}
 
 .capabilities a{display:inline-flex;min-height:40px;align-items:center;font-weight:600;font-size:.94rem}.capabilities>div{min-width:0}
+
+.related-case{border-top:1px solid #c9d9e2;padding-top:22px;margin:30px 0;font-size:.95rem}.related-case a{font-weight:600}
