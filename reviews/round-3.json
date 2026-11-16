@@ -1,0 +1,68 @@
+[
+  {
+    "round": 3,
+    "profile_id": 1,
+    "profile": "Dirección de arte senior",
+    "title": "Continuidad visual entre tarjetas y casos",
+    "before_commit": "599c074fa2c84351476dcce43a977b4857252854",
+    "points": [
+      {
+        "observation": "El fondo de ARCO cambia del verde a azul al abrir el caso.",
+        "location": "assets/style.css .case-top",
+        "decision": "Defecto: conservar la asociación cromática del índice."
+      },
+      {
+        "observation": "PBIS pierde su matiz violeta al entrar.",
+        "location": "build.py case_page",
+        "decision": "Defecto: identificar el caso con data-project."
+      },
+      {
+        "observation": "La investigación usa gris en tarjetas y azul en casos.",
+        "location": "assets/style.css .work[data-kind]",
+        "decision": "Ajustar el panel de los casos de investigación."
+      },
+      {
+        "observation": "El azul profundo de portada distingue el perfil.",
+        "location": "qa/home-desktop-r2.png hero",
+        "decision": "Fortaleza: preservar."
+      },
+      {
+        "observation": "La fotografía mantiene presencia humana sobre la red abstracta.",
+        "location": "qa/home-desktop-r2.png portrait",
+        "decision": "Fortaleza: no sustituir por otra ilustración."
+      },
+      {
+        "observation": "El título editorial tiene prioridad clara sobre la biografía.",
+        "location": "qa/home-desktop-r2.png h1",
+        "decision": "Preservar escala."
+      },
+      {
+        "observation": "Los estados sintéticos se explicitan bajo los paneles.",
+        "location": "build.py work_card",
+        "decision": "Preservar texto, no confiar solo en color."
+      },
+      {
+        "observation": "Los esquemas diferencian modelos de trabajo.",
+        "location": "build.py visual",
+        "decision": "Preservar variedad semántica."
+      },
+      {
+        "observation": "El contacto recupera el azul de la cabecera.",
+        "location": "assets/style.css section.dark",
+        "decision": "Preservar cierre visual."
+      },
+      {
+        "observation": "Las tarjetas carecen de sombras decorativas.",
+        "location": "qa/home-desktop-r2.png work-grid",
+        "decision": "Preservar sobriedad."
+      }
+    ],
+    "prompt": "Extiende a la cabecera de cada caso los fondos ya utilizados en sus tarjetas, mediante atributos estables por proyecto y tipo. Mantén tipografía, fotografía y contenido.",
+    "changes": [
+      "build.py",
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": ""
+  }
+]

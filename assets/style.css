@@ -63,3 +63,5 @@ html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-he
 .print-source{display:none}@media print{.print-source{display:block;font-size:9pt}.case-nav,.copy-email,.copy-status{display:none!important}.product-capture{break-inside:avoid}}
 
 .work .visual{height:250px;flex:0 0 250px}@media print{#contact{display:none!important}.section.tint,.section.dark{background:#fff;color:#111}.page-heading h1{font-size:28pt}.lead{font-size:11pt}}
+
+.case-top[data-project=arco] .visual{background:#e9f3f1;color:#13625e}.case-top[data-project=pbis] .visual{background:#eff0f8;color:#485d87}.case-top[data-kind=research] .visual{background:#edf1f4}
