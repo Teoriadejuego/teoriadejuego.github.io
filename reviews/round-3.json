@@ -260,6 +260,71 @@
       "tests/round3_check.py"
     ],
     "validation": "Prueba headless: 740×390, posiciones estáticas correctas, color ARCO y navegación 390px sin JavaScript. Compilación y 27 páginas estáticas correctas.",
+    "commit": "cc0164d8d14e8627a88774a855e36dc07187cd06"
+  },
+  {
+    "round": 3,
+    "profile_id": 5,
+    "profile": "Tipografía editorial senior",
+    "title": "Resistencia tipográfica a ampliación y cadenas largas",
+    "before_commit": "cc0164d8d14e8627a88774a855e36dc07187cd06",
+    "points": [
+      {
+        "observation": "Los títulos equilibran líneas pero no permiten partir cadenas sin espacios.",
+        "location": "assets/style.css h1,h2,h3",
+        "decision": "Robustez: permitir ruptura solo cuando sea necesaria."
+      },
+      {
+        "observation": "La autoría admite 95 caracteres por línea.",
+        "location": "assets/style.css .publication .authors",
+        "decision": "Reducir a 78ch para lectura continuada."
+      },
+      {
+        "observation": "Las notas de versión admiten 90 caracteres.",
+        "location": "assets/style.css .publication .version",
+        "decision": "Alinear el límite con la autoría."
+      },
+      {
+        "observation": "Las etiquetas pueden crecer más que su tarjeta si cambia una tecnología.",
+        "location": "assets/style.css .tag",
+        "decision": "Permitir ruptura y limitar ancho."
+      },
+      {
+        "observation": "La tipografía Georgia da carácter a los títulos científicos.",
+        "location": "assets/style.css .publication h2",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "Los números comparables ya son tabulares.",
+        "location": "assets/style.css .year,.lab output",
+        "decision": "Preservar."
+      },
+      {
+        "observation": "El texto general utiliza altura de línea generosa.",
+        "location": "assets/style.css body",
+        "decision": "Preservar 1.65."
+      },
+      {
+        "observation": "Los subtítulos mantienen contraste con el fondo.",
+        "location": "assets/style.css .lead",
+        "decision": "Preservar color."
+      },
+      {
+        "observation": "Las fechas de trayectoria están separadas de la descripción.",
+        "location": "build.py profile timeline",
+        "decision": "Preservar lectura cronológica."
+      },
+      {
+        "observation": "El inglés puede tener títulos de extensión distinta.",
+        "location": "build.py t()/shell lang",
+        "decision": "Preservar contenido íntegro, sin truncar."
+      }
+    ],
+    "prompt": "Refuerza los títulos y etiquetas ante ampliación de texto o palabras largas, sin truncarlos. Limita la longitud de línea de autoría y notas bibliográficas a 78ch y conserva el sistema tipográfico.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
