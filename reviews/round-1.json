@@ -262,6 +262,72 @@
       "reviews/round-1.json"
     ],
     "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
+    "commit": "f1c55dc6d9b609b4ae03f72fee0d48148da3ae04"
+  },
+  {
+    "round": 1,
+    "profile_id": 5,
+    "profile": "Tipografía editorial senior",
+    "title": "Lectura más estable entre sistemas y tamaños",
+    "before_commit": "f1c55dc6d9b609b4ae03f72fee0d48148da3ae04",
+    "points": [
+      {
+        "observation": "La fuente Interface usa un alias local sin declarar pesos.",
+        "location": "assets/style.css @font-face",
+        "decision": "Sustituir por una pila de fuentes del sistema explícita."
+      },
+      {
+        "observation": "El contraste entre Georgia y sans aporta carácter editorial.",
+        "location": "assets/style.css h1,h2",
+        "decision": "Conservar las dos funciones tipográficas."
+      },
+      {
+        "observation": "Los años y resultados numéricos cambian de anchura al variar.",
+        "location": "assets/style.css .year,.demo-results",
+        "decision": "Activar cifras tabulares."
+      },
+      {
+        "observation": "Los titulares largos pueden terminar con palabras aisladas.",
+        "location": "assets/style.css h1,h2,h3",
+        "decision": "Equilibrar sus líneas."
+      },
+      {
+        "observation": "La nota de estado de tarjetas queda por debajo de trece píxeles.",
+        "location": "assets/style.css .work .meta",
+        "decision": "Subir a una escala más legible."
+      },
+      {
+        "observation": "Las etiquetas pequeñas no son texto esencial de lectura larga.",
+        "location": "assets/style.css .tag",
+        "decision": "Mantenerlas secundarias pero legibles."
+      },
+      {
+        "observation": "Los párrafos ya respetan una medida controlada.",
+        "location": "assets/style.css p",
+        "decision": "Conservar el máximo de lectura."
+      },
+      {
+        "observation": "Los nombres de revistas son largos y no deben cortarse.",
+        "location": "assets/style.css .venue",
+        "decision": "Permitir saltos naturales y conservar el título."
+      },
+      {
+        "observation": "El correo puede superar el ancho de teléfonos pequeños.",
+        "location": "assets/style.css .contact-link",
+        "decision": "Conservar la regla de separación existente."
+      },
+      {
+        "observation": "El contraste de titulares evita depender de pesos excesivos.",
+        "location": "assets/style.css h2",
+        "decision": "Mantener peso normal en la fuente editorial."
+      }
+    ],
+    "prompt": "Elimina el alias de fuente ambiguo, define claramente cuerpo sans y titulares serif, mejora el equilibrio de líneas, las cifras tabulares y la legibilidad de estados sin descargar fuentes externas.",
+    "changes": [
+      "assets/style.css",
+      "reviews/round-1.json"
+    ],
+    "validation": "Static checks passed: 25 pages; links, anchors, structured data, images and publication completeness.",
     "commit": null
   }
 ]
