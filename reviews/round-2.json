@@ -734,6 +734,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "8a4ee9c28f4dfe2b95711ad41bbcafd7ce762de9"
+  },
+  {
+    "round": 2,
+    "profile_id": 12,
+    "profile": "Responsable de contratación en consultoría de datos",
+    "title": "Acercar código y demostraciones a la entrada del caso",
+    "points": [
+      {
+        "observation": "Consultar código requiere llegar al final de cada caso.",
+        "location": "build.py case_page actions",
+        "decision": "Mover enlaces de evidencia a la cabecera."
+      },
+      {
+        "observation": "El responsable técnico puede querer inspeccionar primero.",
+        "location": "build.py case-top",
+        "decision": "Permitir acceso sin leer toda la narración."
+      },
+      {
+        "observation": "El estado del proyecto aparece junto al título.",
+        "location": "build.py case-top meta",
+        "decision": "Conservarlo antes de los enlaces."
+      },
+      {
+        "observation": "Los casos científicos tienen artículo y repositorio.",
+        "location": "build.py case_page links",
+        "decision": "Trasladar ambas acciones."
+      },
+      {
+        "observation": "TeensLab tiene también datos y documentación.",
+        "location": "data/projects.json additional_links",
+        "decision": "Preservar esa tercera acción."
+      },
+      {
+        "observation": "El bloque Qué comprobar orienta la inspección.",
+        "location": "build.py inspect",
+        "decision": "Mantenerlo y enlazar de vuelta a acciones."
+      },
+      {
+        "observation": "Duplicar todas las acciones al final añade ruido.",
+        "location": "build.py case_page",
+        "decision": "Usar un retorno interno breve."
+      },
+      {
+        "observation": "Las fuentes externas no son páginas del portfolio.",
+        "location": "build.py case-top",
+        "decision": "Aclarar el destino sin alarmas."
+      },
+      {
+        "observation": "Las etiquetas actuales distinguen código, demo y artículo.",
+        "location": "build.py links",
+        "decision": "No sustituirlas por un genérico Ver más."
+      },
+      {
+        "observation": "Las acciones deben envolver en pantallas estrechas.",
+        "location": "assets/style.css .case-actions",
+        "decision": "Conservar flex-wrap y ajustar espaciado."
+      }
+    ],
+    "prompt": "Sitúa los enlaces reales a código, demo, artículo y dataset junto al resumen del caso; conserva las pautas de inspección y añade al final un regreso a esos enlaces.",
+    "before_commit": "8a4ee9c28f4dfe2b95711ad41bbcafd7ce762de9",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
