@@ -33,3 +33,5 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}.year,.timeline time,.demo-results
 .author-details{font-size:.86rem;margin:0 0 15px;color:#455f72}.author-details summary{cursor:pointer;min-height:40px;padding:6px 0;display:list-item}.author-details p{padding:12px 16px;background:#f1f6f8;margin:5px 0;max-width:85ch}
 
 html:not(.js) .lab,html:not(.js) .print-button{display:none}
+
+.product-capture{margin:28px 0}.product-capture img{width:100%;border:1px solid #c4d6df;border-radius:4px}.product-capture figcaption{font-size:.82rem;line-height:1.6;color:var(--muted);margin-top:12px}

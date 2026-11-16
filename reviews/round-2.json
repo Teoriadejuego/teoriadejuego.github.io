@@ -1,0 +1,70 @@
+[
+  {
+    "round": 2,
+    "profile_id": 1,
+    "profile": "Dirección de arte senior",
+    "title": "Mostrar producto real con procedencia sintética",
+    "points": [
+      {
+        "observation": "El caso PBIS solo muestra un esquema.",
+        "location": "build.py case_page",
+        "decision": "Añadir una captura real de la demo pública."
+      },
+      {
+        "observation": "La captura incluye el aviso de datos simulados.",
+        "location": "tmp/cv_2026/review_assets/pbis-product.png",
+        "decision": "Conservar la imagen completa."
+      },
+      {
+        "observation": "El selector de aula enseña una interacción concreta.",
+        "location": "PBIS captura",
+        "decision": "Hacerlo visible antes de salir del portfolio."
+      },
+      {
+        "observation": "El retrato ya establece identidad humana.",
+        "location": "qa/home-desktop-r1-top.png",
+        "decision": "Conservar la portada."
+      },
+      {
+        "observation": "Los colores del producto difieren del portfolio.",
+        "location": "assets/style.css",
+        "decision": "Enmarcar la captura sin recolorearla."
+      },
+      {
+        "observation": "La guía de práctica es parte del producto real.",
+        "location": "PBIS captura",
+        "decision": "No borrarla ni fingir otra interfaz."
+      },
+      {
+        "observation": "La imagen a ancho de lectura puede tener texto pequeño.",
+        "location": "build.py case_page",
+        "decision": "Enlazar la imagen a tamaño completo."
+      },
+      {
+        "observation": "Una captura necesita fecha y contexto.",
+        "location": "build.py case_page",
+        "decision": "Indicar demo, datos sintéticos y fecha."
+      },
+      {
+        "observation": "La captura PNG pesa más que su versión web.",
+        "location": "assets/pbis-product.webp",
+        "decision": "Exportar WebP manteniendo resolución."
+      },
+      {
+        "observation": "La evidencia no acredita adopción comercial.",
+        "location": "data/projects.json pbis",
+        "decision": "Conservar el estado de prototipo."
+      }
+    ],
+    "prompt": "Incorpora al caso PBIS una captura verificable de su demo sintética, con pie bilingüe, fecha, texto alternativo y ampliación directa; conserva el diseño editorial y no atribuyas usuarios reales.",
+    "before_commit": "24eaf2773d30866bac6a3d6e1034b17ba024944a",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/pbis-product.webp",
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
+    "commit": "pending"
+  }
+]
