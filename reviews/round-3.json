@@ -849,6 +849,74 @@
       "build.py"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "2e948587da04c0fe20834ba7490ef5a33db72bea"
+  },
+  {
+    "round": 3,
+    "profile_id": 14,
+    "profile": "Estrategia de posicionamiento y marketing",
+    "title": "Vista compartida con identidad profesional",
+    "before_commit": "2e948587da04c0fe20834ba7490ef5a33db72bea",
+    "points": [
+      {
+        "observation": "Open Graph usa la ilustración genérica sin nombre visible.",
+        "location": "build.py shell og:image",
+        "decision": "Crear composición con nombre y propuesta."
+      },
+      {
+        "observation": "Una vista compartida puede ser el primer contacto de selección.",
+        "location": "build.py shell social metadata",
+        "decision": "Priorizar identidad y campo de trabajo."
+      },
+      {
+        "observation": "El retrato existente permite reconocimiento coherente.",
+        "location": "assets/portrait-800.webp",
+        "decision": "Reutilizar sin síntesis ni cambio facial."
+      },
+      {
+        "observation": "La cabecera ya define una paleta editorial reconocible.",
+        "location": "assets/style.css .hero",
+        "decision": "Trasladar azul, blanco y verde suave."
+      },
+      {
+        "observation": "Las páginas inglesas necesitan una imagen en su idioma.",
+        "location": "build.py shell lang",
+        "decision": "Generar dos variantes de texto."
+      },
+      {
+        "observation": "La imagen carece de dimensiones declaradas en OG.",
+        "location": "build.py shell metadata",
+        "decision": "Declarar 1200×630 y MIME JPEG."
+      },
+      {
+        "observation": "El texto alternativo actual describe avión y redes.",
+        "location": "build.py shell og:image:alt",
+        "decision": "Actualizar a contenido realmente mostrado."
+      },
+      {
+        "observation": "El posicionamiento combina método, datos y desarrollo.",
+        "location": "build.py home h1",
+        "decision": "Conservar propuesta sin añadir superlativos."
+      },
+      {
+        "observation": "El activo de compartir debe ser regenerable.",
+        "location": "tools/render_social.py",
+        "decision": "Guardar composición HTML/CSS y script headless."
+      },
+      {
+        "observation": "Una portada social no debe inflar innecesariamente el sitio.",
+        "location": "assets/social-es.jpg",
+        "decision": "Usar JPEG de calidad 82 y verificar presupuesto final."
+      }
+    ],
+    "prompt": "Genera dos tarjetas sociales 1200×630 mediante composición HTML/CSS del nombre, propuesta y retrato existente. Guarda el render reproducible, enlaza cada idioma desde Open Graph y añade dimensiones, tipo y alt coherentes.",
+    "changes": [
+      "build.py",
+      "tools/render_social.py",
+      "assets/social-es.jpg",
+      "assets/social-en.jpg"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
