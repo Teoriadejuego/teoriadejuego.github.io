@@ -667,6 +667,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "77bf4f28d1e3d81b35f3d77a1d2443a0770bac56"
+  },
+  {
+    "round": 2,
+    "profile_id": 11,
+    "profile": "Selección de talento tecnológico senior",
+    "title": "Comparar aportación personal y evidencia para selección",
+    "points": [
+      {
+        "observation": "Las áreas de encaje describen capacidades generales.",
+        "location": "build.py teams_page areas",
+        "decision": "Añadir contribución y artefacto concretos."
+      },
+      {
+        "observation": "La responsabilidad SONAR está documentada.",
+        "location": "data/projects.json sonar role",
+        "decision": "Mostrarla sin atribuir resultados comerciales."
+      },
+      {
+        "observation": "TeensLab identifica tareas personales específicas.",
+        "location": "data/projects.json teenslab role",
+        "decision": "Resumir diseño, realización, análisis y revisión."
+      },
+      {
+        "observation": "ARCO es desarrollo de herramientas en evaluación.",
+        "location": "data/projects.json arco",
+        "decision": "Indicar código y demo sintética."
+      },
+      {
+        "observation": "Los tres casos ofrecen evidencias de distinta naturaleza.",
+        "location": "build.py teams_page",
+        "decision": "Usar dos rótulos iguales para compararlas."
+      },
+      {
+        "observation": "El título académico actual ya figura encima.",
+        "location": "build.py hiring-facts",
+        "decision": "No duplicarlo en cada capacidad."
+      },
+      {
+        "observation": "La experiencia de redes no acredita entrenar modelos personalmente.",
+        "location": "data/projects.json networks role",
+        "decision": "No usarla como promesa de ML."
+      },
+      {
+        "observation": "No hay idiomas, salario ni disponibilidad verificados.",
+        "location": "build.py teams_page",
+        "decision": "No introducirlos."
+      },
+      {
+        "observation": "Los enlaces de evidencia tienen alturas distintas.",
+        "location": "assets/style.css fit-grid",
+        "decision": "Alinearlos al final de cada columna."
+      },
+      {
+        "observation": "El contexto de contratación exige lectura rápida.",
+        "location": "assets/style.css fit-evidence",
+        "decision": "Mantener descripciones breves y jerarquizadas."
+      }
+    ],
+    "prompt": "En cada una de las tres áreas de encaje muestra dos hechos comparables: aportación personal y evidencia revisable. Extrae ambos de los casos existentes y conserva límites de autoría y madurez.",
+    "before_commit": "77bf4f28d1e3d81b35f3d77a1d2443a0770bac56",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
