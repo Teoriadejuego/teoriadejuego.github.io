@@ -1317,6 +1317,6 @@
       "SOURCES.md"
     ],
     "validation": "Pasaron tests/check_static.py (27 páginas, 26 URLs, pares ES/EN, 12 citas y apellidos), tests/browser_check.py (26 rutas a 1440/768/390), tests/round2_check.py (320/810, ES/EN, clipboard simulado, límites ±0,04, impresión CSS, sin JS, axe en 7 rutas: 0 infracciones) y tests/round3_check.py (URL lab inválidos/extremos/pasos, sensibilidad, foco responsive, 200% texto a 320px, 404 local, colores forzados, movimiento reducido). Sin errores JS. Activos 486353 bytes. Capturas finales inspeccionadas; paginación A4 y despliegue quedan para cierre global.",
-    "commit": ""
+    "commit": "b6a809eac7623a401d1fb6d799c19cba21709ffb"
   }
 ]

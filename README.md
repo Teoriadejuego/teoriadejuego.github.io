@@ -37,3 +37,5 @@ No se modifica el dominio `antonioalfonso.org`: su migración requiere una decis
 - [Datos estructurados de perfiles](https://developers.google.com/search/docs/appearance/structured-data/profile-page)
 
 Los prompts aplicados están en `PROMPTS.md`; la trazabilidad editorial, en `SOURCES.md`.
+
+La revisión posterior comprende 20 perspectivas profesionales simuladas en tres rondas, con 60 prompts aplicados y cambios trazables: [registro de revisión](reviews/README.md). Las pruebas adicionales se ejecutan con `python tests/round2_check.py` y `python tests/round3_check.py`, usando el mismo servidor y las mismas variables de entorno de la prueba principal. Para incluir el análisis automatizado de accesibilidad, `AXE_SCRIPT` debe apuntar a una copia local de axe-core.
