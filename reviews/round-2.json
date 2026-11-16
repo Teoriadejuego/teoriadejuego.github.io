@@ -400,6 +400,73 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "b67c04ef28c9a28ebde50406e9277cf72f8b8831"
+  },
+  {
+    "round": 2,
+    "profile_id": 7,
+    "profile": "Fotografía de retrato profesional",
+    "title": "Identificar el retrato y enlazar sus créditos",
+    "points": [
+      {
+        "observation": "El retrato procede de una foto aportada y editada.",
+        "location": "SOURCES.md imágenes",
+        "decision": "Conservar identidad y archivo."
+      },
+      {
+        "observation": "El perfil carece de acceso contextual a los créditos fotográficos.",
+        "location": "build.py profile",
+        "decision": "Añadir pie discreto con enlace."
+      },
+      {
+        "observation": "La política ya explica fondo e iluminación editados.",
+        "location": "build.py privacy",
+        "decision": "Crear un destino directo."
+      },
+      {
+        "observation": "La foto del perfil mantiene el encuadre cuadrado.",
+        "location": "assets/style.css .profile-top img",
+        "decision": "No recortarla de nuevo."
+      },
+      {
+        "observation": "El retrato aparece en la primera pantalla del perfil.",
+        "location": "build.py profile img",
+        "decision": "Priorizar su descarga."
+      },
+      {
+        "observation": "El texto alternativo usa solo el nombre abreviado.",
+        "location": "build.py profile img",
+        "decision": "Identificar retrato y nombre completo."
+      },
+      {
+        "observation": "Hay dos tamaños adaptativos para el perfil.",
+        "location": "build.py profile srcset",
+        "decision": "Preservarlos."
+      },
+      {
+        "observation": "El margen por defecto de figure alteraría la composición.",
+        "location": "assets/style.css .profile-portrait",
+        "decision": "Anularlo explícitamente."
+      },
+      {
+        "observation": "El pie no aporta al CV impreso.",
+        "location": "assets/style.css print",
+        "decision": "Ocultarlo en impresión."
+      },
+      {
+        "observation": "La portada ya tiene una leyenda profesional.",
+        "location": "build.py home portrait",
+        "decision": "No duplicar el pie allí."
+      }
+    ],
+    "prompt": "Mantén el retrato existente y su encuadre; añade al perfil un pie discreto hacia sus créditos, una descripción alternativa completa y prioridad de carga para la foto principal.",
+    "before_commit": "b67c04ef28c9a28ebde50406e9277cf72f8b8831",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "assets/style.css",
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
