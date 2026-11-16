@@ -456,6 +456,71 @@
       "assets/style.css"
     ],
     "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
+    "commit": "025acadd0f2a5a5d837c7883c006af1a8032f928"
+  },
+  {
+    "round": 3,
+    "profile_id": 8,
+    "profile": "Arquitectura de información UX",
+    "title": "Accesos directos a las tres áreas del laboratorio",
+    "before_commit": "025acadd0f2a5a5d837c7883c006af1a8032f928",
+    "points": [
+      {
+        "observation": "El laboratorio combina demo, código y catorce materiales.",
+        "location": "build.py lab_page",
+        "decision": "Tradeoff: tres áreas válidas que necesitan orientación inicial."
+      },
+      {
+        "observation": "Llegar a los materiales exige atravesar la demo y herramientas.",
+        "location": "build.py lab_page",
+        "decision": "Añadir acceso por ancla desde cabecera."
+      },
+      {
+        "observation": "Las secciones de código y materiales no tienen IDs estables.",
+        "location": "build.py lab_page",
+        "decision": "Añadir code y resources."
+      },
+      {
+        "observation": "La demo tiene ID interno técnico pero no destino de sección.",
+        "location": "build.py lab_page",
+        "decision": "Crear destino demo en su sección."
+      },
+      {
+        "observation": "Los casos ya tienen navegación interna útil.",
+        "location": "build.py case_page .case-nav",
+        "decision": "Reutilizar principio, no copiar el lateral."
+      },
+      {
+        "observation": "La clase subnav ya existe para índices.",
+        "location": "assets/style.css .subnav",
+        "decision": "Reutilizar componente visual."
+      },
+      {
+        "observation": "Las dos colecciones de recursos evitan una lista inicial muy larga.",
+        "location": "build.py lab_page resource-group",
+        "decision": "Preservar agrupación."
+      },
+      {
+        "observation": "Los originales conservan su título e idioma.",
+        "location": "build.py lab_page resources",
+        "decision": "Preservar para identificación bibliográfica."
+      },
+      {
+        "observation": "El laboratorio no exige registro ni envío de datos.",
+        "location": "assets/app.js lab",
+        "decision": "Preservar recorrido local."
+      },
+      {
+        "observation": "Los enlaces de sección funcionan sin scripts.",
+        "location": "build.py lab_page",
+        "decision": "Implementar anclas HTML nativas."
+      }
+    ],
+    "prompt": "Añade al encabezado del laboratorio una navegación nativa a demostración, código abierto y materiales institucionales. Usa IDs estables y el estilo subnav existente, con nombres bilingües.",
+    "changes": [
+      "build.py"
+    ],
+    "validation": "Compilación y comprobación estática de 27 páginas, enlaces y datos estructurados correctas.",
     "commit": ""
   }
 ]
