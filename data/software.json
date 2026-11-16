@@ -1,0 +1,82 @@
+[
+  {
+    "title": "ISAT",
+    "repo": "isat-poc",
+    "description": {
+      "es": "Prototipo de consulta de integración social y adaptación académica: grupo, lista y ficha individual.",
+      "en": "Prototype for exploring social integration and academic adjustment through group, list and individual views."
+    },
+    "stage": {
+      "es": "Prototipo funcional para evaluación",
+      "en": "Functional evaluation prototype"
+    }
+  },
+  {
+    "title": "AERO-RISK",
+    "repo": "aero_risk",
+    "description": {
+      "es": "Cuadernos Python, datos sintéticos y análisis reproducible de una tarea de riesgo con aviones de papel.",
+      "en": "Python notebooks, synthetic data and reproducible analysis of a paper-airplane risk task."
+    },
+    "stage": {
+      "es": "Simulación docente · 128 registros sintéticos",
+      "en": "Teaching simulation · 128 synthetic records"
+    }
+  },
+  {
+    "title": "RIHM",
+    "repo": "rihm",
+    "demo": "https://teoriadejuego.github.io/rihm/",
+    "description": {
+      "es": "Separación de un publicador docente en Shiny y un panel estático Quarto para consultar resultados agregados.",
+      "en": "A Shiny teacher publisher separated from a static Quarto dashboard for aggregate results."
+    },
+    "stage": {
+      "es": "Herramienta docente",
+      "en": "Teaching tool"
+    }
+  },
+  {
+    "title": {
+      "es": "Arquitectura de datos y ciencia abierta",
+      "en": "Data architecture and open science"
+    },
+    "repo": "arquitectura-datos-python-ciencia-abierta",
+    "description": {
+      "es": "Materiales, aplicación Streamlit y laboratorio Jupyter para recorrer protocolo, datos, análisis y publicación.",
+      "en": "Materials, a Streamlit app and a Jupyter lab covering protocols, data, analysis and publication."
+    },
+    "stage": {
+      "es": "Material docente · datos sintéticos",
+      "en": "Teaching material · synthetic data"
+    }
+  },
+  {
+    "title": "Kiki/Bouba",
+    "repo": "miniweb-kikibouba",
+    "description": {
+      "es": "Demostración local en Python de recogida de texto, clasificación con expresiones regulares y documentación FAIR.",
+      "en": "A local Python demonstration of text collection, regular-expression classification and FAIR documentation."
+    },
+    "stage": {
+      "es": "Demostración docente",
+      "en": "Teaching demonstration"
+    }
+  },
+  {
+    "title": {
+      "es": "Antes de contar",
+      "en": "Before counting"
+    },
+    "repo": "escaperoom",
+    "demo": "https://teoriadejuego.github.io/escaperoom/",
+    "description": {
+      "es": "Escape room de estadística por Sevilla: conceptos, decisiones y un cuaderno descargable de la sesión.",
+      "en": "A statistics escape room through Seville: concepts, decisions and a downloadable session notebook."
+    },
+    "stage": {
+      "es": "Ejemplo docente abierto",
+      "en": "Open teaching example"
+    }
+  }
+]

@@ -1,0 +1,270 @@
+[
+  {
+    "id": "sonar",
+    "title": "SONAR",
+    "kind": "software",
+    "repo": "sonar-2026",
+    "tags": [
+      "React",
+      "FastAPI",
+      "Python",
+      "Experimentación"
+    ],
+    "status": {
+      "es": "Proyecto de investigación · 2026",
+      "en": "Research project · 2026"
+    },
+    "role": {
+      "es": "Investigador responsable del proyecto FIUS–Cotec.",
+      "en": "Principal investigator of the FIUS–Cotec project."
+    },
+    "heading": {
+      "es": "Del protocolo al experimento digital.",
+      "en": "From protocol to digital experiment."
+    },
+    "summary": {
+      "es": "Infraestructura para estudiar honestidad y normas sociales: experiencia móvil, asignación de tratamientos, registro de decisiones y análisis.",
+      "en": "Infrastructure to study honesty and social norms: a mobile experience, treatment allocation, decision recording and analysis."
+    },
+    "problem": {
+      "es": "Ejecutar un experimento fuera del laboratorio exige que la interfaz, los incentivos y los registros respeten un mismo protocolo.",
+      "en": "Running an experiment outside the lab requires the interface, incentives and records to follow the same protocol."
+    },
+    "work": {
+      "es": "El repositorio documenta un frontend React, backend FastAPI y una lógica experimental resuelta en servidor. El recorrido conecta consentimiento, comprensión, tarea, reporte y salida.",
+      "en": "The repository documents a React frontend, a FastAPI backend and server-controlled experimental logic. The flow connects consent, comprehension, the task, reporting and exit."
+    },
+    "evidence": {
+      "es": "Proyecto de transferencia FIUS–Cotec y repositorio público con metodología y arquitectura. No se publican aquí resultados de participantes ni métricas de impacto comercial.",
+      "en": "FIUS–Cotec research-transfer project and a public repository documenting methodology and architecture. No participant outcomes or commercial impact metrics are published here."
+    },
+    "value": {
+      "es": "Capacidad transferible: convertir un diseño de evaluación en una herramienta operativa, con coherencia entre producto, datos y análisis.",
+      "en": "Transferable capability: turning an evaluation design into an operational tool, aligning product, data and analysis."
+    },
+    "source": "https://investigacion.us.es/sisius/sis_showpub.php?idpers=45496"
+  },
+  {
+    "id": "arco",
+    "title": "ARCO",
+    "kind": "software",
+    "repo": "arco",
+    "demo": "https://teoriadejuego.github.io/arco/DEMO.html",
+    "tags": [
+      "JavaScript",
+      "Visualización",
+      "Flujos de datos"
+    ],
+    "status": {
+      "es": "Herramientas en evaluación · datos simulados",
+      "en": "Tools under evaluation · simulated data"
+    },
+    "role": {
+      "es": "Desarrollo de herramientas para explorar datos educativos y redes.",
+      "en": "Development of tools for exploring education data and networks."
+    },
+    "heading": {
+      "es": "Recoger, preparar y consultar datos.",
+      "en": "Collect, prepare and explore data."
+    },
+    "summary": {
+      "es": "SALMER, DOVELA y CLAVE organizan el recorrido desde una encuesta de demostración hasta informes y redes consultables.",
+      "en": "SALMER, DOVELA and CLAVE organise the journey from a demonstration survey to explorable reports and networks."
+    },
+    "problem": {
+      "es": "La utilidad de un análisis depende de que la persona destinataria pueda encontrar, entender y contrastar la información.",
+      "en": "An analysis is useful when its audience can find, understand and check the information."
+    },
+    "work": {
+      "es": "Tres herramientas con un recorrido acompañado, revisión de datos, informes por perfil y visualización de redes. El ejemplo público se procesa en el navegador y utiliza datos simulados.",
+      "en": "Three tools with a guided journey, data review, role-based reports and network visualisation. The public example runs in the browser using simulated data."
+    },
+    "evidence": {
+      "es": "Demostración pública y código inspeccionable. La edición está destinada a evaluación; no equivale a una validación externa ni a una implantación acreditada.",
+      "en": "Public demonstration and inspectable code. This edition is for evaluation; it is not evidence of external validation or certified deployment."
+    },
+    "value": {
+      "es": "Capacidad transferible: diseñar interfaces de consulta que acerquen los modelos y los datos al trabajo cotidiano de especialistas.",
+      "en": "Transferable capability: designing interfaces that bring models and data into specialists’ everyday work."
+    }
+  },
+  {
+    "id": "pbis",
+    "title": "PBIS",
+    "kind": "software",
+    "repo": "pbis-poc",
+    "demo": "https://teoriadejuego.github.io/pbis-poc/DEMO.html#guia",
+    "tags": [
+      "HTML / JavaScript",
+      "Redes",
+      "Visualización"
+    ],
+    "status": {
+      "es": "Prototipo en evaluación · demo sintética",
+      "en": "Evaluation prototype · synthetic demo"
+    },
+    "role": {
+      "es": "Desarrollo de un visualizador para apoyar la consulta profesional.",
+      "en": "Development of a visualisation tool supporting professional review."
+    },
+    "heading": {
+      "es": "De una tabla a una vista comprensible.",
+      "en": "From a table to an understandable view."
+    },
+    "summary": {
+      "es": "Fichas de centro, aula y estudiante, con filtros, redes y contexto para explorar indicadores de convivencia.",
+      "en": "School, classroom and student views with filters, networks and context for exploring school-climate indicators."
+    },
+    "problem": {
+      "es": "Una hoja de datos amplia dificulta pasar de una señal agregada a la información que la explica.",
+      "en": "A wide dataset makes it difficult to move from an aggregate signal to the information behind it."
+    },
+    "work": {
+      "es": "Consulta jerárquica, redes de relaciones, importación local y demostración guiada con 1.512 estudiantes simulados. La información apoya el criterio profesional.",
+      "en": "Hierarchical exploration, relationship networks, local import and a guided demonstration with 1,512 simulated students. The information supports professional judgement."
+    },
+    "evidence": {
+      "es": "Código y demo pública; estudiantes y respuestas del ejemplo son sintéticos. El prototipo no se presenta como sistema de diagnóstico ni como evaluación de impacto.",
+      "en": "Public code and demo; example students and responses are synthetic. The prototype is not presented as a diagnostic system or an impact evaluation."
+    },
+    "value": {
+      "es": "Capacidad transferible: transformar indicadores complejos en recorridos de análisis claros, conservando denominadores y datos pendientes.",
+      "en": "Transferable capability: turning complex indicators into clear analytical journeys while preserving denominators and missing-data distinctions."
+    }
+  },
+  {
+    "id": "networks",
+    "title": {
+      "es": "Redes sociales y predicción",
+      "en": "Social networks and prediction"
+    },
+    "kind": "research",
+    "doi": "10.1073/pnas.2215041120",
+    "tags": [
+      "Network science",
+      "Predicción",
+      "PNAS"
+    ],
+    "status": {
+      "es": "Investigación publicada · 2023",
+      "en": "Published research · 2023"
+    },
+    "role": {
+      "es": "Coautor del estudio con un equipo interdisciplinar.",
+      "en": "Study co-author in an interdisciplinary team."
+    },
+    "heading": {
+      "es": "Cuando la estructura explica las relaciones.",
+      "en": "When structure explains relationships."
+    },
+    "summary": {
+      "es": "Un estudio de 13 centros, más de 3.000 estudiantes y 60.000 relaciones declaradas compara señales de red y atributos individuales.",
+      "en": "A study of 13 schools, over 3,000 students and 60,000 reported relationships compares network signals with individual attributes."
+    },
+    "problem": {
+      "es": "Identificar qué información ayuda a predecir relaciones positivas y negativas en una red social.",
+      "en": "Identify which information helps predict positive and negative relationships in a social network."
+    },
+    "work": {
+      "es": "El equipo comparó influencia triádica, atributos personales y representaciones de la red mediante modelos predictivos.",
+      "en": "The team compared triadic influence, personal attributes and network representations using predictive models."
+    },
+    "evidence": {
+      "es": "En este estudio, una medida de influencia triádica alcanzó la mejor precisión y añadir atributos individuales no mejoró el resultado. Artículo en PNAS.",
+      "en": "In this study, a triadic-influence measure achieved the best accuracy, and adding individual attributes did not improve it. Published in PNAS."
+    },
+    "value": {
+      "es": "Aplicación potencial: comparar modelos complejos con señales estructurales interpretables antes de decidir qué información adicional merece recogerse.",
+      "en": "Potential application: compare complex models with interpretable structural signals before deciding what additional information is worth collecting."
+    }
+  },
+  {
+    "id": "collective-action",
+    "title": {
+      "es": "Cooperación en 34 países",
+      "en": "Cooperation across 34 countries"
+    },
+    "kind": "research",
+    "doi": "10.1073/pnas.2504632123",
+    "tags": [
+      "Experimentos",
+      "Incentivos",
+      "PNAS"
+    ],
+    "status": {
+      "es": "Investigación publicada · 2026",
+      "en": "Published research · 2026"
+    },
+    "role": {
+      "es": "Coautor de una colaboración internacional.",
+      "en": "Co-author in an international collaboration."
+    },
+    "heading": {
+      "es": "Entender los incentivos antes de intervenir.",
+      "en": "Understand incentives before intervening."
+    },
+    "summary": {
+      "es": "Un experimento internacional estudia cómo las alternativas privadas interactúan con la cooperación y la desigualdad.",
+      "en": "An international experiment studies how private alternatives interact with cooperation and inequality."
+    },
+    "problem": {
+      "es": "Las soluciones individuales pueden competir con una solución colectiva, incluso cuando esta última beneficia al conjunto.",
+      "en": "Individual solutions can compete with a collective solution, even when the latter benefits the group."
+    },
+    "work": {
+      "es": "El estudio compara decisiones en un juego de acción colectiva con soluciones públicas y privadas y dotaciones desiguales. Participan equipos de 34 países.",
+      "en": "The study compares decisions in a collective-action game with public and private solutions and unequal endowments, involving teams across 34 countries."
+    },
+    "evidence": {
+      "es": "Los participantes con mayor dotación recurrieron más a soluciones privadas; el patrón amplificó la desigualdad en los países estudiados. Publicado en PNAS.",
+      "en": "Participants with larger endowments relied more on private solutions; the pattern increased inequality across the countries studied. Published in PNAS."
+    },
+    "value": {
+      "es": "Aplicación potencial: evaluar si el diseño de incentivos de una política, plataforma o servicio favorece el objetivo colectivo perseguido.",
+      "en": "Potential application: evaluate whether the incentive design of a policy, platform or service supports its intended collective objective."
+    }
+  },
+  {
+    "id": "teenslab",
+    "title": "TeensLab",
+    "kind": "research",
+    "doi": "10.1038/s41597-024-04298-6",
+    "tags": [
+      "Datos abiertos",
+      "Medición",
+      "Scientific Data"
+    ],
+    "status": {
+      "es": "Datos y artículo publicados",
+      "en": "Published data and article"
+    },
+    "role": {
+      "es": "Coautor del trabajo de documentación del conjunto de datos.",
+      "en": "Co-author of the dataset documentation study."
+    },
+    "heading": {
+      "es": "Medir bien para poder reutilizar.",
+      "en": "Measure carefully. Make reuse possible."
+    },
+    "summary": {
+      "es": "Preferencias económicas, capacidades cognitivas y pensamiento estratégico en adolescentes: datos y documentación para investigación reproducible.",
+      "en": "Economic preferences, cognitive abilities and strategic thinking among adolescents: data and documentation for reproducible research."
+    },
+    "problem": {
+      "es": "Las comparaciones entre personas y contextos requieren medidas definidas y datos que puedan interpretarse fuera del equipo original.",
+      "en": "Comparisons across people and contexts require defined measures and data that can be interpreted outside the original team."
+    },
+    "work": {
+      "es": "El trabajo reúne tareas experimentales y variables complementarias en una fuente documentada. La versión de repositorio describe 5.890 estudiantes de 33 centros.",
+      "en": "The work brings experimental tasks and supplementary variables together in a documented resource. The repository version describes 5,890 students across 33 institutions."
+    },
+    "evidence": {
+      "es": "Artículo en Scientific Data y versión abierta en el repositorio Loyola. Las cifras corresponden al conjunto descrito, no a usuarios de un producto comercial.",
+      "en": "Scientific Data article and an open version in the Loyola repository. These figures describe the dataset, not users of a commercial product."
+    },
+    "value": {
+      "es": "Capacidad transferible: conectar diseño de medición, calidad de datos y documentación para que otros equipos puedan analizar y reutilizar la evidencia.",
+      "en": "Transferable capability: connecting measurement design, data quality and documentation so other teams can analyse and reuse the evidence."
+    }
+  }
+]

@@ -1,0 +1,6 @@
+__pycache__/
+public/
+.venv/
+qa/
+*.log
+.env*
