@@ -869,6 +869,72 @@
       "build.py",
       "reviews/round-2.json"
     ],
+    "commit": "c82c74b194d38015a8053f79b99f23ffb13e6331"
+  },
+  {
+    "round": 2,
+    "profile_id": 14,
+    "profile": "Estrategia de posicionamiento y marketing",
+    "title": "Orientar la portada al encaje y la evidencia",
+    "points": [
+      {
+        "observation": "La portada prioriza explorar proyectos y escribir de inmediato.",
+        "location": "build.py home actions",
+        "decision": "Dar prioridad al encaje profesional."
+      },
+      {
+        "observation": "La ruta Para equipos ya sintetiza aportación y evidencia.",
+        "location": "build.py teams_page",
+        "decision": "Usarla como primera acción."
+      },
+      {
+        "observation": "Explorar proyectos sigue siendo una alternativa útil.",
+        "location": "build.py home actions",
+        "decision": "Mantenerla como segunda acción."
+      },
+      {
+        "observation": "El interés en consultoría aparece en una línea menor.",
+        "location": "build.py home fine",
+        "decision": "Conservar el contexto sin duplicar enlace."
+      },
+      {
+        "observation": "La propuesta principal une experimentos, datos y software.",
+        "location": "build.py home h1",
+        "decision": "Preservarla."
+      },
+      {
+        "observation": "El párrafo de presentación repite comunicación y decisiones.",
+        "location": "build.py home lead",
+        "decision": "Concretar evaluar cambios y comunicar resultados."
+      },
+      {
+        "observation": "La versión inglesa necesita idéntico objetivo.",
+        "location": "build.py home",
+        "decision": "Alinear ambos recorridos."
+      },
+      {
+        "observation": "El email permanece visible al final y en el perfil.",
+        "location": "build.py contact/profile",
+        "decision": "No perder la vía de contacto."
+      },
+      {
+        "observation": "El encabezado ya es largo en escritorio.",
+        "location": "qa/home-desktop-r1-top.png",
+        "decision": "Evitar sumar una tercera acción."
+      },
+      {
+        "observation": "La identidad académica distingue la propuesta.",
+        "location": "build.py home intro/portrait",
+        "decision": "Mantenerla junto a la orientación aplicada."
+      }
+    ],
+    "prompt": "Haz que la portada conduzca primero al encaje para equipos y después a proyectos. Ajusta el párrafo a evaluación y herramientas de consulta, conservando identidad académica y vías de contacto.",
+    "before_commit": "c82c74b194d38015a8053f79b99f23ffb13e6331",
+    "validation": "Static checks passed: 27 pages; links, anchors, structured data, images and publication completeness.",
+    "changes": [
+      "build.py",
+      "reviews/round-2.json"
+    ],
     "commit": "pending"
   }
 ]
