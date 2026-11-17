@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Cabecera sin transparencias que interfieran",
+    "observation": "En las capturas con scroll se leen restos del contenido a través de la cabecera blanca al 97 %.",
+    "prompt": "Haz opaco el fondo de la cabecera fija para eliminar la superposición visual del contenido que pasa por debajo. Conserva altura, borde inferior, navegación, posición responsive y paleta. Revisa una página desplazada en escritorio y móvil.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Cabecera fija opaca tras scroll450px, altura conservada:79px a1440 y75px a390.",
+      "visual": "Capturas de escritorio y móvil revisadas; desaparece la lectura de contenido a través del fondo.",
+      "captures": [
+        "qa/micro/01-header-1440.png",
+        "qa/micro/01-header-390.png"
+      ]
+    },
+    "before_commit": "a46580765f50696d6fdc220fbef3a94ccc0399fc",
+    "commit": null
+  }
+]
