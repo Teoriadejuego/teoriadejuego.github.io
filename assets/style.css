@@ -35,7 +35,7 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}.year,.timeline time,.demo-results
 
 html:not(.js) .lab,html:not(.js) .print-button{display:none}
 
-.product-capture{margin:28px 0}.product-capture img{width:100%;border:1px solid #c4d6df;border-radius:4px}.product-capture figcaption{font-size:.82rem;line-height:1.6;color:var(--muted);margin-top:12px}
+.product-capture{margin:28px 0}.product-capture>a{display:block;border-radius:4px}.product-capture>a:focus-visible{outline:3px solid var(--teal);outline-offset:4px}.capture-zoom{display:flex;align-items:center;width:fit-content;min-height:44px;font-weight:600;margin-top:4px}@media(forced-colors:active){.product-capture>a:focus-visible{outline-color:Highlight}}.product-capture img{width:100%;border:1px solid #c4d6df;border-radius:4px}.product-capture figcaption{font-size:.82rem;line-height:1.6;color:var(--muted);margin-top:12px}
 
 .work[data-kind=research] .visual{background:#edf1f4}.work[data-kind=research] .work-type{border-left:3px solid #687b91;padding-left:9px}
 

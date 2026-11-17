@@ -273,7 +273,31 @@
       ]
     },
     "before_commit": "97f29c2e54034a383d56ab77e9b8d59cb7b3481c",
-    "commit": null,
+    "commit": "2523ed5cd1bf28a1003277eb91fc659a901769a0",
     "implementation": "Los enlaces del índice local reciben padding horizontal uniforme, fondo suave al pasar el puntero o enfocarlos y un outline teal con separación. El foco conserva color del sistema en contraste forzado; no cambia el comportamiento ni indica una sección actual ficticia."
+  },
+  {
+    "id": 13,
+    "title": "Ampliación de captura más reconocible",
+    "observation": "La captura de PBIS ya se puede ampliar, pero la indicación textual está integrada en el pie y su acción puede hacerse más reconocible.",
+    "prompt": "Haz más reconocible la ampliación de la captura de PBIS: conserva el enlace existente sobre la imagen y añade una acción textual discreta y explícita en el pie, en español e inglés. Mantén datos sintéticos, procedencia y fecha. No añadas modal ni dependencias; refina el foco visible del enlace de imagen sin cambiar la captura.",
+    "changes": [
+      "build.py",
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Enlaces de imagen y texto al mismo WebP en ES/EN a 390/1440 px; foco visible con teclado, acción textual de al menos 44 px y hash del archivo intacto. El servidor local envía WebP como octet-stream: la prueba de navegación intercepta únicamente ese recurso y declara image/webp, sin alterar el servidor.",
+      "visual": "Capturas ES/EN de escritorio y móvil revisadas; texto de acción separado del pie y foco completo alrededor de la imagen, sin modal.",
+      "captures": [
+        "qa/micro/13-capture-es-390.png",
+        "qa/micro/13-capture-es-1440.png",
+        "qa/micro/13-capture-en-390.png",
+        "qa/micro/13-capture-en-1440.png"
+      ]
+    },
+    "before_commit": "2523ed5cd1bf28a1003277eb91fc659a901769a0",
+    "commit": null,
+    "implementation": "El pie de PBIS incorpora una acción textual bilingüe de ampliación con área de 44 px; la imagen conserva su enlace y gana un foco exterior teal de 3 px. Se mantienen exactamente archivo, proporción, procedencia, datos sintéticos y fecha de captura."
   }
 ]
