@@ -17,7 +17,8 @@
       ]
     },
     "before_commit": "a46580765f50696d6fdc220fbef3a94ccc0399fc",
-    "commit": "9b489188469e0f70fead993b398e12645f0aace4"
+    "commit": "9b489188469e0f70fead993b398e12645f0aace4",
+    "implementation": "Fondo blanco completamente opaco en la cabecera fija, sin modificar altura, borde ni disposición responsive."
   },
   {
     "id": 2,
@@ -37,6 +38,29 @@
       ]
     },
     "before_commit": "9b489188469e0f70fead993b398e12645f0aace4",
-    "commit": null
+    "commit": "15b60f6af6acb242c1f4900c4d07b854df348b6f",
+    "implementation": "Se reserva un borde inferior transparente en todos los enlaces y se unifica el padding. El activo usa verde y el hover un gris azulado, sin movimiento."
+  },
+  {
+    "id": 3,
+    "title": "Estado abierto del menú reconocible",
+    "observation": "El botón Menú conserva la misma apariencia al abrirse; aria-expanded ya informa correctamente a tecnologías de apoyo.",
+    "prompt": "Da al botón del menú móvil un estado abierto visual mediante aria-expanded: fondo y borde de la paleta que distingan abierto de cerrado sin cambiar dimensiones. Mantén contraste, foco y comportamiento de Escape. No cambies JavaScript ni texto.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Botón390px con anchura/altura idénticas abierto y cerrado; Escape cierra, oculta navegación y devuelve foco.",
+      "visual": "Estado abierto con fondo verde pálido, borde verde y texto oscuro revisado; cerrado y foco siguen distinguibles.",
+      "captures": [
+        "qa/micro/03-menu-closed.png",
+        "qa/micro/03-menu-open.png",
+        "qa/micro/03-menu-escape.png"
+      ]
+    },
+    "before_commit": "15b60f6af6acb242c1f4900c4d07b854df348b6f",
+    "commit": null,
+    "implementation": "El selector aria-expanded=true aplica fondo verde pálido y borde/texto más definidos, sin cambiar medidas, texto ni JavaScript."
   }
 ]
