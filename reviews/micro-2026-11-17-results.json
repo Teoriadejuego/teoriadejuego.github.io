@@ -60,7 +60,30 @@
       ]
     },
     "before_commit": "15b60f6af6acb242c1f4900c4d07b854df348b6f",
-    "commit": null,
+    "commit": "2d58d3d77a2fd8d204a9cc9dccf9090b44c6d982",
     "implementation": "El selector aria-expanded=true aplica fondo verde pálido y borde/texto más definidos, sin cambiar medidas, texto ni JavaScript."
+  },
+  {
+    "id": 4,
+    "title": "Respuesta visual de botones secundarios",
+    "observation": "Los botones outline fuera del hero conservan un fondo transparente al pasar el puntero.",
+    "prompt": "Define un hover claro y sobrio para botones outline sobre fondos claros y para botones blancos, conservando el tratamiento especial sobre el hero oscuro. Usa solo color de fondo, borde y texto; nada de elevación o escalado. Comprueba acciones de portada, contratación y casos.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Hover cambia fondo y color sin modificar ancho/altura en botones blancos y outline de portada, contratación y ARCO.",
+      "visual": "Se revisaron cuatro estados; el outline del hero conserva texto blanco y fondo azul oscuro.",
+      "captures": [
+        "qa/micro/04-hero-light.png",
+        "qa/micro/04-hero-outline.png",
+        "qa/micro/04-teams-outline.png",
+        "qa/micro/04-case-outline.png"
+      ]
+    },
+    "before_commit": "2d58d3d77a2fd8d204a9cc9dccf9090b44c6d982",
+    "commit": null,
+    "implementation": "Hover azul pálido para outline sobre fondos claros y para botones blancos, con borde definido. La variante del hero mantiene su respuesta azul oscura y texto blanco."
   }
 ]
