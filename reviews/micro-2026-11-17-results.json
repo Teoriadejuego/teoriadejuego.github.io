@@ -131,7 +131,31 @@
       ]
     },
     "before_commit": "9aeed40668c857e037e7c5d85d3182f30f3f28cd",
-    "commit": null,
+    "commit": "11a4f8b4d905478f08e863fe6a1cf336769571dc",
     "implementation": "Rejilla de una columna exclusivamente para las acciones del hero hasta 480 px, con separación de 12 px. Los botones ocupan el mismo ancho y admiten texto multilínea centrado sin perder su área táctil."
+  },
+  {
+    "id": 7,
+    "title": "Encuadre fotográfico coherente",
+    "observation": "El retrato principal y el retrato del perfil usan remates geométricos distintos.",
+    "prompt": "Unifica de forma sutil el tratamiento de borde y esquinas del retrato en portada y perfil, tomando como referencia la identidad actual. Mantén el rostro, recorte, proporción, tamaños responsive, créditos y archivos originales. No generes ni retoques fotografías. Verifica escritorio, móvil e impresión CSS.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Comparación antes/después idéntica de anchura, altura, aspect-ratio, object-fit, object-position, archivo y alt a 390/1440 px; geometría de impresión conservada. Radio común 4/4/20/4 px.",
+      "visual": "Cinco capturas inspeccionadas: ambos retratos a 390/1440 px y perfil en impresión CSS. Esquina inferior derecha coherente y créditos intactos.",
+      "captures": [
+        "qa/micro/07-home-390.png",
+        "qa/micro/07-home-1440.png",
+        "qa/micro/07-profile-390.png",
+        "qa/micro/07-profile-1440.png",
+        "qa/micro/07-profile-print.png"
+      ]
+    },
+    "before_commit": "11a4f8b4d905478f08e863fe6a1cf336769571dc",
+    "commit": null,
+    "implementation": "Los dos retratos comparten una única regla de esquinas 4/4/20/4 px, basada en la portada. Se eliminan los radios divergentes del perfil y móvil sin alterar fotos, encuadres, bordes, medidas ni créditos."
   }
 ]
