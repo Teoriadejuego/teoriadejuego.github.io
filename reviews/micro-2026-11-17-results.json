@@ -366,7 +366,28 @@
       ]
     },
     "before_commit": "deb497876e2a2eea7078d6460f4713ee37a08344",
-    "commit": null,
+    "commit": "d96d287730aaec6b5c2452722cbccd23895791e0",
     "implementation": "El control de autoría tiene peso tipográfico estable y espacio interior compartido en ambos estados. Al abrir, adopta el mismo fondo suave de la lista y texto más definido, sin cambiar sus dimensiones."
+  },
+  {
+    "id": 17,
+    "title": "Filtros con foco visual de conjunto",
+    "observation": "El campo enfocado no refuerza visualmente la asociación con su etiqueta.",
+    "prompt": "Usa focus-within para destacar de forma sutil la etiqueta del filtro que se está usando, conservando el outline de su control. Ajusta el tratamiento de placeholder si hace falta para separarlo claramente del valor introducido. No cambies lógica, URL, opciones ni comportamiento sin JavaScript.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Tab transfiere el énfasis entre búsqueda, tema y año conservando outline. BuscarPNAS mantiene2 resultados y URL; sin JavaScript siguen disponibles12 artículos.",
+      "visual": "Revisados foco de búsqueda en escritorio y de tema en móvil; etiqueta subrayada en verde y placeholder diferenciado del valor.",
+      "captures": [
+        "qa/micro/17-filters-1440.png",
+        "qa/micro/17-filters-390.png"
+      ]
+    },
+    "before_commit": "d96d287730aaec6b5c2452722cbccd23895791e0",
+    "commit": null,
+    "implementation": "Focus-within refuerza con verde y subrayado la etiqueta del control activo, sin cambiar su geometría. El placeholder tiene gris explícito y opacidad completa; la lógica de filtros permanece intacta."
   }
 ]
