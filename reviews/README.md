@@ -17,3 +17,11 @@ La construcción estática y las tres baterías de navegador pasan. Se comprobar
 La impresión del perfil se exportó y revisó visualmente en A4: dos páginas en español y dos en inglés, sin páginas vacías ni contenido recortado. Los PDF y las capturas son evidencias locales de QA y no forman parte del sitio publicado. Las imágenes sociales y la captura de PBIS se revisaron visualmente; esta última muestra datos sintéticos de demostración.
 
 Fecha de referencia: 16 de noviembre de 2026. La indexación, el posicionamiento y la disponibilidad futura de repositorios externos no se garantizan.
+
+## Micromejoras gráficas del 17 de noviembre
+
+Una revisión posterior preparó [20 prompts acotados](micro-2026-11-17-prompts.json), ejecutados uno a uno por tres subagentes de IA. El [registro de resultados](micro-2026-11-17-results.json) conserva la solución aplicada, los archivos, las comprobaciones y un commit de implementación distinto por prompt. Complementa las tres rondas anteriores.
+
+Los ajustes refinan cabecera, navegación, foco, botones, retratos, etiquetas, diagramas, columnas para empresas, cronología, índice de casos, ampliación de captura, publicaciones, filtros, laboratorio y pie móvil. Se conservan el contenido científico, los datos, las fotografías y los cálculos. La fecha de actualización visual del sitio pasa al 17 de noviembre; la fecha de captura de PBIS permanece en el 16.
+
+El cierre de estas micromejoras pasó la comprobación estática y las tres baterías de navegador existentes. Axe evaluó siete rutas sin infracciones automáticas. Se revisaron también dos páginas A4 por idioma del perfil, sin recortes.

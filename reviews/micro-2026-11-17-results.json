@@ -452,7 +452,7 @@
       ]
     },
     "before_commit": "e782365fd084e0b287065fb09d6da3dd7abc56f7",
-    "commit": null,
+    "commit": "771e398d01d735717b5a1c09d5ed559d0560b68d",
     "implementation": "El pie usa una rejilla móvil con columnas adaptadas al espacio y al tamaño del texto, superficies táctiles de44px y envoltura sin recortes. Se conserva el flujo flexible de escritorio, los destinos y el contenido del pie."
   }
 ]
