@@ -400,7 +400,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Búsqueda sin coincidencias muestra0 artículos y la acción existente de restablecer. Tras limpiar vuelven los12 artículos; texto original y URL funcional conservados. Sin desbordamiento a390px.",
+      "checks": "Búsqueda sin coincidencias muestra 0 artículos y la acción existente de restablecer. Tras limpiar vuelven los 12 artículos; texto original y URL funcional conservados. Sin desbordamiento a 390 px.",
       "visual": "Revisada la respuesta vacía en móvil: medida contenida, borde fino y señal lateral; sin recomendaciones ni controles duplicados.",
       "captures": [
         "qa/micro/18-empty-mobile.png",
@@ -409,7 +409,7 @@
     },
     "before_commit": "f07d9b6f4a0fdd4624ac2fa1c218e59e4f6ea6ab",
     "commit": "6b7b9bc7f6a794caace9e47a499a3466afa09170",
-    "implementation": "El mensaje vacío tiene padding más compacto, límite de60 caracteres de medida, borde suave y una línea lateral verde. El texto y el botón de limpiar existente permanecen sin cambios."
+    "implementation": "El mensaje vacío tiene padding más compacto, medida máxima de 60ch, borde suave y una línea lateral verde. El texto y el botón de limpiar existente permanecen sin cambios."
   },
   {
     "id": 19,
@@ -421,7 +421,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Diferencias3, -3 y0,5 verificadas a1440 y390px: valores, interpretación y dimensiones del gráfico idénticos a la versión previa. Color numérico constante, sin codificar significación.",
+      "checks": "Diferencias 3, -3 y 0,5 verificadas a 1440 y 390 px: valores, interpretación y dimensiones del gráfico idénticos a la versión previa. Color numérico constante, sin codificar significación.",
       "visual": "Revisadas composición desktop y móvil; el separador y espacio distinguen leyenda y lectura numérica sin añadir semántica de éxito.",
       "captures": [
         "qa/micro/19-lab-1440.png",
@@ -429,7 +429,30 @@
       ]
     },
     "before_commit": "6b7b9bc7f6a794caace9e47a499a3466afa09170",
+    "commit": "e782365fd084e0b287065fb09d6da3dd7abc56f7",
+    "implementation": "La lectura numérica comienza tras un separador fino y un espacio de 18 px. La leyenda tiene margen propio y medida controlada; el gráfico, las cifras tabulares, los supuestos y todos los cálculos permanecen intactos."
+  },
+  {
+    "id": 20,
+    "title": "Pie de página ordenado en pantallas pequeñas",
+    "observation": "Los enlaces del pie saltan de línea según su longitud y pueden terminar con un reparto poco equilibrado.",
+    "prompt": "Ordena los enlaces del pie en una rejilla móvil legible y predecible, con espacio táctil suficiente, manteniendo el flujo de escritorio. Permite envolver los textos largos y el texto ampliado sin recortes. Conserva destinos, nombres, información de actualización y créditos.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Geometría y destinos de los cuatro enlaces de escritorio idénticos a la versión previa. En móvil, enlaces de al menos44px y cero desbordamiento a320/390px, también con texto al200%.",
+      "visual": "Revisadas rejilla de dos columnas a390px y una columna a320px o con texto ampliado. Una regla base tardía anulaba inicialmente el mínimo táctil; se consolidó antes de la mediaquery y se volvió a verificar.",
+      "captures": [
+        "qa/micro/20-footer-390-100.png",
+        "qa/micro/20-footer-320-100.png",
+        "qa/micro/20-footer-390-200.png",
+        "qa/micro/20-footer-320-200.png"
+      ]
+    },
+    "before_commit": "e782365fd084e0b287065fb09d6da3dd7abc56f7",
     "commit": null,
-    "implementation": "La lectura numérica comienza tras un separador fino y un espacio de18px. La leyenda tiene margen propio y medida controlada; el gráfico, las cifras tabulares, los supuestos y todos los cálculos permanecen intactos."
+    "implementation": "El pie usa una rejilla móvil con columnas adaptadas al espacio y al tamaño del texto, superficies táctiles de44px y envoltura sin recortes. Se conserva el flujo flexible de escritorio, los destinos y el contenido del pie."
   }
 ]
