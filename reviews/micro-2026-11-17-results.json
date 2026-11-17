@@ -9,7 +9,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Cabecera fija opaca tras scroll450px, altura conservada:79px a1440 y75px a390.",
+      "checks": "Cabecera fija opaca tras scroll de 450 px, altura conservada: 79 px a 1440 px y 75 px a 390 px.",
       "visual": "Capturas de escritorio y móvil revisadas; desaparece la lectura de contenido a través del fondo.",
       "captures": [
         "qa/micro/01-header-1440.png",
@@ -30,7 +30,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Padding y altura uniformes en los siete enlaces; hover sin cambios de ancho ni altura a1440 y390px.",
+      "checks": "Padding y altura uniformes en los siete enlaces; hover sin cambios de ancho ni altura a 1440 y 390 px.",
       "visual": "Indicador activo verde y hover gris azulado diferenciados; separador de idioma y foco conservados.",
       "captures": [
         "qa/micro/02-nav-1440.png",
@@ -51,7 +51,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Botón390px con anchura/altura idénticas abierto y cerrado; Escape cierra, oculta navegación y devuelve foco.",
+      "checks": "Botón a 390 px con anchura/altura idénticas abierto y cerrado; Escape cierra, oculta navegación y devuelve foco.",
       "visual": "Estado abierto con fondo verde pálido, borde verde y texto oscuro revisado; cerrado y foco siguen distinguibles.",
       "captures": [
         "qa/micro/03-menu-closed.png",
@@ -83,7 +83,33 @@
       ]
     },
     "before_commit": "2d58d3d77a2fd8d204a9cc9dccf9090b44c6d982",
-    "commit": null,
+    "commit": "ca6c74f4d043520d8888e5de1140775921db7a4d",
     "implementation": "Hover azul pálido para outline sobre fondos claros y para botones blancos, con borde definido. La variante del hero mantiene su respuesta azul oscura y texto blanco."
+  },
+  {
+    "id": 5,
+    "title": "Foco de botones legible sobre ambos fondos",
+    "observation": "El foco global dorado puede afinarse en los distintos fondos y bordes de los botones.",
+    "prompt": "Refina el foco visible de los botones y controles de menú con una separación clara del borde y contraste verificable sobre blanco, azul y verde. No elimines el outline, no afectes al foco del resto de enlaces ni añadas movimiento. Mantén la adaptación a colores forzados y comprueba navegación con Tab.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Tab alcanza botones de portada, contratación y menú. Foco visible sin movimiento; colores forzados conservan outline del sistema y eliminan la sombra.",
+      "contrast": "Contorno azul/blanco: 15,34:1; separación blanca sobre verde: 5,43:1. En fondos azules se invierten contorno y separación para mantener un anillo blanco claramente separado.",
+      "visual": "Revisadas capturas de foco en botón blanco sobre azul, botón verde, outline claro, menú y colores forzados. La primera prueba visual detectó mezcla del anillo blanco con el botón blanco y se corrigió mediante la variante contextual.",
+      "captures": [
+        "qa/micro/05-hero-light-focus.png",
+        "qa/micro/05-teams-green-focus.png",
+        "qa/micro/05-teams-outline-focus.png",
+        "qa/micro/05-menu-focus.png",
+        "qa/micro/05-forced-colors.png",
+        "qa/micro/05-hero-forced.png"
+      ]
+    },
+    "before_commit": "ca6c74f4d043520d8888e5de1140775921db7a4d",
+    "commit": null,
+    "implementation": "Foco de 3 px separado 4 px del borde, con contorno azul y separación blanca sobre fondos claros. En el hero y bandas oscuras se invierten los tonos; el resto de enlaces conserva su foco y colores forzados usa Highlight sin sombra."
   }
 ]
