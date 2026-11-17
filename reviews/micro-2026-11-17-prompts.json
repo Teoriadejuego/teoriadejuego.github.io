@@ -73,7 +73,7 @@
   },
   {
     "id": 13,
-    "title": "Captura de producto consultable a tamaño completo",
+    "title": "Ampliación de captura más reconocible",
     "observation": "La captura de PBIS ya se puede ampliar, pero la indicación textual está integrada en el pie y su acción puede hacerse más reconocible.",
     "prompt": "Haz más reconocible la ampliación de la captura de PBIS: conserva el enlace existente sobre la imagen y añade una acción textual discreta y explícita en el pie, en español e inglés. Mantén datos sintéticos, procedencia y fecha. No añadas modal ni dependencias; refina el foco visible del enlace de imagen sin cambiar la captura."
   },

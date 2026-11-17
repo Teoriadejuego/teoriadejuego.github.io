@@ -229,7 +229,7 @@
       ]
     },
     "before_commit": "d032f5cce6bb2210fd78f722a95d8f93ed35a331",
-    "commit": null,
+    "commit": "8eb7d911930555603795b33b1429821c329567d0",
     "implementation": "Mejora progresiva con subgrid en escritorio: cada tarjeta comparte nueve filas de tamaño natural, incluido un subgrid para sus tres parejas de evidencia. Se mantienen el DOM, la disposición móvil y el fallback flex existentes, sin alturas fijas ni recortes."
   }
 ]
