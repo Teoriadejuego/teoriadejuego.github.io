@@ -177,7 +177,32 @@
       ]
     },
     "before_commit": "81e46cb8a853b8000781f656805a2a552ec29ff1",
-    "commit": null,
+    "commit": "14f7746518040e16468e17bdbb3d8522d1c787bf",
     "implementation": "Las etiquetas técnicas usan interlineado 1,35 y padding relativo a su fuente, para conservar proporción al ampliar texto. Se mantienen borde, color, wrapping y ausencia de estados de botón."
+  },
+  {
+    "id": 9,
+    "title": "Diagramas de tarjetas proporcionados al móvil",
+    "observation": "Las ilustraciones de tarjeta mantienen 250px de alto también en móvil, aunque el diagrama interior ocupa 175px.",
+    "prompt": "Reduce discretamente la altura y el padding de las zonas visuales de tarjetas solo en móvil para mejorar la proporción entre diagrama y contenido. Garantiza que esquemas, flechas y etiquetas queden completos. Mantén los colores por proyecto y las alturas uniformes dentro de cada breakpoint; no alteres los visuales de cabecera de casos.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Seis visuales completos y uniformes a 230 px con padding de 15 px en 320/390/760 px. Escritorio conserva 250 px y padding de 25 px; cabecera de ARCO y colores sin cambios.",
+      "visual": "Inspeccionados los seis diagramas móviles; flechas, rótulos y nodos completos. ARCO mantiene los casi 200 px que necesita dentro de su panel de 230 px.",
+      "captures": [
+        "qa/micro/09-sonar-390.png",
+        "qa/micro/09-arco-390.png",
+        "qa/micro/09-pbis-390.png",
+        "qa/micro/09-networks-390.png",
+        "qa/micro/09-collective-action-390.png",
+        "qa/micro/09-teenslab-390.png"
+      ]
+    },
+    "before_commit": "14f7746518040e16468e17bdbb3d8522d1c787bf",
+    "commit": null,
+    "implementation": "Hasta 760 px las zonas visuales de tarjetas pasan de 250 a 230 px y de 25 a 15 px de padding. Se consolida la altura de escritorio en la regla base, conservando colores por proyecto y sin tocar visuales de cabecera de casos."
   }
 ]
