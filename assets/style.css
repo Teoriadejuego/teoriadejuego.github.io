@@ -31,7 +31,7 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}.year,.timeline time,.demo-results
 
 .related-case{border-top:1px solid #c9d9e2;padding-top:22px;margin:30px 0;font-size:.95rem}.related-case a{font-weight:600}
 
-.author-details{font-size:.86rem;margin:0 0 15px;color:#455f72}.author-details summary{cursor:pointer;min-height:40px;padding:6px 0;display:list-item}.author-details p{padding:12px 16px;background:#f1f6f8;margin:5px 0;max-width:85ch}
+.author-details{font-size:.86rem;margin:0 0 15px;color:#455f72}.author-details summary{cursor:pointer;min-height:40px;padding:6px 12px;display:list-item;font-weight:600;border-radius:3px}.author-details[open] summary{background:var(--paper);color:var(--ink)}.author-details p{padding:12px 16px;background:#f1f6f8;margin:5px 0;max-width:85ch}
 
 html:not(.js) .lab,html:not(.js) .print-button{display:none}
 

@@ -347,5 +347,26 @@
     "before_commit": "a5a150adda98b2a832d8f624596e7a536b6f6716",
     "commit": "93516556a6843add8010961e83ddd4959c409a0a",
     "implementation": "El primer enlace de cada fila bibliográfica usa peso 600, mientras las acciones auxiliares mantienen peso 400. Se conservan subrayados, orden, etiquetas, destinos y áreas táctiles, sin añadir contenido ni componentes."
+  },
+  {
+    "id": 16,
+    "title": "Autoría desplegada con estado visible",
+    "observation": "La lista de autoría tiene fondo propio pero el control conserva una apariencia casi idéntica abierto y cerrado.",
+    "prompt": "Refina el estado abierto del desplegable de autoría con tipografía o color de fondo discreto en su summary, coordinado con la lista. Conserva el indicador nativo, teclado, orden de autores y dos columnas responsive. Evita que cambien sus dimensiones al abrirse.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Autoría de72 nombres conserva orden. Summary mantiene1089×40px en escritorio y354×40px en móvil al abrir; Enter abre/cierra. Dos columnas a1440px y una a390px.",
+      "visual": "Capturas abiertas revisadas: fondo del control coordinado con la lista, marcador nativo y foco visibles.",
+      "captures": [
+        "qa/micro/16-authors-open-1440.png",
+        "qa/micro/16-authors-open-390.png"
+      ]
+    },
+    "before_commit": "deb497876e2a2eea7078d6460f4713ee37a08344",
+    "commit": null,
+    "implementation": "El control de autoría tiene peso tipográfico estable y espacio interior compartido en ambos estados. Al abrir, adopta el mismo fondo suave de la lista y texto más definido, sin cambiar sus dimensiones."
   }
 ]
