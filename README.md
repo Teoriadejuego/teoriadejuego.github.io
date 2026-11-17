@@ -6,10 +6,24 @@ Web estática bilingüe para GitHub Pages. El contenido y los enlaces principale
 
 ```sh
 python build.py
-python -m http.server 8078 --directory public
+python tools/preview.py --port 8078
 ```
 
-Verificación estática: `python tests/check_static.py`. Para revisar la interacción: instalar Playwright y Chromium (`python -m pip install playwright`, `python -m playwright install chromium`), iniciar el servidor anterior y ejecutar `python tests/browser_check.py`. Opcionalmente, `PLAYWRIGHT_CHROMIUM_EXECUTABLE` permite indicar un Chromium existente y `TEST_BASE_URL` otra URL de prueba. Las capturas se guardan en `qa/`, excluido del repositorio.
+Python 3.12. El build valida los datos, genera un candidato limpio y lo verifica antes de sustituir `public/`. La fecha editorial y las selecciones de portada se editan en `data/site.json`. La reconstrucción no cambia la fecha por sí sola.
+
+```sh
+python -m pip install -r requirements-dev.txt
+python -m playwright install chromium firefox
+python -m unittest discover -s tests -p "test_*.py"
+python build.py
+python tests/check_static.py
+python tools/release.py verify
+python tools/fetch_axe.py
+python tools/check_browser.py --firefox
+python tools/measure.py
+```
+
+Los controles de navegador levantan su propio servidor local. `PLAYWRIGHT_CHROMIUM_EXECUTABLE` permite indicar un Chromium existente. Las pruebas individuales aceptan `TEST_BASE_URL`. Capturas, resultados y axe se guardan en `qa/`, excluido del repositorio y de la distribución pública. Las mediciones locales no representan capacidad del hosting.
 
 Editar `data/publications.json`, `data/projects.json`, `build.py` y `assets/`. `build.py` usa únicamente la biblioteca estándar de Python. El workflow publica exclusivamente `public/`; los documentos privados de trabajo no forman parte del repositorio.
 
@@ -22,11 +36,15 @@ La URL canónica se configura con `SITE_URL` y por defecto es `https://teoriadej
 - Los trabajos seleccionados se destacan por relevancia, alcance y evidencia; no se presenta una clasificación bibliométrica sin verificar.
 - Las descargas de artículos apuntan al repositorio o editor que conserva la versión. No se redistribuyen PDFs editoriales en este repositorio.
 - Los enlaces institucionales pueden tener protección antibots o cambiar. Cada entrada incluye el DOI y una alternativa cuando existe.
-- Fecha de referencia: 16 de noviembre de 2026.
+- Fecha editorial: `data/site.json`; fechas históricas de artículos y capturas conservadas.
 
 ## Publicación y buscadores
 
-El workflow construye y publica en GitHub Pages. Incluye sitemap, robots.txt, URL canónica, hreflang, Open Graph y datos estructurados Person/ProfilePage y ScholarlyArticle. La indexación y el posicionamiento dependen de Google y no se garantizan. Después del despliegue, el propietario puede verificar el dominio en Search Console y enviar `/sitemap.xml`.
+El workflow valida datos, recuperación, enlaces, accesibilidad automatizada y comportamiento en Chromium/Firefox antes de publicar en GitHub Pages. Las pull requests solo validan. Incluye sitemap, robots.txt, URL canónica, hreflang, Open Graph y datos estructurados Person/ProfilePage y ScholarlyArticle. La indexación y el posicionamiento dependen de Google y no se garantizan. Después del despliegue, el propietario puede verificar el dominio en Search Console y enviar `/sitemap.xml`.
+
+`release.json` registra el inventario SHA-256 y la revisión del código cuando el árbol está limpio. Para confirmar los archivos realmente servidos: `python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision SHA_COMPLETO`. Es un registro de consistencia, no una firma criptográfica.
+
+La adaptación del plan de 20 perfiles está en [ADAPTED_PLAN.md](docs/ADAPTED_PLAN.md), sus 400 criterios en [adapted-plan.json](docs/adapted-plan.json) y las instrucciones de edición, validación, publicación y recuperación en [OPERATIONS.md](docs/OPERATIONS.md).
 
 No se modifica el dominio `antonioalfonso.org`: su migración requiere una decisión y acceso DNS independientes.
 

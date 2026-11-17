@@ -4,3 +4,5 @@ public/
 qa/
 *.log
 .env*
+.portfolio-build-*/
+.portfolio-previous-*/

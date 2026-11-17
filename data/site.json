@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "updated": "2026-11-18",
+  "home_projects": ["sonar", "arco", "pbis"],
+  "home_publications": ["private-solutions", "triadic", "teenslab", "honesty"]
+}
