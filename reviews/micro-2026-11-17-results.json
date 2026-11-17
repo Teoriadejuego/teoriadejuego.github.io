@@ -345,7 +345,7 @@
       ]
     },
     "before_commit": "a5a150adda98b2a832d8f624596e7a536b6f6716",
-    "commit": null,
+    "commit": "93516556a6843add8010961e83ddd4959c409a0a",
     "implementation": "El primer enlace de cada fila bibliográfica usa peso 600, mientras las acciones auxiliares mantienen peso 400. Se conservan subrayados, orden, etiquetas, destinos y áreas táctiles, sin añadir contenido ni componentes."
   }
 ]
