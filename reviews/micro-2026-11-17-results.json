@@ -408,7 +408,28 @@
       ]
     },
     "before_commit": "f07d9b6f4a0fdd4624ac2fa1c218e59e4f6ea6ab",
-    "commit": null,
+    "commit": "6b7b9bc7f6a794caace9e47a499a3466afa09170",
     "implementation": "El mensaje vacío tiene padding más compacto, límite de60 caracteres de medida, borde suave y una línea lateral verde. El texto y el botón de limpiar existente permanecen sin cambios."
+  },
+  {
+    "id": 19,
+    "title": "Separación entre leyenda y resultado del laboratorio",
+    "observation": "La leyenda del gráfico y su lectura numérica comparten una zona con jerarquía poco marcada.",
+    "prompt": "Diferencia visualmente el resultado numérico del laboratorio de la leyenda mediante espaciado y un separador sobrio. Conserva cifras tabulares, contraste, todos los supuestos y cálculos. No cambies tamaños del gráfico ni uses color para sugerir éxito estadístico; revisa valores positivos, negativos y cercanos a cero.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Diferencias3, -3 y0,5 verificadas a1440 y390px: valores, interpretación y dimensiones del gráfico idénticos a la versión previa. Color numérico constante, sin codificar significación.",
+      "visual": "Revisadas composición desktop y móvil; el separador y espacio distinguen leyenda y lectura numérica sin añadir semántica de éxito.",
+      "captures": [
+        "qa/micro/19-lab-1440.png",
+        "qa/micro/19-lab-390.png"
+      ]
+    },
+    "before_commit": "6b7b9bc7f6a794caace9e47a499a3466afa09170",
+    "commit": null,
+    "implementation": "La lectura numérica comienza tras un separador fino y un espacio de18px. La leyenda tiene margen propio y medida controlada; el gráfico, las cifras tabulares, los supuestos y todos los cálculos permanecen intactos."
   }
 ]
