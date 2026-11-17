@@ -252,7 +252,28 @@
       ]
     },
     "before_commit": "23fca29200d51b92a31b10add14f6800c87ef68e",
-    "commit": null,
+    "commit": "97f29c2e54034a383d56ab77e9b8d59cb7b3481c",
     "implementation": "Las fechas ganan peso 600, tamaño ligeramente mayor y alineación de primera línea. La cronología conserva columnas a tamaño normal y permite que la descripción pase a la fila siguiente cuando el texto ampliado necesita más espacio, sin cambiar datos ni añadir adornos."
+  },
+  {
+    "id": 12,
+    "title": "Navegación local de casos con respuesta clara",
+    "observation": "El índice lateral tiene enlaces planos y puede diferenciar mejor el área que responde al puntero y al teclado.",
+    "prompt": "Mejora de forma contenida hover y foco del índice local de los casos mediante un fondo suave y alineación uniforme. Respeta la jerarquía respecto a la navegación principal, el mínimo táctil y el formato horizontal móvil. Evita indicar como actual una sección que no se esté siguiendo realmente.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Cuatro enlaces con altura mínima de 40 px, dimensiones estables durante hover, foco visible con Tab y anclas operativas. Escritorio mantiene grid y móvil flex horizontal; no se añade aria-current.",
+      "visual": "Índice revisado en 1440/390 px con foco de teclado y fondo suave. Las capturas incluyen margen exterior para no recortar el outline.",
+      "captures": [
+        "qa/micro/12-case-nav-1440.png",
+        "qa/micro/12-case-nav-390.png"
+      ]
+    },
+    "before_commit": "97f29c2e54034a383d56ab77e9b8d59cb7b3481c",
+    "commit": null,
+    "implementation": "Los enlaces del índice local reciben padding horizontal uniforme, fondo suave al pasar el puntero o enfocarlos y un outline teal con separación. El foco conserva color del sistema en contraste forzado; no cambia el comportamiento ni indica una sección actual ficticia."
   }
 ]
