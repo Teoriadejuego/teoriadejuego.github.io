@@ -320,7 +320,32 @@
       ]
     },
     "before_commit": "7ff83fcb3339911e7b823daed976d96b96458da3",
-    "commit": null,
+    "commit": "a5a150adda98b2a832d8f624596e7a536b6f6716",
     "implementation": "A partir de 761 px, las dos columnas de cada publicación comparten la primera línea de base mediante align-items:first baseline. No se alteran márgenes, contenidos, tamaños ni distribución móvil."
+  },
+  {
+    "id": 15,
+    "title": "Acción de lectura prioritaria en publicaciones",
+    "observation": "El acceso al artículo y la descarga de cita tienen casi el mismo peso visual.",
+    "prompt": "Distingue tipográficamente el primer enlace de lectura o acceso al artículo dentro de cada publicación frente a las acciones bibliográficas auxiliares. Conserva enlaces subrayados, el orden editorial y el área táctil; no añadas tarjetas, iconos o afirmaciones nuevas de acceso abierto.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Doce publicaciones por idioma en 320/390/1440 px: primer enlace DOI con peso 600 y auxiliares con 400; subrayados y altura mínima de 44 px conservados, sin overflow. Hashes del HTML ES/EN idénticos antes y después: orden, destinos y contenidos intactos.",
+      "visual": "Revisadas acciones de artículo abierto y de artículo con repositorio, PDF y cita; la lectura se distingue de las acciones auxiliares con un cambio tipográfico discreto.",
+      "captures": [
+        "qa/micro/15-links-es-320.png",
+        "qa/micro/15-links-es-1440.png",
+        "qa/micro/15-links-en-320.png",
+        "qa/micro/15-links-en-1440.png",
+        "qa/micro/15-publication-es.png",
+        "qa/micro/15-publication-en.png"
+      ]
+    },
+    "before_commit": "a5a150adda98b2a832d8f624596e7a536b6f6716",
+    "commit": null,
+    "implementation": "El primer enlace de cada fila bibliográfica usa peso 600, mientras las acciones auxiliares mantienen peso 400. Se conservan subrayados, orden, etiquetas, destinos y áreas táctiles, sin añadir contenido ni componentes."
   }
 ]
