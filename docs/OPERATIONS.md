@@ -34,7 +34,7 @@ Set `updated` when making an editorial update. Rebuilding alone must not advance
 
 ## Validate and build
 
-Use Python 3.12, matching CI. The production build has no third-party runtime dependencies. Browser QA has development dependencies:
+Use Python 3.12, matching CI. CI selects Ubuntu 24.04 explicitly to avoid changes in the operating-system family behind `ubuntu-latest`; hosted images still receive updates. Browser dependency installation has a five-minute limit, with a twenty-minute validation-job limit. These bounds expose infrastructure failures without bypassing tests. See the [runner image migration guidance](https://github.com/actions/runner-images#latest-migration-process) and [Playwright CI instructions](https://playwright.dev/python/docs/ci). The production build has no third-party runtime dependencies. Browser QA has development dependencies:
 
 ```sh
 python -m pip install -r requirements-dev.txt

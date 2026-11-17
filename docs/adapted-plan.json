@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "candidato enviado a main; CI y verificación remota pendientes",
+  "status": "CI y producción verificadas en 301465d; dos criterios de confirmación automática pendientes del run 44201541791",
   "date": "2026-11-18",
   "base_revision": "32d65db",
   "source_attachment": "Texto pegado.txt (75c6674a-16d7-429a-be50-1c91e0d02db2)",
@@ -32,7 +32,7 @@
     "Carga de 30/60/200 estudiantes y velocidad de exportación → mediciones locales declaradas de bytes, build e interacción; no se infiere capacidad de hosting.",
     "Dashboard de telemetría → logs de comandos/CI y manifiesto, sin seguimiento de visitantes."
   ],
-  "evidence_policy": "Evidencia compartida y acotada, no 400 tests independientes. Unitarias, suite Chromium/Firefox, aislamiento de dos contextos y medición local confirmados. Candidato 301465d en main; CI y confirmación pública permanecen pendientes. Omisiones y límites se conservan.",
+  "evidence_policy": "Evidencia compartida y acotada, no 400 tests independientes. CI Linux y producción confirmadas para 301465d. Solo P09-C15/P14-C11 esperan job confirm automático de 87d4916; no se anticipa su resultado. Omisiones y límites permanecen explícitos.",
   "limits": [
     "Sin entrevistas ni estudio representativo de usuarios.",
     "Sin certificación WCAG.",
@@ -158,9 +158,9 @@
           "source_criterion": "Mostrar la versión vigente.",
           "acceptance": "El manifiesto servido permite identificar el candidato publicado.",
           "evidence_ref": "E-P01",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -194,11 +194,11 @@
           "source_criterion": "Mantener resultados ante fallos.",
           "acceptance": "Un fallo de validación/render preserva la salida anterior y bloquea deploy.",
           "evidence_ref": "E-P01",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
             "E-UNIT",
             "E-CI-SOURCE",
-            "E-CI-PENDING"
+            "E-CI"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -2269,8 +2269,10 @@
           "evidence_ref": "E-P09",
           "status": "pendiente",
           "evidence_obtained": [
+            "E-CI",
+            "E-CI-SOURCE",
             "E-CI-PENDING",
-            "E-CI-SOURCE"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -3488,8 +3490,10 @@
           "evidence_ref": "E-P14",
           "status": "pendiente",
           "evidence_obtained": [
+            "E-CI",
+            "E-CI-SOURCE",
             "E-CI-PENDING",
-            "E-CI-SOURCE"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -3523,9 +3527,9 @@
           "source_criterion": "Ejecutar controles previos al despliegue.",
           "acceptance": "Fallos de contrato, pruebas o verificación bloquean deploy.",
           "evidence_ref": "E-P14",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -3536,9 +3540,9 @@
           "source_criterion": "Impedir despliegues obsoletos.",
           "acceptance": "Versión servida se compara con candidato y discrepancia se informa.",
           "evidence_ref": "E-P14",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -3548,9 +3552,9 @@
           "source_criterion": "Confirmar los resultados servidos.",
           "acceptance": "Manifiesto y bytes servidos se contrastan sin exigir .nojekyll por HTTP.",
           "evidence_ref": "E-P14",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -4316,9 +4320,9 @@
           "source_criterion": "Validar contenido además de HTTP.",
           "acceptance": "Producción comprueba estado HTTP y MIME de recursos críticos.",
           "evidence_ref": "E-P17",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -4454,9 +4458,9 @@
           "source_criterion": "Incorporar pruebas R a CI.",
           "acceptance": "CI ejecuta pruebas de contrato, build y método pertinentes.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4467,9 +4471,9 @@
           "source_criterion": "Incorporar pruebas JavaScript a CI.",
           "acceptance": "CI incluye interacción JavaScript mediante headless.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4480,9 +4484,9 @@
           "source_criterion": "Incorporar pruebas E2E a CI.",
           "acceptance": "E2E cubre filtros, idiomas y laboratorio sin proveedores privados.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4493,9 +4497,9 @@
           "source_criterion": "Escanear artefactos públicos.",
           "acceptance": "Inventario y hashes se verifican antes de upload-pages-artifact.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4530,9 +4534,9 @@
           "source_criterion": "Configurar un coordinador del panel.",
           "acceptance": "Concurrencia de deploy está coordinada y PR no despliega.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4555,9 +4559,9 @@
           "source_criterion": "Mantener despliegues ordenados.",
           "acceptance": "Validación, build, pruebas y verificación preceden a deploy.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4568,9 +4572,9 @@
           "source_criterion": "Verificar versión realmente servida.",
           "acceptance": "Tras publicar se compara manifiesto servido con candidato.",
           "evidence_ref": "E-P18",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -4737,9 +4741,9 @@
           "source_criterion": "Mostrar último intento.",
           "acceptance": "Último intento observado se identifica por CI/informe sin dashboard inventado.",
           "evidence_ref": "E-P19",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-CI-PENDING",
+            "E-CI",
             "E-CI-SOURCE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -4750,9 +4754,9 @@
           "source_criterion": "Mostrar último éxito confirmado.",
           "acceptance": "Último éxito se referencia con logs/manifiesto sin visitantes.",
           "evidence_ref": "E-P19",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -4762,9 +4766,9 @@
           "source_criterion": "Mostrar publicación actualmente servida.",
           "acceptance": "Cierre compara digest esperado y servido.",
           "evidence_ref": "E-P19",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-REMOTE-PENDING"
+            "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
         },
@@ -5183,7 +5187,7 @@
         "qa/round3-results.json",
         "reviews/"
       ],
-      "result": "La línea base documenta 26 páginas, no-JS, foco, responsive y revisiones anteriores. Es evidencia de preservación; falta todavía la suite integral del nuevo candidato."
+      "result": "La línea base documenta 26 páginas, no-JS, foco, responsive y revisiones anteriores. Se conserva como trazabilidad histórica; la regresión actual está en E-BROWSER/E-SUITE y su ejecución Linux en E-CI."
     },
     "E-CONTENT": {
       "type": "implementación inspeccionada",
@@ -5213,9 +5217,9 @@
         "tools/release.py"
       ],
       "command": "python -m unittest discover -s tests -p test_release.py",
-      "result": "37 tests: 32 ejecutados OK y 5 enlaces simbólicos reales omitidos por privilegios Windows. Incluye hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas. Dos pruebas simulan detector linklike; las reales requieren CI Linux.",
+      "result": "37 tests: 32 ejecutados OK y 5 enlaces simbólicos reales omitidos por privilegios Windows. Incluye hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas. Dos pruebas simulan detector linklike; las reales requieren CI Linux. En el run Linux 44200941155 también pasan las pruebas de symlink real que Windows omitía; véase E-CI.",
       "limits": [
-        "No equivale a verificación remota.",
+        "La ejecución local no sustituye verificación remota, ahora registrada por separado en E-REMOTE.",
         "No prueba terminación abrupta del proceso ni atomicidad universal."
       ]
     },
@@ -5261,14 +5265,7 @@
       "paths": [
         ".github/workflows/pages.yml"
       ],
-      "result": "Workflow nuevo implementado e inspeccionado (E-CI-SOURCE), pero falta ejecución GitHub Actions y pruebas reales de symlink en Linux. No se marca CI pasado."
-    },
-    "E-REMOTE-PENDING": {
-      "type": "pendiente",
-      "paths": [
-        "tools/release.py"
-      ],
-      "result": "No se ha confirmado aún despliegue de este candidato ni manifiesto/bytes servidos. La URL pública anterior no demuestra esta entrega."
+      "result": "Solo falta el job confirm automático del run 44201541791 para 87d49162722d045e2be07d0ee5b883fbb0f0d14b. Implementado: checkout del mismo SHA, build reproducible y verify-remote con GITHUB_SHA y seis intentos acotados. Run aún en curso; P09-C15 y P14-C11 siguen pendientes hasta su resultado."
     },
     "E-LIMITS": {
       "type": "límite explícito",
@@ -5296,9 +5293,9 @@
         "tests/test_remote_release.py"
       ],
       "command": "python -m unittest discover -s tests -p \"test_*.py\"",
-      "result": "100 pruebas en 31.145 s: OK, 7 omitidas por permisos Windows para enlaces simbólicos. Se inspeccionó qa/unit-results.txt. Cubre contratos editoriales, builds aislados, fuentes intactas, LF/determinismo, fallos de render/verificación/promoción y hashes. No supone ejecución CI Linux. Incluye 12 casos del verificador remoto con transporte simulado: esquema estricto, revisión e I/O. No hacen peticiones reales ni confirman producción.",
+      "result": "100 pruebas en 31.145 s: OK, 7 omitidas por permisos Windows para enlaces simbólicos. Se inspeccionó qa/unit-results.txt. Cubre contratos editoriales, builds aislados, fuentes intactas, LF/determinismo, fallos de render/verificación/promoción y hashes. No supone ejecución CI Linux. Incluye 12 casos del verificador remoto con transporte simulado: esquema estricto, revisión e I/O. No hacen peticiones reales ni confirman producción. Confirmación Linux CI: las mismas 100 pruebas pasan en 8.530 s con una sola omisión de junction Windows; los enlaces simbólicos reales sí se ejecutan (E-CI).",
       "limits": [
-        "7 pruebas de symlink real pendientes de un host compatible; las guardas simuladas sí se ejecutaron.",
+        "En Windows se omitieron siete pruebas de links; en Linux se ejecutaron symlinks reales y se omitió únicamente junction Windows.",
         "No prueba terminación abrupta del proceso ni atomicidad universal."
       ]
     },
@@ -5326,7 +5323,7 @@
         "tools/check_browser.py",
         "tools/fetch_axe.py"
       ],
-      "result": "Workflow con validate previo a deploy, Python 3.12, dependencias/browsers, axe, unittest, build, static/release y wrapper Firefox; acciones fijadas por SHA. PR no sube artefacto Pages ni despliega; deploy depende de validate y usa permisos separados. Aún sin push ni ejecución remota confirmada."
+      "result": "Workflow inspeccionado: validate previo a deploy, PR excluidas de publicación, acciones por SHA, permisos separados y grupo de concurrencia. Primer run real validado en E-CI. Nuevo job confirm posterior a deploy en 87d49162722d045e2be07d0ee5b883fbb0f0d14b aún pendiente: no se atribuye al primer run."
     },
     "E-SUITE": {
       "type": "suite integral local confirmada",
@@ -5353,6 +5350,32 @@
         "No existe una serie histórica comparable de latencia previa; no se afirma una mejora porcentual.",
         "Duración de build local registrada en E-BUILD; no se aisló un benchmark separado del verificador de hashes."
       ]
+    },
+    "E-CI": {
+      "type": "ejecución CI y despliegue reales confirmados",
+      "paths": [
+        "qa/ci-44200941155-validate.log",
+        ".github/workflows/pages.yml"
+      ],
+      "result": "Run 44200941155 success para 301465dc1483304db00b5247b21c3b261512957c. Linux: 100 pruebas en 8.530 s, OK con una omisión exclusiva de junction Windows; symlinks reales ejecutados. Build 26 páginas en 0.194 s, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Static check, release local y siete suites de navegador pasan; después upload/deploy correctos. Logs inspeccionados.",
+      "source": "[GitHub Actions 44200941155](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44200941155). Resultado de deploy comunicado por coordinador.",
+      "limits": [
+        "Este primer run no incluye todavía el job confirm automático.",
+        "La omisión de junction es específica de plataforma; no se presenta como ejecutada en Linux."
+      ]
+    },
+    "E-REMOTE": {
+      "type": "verificación pública real confirmada",
+      "paths": [
+        "qa/remote-release.json",
+        "tools/release.py"
+      ],
+      "command": "python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision 301465dc1483304db00b5247b21c3b261512957c",
+      "result": "Exit 0 comunicado por coordinador; JSON inspeccionado: source_revision 301465dc1483304db00b5247b21c3b261512957c, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a; 52 archivos con HTTP 200, tamaños, hashes y MIME pertinentes verificados. .nojekyll se comprueba localmente y no se exige por HTTP.",
+      "limits": [
+        "Observación fechada de esta versión servida, no garantía perpetua ni firma criptográfica.",
+        "La confirmación automática del siguiente commit sigue pendiente."
+      ]
     }
   },
   "status_definitions": {
@@ -5366,10 +5389,12 @@
   "status_counts": {
     "documentado": 70,
     "preservado": 83,
-    "verificado": 181,
-    "pendiente": 18,
+    "verificado": 197,
     "cambiado": 39,
-    "limitado": 9
+    "limitado": 9,
+    "pendiente": 2
   },
-  "candidate_revision": "301465dc1483304db00b5247b21c3b261512957c"
+  "candidate_revision": "301465dc1483304db00b5247b21c3b261512957c",
+  "confirmed_revision": "301465dc1483304db00b5247b21c3b261512957c",
+  "pending_automatic_confirmation_revision": "87d49162722d045e2be07d0ee5b883fbb0f0d14b"
 }

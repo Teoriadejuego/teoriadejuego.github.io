@@ -1,17 +1,17 @@
 # Plan adaptado: 20 perfiles y 400 criterios
 
-Fecha de evaluación: 18 de noviembre de 2026. Base de adaptación: `32d65db`; plan aprobado inicialmente en `67b7d0a`. **Candidato `301465d` enviado a main. Pendientes: ejecución CI y confirmación del sitio servido.**
+Fecha de evaluación: 18 de noviembre de 2026. Base de adaptación: `32d65db`; plan aprobado inicialmente en `67b7d0a`. **CI y producción verificadas para `301465d`. Solo dos criterios esperan la confirmación automática de `87d4916` (run 44201541791, en curso).**
 
 El registro canónico es [adapted-plan.json](adapted-plan.json); la implementación sigue [CONTRACTS.md](CONTRACTS.md). Los perfiles son perspectivas de revisión, no personas externas consultadas. La numeración conserva correspondencia con el adjunto. No se afirman 400 defectos, cambios o tests independientes.
 
 ## Estados
 
 - **preservado** (83): Comportamiento o contenido existente conservado, con fuente/resultado de línea base identificado.
-- **verificado** (181): Comprobación concreta ejecutada u observación comunicada y acotada en la evidencia.
+- **verificado** (197): Comprobación concreta ejecutada u observación comunicada y acotada en la evidencia.
 - **cambiado** (39): Implementación inspeccionada; no implica que todas sus pruebas o el despliegue estén cerrados.
 - **documentado** (70): Procedimiento o decisión descritos y revisados; no equivale a su ejecución.
 - **limitado** (9): No se mide o garantiza la pretensión amplia; se declara el alcance posible.
-- **pendiente** (18): Falta una prueba, integración o confirmación requerida.
+- **pendiente** (2): Falta una prueba, integración o confirmación requerida.
 
 ## Alcance y coordinación
 
@@ -65,7 +65,7 @@ Catálogos y atribuciones existentes conservados. Se reutiliza la trazabilidad d
 
 **Referencia:** `qa/browser-results.json`, `qa/round2-results.json`, `qa/round3-results.json`, `reviews/`.
 
-La línea base documenta 26 páginas, no-JS, foco, responsive y revisiones anteriores. Es evidencia de preservación; falta todavía la suite integral del nuevo candidato.
+La línea base documenta 26 páginas, no-JS, foco, responsive y revisiones anteriores. Se conserva como trazabilidad histórica; la regresión actual está en E-BROWSER/E-SUITE y su ejecución Linux en E-CI.
 
 ### E-CONTENT — implementación inspeccionada
 
@@ -85,11 +85,11 @@ Coordinador confirma build con static check integrado y release local: 26 págin
 
 **Referencia:** `tests/test_release.py`, `tools/release.py`.
 
-37 tests: 32 ejecutados OK y 5 enlaces simbólicos reales omitidos por privilegios Windows. Incluye hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas. Dos pruebas simulan detector linklike; las reales requieren CI Linux.
+37 tests: 32 ejecutados OK y 5 enlaces simbólicos reales omitidos por privilegios Windows. Incluye hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas. Dos pruebas simulan detector linklike; las reales requieren CI Linux. En el run Linux 44200941155 también pasan las pruebas de symlink real que Windows omitía; véase E-CI.
 
 **Comando ejecutado:** `python -m unittest discover -s tests -p test_release.py`.
 
-- No equivale a verificación remota.
+- La ejecución local no sustituye verificación remota, ahora registrada por separado en E-REMOTE.
 - No prueba terminación abrupta del proceso ni atomicidad universal.
 
 ### E-SCI — pruebas Chromium y Firefox confirmadas
@@ -120,14 +120,7 @@ Agente confirma capturas ES/EN a 320/1440 y 320 con texto 200%, sin overflow. Re
 
 **Referencia:** `.github/workflows/pages.yml`.
 
-Workflow nuevo implementado e inspeccionado (E-CI-SOURCE), pero falta ejecución GitHub Actions y pruebas reales de symlink en Linux. No se marca CI pasado.
-
-### E-REMOTE-PENDING — pendiente
-
-**Referencia:** `tools/release.py`.
-
-No se ha confirmado aún despliegue de este candidato ni manifiesto/bytes servidos. La URL pública anterior no demuestra esta entrega.
-
+Solo falta el job confirm automático del run 44201541791 para 87d49162722d045e2be07d0ee5b883fbb0f0d14b. Implementado: checkout del mismo SHA, build reproducible y verify-remote con GITHUB_SHA y seis intentos acotados. Run aún en curso; P09-C15 y P14-C11 siguen pendientes hasta su resultado.
 
 ### E-LIMITS — límite explícito
 
@@ -145,11 +138,11 @@ Sin entrevistas ni frecuencia real de usuarios; sin certificación WCAG, garant�
 
 **Referencia:** `qa/unit-results.txt`, `tests/test_content_contract.py`, `tests/test_build.py`, `tests/test_release.py`, `tests/test_remote_release.py`.
 
-100 pruebas en 31.145 s: OK, 7 omitidas por permisos Windows para enlaces simbólicos. Se inspeccionó qa/unit-results.txt. Cubre contratos editoriales, builds aislados, fuentes intactas, LF/determinismo, fallos de render/verificación/promoción y hashes. No supone ejecución CI Linux. Incluye 12 casos del verificador remoto con transporte simulado: esquema estricto, revisión e I/O. No hacen peticiones reales ni confirman producción.
+100 pruebas en 31.145 s: OK, 7 omitidas por permisos Windows para enlaces simbólicos. Se inspeccionó qa/unit-results.txt. Cubre contratos editoriales, builds aislados, fuentes intactas, LF/determinismo, fallos de render/verificación/promoción y hashes. No supone ejecución CI Linux. Incluye 12 casos del verificador remoto con transporte simulado: esquema estricto, revisión e I/O. No hacen peticiones reales ni confirman producción. Confirmación Linux CI: las mismas 100 pruebas pasan en 8.530 s con una sola omisión de junction Windows; los enlaces simbólicos reales sí se ejecutan (E-CI).
 
 **Comando ejecutado:** `python -m unittest discover -s tests -p "test_*.py"`.
 
-- 7 pruebas de symlink real pendientes de un host compatible; las guardas simuladas sí se ejecutaron.
+- En Windows se omitieron siete pruebas de links; en Linux se ejecutaron symlinks reales y se omitió únicamente junction Windows.
 - No prueba terminación abrupta del proceso ni atomicidad universal.
 
 ### E-BROWSER — regresión Chromium del candidato actual confirmada
@@ -165,7 +158,7 @@ Tres suites amplias pasadas y resultados JSON inspeccionados: 26 páginas a 1440
 
 **Referencia:** `.github/workflows/pages.yml`, `requirements-dev.txt`, `tools/check_browser.py`, `tools/fetch_axe.py`.
 
-Workflow con validate previo a deploy, Python 3.12, dependencias/browsers, axe, unittest, build, static/release y wrapper Firefox; acciones fijadas por SHA. PR no sube artefacto Pages ni despliega; deploy depende de validate y usa permisos separados. Aún sin push ni ejecución remota confirmada.
+Workflow inspeccionado: validate previo a deploy, PR excluidas de publicación, acciones por SHA, permisos separados y grupo de concurrencia. Primer run real validado en E-CI. Nuevo job confirm posterior a deploy en 87d49162722d045e2be07d0ee5b883fbb0f0d14b aún pendiente: no se atribuye al primer run.
 
 ### E-SUITE — suite integral local confirmada
 
@@ -188,6 +181,28 @@ Windows 11, Python 3.12.10, Playwright 1.65.2, Chromium 151.0.7922.34; viewport 
 - Conteos estables no prueban ausencia de fugas de heap.
 - No existe una serie histórica comparable de latencia previa; no se afirma una mejora porcentual.
 - Duración de build local registrada en E-BUILD; no se aisló un benchmark separado del verificador de hashes.
+
+### E-CI — ejecución CI y despliegue reales confirmados
+
+**Referencia:** `qa/ci-44200941155-validate.log`, `.github/workflows/pages.yml`.
+
+Run 44200941155 success para 301465dc1483304db00b5247b21c3b261512957c. Linux: 100 pruebas en 8.530 s, OK con una omisión exclusiva de junction Windows; symlinks reales ejecutados. Build 26 páginas en 0.194 s, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Static check, release local y siete suites de navegador pasan; después upload/deploy correctos. Logs inspeccionados.
+
+**Origen del resultado:** [GitHub Actions 44200941155](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44200941155). Resultado de deploy comunicado por coordinador.
+
+- Este primer run no incluye todavía el job confirm automático.
+- La omisión de junction es específica de plataforma; no se presenta como ejecutada en Linux.
+
+### E-REMOTE — verificación pública real confirmada
+
+**Referencia:** `qa/remote-release.json`, `tools/release.py`.
+
+Exit 0 comunicado por coordinador; JSON inspeccionado: source_revision 301465dc1483304db00b5247b21c3b261512957c, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a; 52 archivos con HTTP 200, tamaños, hashes y MIME pertinentes verificados. .nojekyll se comprueba localmente y no se exige por HTTP.
+
+**Comando ejecutado:** `python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision 301465dc1483304db00b5247b21c3b261512957c`.
+
+- Observación fechada de esta versión servida, no garantía perpetua ni firma criptográfica.
+- La confirmación automática del siguiente commit sigue pendiente.
 
 ## P01 — Dirección de producto del portfolio
 
@@ -215,14 +230,14 @@ Oleada: A. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-OPS`.
 8. **P01-C08 · documentado** — Un build local correcto no se comunica como publicación ya disponible.
    Evidencia: `E-OPS`.
-9. **P01-C09 · pendiente** — El manifiesto servido permite identificar el candidato publicado.
-   Evidencia: `E-REMOTE-PENDING`.
+9. **P01-C09 · verificado** — El manifiesto servido permite identificar el candidato publicado.
+   Evidencia: `E-REMOTE`.
 10. **P01-C10 · verificado** — Se conservan 12 artículos y 2 working papers separados, sin cohortes inventadas.
    Evidencia: `E-BUILD`.
 11. **P01-C11 · documentado** — La espera descrita corresponde a CI/Pages, sin temporizador artificial.
    Evidencia: `E-OPS`.
-12. **P01-C12 · pendiente** — Un fallo de validación/render preserva la salida anterior y bloquea deploy.
-   Evidencia: `E-UNIT`, `E-CI-SOURCE`, `E-CI-PENDING`.
+12. **P01-C12 · verificado** — Un fallo de validación/render preserva la salida anterior y bloquea deploy.
+   Evidencia: `E-UNIT`, `E-CI-SOURCE`, `E-CI`.
 13. **P01-C13 · verificado** — Reconstruir el mismo contenido mantiene su digest sin prohibir commits legítimos.
    Evidencia: `E-RELEASE`.
 14. **P01-C14 · preservado** — Demo sintética y evidencia investigadora se diferencian en laboratorio y casos.
@@ -636,7 +651,7 @@ Oleada: B. Contrato: `docs/CONTRACTS.md`.
 14. **P09-C14 · verificado** — Reconstrucción idéntica conserva bytes y digest verificables.
    Evidencia: `E-RELEASE`.
 15. **P09-C15 · pendiente** — CI coordina despliegues y detecta candidato servido obsoleto.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
+   Evidencia: `E-CI`, `E-CI-SOURCE`, `E-CI-PENDING`, `E-REMOTE`.
 16. **P09-C16 · documentado** — El flujo no utiliza force-push ni sobrescritura remota ajena.
    Evidencia: `E-OPS`.
 17. **P09-C17 · verificado** — Reintentar valida candidato completo y no reutiliza salida parcial.
@@ -883,17 +898,17 @@ Oleada: C. Contrato: `docs/CONTRACTS.md`.
 10. **P14-C10 · verificado** — Promoción no toca fuentes ni archivos ajenos a salida/temporales propios.
    Evidencia: `E-RELEASE`.
 11. **P14-C11 · pendiente** — Workflow coordina despliegues y comprueba candidato esperado.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
+   Evidencia: `E-CI`, `E-CI-SOURCE`, `E-CI-PENDING`, `E-REMOTE`.
 12. **P14-C12 · verificado** — Reintento idéntico mantiene digest sin duplicar contenido.
    Evidencia: `E-RELEASE`.
 13. **P14-C13 · verificado** — source_revision es SHA limpio de 40 caracteres o null cuando no atribuible.
    Evidencia: `E-RELEASE`.
-14. **P14-C14 · pendiente** — Fallos de contrato, pruebas o verificación bloquean deploy.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
-15. **P14-C15 · pendiente** — Versión servida se compara con candidato y discrepancia se informa.
-   Evidencia: `E-REMOTE-PENDING`.
-16. **P14-C16 · pendiente** — Manifiesto y bytes servidos se contrastan sin exigir .nojekyll por HTTP.
-   Evidencia: `E-REMOTE-PENDING`.
+14. **P14-C14 · verificado** — Fallos de contrato, pruebas o verificación bloquean deploy.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
+15. **P14-C15 · verificado** — Versión servida se compara con candidato y discrepancia se informa.
+   Evidencia: `E-REMOTE`.
+16. **P14-C16 · verificado** — Manifiesto y bytes servidos se contrastan sin exigir .nojekyll por HTTP.
+   Evidencia: `E-REMOTE`.
 17. **P14-C17 · verificado** — Fallo de validación/render conserva bytes de salida anterior.
    Evidencia: `E-UNIT`.
 18. **P14-C18 · documentado** — Informe distingue preparado, validado, desplegado y confirmado.
@@ -1045,8 +1060,8 @@ Oleada: D. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-ARCH`.
 15. **P17-C15 · limitado** — No se afirma capacidad probada de 30/60/200 clientes.
    Evidencia: `E-LIMITS`.
-16. **P17-C16 · pendiente** — Producción comprueba estado HTTP y MIME de recursos críticos.
-   Evidencia: `E-REMOTE-PENDING`.
+16. **P17-C16 · verificado** — Producción comprueba estado HTTP y MIME de recursos críticos.
+   Evidencia: `E-REMOTE`.
 17. **P17-C17 · preservado** — Build no incluye exportaciones Qualtrics ni adquisición remota.
    Evidencia: `E-ARCH`.
 18. **P17-C18 · limitado** — Se registra duración de build/verificación en el entorno usado.
@@ -1076,26 +1091,26 @@ Oleada: C. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-CI-SOURCE`, `E-ARCH`.
 5. **P18-C05 · preservado** — Se conserva build.py sin añadir Vite o bundler.
    Evidencia: `E-ARCH`.
-6. **P18-C06 · pendiente** — CI ejecuta pruebas de contrato, build y método pertinentes.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
-7. **P18-C07 · pendiente** — CI incluye interacción JavaScript mediante headless.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
-8. **P18-C08 · pendiente** — E2E cubre filtros, idiomas y laboratorio sin proveedores privados.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
-9. **P18-C09 · pendiente** — Inventario y hashes se verifican antes de upload-pages-artifact.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
+6. **P18-C06 · verificado** — CI ejecuta pruebas de contrato, build y método pertinentes.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
+7. **P18-C07 · verificado** — CI incluye interacción JavaScript mediante headless.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
+8. **P18-C08 · verificado** — E2E cubre filtros, idiomas y laboratorio sin proveedores privados.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
+9. **P18-C09 · verificado** — Inventario y hashes se verifican antes de upload-pages-artifact.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
 10. **P18-C10 · verificado** — Tests, docs, reviews y paquetes de desarrollo no se sirven.
    Evidencia: `E-BUILD`.
 11. **P18-C11 · preservado** — No se añaden tokens y workflow conserva permisos mínimos.
    Evidencia: `E-ARCH`.
-12. **P18-C12 · pendiente** — Concurrencia de deploy está coordinada y PR no despliega.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
+12. **P18-C12 · verificado** — Concurrencia de deploy está coordinada y PR no despliega.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
 13. **P18-C13 · verificado** — Checkout nuevo se construye con comandos documentados sin estado oculto.
    Evidencia: `E-UNIT`.
-14. **P18-C14 · pendiente** — Validación, build, pruebas y verificación preceden a deploy.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
-15. **P18-C15 · pendiente** — Tras publicar se compara manifiesto servido con candidato.
-   Evidencia: `E-REMOTE-PENDING`.
+14. **P18-C14 · verificado** — Validación, build, pruebas y verificación preceden a deploy.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
+15. **P18-C15 · verificado** — Tras publicar se compara manifiesto servido con candidato.
+   Evidencia: `E-REMOTE`.
 16. **P18-C16 · documentado** — Rollback público se documenta como reconstrucción/redeploy verificado.
    Evidencia: `E-OPS`.
 17. **P18-C17 · documentado** — Recuperación local de public no se llama rollback de un panel ficticio.
@@ -1131,12 +1146,12 @@ Oleada: C. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-OPS`.
 7. **P19-C07 · documentado** — Falta de confirmación HTTP no se transforma en éxito.
    Evidencia: `E-OPS`.
-8. **P19-C08 · pendiente** — Último intento observado se identifica por CI/informe sin dashboard inventado.
-   Evidencia: `E-CI-PENDING`, `E-CI-SOURCE`.
-9. **P19-C09 · pendiente** — Último éxito se referencia con logs/manifiesto sin visitantes.
-   Evidencia: `E-REMOTE-PENDING`.
-10. **P19-C10 · pendiente** — Cierre compara digest esperado y servido.
-   Evidencia: `E-REMOTE-PENDING`.
+8. **P19-C08 · verificado** — Último intento observado se identifica por CI/informe sin dashboard inventado.
+   Evidencia: `E-CI`, `E-CI-SOURCE`.
+9. **P19-C09 · verificado** — Último éxito se referencia con logs/manifiesto sin visitantes.
+   Evidencia: `E-REMOTE`.
+10. **P19-C10 · verificado** — Cierre compara digest esperado y servido.
+   Evidencia: `E-REMOTE`.
 11. **P19-C11 · verificado** — Verificador identifica archivos ausentes, extra o alterados.
    Evidencia: `E-RELEASE`.
 12. **P19-C12 · verificado** — Contrato incompatible genera diagnóstico y bloquea promoción.
@@ -1211,4 +1226,4 @@ Oleada: E. Contrato: `docs/CONTRACTS.md`.
 
 ## Lectura del resultado
 
-Los estados solo afirman lo indicado en las referencias. Una implementación puede estar cambiada sin tener aún su despliegue confirmado. Usuarios reales, certificación, capacidad, heap y disponibilidad futura de enlaces conservan los límites declarados. No existe una medición histórica comparable de latencia que permita afirmar una mejora porcentual.
+Los estados solo afirman lo indicado en las referencias. La primera versión ya tiene CI y verificación pública; no se atribuye a ella el nuevo job automático aún pendiente. Usuarios reales, certificación, capacidad, heap y disponibilidad futura de enlaces conservan los límites declarados. No existe una serie histórica comparable de latencia para afirmar una mejora porcentual.

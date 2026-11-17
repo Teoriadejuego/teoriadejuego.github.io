@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -21,7 +21,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements-dev.txt
-      - run: python -m playwright install --with-deps chromium firefox
+      - name: Install browser dependencies
+        timeout-minutes: 5
+        run: python -m playwright install --with-deps chromium firefox
       - run: python tools/fetch_axe.py
       - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: python build.py
@@ -35,7 +37,7 @@ jobs:
   deploy:
     needs: validate
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
@@ -49,7 +51,7 @@ jobs:
         id: deployment
   confirm:
     needs: deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
