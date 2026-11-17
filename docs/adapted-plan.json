@@ -1,0 +1,3908 @@
+{
+  "schema_version": 1,
+  "status": "aprobado_para_ejecucion",
+  "date": "2026-11-18",
+  "base_revision": "32d65db",
+  "source_attachment": "Texto pegado.txt (75c6674a-16d7-429a-be50-1c91e0d02db2)",
+  "contract_ref": "docs/CONTRACTS.md",
+  "purpose": "20 perspectivas y 400 aceptaciones observables para el portfolio existente, no 400 defectos ni 400 funciones.",
+  "scope_and_coordination": [
+    "Portfolio estático Python ES/EN: 26 rutas de contenido más 404, 12 artículos, 2 working papers, 6 casos y laboratorio sintético. Se conservan URLs, contacto, fuentes y atribución individual.",
+    "Dos contextos: mantenimiento editorial local y lectura pública. No se crea una aplicación privada.",
+    "Cambios acordados: contrato editorial y `data/site.json`; staging limpio con recuperación; UTF-8/LF; inventario permitido y `release.json` v1; normalización de filtros URL; tabla accesible del laboratorio; gates CI y documentación operativa.",
+    "Fórmula preservada: SE = sqrt(2 SD² / n); IC = delta ± 1.96 SE. Dos grupos independientes, del mismo tamaño y SD; aproximación normal. No calcula potencia ni demuestra causalidad.",
+    "Un escritor por módulo. El coordinador integra `build.py`, HTML compartido, CI y `public/`; fixtures en temporales aislados.",
+    "A: contratos y adaptación (P01–P04, P07–P08). B: módulos coordinados (P05–P06, P09–P13). C: release/CI (P14, P18–P19). D: QA (P15–P17 y revisión P07). E: documentación/publicación (P20, P01, P18).",
+    "Todos los criterios parten **pendientes**. El cierre debe registrar evidencia, revisión, límites y resultados reales; generar este plan no constituye ejecución.",
+    "No se realizan entrevistas, certificación WCAG, garantía de Google, prueba universal de privacidad, garantía de capacidad del hosting ni garantía futura de enlaces externos. El manifiesto acredita consistencia de bytes, no firma ni inmunidad ante un host comprometido. La recuperación no promete intercambio atómico universal de directorios."
+  ],
+  "discarded_or_reinterpreted": [
+    "Inglés exclusivo → ES/EN: se preserva el producto bilingüe autorizado.",
+    "Panel investigador y web estudiantil → edición local y portfolio público; no se crean dos aplicaciones.",
+    "Qualtrics, dos encuestas, DIC/dic_pairs, alternative_2, exportaciones y tokens → catálogos bibliográficos curados y validación offline; esos proveedores/esquemas no existen aquí.",
+    "Login, sesiones, expiración, intentos y reconexión → permisos de GitHub/CI y ausencia de endpoints privados; no hay acciones mutables públicas.",
+    "Cooldown de tres minutos, mutex entre pestañas y botón público de publicar → build coordinado y gates reales de Pages; no se añaden esperas artificiales.",
+    "EndDate, cohortes históricas y selección por última respuesta → fechas editoriales e históricas explícitas; no se procesan respuestas de participantes.",
+    "Seis decisiones binarias, 64 patrones, compasión/envidia, ocho clases y dp_efficiency → fórmula y dominios del laboratorio actual; importar reglas de otro estudio sería incorrecto.",
+    "Supresión menor de cinco y tablas cruzadas → ausencia de microdatos y frontera de publicación; no se afirma implementar una supresión inexistente.",
+    "Doce diapositivas y modo proyección obligatorio → casos y laboratorio explicativo; no se fuerza una presentación nueva.",
+    "Polling de 60 segundos y reemplazo automático del lector → manifiesto operativo sin consultas cliente; se mantiene lectura estable.",
+    "Contrato estudiantil v2/transición v1 → nuevo release.json v1 con rechazo de versiones desconocidas; no se inventa un contrato anterior.",
+    "R, Vite, dos despliegues y Connect Cloud → Python estándar, mejora progresiva y GitHub Pages existentes.",
+    "Carga de 30/60/200 estudiantes y velocidad de exportación → mediciones locales declaradas de bytes, build e interacción; no se infiere capacidad de hosting.",
+    "Dashboard de telemetría → logs de comandos/CI y manifiesto, sin seguimiento de visitantes."
+  ],
+  "evidence_policy": "Cada criterio referencia evidencia común por perfil. En cierre se vincularán pruebas concretas, revisión y resultado real. Una evidencia puede cubrir varios criterios. Todo parte pendiente; el plan no prueba ejecución. Preservar estado demostrado satisface aceptación sin exigir cambios.",
+  "limits": [
+    "Sin entrevistas ni estudio representativo de usuarios.",
+    "Sin certificación WCAG.",
+    "Sin garantía de indexación o ranking Google.",
+    "Sin garantía futura de enlaces externos.",
+    "Sin garantía de capacidad de hosting por mediciones locales.",
+    "Manifiesto de consistencia, no firma criptográfica.",
+    "Allowlist y escaneo no prueban confidencialidad universal.",
+    "Recuperación sin promesa de intercambio atómico universal."
+  ],
+  "profiles": [
+    {
+      "id": "P01",
+      "title": "Dirección de producto del portfolio",
+      "original_title": "Dirección sénior de producto",
+      "wave": "A",
+      "prompt": "Completa los recorridos editorial y público conservando ES/EN, evidencia profesional y acceso abierto; consolida obligaciones compartidas sin multiplicar funciones.",
+      "acceptance": "evaluar sus 20 criterios sobre el candidato común; conservar comportamientos demostrados y declarar cualquier pendiente.",
+      "evidence_id": "E-P01",
+      "evidence_expected": "README, CONTRACTS y recorridos headless portada/equipos/casos/contacto.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P01-C01",
+          "source_index": 1,
+          "source_criterion": "Definir el objetivo del investigador.",
+          "acceptance": "El editor identifica qué fuentes modificar y cómo validar antes de publicar.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C02",
+          "source_index": 2,
+          "source_criterion": "Definir el objetivo del estudiante.",
+          "acceptance": "El visitante encuentra especialización, contribución individual y contacto.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C03",
+          "source_index": 3,
+          "source_criterion": "Delimitar ambas superficies.",
+          "acceptance": "La guía distingue mantenimiento local de lectura pública sin inventar un panel.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C04",
+          "source_index": 4,
+          "source_criterion": "Establecer la navegación privada.",
+          "acceptance": "El recorrido editorial enumera edición, build, pruebas, despliegue y recuperación.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C05",
+          "source_index": 5,
+          "source_criterion": "Establecer la navegación pública.",
+          "acceptance": "Las seis áreas principales siguen accesibles en ES/EN.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C06",
+          "source_index": 6,
+          "source_criterion": "Explicar el último grupo histórico.",
+          "acceptance": "Fechas de artículos y trayectoria se distinguen de actualización editorial.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C07",
+          "source_index": 7,
+          "source_criterion": "Unificar “actualizar” y “publicar”.",
+          "acceptance": "Modificar fuentes y publicar en Pages se describen como etapas diferentes.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C08",
+          "source_index": 8,
+          "source_criterion": "Diferenciar cálculo y disponibilidad pública.",
+          "acceptance": "Un build local correcto no se comunica como publicación ya disponible.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C09",
+          "source_index": 9,
+          "source_criterion": "Mostrar la versión vigente.",
+          "acceptance": "El manifiesto servido permite identificar el candidato publicado.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C10",
+          "source_index": 10,
+          "source_criterion": "Mostrar el intervalo del grupo.",
+          "acceptance": "Se conservan 12 artículos y 2 working papers separados, sin cohortes inventadas.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C11",
+          "source_index": 11,
+          "source_criterion": "Explicar la espera de tres minutos.",
+          "acceptance": "La espera descrita corresponde a CI/Pages, sin temporizador artificial.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C12",
+          "source_index": 12,
+          "source_criterion": "Mantener resultados ante fallos.",
+          "acceptance": "Un fallo de validación/render preserva la salida anterior y bloquea deploy.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C13",
+          "source_index": 13,
+          "source_criterion": "Evitar publicaciones duplicadas.",
+          "acceptance": "Reconstruir el mismo contenido mantiene su digest sin prohibir commits legítimos.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C14",
+          "source_index": 14,
+          "source_criterion": "Separar demostración y resultados reales.",
+          "acceptance": "Demo sintética y evidencia investigadora se diferencian en laboratorio y casos.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C15",
+          "source_index": 15,
+          "source_criterion": "Definir el primer uso sin datos.",
+          "acceptance": "Primera visita y cero coincidencias tienen recorridos comprensibles sin cuenta.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C16",
+          "source_index": 16,
+          "source_criterion": "Definir el regreso del profesor.",
+          "acceptance": "README permite retomar mantenimiento desde un checkout limpio.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C17",
+          "source_index": 17,
+          "source_criterion": "Mantener acceso directo al alumnado.",
+          "acceptance": "Casos, publicaciones con ancla y laboratorio conservan acceso directo.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C18",
+          "source_index": 18,
+          "source_criterion": "Priorizar tareas completas del aula.",
+          "acceptance": "El recorrido equipos→caso→perfil/contacto se completa sin callejones sin salida.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C19",
+          "source_index": 19,
+          "source_criterion": "Consolidar requisitos duplicados entre perfiles.",
+          "acceptance": "Obligaciones duplicadas comparten contratos y evidencia identificada.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P01-C20",
+          "source_index": 20,
+          "source_criterion": "Aceptar mediante escenarios observables.",
+          "acceptance": "El cierre distingue preservado, verificado, cambiado, limitado y pendiente.",
+          "evidence_ref": "E-P01",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Dirección de metodología y rigor científico",
+      "original_title": "Dirección sénior de metodología",
+      "wave": "A",
+      "prompt": "Preserva fórmula, supuestos y atribuciones verificadas; explica límites sin importar clasificaciones científicas del producto ajeno.",
+      "acceptance": "evaluar los 20 criterios con código, fuentes existentes y pruebas independientes; no inventar análisis nuevos.",
+      "evidence_id": "E-P02",
+      "evidence_expected": "app.js, lab_page, datos de casos, SOURCES y oráculo independiente.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P02-C01",
+          "source_index": 1,
+          "source_criterion": "Documentar las seis decisiones originales.",
+          "acceptance": "Se conservan tres controles reales: n, diferencia y SD.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C02",
+          "source_index": 2,
+          "source_criterion": "Verificar el significado de cero y uno.",
+          "acceptance": "Diferencia cero y signos positivo/negativo no se confunden con ausencia de datos.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C03",
+          "source_index": 3,
+          "source_criterion": "Mantener equivalencia entre esquemas.",
+          "acceptance": "El mismo estado produce iguales resultados científicos en ES/EN.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C04",
+          "source_index": 4,
+          "source_criterion": "Explicar los niveles de compasión.",
+          "acceptance": "La explicación trata diferencia y precisión, sin categorías de compasión ajenas.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C05",
+          "source_index": 5,
+          "source_criterion": "Explicar los niveles de envidia.",
+          "acceptance": "SD se identifica como dispersión y no como error estándar por sí sola.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C06",
+          "source_index": 6,
+          "source_criterion": "Conservar las ocho clasificaciones internas.",
+          "acceptance": "Se mantienen tres interpretaciones: positivo, negativo e incluye cero.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C07",
+          "source_index": 7,
+          "source_criterion": "Mantener los cuatro indicadores sociales.",
+          "acceptance": "Estimación, SE y límites se derivan de las mismas entradas.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C08",
+          "source_index": 8,
+          "source_criterion": "Explicar sus solapamientos.",
+          "acceptance": "Gráfico, tabla y texto representan el mismo cálculo, no pruebas independientes.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C09",
+          "source_index": 9,
+          "source_criterion": "Evitar distribuciones falsamente exclusivas.",
+          "acceptance": "La separación estadística no se presenta como utilidad empresarial automática.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C10",
+          "source_index": 10,
+          "source_criterion": "Separar denominadores completos y consistentes.",
+          "acceptance": "n significa observaciones por grupo y ambos grupos tienen igual tamaño.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C11",
+          "source_index": 11,
+          "source_criterion": "Explicar las respuestas inconsistentes.",
+          "acceptance": "URL inválidas no producen NaN ni intervalos fuera de los dominios definidos.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C12",
+          "source_index": 12,
+          "source_criterion": "Documentar exclusiones por calidad.",
+          "acceptance": "La demo no afirma excluir participantes o evaluar datos reales.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C13",
+          "source_index": 13,
+          "source_criterion": "Documentar deduplicación.",
+          "acceptance": "Repetir entradas produce resultados idénticos sin aleatoriedad.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C14",
+          "source_index": 14,
+          "source_criterion": "Separar pertenencia temporal y calidad estadística.",
+          "acceptance": "La fecha editorial no interviene en el cálculo.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C15",
+          "source_index": 15,
+          "source_criterion": "Definir la referencia internacional.",
+          "acceptance": "Las cifras de los casos conservan fuente y contexto de muestra.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C16",
+          "source_index": 16,
+          "source_criterion": "Evitar representatividad nacional injustificada.",
+          "acceptance": "TeensLab no se presenta como muestra nacional representativa ni n universal por tarea.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C17",
+          "source_index": 17,
+          "source_criterion": "Usar diferencias descriptivas.",
+          "acceptance": "Las narraciones distinguen descripción, asociación y conclusión del estudio.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C18",
+          "source_index": 18,
+          "source_criterion": "Evitar afirmaciones causales.",
+          "acceptance": "El laboratorio conserva su advertencia de que no demuestra causalidad.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C19",
+          "source_index": 19,
+          "source_criterion": "Conservar `dp_efficiency` en regresiones.",
+          "acceptance": "Se preservan SE=sqrt(2*SD²/n) e IC=delta±1.96*SE, sin dp_efficiency.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P02-C20",
+          "source_index": 20,
+          "source_criterion": "Versionar cualquier cambio metodológico.",
+          "acceptance": "La guía vincula método, código y revisión; cambios futuros requieren revisión explícita.",
+          "evidence_ref": "E-P02",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Investigación de experiencia de uso",
+      "original_title": "Investigación sénior de experiencia de usuario",
+      "wave": "A",
+      "prompt": "Inspecciona tareas reales del editor y lector; separa observaciones verificadas de hipótesis de usabilidad sin inventar entrevistas.",
+      "acceptance": "registrar resultados de 20 tareas/observaciones y límites del método de inspección.",
+      "evidence_id": "E-P03",
+      "evidence_expected": "recorridos headless, capturas ES/EN, README e informe de tareas.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P03-C01",
+          "source_index": 1,
+          "source_criterion": "Revisar el primer acceso del profesor.",
+          "acceptance": "El primer acceso al repo permite localizar comandos y fuentes editables.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C02",
+          "source_index": 2,
+          "source_criterion": "Revisar el uso repetido.",
+          "acceptance": "Editar y reconstruir no exige pasos manuales ocultos.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C03",
+          "source_index": 3,
+          "source_criterion": "Comprobar comprensión del grupo histórico.",
+          "acceptance": "El perfil distingue trabajos históricos del puesto actual.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C04",
+          "source_index": 4,
+          "source_criterion": "Comprobar comprensión de las dos fechas.",
+          "acceptance": "Se diferencian fecha científica, captura de demo y actualización editorial.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C05",
+          "source_index": 5,
+          "source_criterion": "Evaluar el botón principal.",
+          "acceptance": "Portada y equipos ofrecen siguiente paso hacia evidencia o contacto.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C06",
+          "source_index": 6,
+          "source_criterion": "Evaluar el temporizador de espera.",
+          "acceptance": "La guía explica CI sin hacer esperar al visitante una actualización inexistente.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C07",
+          "source_index": 7,
+          "source_criterion": "Revisar estados de operación.",
+          "acceptance": "Los diagnósticos distinguen validación, build, verificación y despliegue.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C08",
+          "source_index": 8,
+          "source_criterion": "Comprobar identificación de errores recuperables.",
+          "acceptance": "Un campo inválido tiene corrección localizable y preserva salida anterior.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C09",
+          "source_index": 9,
+          "source_criterion": "Evaluar el retorno tras caducidad.",
+          "acceptance": "Volver atrás recupera filtros válidos sin autenticación.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C10",
+          "source_index": 10,
+          "source_criterion": "Revisar comprensión de diagnósticos.",
+          "acceptance": "Errores editoriales identifican ubicación sin exponer valores sensibles.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C11",
+          "source_index": 11,
+          "source_criterion": "Evaluar reconocimiento de datos sintéticos.",
+          "acceptance": "La advertencia sintética precede a la interpretación del laboratorio.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C12",
+          "source_index": 12,
+          "source_criterion": "Comprobar orientación en las diapositivas.",
+          "acceptance": "Los enlaces de laboratorio llevan a demo, código y materiales.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C13",
+          "source_index": 13,
+          "source_criterion": "Evaluar la transición hacia resultados.",
+          "acceptance": "Los casos conducen a repositorio, artículo o demo según su estado real.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C14",
+          "source_index": 14,
+          "source_criterion": "Revisar descubrimiento de filtros.",
+          "acceptance": "Buscar, tema, año y reset tienen etiquetas y estado reconocible.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C15",
+          "source_index": 15,
+          "source_criterion": "Comprobar interpretación de denominadores.",
+          "acceptance": "El lector puede identificar n como tamaño de cada grupo.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C16",
+          "source_index": 16,
+          "source_criterion": "Distinguir cero, ocultación y ausencia.",
+          "acceptance": "Cero coincidencias no se confunde con efecto cero.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C17",
+          "source_index": 17,
+          "source_criterion": "Evaluar cambios automáticos de publicación.",
+          "acceptance": "La página no cambia automáticamente mediante polling ni anuncios ficticios.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C18",
+          "source_index": 18,
+          "source_criterion": "Revisar uso desde móvil.",
+          "acceptance": "A 320 y 390 px se puede navegar, filtrar, leer y contactar sin overflow.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C19",
+          "source_index": 19,
+          "source_criterion": "Priorizar errores por gravedad y frecuencia.",
+          "acceptance": "Hallazgos se priorizan por impacto observado; frecuencia no medida se declara desconocida.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P03-C20",
+          "source_index": 20,
+          "source_criterion": "Entregar evidencia sin inventar entrevistas.",
+          "acceptance": "El informe identifica inspección y automatización, sin atribuir entrevistas inexistentes.",
+          "evidence_ref": "E-P03",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Diseño de interfaces accesibles",
+      "original_title": "Diseño sénior de interfaces accesibles",
+      "wave": "A",
+      "prompt": "Conserva identidad visual y verifica teclado, foco, etiquetas, texto equivalente y adaptación; no presentes la revisión como certificación WCAG.",
+      "acceptance": "documentar los 20 checks y su alcance, preservando las mejoras previas.",
+      "evidence_id": "E-P04",
+      "evidence_expected": "CSS, HTML, teclado headless, capturas y axe cuando esté disponible.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P04-C01",
+          "source_index": 1,
+          "source_criterion": "Definir tipografía legible.",
+          "acceptance": "Texto principal mantiene tamaño y altura de línea legibles en móvil/escritorio.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C02",
+          "source_index": 2,
+          "source_criterion": "Establecer jerarquía de encabezados.",
+          "acceptance": "Cada página tiene un h1 y jerarquía comprensible de secciones.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C03",
+          "source_index": 3,
+          "source_criterion": "Mantener contraste suficiente.",
+          "acceptance": "Contraste de texto, controles y foco se comprueba en el alcance inspeccionado.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C04",
+          "source_index": 4,
+          "source_criterion": "Compartir colores semánticos.",
+          "acceptance": "Colores del laboratorio no implican éxito comercial automático.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C05",
+          "source_index": 5,
+          "source_criterion": "Evitar depender exclusivamente del color.",
+          "acceptance": "Signo e intervalo se expresan con números y texto además de color.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C06",
+          "source_index": 6,
+          "source_criterion": "Añadir navegación por teclado.",
+          "acceptance": "Menú, filtros, detalles y sliders funcionan por teclado.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C07",
+          "source_index": 7,
+          "source_criterion": "Mantener foco visible.",
+          "acceptance": "Foco es perceptible sobre fondos y estados seleccionados.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C08",
+          "source_index": 8,
+          "source_criterion": "Incorporar salto al contenido.",
+          "acceptance": "El salto al contenido lleva a main y evita navegación repetida.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C09",
+          "source_index": 9,
+          "source_criterion": "Gestionar foco tras autenticación.",
+          "acceptance": "Escape cierra menú móvil y devuelve foco al disparador.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C10",
+          "source_index": 10,
+          "source_criterion": "Asociar errores a controles.",
+          "acceptance": "Estados de filtros y fallo de copiar correo se explican junto al control.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C11",
+          "source_index": 11,
+          "source_criterion": "Etiquetar todos los filtros.",
+          "acceptance": "Búsqueda, selectores y sliders tienen nombres accesibles asociados.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C12",
+          "source_index": 12,
+          "source_criterion": "Dar encabezados adecuados a tablas.",
+          "acceptance": "La tabla del laboratorio usa encabezados y semántica nativa.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C13",
+          "source_index": 13,
+          "source_criterion": "Hacer navegable la matriz.",
+          "acceptance": "El detalle de tabla se abre por teclado sin una matriz artificial.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C14",
+          "source_index": 14,
+          "source_criterion": "Ofrecer alternativas textuales a gráficos.",
+          "acceptance": "Título SVG, texto y tabla ofrecen resultados equivalentes.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C15",
+          "source_index": 15,
+          "source_criterion": "Acotar regiones de anuncios accesibles.",
+          "acceptance": "La tabla no crea una segunda región viva duplicada.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C16",
+          "source_index": 16,
+          "source_criterion": "Respetar movimiento reducido.",
+          "acceptance": "Se respeta reduced-motion sin animaciones necesarias para comprender.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C17",
+          "source_index": 17,
+          "source_criterion": "Permitir ampliación sin recortes.",
+          "acceptance": "A 200% de texto y 320 px no se recorta contenido esencial.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C18",
+          "source_index": 18,
+          "source_criterion": "Adaptar objetivos táctiles.",
+          "acceptance": "Objetivos táctiles inspeccionados conservan área y separación utilizables.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C19",
+          "source_index": 19,
+          "source_criterion": "Mantener metadatos visibles en móvil.",
+          "acceptance": "Autoría, versiones y enlaces no se superponen a 320 px.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P04-C20",
+          "source_index": 20,
+          "source_criterion": "Revisar el inglés de toda la interfaz.",
+          "acceptance": "lang y controles corresponden a es/en según ruta.",
+          "evidence_ref": "E-P04",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Diseño de explicación científica y casos",
+      "original_title": "Diseño sénior de diapositivas docentes",
+      "wave": "B",
+      "prompt": "Adapta la intención docente a casos y laboratorio mediante secuencia, evidencia y límites; no fuerces doce diapositivas ni nuevas pantallas.",
+      "acceptance": "revisar 20 propiedades del contenido existente y mejorar solo lo acordado.",
+      "evidence_id": "E-P05",
+      "evidence_expected": "case_page, lab_page, projects.json, lectura y navegación.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P05-C01",
+          "source_index": 1,
+          "source_criterion": "Presentar la pregunta del proyecto.",
+          "acceptance": "Los seis casos presentan el problema antes de herramientas técnicas.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C02",
+          "source_index": 2,
+          "source_criterion": "Explicar el protocolo de la actividad.",
+          "acceptance": "La demo explica qué cambia y qué permanece fijo.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C03",
+          "source_index": 3,
+          "source_criterion": "Introducir decisor y receptor.",
+          "acceptance": "Cada caso distingue el papel individual del trabajo del equipo.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C04",
+          "source_index": 4,
+          "source_criterion": "Mostrar las seis decisiones.",
+          "acceptance": "La explicación utiliza los tres controles reales, no seis decisiones ajenas.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C05",
+          "source_index": 5,
+          "source_criterion": "Desarrollar un ejemplo de asignación.",
+          "acceptance": "n=200, delta=3 y SD=15 forman un ejemplo inicial reproducible.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C06",
+          "source_index": 6,
+          "source_criterion": "Explicar compasión y envidia.",
+          "acceptance": "Se explican incertidumbre y diferencia sin categorías ajenas.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C07",
+          "source_index": 7,
+          "source_criterion": "Presentar los indicadores sociales.",
+          "acceptance": "Los resultados visibles responden a la pregunta del ejemplo.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C08",
+          "source_index": 8,
+          "source_criterion": "Explicar el solapamiento.",
+          "acceptance": "Gráfico, tabla y texto se reconocen como representaciones del mismo cálculo.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C09",
+          "source_index": 9,
+          "source_criterion": "Diferenciar denominadores.",
+          "acceptance": "Etiqueta y supuestos expresan n por grupo.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C10",
+          "source_index": 10,
+          "source_criterion": "Explicar la privacidad.",
+          "acceptance": "Los recursos públicos excluyen documentos administrativos privados.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C11",
+          "source_index": 11,
+          "source_criterion": "Mostrar cómo se forma el grupo.",
+          "acceptance": "Los grupos sintéticos no se presentan como cohorte observada.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C12",
+          "source_index": 12,
+          "source_criterion": "Enseñar a leer comparaciones.",
+          "acceptance": "Cero y dirección del efecto tienen explicación en ES/EN.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C13",
+          "source_index": 13,
+          "source_criterion": "Explicar límites interpretativos.",
+          "acceptance": "Se conservan límites sobre potencia, causalidad y negocio.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C14",
+          "source_index": 14,
+          "source_criterion": "Preparar preguntas de discusión.",
+          "acceptance": "Se puede explorar y restablecer sin enviar datos.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C15",
+          "source_index": 15,
+          "source_criterion": "Separar notas y contenido proyectado.",
+          "acceptance": "Supuestos y tabla se consultan mediante detalles nativos opcionales.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C16",
+          "source_index": 16,
+          "source_criterion": "Incorporar pantalla completa.",
+          "acceptance": "La página sigue usable ampliada sin exigir modo proyección.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C17",
+          "source_index": 17,
+          "source_criterion": "Permitir navegación directa y por teclado.",
+          "acceptance": "Anclas y controles son alcanzables por enlace y teclado.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C18",
+          "source_index": 18,
+          "source_criterion": "Mantener legibilidad a distancia.",
+          "acceptance": "Gráfico, leyenda y resultados se leen en escritorio y móvil.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C19",
+          "source_index": 19,
+          "source_criterion": "Fijar la publicación durante la proyección.",
+          "acceptance": "Una página abierta no cambia de release durante su explicación.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P05-C20",
+          "source_index": 20,
+          "source_criterion": "Facilitar apertura de la web estudiantil.",
+          "acceptance": "La URL sintética reproduce el ejemplo en su idioma.",
+          "evidence_ref": "E-P05",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "Dirección de visualización de datos",
+      "original_title": "Dirección sénior de visualización",
+      "wave": "B",
+      "prompt": "Conserva un intervalo con escala honesta, texto equivalente y tabla sincronizada; no añadas agregados de participantes ni gráficos ajenos.",
+      "acceptance": "contrastar 20 propiedades con los mismos estados numéricos y registrar límites de inspección.",
+      "evidence_id": "E-P06",
+      "evidence_expected": "app.js, CSS, SVG/tabla del laboratorio y fixtures numéricas.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P06-C01",
+          "source_index": 1,
+          "source_criterion": "Compartir escalas porcentuales.",
+          "acceptance": "El eje expresa puntos de diferencia, sin porcentajes injustificados.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C02",
+          "source_index": 2,
+          "source_criterion": "Alinear indicadores entre muestras.",
+          "acceptance": "Punto, segmento, tabla y texto utilizan el mismo n, delta y SD.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C03",
+          "source_index": 3,
+          "source_criterion": "Separar inconsistencia del resto.",
+          "acceptance": "URL inválida se normaliza antes de dibujar sin estado contradictorio.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C04",
+          "source_index": 4,
+          "source_criterion": "Mostrar denominadores pertinentes.",
+          "acceptance": "n aparece identificado como observaciones por grupo.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C05",
+          "source_index": 5,
+          "source_criterion": "Presentar tamaños publicables independientemente.",
+          "acceptance": "n sintético no se presenta como participantes publicados.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C06",
+          "source_index": 6,
+          "source_criterion": "Diferenciar cero y supresión.",
+          "acceptance": "Efecto cero se sitúa en el centro, distinto de ausencia de JavaScript.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C07",
+          "source_index": 7,
+          "source_criterion": "Diferenciar ausencia y error.",
+          "acceptance": "Sin JavaScript se explica la limitación y siguen disponibles los materiales.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C08",
+          "source_index": 8,
+          "source_criterion": "Evitar barras falsas para valores ocultos.",
+          "acceptance": "Los límites extremos permitidos permanecen dentro del gráfico.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C09",
+          "source_index": 9,
+          "source_criterion": "Mantener orden de indicadores.",
+          "acceptance": "La tabla ordena n, diferencia, SD, SE y límites de forma equivalente ES/EN.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C10",
+          "source_index": 10,
+          "source_criterion": "Incorporar diferencias en puntos porcentuales.",
+          "acceptance": "La diferencia se expresa en puntos, no crecimiento porcentual.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C11",
+          "source_index": 11,
+          "source_criterion": "Evitar porcentajes de cambio ambiguos.",
+          "acceptance": "La precisión cerca de cero conserva la dirección del intervalo.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C12",
+          "source_index": 12,
+          "source_criterion": "Etiquetar país y género activos.",
+          "acceptance": "Sliders y outputs reflejan los parámetros seleccionados.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C13",
+          "source_index": 13,
+          "source_criterion": "Distinguir grupo y referencia.",
+          "acceptance": "La demo no se compara con una población de referencia inexistente.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C14",
+          "source_index": 14,
+          "source_criterion": "Numerar niveles de la matriz.",
+          "acceptance": "El cero está centrado en una escala simétrica.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C15",
+          "source_index": 15,
+          "source_criterion": "Explicar dirección de ambos ejes.",
+          "acceptance": "Valores negativos van a izquierda y positivos a derecha.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C16",
+          "source_index": 16,
+          "source_criterion": "Mantener escalas de color comparables.",
+          "acceptance": "Punto y segmento conservan significado entre idiomas y estados.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C17",
+          "source_index": 17,
+          "source_criterion": "Ofrecer tabla equivalente a la matriz.",
+          "acceptance": "Valores tabulados coinciden con cálculo y precisión de los límites textuales.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C18",
+          "source_index": 18,
+          "source_criterion": "Usar observaciones descriptivas deterministas.",
+          "acceptance": "Entradas repetidas producen igual escala y coordenadas.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C19",
+          "source_index": 19,
+          "source_criterion": "Conservar filtros válidos tras actualizar.",
+          "acceptance": "Historial e idioma conservan parámetros válidos sin alterar fórmula.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P06-C20",
+          "source_index": 20,
+          "source_criterion": "Mostrar procedencia y publicación.",
+          "acceptance": "Origen sintético y fórmula permanecen accesibles junto al gráfico.",
+          "evidence_ref": "E-P06",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "Arquitectura de privacidad y seguridad estática",
+      "original_title": "Arquitectura sénior de privacidad y seguridad",
+      "wave": "A",
+      "prompt": "Mantén frontera entre fuentes editoriales y artefacto público mediante validación, escape y lista permitida; no añadas autenticación ni telemetría.",
+      "acceptance": "comprobar 20 propiedades y declarar que escaneo/allowlist no prueban confidencialidad universal.",
+      "evidence_id": "E-P07",
+      "evidence_expected": "contrato editorial, build/release, inventario, pruebas adversas y tráfico público.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P07-C01",
+          "source_index": 1,
+          "source_criterion": "Mantener Qualtrics exclusivamente en servidor.",
+          "acceptance": "Cargar el portfolio no consulta Qualtrics ni adquisición privada.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C02",
+          "source_index": 2,
+          "source_criterion": "Mantener secretos fuera del navegador.",
+          "acceptance": "El artefacto inspeccionado no contiene credenciales ni rutas locales del propietario.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C03",
+          "source_index": 3,
+          "source_criterion": "Autorizar cada operación sensible.",
+          "acceptance": "El visitante no edita ni publica; GitHub conserva permisos operativos.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C04",
+          "source_index": 4,
+          "source_criterion": "Preservar cierre de sesión efectivo.",
+          "acceptance": "No se añaden login/logout ni estados de sesión ficticios.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C05",
+          "source_index": 5,
+          "source_criterion": "Preservar caducidad efectiva.",
+          "acceptance": "Contenido público no depende de tokens o caducidad de aplicación.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C06",
+          "source_index": 6,
+          "source_criterion": "Controlar reconexiones.",
+          "acceptance": "Reabrir una ruta no requiere reconectar una cuenta.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C07",
+          "source_index": 7,
+          "source_criterion": "Mantener límites de intentos.",
+          "acceptance": "Se verifica ausencia de endpoint de autenticación en vez de límites de intentos innecesarios.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C08",
+          "source_index": 8,
+          "source_criterion": "Aislar trabajos entre sesiones.",
+          "acceptance": "Fixtures y candidatos temporales no se distribuyen.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C09",
+          "source_index": 9,
+          "source_criterion": "Limpiar temporales y microdatos.",
+          "acceptance": "Temporales, caches y documentos privados quedan fuera de salida.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C10",
+          "source_index": 10,
+          "source_criterion": "Sanear errores y registros.",
+          "acceptance": "Errores indican ubicación sin reproducir valores sensibles rechazados.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C11",
+          "source_index": 11,
+          "source_criterion": "Aplicar lista permitida al JSON.",
+          "acceptance": "El verificador rechaza archivos extra, symlinks y escapes de ruta.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C12",
+          "source_index": 12,
+          "source_criterion": "Proteger conteos inferiores a cinco.",
+          "acceptance": "No se publican microdatos ni se afirma supresión menor de cinco inexistente.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C13",
+          "source_index": 13,
+          "source_criterion": "Proteger denominadores y complementos.",
+          "acceptance": "Recuentos bibliográficos son públicos y n del laboratorio es sintético.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C14",
+          "source_index": 14,
+          "source_criterion": "Mantener supresión secundaria.",
+          "acceptance": "La tabla del laboratorio no incluye atributos individuales ni cruces identificables.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C15",
+          "source_index": 15,
+          "source_criterion": "Mantener controles entre tablas.",
+          "acceptance": "Filtros consultan metadatos públicos de artículos, no participantes.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C16",
+          "source_index": 16,
+          "source_criterion": "Eliminar números de celdas suprimidas.",
+          "acceptance": "DOM y JSON distribuidos no esconden valores privados tras estilos.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C17",
+          "source_index": 17,
+          "source_criterion": "Auditar diferencias entre publicaciones.",
+          "acceptance": "Diffs de releases contienen archivos públicos, no entradas administrativas.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C18",
+          "source_index": 18,
+          "source_criterion": "Documentar el límite de privacidad longitudinal.",
+          "acceptance": "No se crean identificadores ni historial remoto de visitantes.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C19",
+          "source_index": 19,
+          "source_criterion": "Evitar inserción de HTML no confiable.",
+          "acceptance": "Texto se escapa y URL ejecutables o con credenciales se rechazan.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P07-C20",
+          "source_index": 20,
+          "source_criterion": "Escanear artefactos y tráfico estudiantil.",
+          "acceptance": "La prueba registra tráfico sin conexiones privadas y declara su alcance.",
+          "evidence_ref": "E-P07",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "Arquitectura del portfolio estático",
+      "original_title": "Arquitectura sénior de sistemas",
+      "wave": "A",
+      "prompt": "Mantén Python estándar y HTML progresivo; separa validación, render y publicación sin migrar framework ni introducir servicios.",
+      "acceptance": "verificar 20 límites arquitectónicos, evitando componentes sin necesidad real.",
+      "evidence_id": "E-P08",
+      "evidence_expected": "CONTRACTS, build.py, contrato editorial, app.js y workflow.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P08-C01",
+          "source_index": 1,
+          "source_criterion": "Mantener dos aplicaciones diferenciadas.",
+          "acceptance": "Se documentan edición local y lectura pública como contextos del mismo portfolio.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C02",
+          "source_index": 2,
+          "source_criterion": "Conservar el núcleo estadístico R.",
+          "acceptance": "El núcleo usa Python estándar y no incorpora R.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C03",
+          "source_index": 3,
+          "source_criterion": "Separar lógica y componentes visuales.",
+          "acceptance": "Validación, render e interacción tienen responsabilidades identificables.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C04",
+          "source_index": 4,
+          "source_criterion": "Modularizar el panel privado.",
+          "acceptance": "load_content y validate_content no escriben ni hacen red.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C05",
+          "source_index": 5,
+          "source_criterion": "Modularizar el lector estudiantil.",
+          "acceptance": "HTML contiene contenido y enlaces; JavaScript solo mejora la experiencia.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C06",
+          "source_index": 6,
+          "source_criterion": "Formalizar entradas de las dos encuestas.",
+          "acceptance": "Se mantienen cinco catálogos y se añade site según contrato.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C07",
+          "source_index": 7,
+          "source_criterion": "Formalizar el candidato interno.",
+          "acceptance": "El candidato se renderiza separado de public vigente.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C08",
+          "source_index": 8,
+          "source_criterion": "Formalizar el contrato público v2.",
+          "acceptance": "release.json usa schema_version 1 y campos acordados.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C09",
+          "source_index": 9,
+          "source_criterion": "Mantener la consulta estudiantil estática.",
+          "acceptance": "El navegador no requiere backend ni manifiesto para renderizar.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C10",
+          "source_index": 10,
+          "source_criterion": "Evitar dependencias del panel para alumnos.",
+          "acceptance": "Pages sigue disponible con el ordenador del editor apagado.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C11",
+          "source_index": 11,
+          "source_criterion": "Separar datos y material docente.",
+          "acceptance": "Fuentes de trabajo se distinguen del inventario aprobado de distribución.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C12",
+          "source_index": 12,
+          "source_criterion": "Establecer un coordinador de trabajos.",
+          "acceptance": "Un escritor por módulo y coordinador para build/public evitan conflictos.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C13",
+          "source_index": 13,
+          "source_criterion": "Limitar procesos concurrentes.",
+          "acceptance": "Fixtures usan temporales sin sobrescribir salida compartida.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C14",
+          "source_index": 14,
+          "source_criterion": "Definir comportamiento tras reinicios.",
+          "acceptance": "Un fallo conserva salida previa o informa recuperación concreta.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C15",
+          "source_index": 15,
+          "source_criterion": "Evitar almacenamiento duradero de microdatos.",
+          "acceptance": "No se añade base de datos ni persistencia remota del visitante.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C16",
+          "source_index": 16,
+          "source_criterion": "Reutilizar persistencia de agregados.",
+          "acceptance": "Git/Pages conservan material público sin incorporar expedientes privados.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C17",
+          "source_index": 17,
+          "source_criterion": "Preparar compatibilidad transitoria con v1.",
+          "acceptance": "El contrato admite catálogos actuales y rechaza versión site desconocida.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C18",
+          "source_index": 18,
+          "source_criterion": "Mantener URLs existentes.",
+          "acceptance": "Se mantienen 26 rutas ES/EN y 404.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C19",
+          "source_index": 19,
+          "source_criterion": "Documentar portabilidad del alojamiento.",
+          "acceptance": "El artefacto es estático y SITE_URL configura identidad canónica segura.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P08-C20",
+          "source_index": 20,
+          "source_criterion": "Verificar recuperación integral.",
+          "acceptance": "La recuperación reconstruye y redeploya revisión conocida sin servicios nuevos.",
+          "evidence_ref": "E-P08",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "Ingeniería de construcción fiable",
+      "original_title": "Ingeniería sénior de backend",
+      "wave": "B",
+      "prompt": "Valida antes de escribir, conserva salida anterior y distingue candidato correcto de publicación confirmada; no prometas atomicidad universal.",
+      "acceptance": "verificar 20 estados/invariantes operativos con fixtures aisladas cuando haya mutaciones.",
+      "evidence_id": "E-P09",
+      "evidence_expected": "build/release, pruebas de fallos inyectados, determinismo y logs.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P09-C01",
+          "source_index": 1,
+          "source_criterion": "Definir estados operacionales explícitos.",
+          "acceptance": "Diagnósticos distinguen validación, render, verificación y promoción.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C02",
+          "source_index": 2,
+          "source_criterion": "Crear identificadores opacos de trabajo.",
+          "acceptance": "Trazabilidad usa revisión y digest, sin IDs de visitante o sesión.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C03",
+          "source_index": 3,
+          "source_criterion": "Autorizar el inicio de la operación.",
+          "acceptance": "Solo editor/CI ejecutan publicación; no hay acciones públicas mutables.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C04",
+          "source_index": 4,
+          "source_criterion": "Aplicar cooldown en servidor.",
+          "acceptance": "No se impone cooldown artificial de tres minutos.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C05",
+          "source_index": 5,
+          "source_criterion": "Compartirlo entre pestañas.",
+          "acceptance": "Abrir pestañas no inicia builds ni bloqueos de publicación.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C06",
+          "source_index": 6,
+          "source_criterion": "Aplicar bloqueo global de trabajo.",
+          "acceptance": "El procedimiento asigna un único escritor de public.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C07",
+          "source_index": 7,
+          "source_criterion": "Evitar colas de clics repetidos.",
+          "acceptance": "No se añade botón público de build ni cola de clics.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C08",
+          "source_index": 8,
+          "source_criterion": "Mantener navegación no bloqueante.",
+          "acceptance": "Lectura pública no depende del progreso de construcción local.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C09",
+          "source_index": 9,
+          "source_criterion": "Acotar tiempos de espera.",
+          "acceptance": "Fallos de render/promoción terminan con diagnóstico, sin reintentos ilimitados.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C10",
+          "source_index": 10,
+          "source_criterion": "Sanear errores de proveedores.",
+          "acceptance": "Build offline no falla por caída de repositorio bibliográfico.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C11",
+          "source_index": 11,
+          "source_criterion": "Cancelar trabajos aún no comprometidos.",
+          "acceptance": "Candidato inválido no reemplaza public anterior.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C12",
+          "source_index": 12,
+          "source_criterion": "Reconciliar escrituras ya aceptadas.",
+          "acceptance": "Promoción fallida intenta restauración y comunica copia recuperable si procede.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C13",
+          "source_index": 13,
+          "source_criterion": "Calcular huellas estables de contenido.",
+          "acceptance": "content_digest deriva del inventario canónico, no del reloj.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C14",
+          "source_index": 14,
+          "source_criterion": "Evitar publicaciones idénticas.",
+          "acceptance": "Reconstrucción idéntica conserva bytes y digest verificables.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C15",
+          "source_index": 15,
+          "source_criterion": "Detectar modificaciones concurrentes.",
+          "acceptance": "CI coordina despliegues y detecta candidato servido obsoleto.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C16",
+          "source_index": 16,
+          "source_criterion": "Mantener actualizaciones sin sobrescritura forzada.",
+          "acceptance": "El flujo no utiliza force-push ni sobrescritura remota ajena.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C17",
+          "source_index": 17,
+          "source_criterion": "Limitar reintentos a operaciones seguras.",
+          "acceptance": "Reintentar valida candidato completo y no reutiliza salida parcial.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C18",
+          "source_index": 18,
+          "source_criterion": "Distinguir fallo de resultado desconocido.",
+          "acceptance": "Build local no se declara publicación remota confirmada.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C19",
+          "source_index": 19,
+          "source_criterion": "Recuperar estado al volver a entrar.",
+          "acceptance": "Error indica siguiente paso y salida conservada cuando corresponda.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P09-C20",
+          "source_index": 20,
+          "source_criterion": "Probar transportes simulados.",
+          "acceptance": "Fixtures cubren validación, render y promoción sin tocar producción.",
+          "evidence_ref": "E-P09",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "Curación sénior de fuentes bibliográficas",
+      "original_title": "Especialista sénior en Qualtrics",
+      "wave": "B",
+      "prompt": "Sustituye adquisición Qualtrics por catálogos curados offline; conserva versiones abiertas, DOI y autoría sin prometer acceso perpetuo.",
+      "acceptance": "revisar 20 propiedades de metadatos, fuentes y límites de comprobación externa.",
+      "evidence_id": "E-P10",
+      "evidence_expected": "publications, working-papers, resources, SOURCES y contrato editorial.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P10-C01",
+          "source_index": 1,
+          "source_criterion": "Conservar separados los dos orígenes.",
+          "acceptance": "Artículos, working papers y materiales permanecen diferenciados.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C02",
+          "source_index": 2,
+          "source_criterion": "Validar identificadores privados.",
+          "acceptance": "IDs únicos/seguros y referencias locales resuelven al catálogo correcto.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C03",
+          "source_index": 3,
+          "source_criterion": "Validar el hostname autorizado.",
+          "acceptance": "URL editoriales rechazan esquemas ejecutables y credenciales embebidas.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C04",
+          "source_index": 4,
+          "source_criterion": "Comprobar disponibilidad de credenciales.",
+          "acceptance": "Visita y build no requieren credenciales bibliográficas.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C05",
+          "source_index": 5,
+          "source_criterion": "Solicitar exportación temporal en UTC.",
+          "acceptance": "Año científico no se sustituye por fecha de descarga.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C06",
+          "source_index": 6,
+          "source_criterion": "Preservar códigos numéricos originales.",
+          "acceptance": "Campos numéricos respetan tipos definidos por el contrato.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C07",
+          "source_index": 7,
+          "source_criterion": "Mantener compatibilidad `DIC`.",
+          "acceptance": "Títulos originales se preservan sin importar variables Qualtrics.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C08",
+          "source_index": 8,
+          "source_criterion": "Mantener compatibilidad `dic_pairs`.",
+          "acceptance": "Lista de autores y author_parts conservan orden editorial.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C09",
+          "source_index": 9,
+          "source_criterion": "Resolver columnas alternativas `_2`.",
+          "acceptance": "BibTeX mantiene apellidos compuestos como Alfonso Costillo.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C10",
+          "source_index": 10,
+          "source_criterion": "Detectar cambios de esquema.",
+          "acceptance": "Campos inesperados o incompatibles fallan antes del render.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C11",
+          "source_index": 11,
+          "source_criterion": "Obtener `EndDate` explícitamente.",
+          "acceptance": "site.updated usa fecha ISO válida separada de años bibliográficos.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C12",
+          "source_index": 12,
+          "source_criterion": "No sustituirlo por `RecordedDate`.",
+          "acceptance": "Etiquetas distinguen preprint, manuscrito y versión editorial cuando consta.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C13",
+          "source_index": 13,
+          "source_criterion": "Evitar filtros remotos sobre otra fecha.",
+          "acceptance": "Corpus no excluye artículos por hora de acceso al repositorio.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C14",
+          "source_index": 14,
+          "source_criterion": "Completar ambas exportaciones por intento.",
+          "acceptance": "Cada build valida todos los catálogos requeridos.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C15",
+          "source_index": 15,
+          "source_criterion": "Registrar sus tiempos por separado.",
+          "acceptance": "SOURCES distingue procedencia, publicación y limitaciones de verificación.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C16",
+          "source_index": 16,
+          "source_criterion": "Gestionar límites y fallos transitorios.",
+          "acceptance": "Un destino bloqueado se registra no confirmado, sin borrar automáticamente el artículo.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C17",
+          "source_index": 17,
+          "source_criterion": "Mostrar progreso real de exportación.",
+          "acceptance": "Build offline no finge descargar o verificar PDFs externos.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C18",
+          "source_index": 18,
+          "source_criterion": "Mantener temporales exclusivos.",
+          "acceptance": "No se copian documentos privados ni microdatos al artefacto.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C19",
+          "source_index": 19,
+          "source_criterion": "Limpiar archivos incluso ante errores.",
+          "acceptance": "Archivos temporales de inspección quedan fuera del inventario público.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P10-C20",
+          "source_index": 20,
+          "source_criterion": "Probar con servicios simulados y acceso autorizado.",
+          "acceptance": "Pruebas usan fixtures o verificaciones explícitas, sin llamadas masivas a proveedores.",
+          "evidence_ref": "E-P10",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Ingeniería de datos editoriales",
+      "original_title": "Ingeniería sénior de datos",
+      "wave": "B",
+      "prompt": "Valida tipos, traducciones, referencias y cardinalidades antes de renderizar; deriva recuentos de catálogos públicos sin modificar su significado.",
+      "acceptance": "ejecutar 20 comprobaciones sobre fuentes reales y fixtures inválidas, sin corregir silenciosamente datos.",
+      "evidence_id": "E-P11",
+      "evidence_expected": "content_contract, data/*.json y fixtures de validación.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P11-C01",
+          "source_index": 1,
+          "source_criterion": "Normalizar los dos esquemas.",
+          "acceptance": "Los seis catálogos se cargan bajo sus claves definidas sin reescribir fuentes.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C02",
+          "source_index": 2,
+          "source_criterion": "Preservar tipos de decisión.",
+          "acceptance": "Tipos estrictos no confunden booleanos con enteros de esquema.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C03",
+          "source_index": 3,
+          "source_criterion": "Interpretar fechas exportadas en UTC.",
+          "acceptance": "site.updated rechaza fechas imposibles y formatos no ISO.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C04",
+          "source_index": 4,
+          "source_criterion": "Detectar fechas inválidas.",
+          "acceptance": "Fecha inválida genera diagnóstico localizado, no fecha sustitutiva.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C05",
+          "source_index": 5,
+          "source_criterion": "Deduplicar de forma determinista.",
+          "acceptance": "IDs y destacados duplicados se rechazan sin deduplicación silenciosa.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C06",
+          "source_index": 6,
+          "source_criterion": "Calcular el máximo temporal de clase.",
+          "acceptance": "Actualización visible deriva de site.updated, no del reloj del build.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C07",
+          "source_index": 7,
+          "source_criterion": "Anclar antes del filtrado estadístico.",
+          "acceptance": "Datos inválidos se detectan antes de tocar salida anterior.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C08",
+          "source_index": 8,
+          "source_criterion": "Aplicar límite inferior excluido.",
+          "acceptance": "Lab respeta mínimos n=20, delta=-15 y SD=5.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C09",
+          "source_index": 9,
+          "source_criterion": "Aplicar límite superior incluido.",
+          "acceptance": "Lab respeta máximos n=2000, delta=15 y SD=40.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C10",
+          "source_index": 10,
+          "source_criterion": "Preservar todos los empates válidos.",
+          "acceptance": "Artículos del mismo año no se eliminan como duplicados.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C11",
+          "source_index": 11,
+          "source_criterion": "Aceptar grupos de fechas antiguas.",
+          "acceptance": "Trabajos históricos no desaparecen por ventanas relativas al presente.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C12",
+          "source_index": 12,
+          "source_criterion": "Evitar ventanas dependientes del reloj actual.",
+          "acceptance": "Corpus y destacados dependen de datos explícitos, no del reloj.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C13",
+          "source_index": 13,
+          "source_criterion": "Clasificar únicamente respuestas elegibles.",
+          "acceptance": "IDs de portada resuelven al catálogo correspondiente.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C14",
+          "source_index": 14,
+          "source_criterion": "Conservar diagnósticos de exclusión.",
+          "acceptance": "Errores identifican archivo, registro y campo corregible.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C15",
+          "source_index": 15,
+          "source_criterion": "Mantener denominadores separados.",
+          "acceptance": "Totales de artículos, working papers y casos se derivan de datos.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C16",
+          "source_index": 16,
+          "source_criterion": "Mantener correspondencias geográficas.",
+          "acceptance": "Temas corresponden a categorías reales sin país/género inventados.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C17",
+          "source_index": 17,
+          "source_criterion": "Incorporar toda la referencia válida.",
+          "acceptance": "El corpus de esta entrega conserva 12 artículos y 2 working papers.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C18",
+          "source_index": 18,
+          "source_criterion": "Generar agregados deterministas.",
+          "acceptance": "Orden y serialización producen igual resultado con fuentes idénticas.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C19",
+          "source_index": 19,
+          "source_criterion": "Aplicar supresión sin convertir a cero.",
+          "acceptance": "Campo obligatorio ausente genera error, no cero o texto inventado.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P11-C20",
+          "source_index": 20,
+          "source_criterion": "Detectar cambios semánticos en ambas fuentes.",
+          "acceptance": "Referencias entre casos, artículos y destacados se validan antes de publicar.",
+          "evidence_ref": "E-P11",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Experiencia de mantenimiento editorial",
+      "original_title": "Frontend sénior del panel investigador",
+      "wave": "B",
+      "prompt": "Ofrece un flujo local documentado en vez de panel autenticado; explica entradas, versión y recuperación sin añadir interfaz innecesaria.",
+      "acceptance": "comprobar 20 puntos de operación y documentación contra el comportamiento final.",
+      "evidence_id": "E-P12",
+      "evidence_expected": "README, guía operativa, mensajes de validación/build y CONTRACTS.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P12-C01",
+          "source_index": 1,
+          "source_criterion": "Crear la portada del proyecto.",
+          "acceptance": "README indica propósito y primer comando de construcción.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C02",
+          "source_index": 2,
+          "source_criterion": "Implementar navegación de cinco espacios.",
+          "acceptance": "La guía localiza datos, render, estilos, interacción, pruebas y salida.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C03",
+          "source_index": 3,
+          "source_criterion": "Mostrar publicación vigente.",
+          "acceptance": "Se explica cómo leer revisión y digest del manifiesto.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C04",
+          "source_index": 4,
+          "source_criterion": "Mostrar intervalo del grupo.",
+          "acceptance": "El editor conoce los 12 artículos, 2 working papers y 6 casos de la entrega.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C05",
+          "source_index": 5,
+          "source_criterion": "Mostrar adquisición y publicación separadamente.",
+          "acceptance": "Actualización editorial, año del artículo y despliegue se diferencian.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C06",
+          "source_index": 6,
+          "source_criterion": "Integrar las diapositivas.",
+          "acceptance": "Se documenta dónde editar títulos, roles y enlaces de casos.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C07",
+          "source_index": 7,
+          "source_criterion": "Integrar notas del profesor.",
+          "acceptance": "SOURCES conserva atribuciones y límites sin saturar interfaz pública.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C08",
+          "source_index": 8,
+          "source_criterion": "Implementar “Update and publish”.",
+          "acceptance": "Edición, pruebas, commit y publicación se describen por separado.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C09",
+          "source_index": 9,
+          "source_criterion": "Mostrar espera restante.",
+          "acceptance": "La espera remite al job real de Pages, sin contador ficticio.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C10",
+          "source_index": 10,
+          "source_criterion": "Desactivar acciones incompatibles.",
+          "acceptance": "La guía identifica único escritor y evita public durante promoción concurrente.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C11",
+          "source_index": 11,
+          "source_criterion": "Mostrar etapas reales de progreso.",
+          "acceptance": "Comandos/CI muestran etapas reales y no porcentajes simulados.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C12",
+          "source_index": 12,
+          "source_criterion": "Mostrar ausencia de cambios.",
+          "acceptance": "Digest igual se explica como mismo contenido aunque cambie documentación.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C13",
+          "source_index": 13,
+          "source_criterion": "Explicar fallos recuperables.",
+          "acceptance": "Se explica cómo corregir datos y reintentar sin perder salida anterior.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C14",
+          "source_index": 14,
+          "source_criterion": "Conservar la vista vigente durante procesos.",
+          "acceptance": "La versión desplegada permanece durante edición o build fallido.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C15",
+          "source_index": 15,
+          "source_criterion": "Resumir diagnósticos privados.",
+          "acceptance": "Diagnósticos de desarrollo no se copian al sitio.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C16",
+          "source_index": 16,
+          "source_criterion": "Ofrecer detalle desplegable.",
+          "acceptance": "Esquema y errores se documentan fuera de los recorridos públicos principales.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C17",
+          "source_index": 17,
+          "source_criterion": "Incluir comportamientos y matriz.",
+          "acceptance": "Cambiar el cálculo exige localizar código y pasar pruebas metodológicas.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C18",
+          "source_index": 18,
+          "source_criterion": "Mantener credenciales completamente ocultas.",
+          "acceptance": "Instrucciones no incluyen tokens ni contraseñas reales.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C19",
+          "source_index": 19,
+          "source_criterion": "Recuperar contexto tras reconexión autorizada.",
+          "acceptance": "Retomar mantenimiento incluye comprobar revisión y estado de trabajo.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P12-C20",
+          "source_index": 20,
+          "source_criterion": "Enlazar directamente con la web estudiantil.",
+          "acceptance": "README identifica URL canónica y comando de previsualización.",
+          "evidence_ref": "E-P12",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "Frontend público y mejora progresiva",
+      "original_title": "Frontend sénior de estudiantes",
+      "wave": "B",
+      "prompt": "Preserva HTML útil, normaliza filtros URL y añade equivalencia tabular del laboratorio; sin polling ni datos remotos adicionales.",
+      "acceptance": "comprobar 20 estados del lector en ES/EN con y sin JavaScript.",
+      "evidence_id": "E-P13",
+      "evidence_expected": "app.js, HTML y pruebas de URL/historial/idioma/no-JS.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P13-C01",
+          "source_index": 1,
+          "source_criterion": "Crear módulos de datos y presentación.",
+          "acceptance": "HTML contiene el catálogo sin servicio remoto duplicado.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C02",
+          "source_index": 2,
+          "source_criterion": "Cargar el manifiesto al iniciar.",
+          "acceptance": "Render inicial no depende de release.json ni petición posterior de datos.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C03",
+          "source_index": 3,
+          "source_criterion": "Comprobar novedades cada 60 segundos.",
+          "acceptance": "No se instala polling de 60 segundos ni otro refresco periódico.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C04",
+          "source_index": 4,
+          "source_criterion": "Pausar consultas con pestaña oculta.",
+          "acceptance": "Ocultar pestaña no mantiene tareas de red creadas por el portfolio.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C05",
+          "source_index": 5,
+          "source_criterion": "Comprobar al recuperar visibilidad.",
+          "acceptance": "Volver a pestaña no resetea filtros ni reemplaza página automáticamente.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C06",
+          "source_index": 6,
+          "source_criterion": "Evitar descargas completas innecesarias.",
+          "acceptance": "Filtrar no vuelve a descargar catálogos ni PDFs externos.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C07",
+          "source_index": 7,
+          "source_criterion": "Verificar esquema, identificador y hash.",
+          "acceptance": "Manifiesto se verifica operativamente, no como dependencia del visitante.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C08",
+          "source_index": 8,
+          "source_criterion": "Sustituir la vista de forma conjunta.",
+          "acceptance": "Resultados, contador y URL reflejan el mismo estado aplicado.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C09",
+          "source_index": 9,
+          "source_criterion": "Conservar filtros compatibles.",
+          "acceptance": "topic/year desconocidos se eliminan al cargar y navegar historial.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C10",
+          "source_index": 10,
+          "source_criterion": "Explicar filtros restablecidos.",
+          "acceptance": "Controles normalizados muestran los valores realmente aplicados.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C11",
+          "source_index": 11,
+          "source_criterion": "Mantener resultados ante fallos.",
+          "acceptance": "Página cargada conserva filtros/lab sin servicios privados.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C12",
+          "source_index": 12,
+          "source_criterion": "Mostrar aviso de actualización pendiente.",
+          "acceptance": "La interfaz no anuncia releases pendientes que no observa.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C13",
+          "source_index": 13,
+          "source_criterion": "Mostrar fecha histórica del grupo.",
+          "acceptance": "Años científicos no se reemplazan por fecha del release.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C14",
+          "source_index": 14,
+          "source_criterion": "Distinguirla de la publicación.",
+          "acceptance": "Fecha editorial deriva de site.updated, no de apertura de página.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C15",
+          "source_index": 15,
+          "source_criterion": "Implementar filtros locales.",
+          "acceptance": "Búsqueda, tema y año operan sobre artículos presentes en DOM.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C16",
+          "source_index": 16,
+          "source_criterion": "Integrar gráficos y tabla accesible.",
+          "acceptance": "Tabla se actualiza con gráfico y usa igual precisión de límites.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C17",
+          "source_index": 17,
+          "source_criterion": "Mantener estados vacíos comprensibles.",
+          "acceptance": "Estado vacío ofrece explicación y reset conservando formulario.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C18",
+          "source_index": 18,
+          "source_criterion": "Manejar contratos antiguos explícitamente.",
+          "acceptance": "URL malformadas no ejecutan HTML ni causan errores JavaScript.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C19",
+          "source_index": 19,
+          "source_criterion": "Evitar conexiones a servicios privados.",
+          "acceptance": "Cargar rutas no consulta APIs privadas ni seguimiento inesperado.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P13-C20",
+          "source_index": 20,
+          "source_criterion": "Probar navegación móvil y de escritorio.",
+          "acceptance": "Filtros, navegación, tabla y casos funcionan a 320/390/768/1440 px.",
+          "evidence_ref": "E-P13",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "Arquitectura de publicación verificable",
+      "original_title": "Arquitectura sénior de publicación",
+      "wave": "C",
+      "prompt": "Construye candidato limpio, verifica inventario y hashes, promueve con recuperación; el manifiesto registra consistencia, no firma criptográfica.",
+      "acceptance": "probar 20 invariantes sobre candidatos aislados y confirmar el servido al publicar.",
+      "evidence_id": "E-P14",
+      "evidence_expected": "build/release, manifiesto v1, pruebas de alteración/recuperación y CI.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P14-C01",
+          "source_index": 1,
+          "source_criterion": "Definir el candidato inmutable.",
+          "acceptance": "Render ocurre en temporal nuevo bajo repo, separado de public vigente.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C02",
+          "source_index": 2,
+          "source_criterion": "Identificar su contenido semántico.",
+          "acceptance": "content_digest es SHA-256 del inventario canónico de bytes.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C03",
+          "source_index": 3,
+          "source_criterion": "Excluir metadatos volátiles de esa huella.",
+          "acceptance": "Reloj y revisión no alteran digest de archivos idénticos.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C04",
+          "source_index": 4,
+          "source_criterion": "Validar el contrato v2.",
+          "acceptance": "Manifiesto respeta campos v1 y verificación rechaza esquemas desconocidos.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C05",
+          "source_index": 5,
+          "source_criterion": "Validar privacidad antes de transmitir.",
+          "acceptance": "Allowlist y verificación preceden al upload del artefacto.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C06",
+          "source_index": 6,
+          "source_criterion": "Serializar UTF-8 de forma estable.",
+          "acceptance": "Textos generados usan UTF-8 y LF entre entornos.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C07",
+          "source_index": 7,
+          "source_criterion": "Calcular hash sobre bytes publicados.",
+          "acceptance": "Hash y tamaño se calculan sobre bytes de cada archivo.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C08",
+          "source_index": 8,
+          "source_criterion": "Construir el manifiesto correspondiente.",
+          "acceptance": "Inventario POSIX ordenado excluye release.json y .nojekyll según contrato.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C09",
+          "source_index": 9,
+          "source_criterion": "Comprometer ambos archivos conjuntamente.",
+          "acceptance": "Promoción fallida intenta restauración sin prometer atomicidad universal.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C10",
+          "source_index": 10,
+          "source_criterion": "Preservar el resto del repositorio.",
+          "acceptance": "Promoción no toca fuentes ni archivos ajenos a salida/temporales propios.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C11",
+          "source_index": 11,
+          "source_criterion": "Detectar carreras sobre la rama.",
+          "acceptance": "Workflow coordina despliegues y comprueba candidato esperado.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C12",
+          "source_index": 12,
+          "source_criterion": "Evitar duplicados tras respuestas perdidas.",
+          "acceptance": "Reintento idéntico mantiene digest sin duplicar contenido.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C13",
+          "source_index": 13,
+          "source_criterion": "Vincular commit y publicación.",
+          "acceptance": "source_revision es SHA limpio de 40 caracteres o null cuando no atribuible.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C14",
+          "source_index": 14,
+          "source_criterion": "Ejecutar controles previos al despliegue.",
+          "acceptance": "Fallos de contrato, pruebas o verificación bloquean deploy.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C15",
+          "source_index": 15,
+          "source_criterion": "Impedir despliegues obsoletos.",
+          "acceptance": "Versión servida se compara con candidato y discrepancia se informa.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C16",
+          "source_index": 16,
+          "source_criterion": "Confirmar los resultados servidos.",
+          "acceptance": "Manifiesto y bytes servidos se contrastan sin exigir .nojekyll por HTTP.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C17",
+          "source_index": 17,
+          "source_criterion": "Mantener la última versión correcta.",
+          "acceptance": "Fallo de validación/render conserva bytes de salida anterior.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C18",
+          "source_index": 18,
+          "source_criterion": "Mostrar estados pendientes reales.",
+          "acceptance": "Informe distingue preparado, validado, desplegado y confirmado.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C19",
+          "source_index": 19,
+          "source_criterion": "Recuperar mediante una publicación nueva.",
+          "acceptance": "Guía permite reconstruir y redeployar revisión conocida con pruebas.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P14-C20",
+          "source_index": 20,
+          "source_criterion": "Conservar trazabilidad sin microdatos.",
+          "acceptance": "Manifiesto excluye visitantes, microdatos, credenciales y tiempos individuales.",
+          "evidence_ref": "E-P14",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "QA de métodos y contratos de datos",
+      "original_title": "QA sénior de estadística y regresión",
+      "wave": "D",
+      "prompt": "Protege fórmula, entradas y contratos con expectativas independientes; no implementes el oráculo de 64 patrones de otro estudio.",
+      "acceptance": "documentar 20 checks con fixtures y tolerancias pertinentes, evitando tests que solo repitan implementación.",
+      "evidence_id": "E-P15",
+      "evidence_expected": "expectativas Python independientes, navegador y fixtures temporales.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P15-C01",
+          "source_index": 1,
+          "source_criterion": "Crear oráculo de 64 patrones.",
+          "acceptance": "Oráculo Python independiente cubre estados representativos del laboratorio.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C02",
+          "source_index": 2,
+          "source_criterion": "Verificar cada indicador individualmente.",
+          "acceptance": "Se comparan estimación, SE y límites con tolerancias declaradas.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C03",
+          "source_index": 3,
+          "source_criterion": "Comprobar solapamientos originales.",
+          "acceptance": "Texto, tabla y gráfico coinciden en positivo, negativo e incluye cero.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C04",
+          "source_index": 4,
+          "source_criterion": "Mantener equivalencia de `dp_efficiency`.",
+          "acceptance": "Pruebas fijan sqrt(2*SD²/n) y 1.96 sin regresión ajena.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C05",
+          "source_index": 5,
+          "source_criterion": "Contrastar ambos esquemas de entrada.",
+          "acceptance": "Fixtures cubren los seis tipos de catálogos definidos.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C06",
+          "source_index": 6,
+          "source_criterion": "Probar columnas alternativas.",
+          "acceptance": "Campos desconocidos, tipos erróneos y referencias rotas se rechazan.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C07",
+          "source_index": 7,
+          "source_criterion": "Probar respuestas incompletas.",
+          "acceptance": "Faltan campos/traducciones obligatorios: ContentError localizable.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C08",
+          "source_index": 8,
+          "source_criterion": "Probar respuestas no binarias.",
+          "acceptance": "Tipos numéricos inválidos y booleanos indebidos no pasan validación pertinente.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C09",
+          "source_index": 9,
+          "source_criterion": "Probar duplicados y empates.",
+          "acceptance": "Se prueban IDs/destacados duplicados y autoría inconsistente.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C10",
+          "source_index": 10,
+          "source_criterion": "Probar fechas ausentes e inválidas.",
+          "acceptance": "Fechas imposibles o no ISO fallan antes de construir.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C11",
+          "source_index": 11,
+          "source_criterion": "Probar bases de años anteriores.",
+          "acceptance": "Artículos antiguos permanecen en catálogo y filtros.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C12",
+          "source_index": 12,
+          "source_criterion": "Probar ambos límites temporales.",
+          "acceptance": "Se prueban extremos/pasos de n, delta y SD y URL fuera de dominio.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C13",
+          "source_index": 13,
+          "source_criterion": "Probar ancla anterior a exclusiones.",
+          "acceptance": "Datos inválidos mantienen salida previa intacta en fixture aislada.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C14",
+          "source_index": 14,
+          "source_criterion": "Probar cambios de horario estacional.",
+          "acceptance": "Fecha editorial y digest no dependen de zona horaria o DST.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C15",
+          "source_index": 15,
+          "source_criterion": "Verificar denominadores por filtro.",
+          "acceptance": "Conteos de filtros coinciden con registros públicos esperados.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C16",
+          "source_index": 16,
+          "source_criterion": "Ensayar umbral cinco y sus vecinos.",
+          "acceptance": "Casos cerca de cero verifican signo y precisión de redondeo.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C17",
+          "source_index": 17,
+          "source_criterion": "Ensayar reconstrucción entre tablas.",
+          "acceptance": "Fixtures no contienen participantes reales ni tablas cruzadas inexistentes.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C18",
+          "source_index": 18,
+          "source_criterion": "Comprobar serialización y recuperación.",
+          "acceptance": "UTF-8/LF, inventario, alteración y recuperación se prueban en temporales.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C19",
+          "source_index": 19,
+          "source_criterion": "Verificar cambios solo en referencia.",
+          "acceptance": "Cambio público cambia digest; cambio solo de revisión no lo cambia.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P15-C20",
+          "source_index": 20,
+          "source_criterion": "Verificar estabilidad ante reordenación de filas.",
+          "acceptance": "Se preserva orden editorial de listas y serialización canónica de mapas.",
+          "evidence_ref": "E-P15",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P16",
+      "title": "QA de navegador y accesibilidad",
+      "original_title": "QA sénior de navegador y accesibilidad",
+      "wave": "D",
+      "prompt": "Prueba estados reales del portfolio: filtros, historial, idiomas, laboratorio, teclado, móvil y red; no simules login inexistente.",
+      "acceptance": "registrar 20 comprobaciones del candidato y límites de automatización/accesibilidad.",
+      "evidence_id": "E-P16",
+      "evidence_expected": "tests headless, capturas, tráfico, fixtures y axe opcional.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P16-C01",
+          "source_index": 1,
+          "source_criterion": "Probar inicio y cierre de sesión.",
+          "acceptance": "Rutas públicas abren sin cuenta ni controles de sesión ficticios.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C02",
+          "source_index": 2,
+          "source_criterion": "Probar caducidad de autorización.",
+          "acceptance": "Visita no caduca por autenticación para usar controles locales.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C03",
+          "source_index": 3,
+          "source_criterion": "Probar acceso a acciones protegidas.",
+          "acceptance": "Interfaz y red no permiten lanzar publicación desde la visita.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C04",
+          "source_index": 4,
+          "source_criterion": "Probar actualización automática completa.",
+          "acceptance": "Se verifica portada→equipos→caso→perfil/contacto en ES/EN.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C05",
+          "source_index": 5,
+          "source_criterion": "Probar bloqueo de doble clic.",
+          "acceptance": "Repetir reset/menú no rompe estado ni foco.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C06",
+          "source_index": 6,
+          "source_criterion": "Probar cooldown entre pestañas.",
+          "acceptance": "Dos contextos mantienen URL propia sin bloqueo ni storage compartido.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C07",
+          "source_index": 7,
+          "source_criterion": "Probar fallo durante exportación.",
+          "acceptance": "Bloquear red externa no rompe lectura, filtros ni laboratorio locales.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C08",
+          "source_index": 8,
+          "source_criterion": "Probar fallo durante publicación.",
+          "acceptance": "Build fallido conserva salida anterior sin servir candidato parcial.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C09",
+          "source_index": 9,
+          "source_criterion": "Probar publicación pendiente.",
+          "acceptance": "Informe no llama publicado a un candidato solo local.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C10",
+          "source_index": 10,
+          "source_criterion": "Probar primera carga sin resultados.",
+          "acceptance": "Sin JS se leen 12 artículos, enlaces y advertencia de controles.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C11",
+          "source_index": 11,
+          "source_criterion": "Probar cambio de manifiesto.",
+          "acceptance": "Verificador detecta cambio de digest sin recarga automática del visitante.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C12",
+          "source_index": 12,
+          "source_criterion": "Probar discrepancia entre archivos.",
+          "acceptance": "Fixture con bytes alterados falla verificación antes de deploy.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C13",
+          "source_index": 13,
+          "source_criterion": "Probar contrato desconocido.",
+          "acceptance": "Versión de esquema desconocida falla de forma explícita.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C14",
+          "source_index": 14,
+          "source_criterion": "Contrastar gráficos y tablas.",
+          "acceptance": "Tabla, texto y SVG coinciden con expectativas independientes.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C15",
+          "source_index": 15,
+          "source_criterion": "Probar todas las combinaciones de filtros.",
+          "acceptance": "Se cubren tema/año, búsqueda, vacío, inválidos, historial e idioma.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C16",
+          "source_index": 16,
+          "source_criterion": "Verificar teclado y foco.",
+          "acceptance": "Teclado verifica salto, Escape, filtros, detalles y reset con foco.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C17",
+          "source_index": 17,
+          "source_criterion": "Verificar zoom y tamaños móviles.",
+          "acceptance": "Se inspeccionan 320/390/768/1440 px y texto al 200%.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C18",
+          "source_index": 18,
+          "source_criterion": "Revisar anuncios accesibles.",
+          "acceptance": "Hay una región viva de resultados lab y anuncios de filtros comprensibles.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C19",
+          "source_index": 19,
+          "source_criterion": "Probar inyección de metadatos.",
+          "acceptance": "Fixtures de texto/URL adversos no ejecutan HTML o código.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P16-C20",
+          "source_index": 20,
+          "source_criterion": "Fallar ante solicitudes estudiantiles privadas.",
+          "acceptance": "Tráfico registrado no contiene APIs privadas ni seguimiento inesperado.",
+          "evidence_ref": "E-P16",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P17",
+      "title": "Ingeniería de rendimiento proporcionado",
+      "original_title": "Ingeniería sénior de rendimiento",
+      "wave": "D",
+      "prompt": "Mide costes estáticos en condiciones declaradas y conserva interacción local; evita pruebas masivas o proveedores ajenos al alcance.",
+      "acceptance": "revisar 20 propiedades, diferenciando medición, inspección y aspectos no medidos.",
+      "evidence_id": "E-P17",
+      "evidence_expected": "inventario, mediciones headless/build e informe con condiciones.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P17-C01",
+          "source_index": 1,
+          "source_criterion": "Definir un equipo de referencia.",
+          "acceptance": "Informe identifica navegador, viewport y entorno de medición.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C02",
+          "source_index": 2,
+          "source_criterion": "Definir una red de referencia.",
+          "acceptance": "Se distingue localhost de producción y cualquier limitación de red.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C03",
+          "source_index": 3,
+          "source_criterion": "Medir todos los recursos públicos.",
+          "acceptance": "Se suman bytes públicos y se identifican recursos de mayor peso.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C04",
+          "source_index": 4,
+          "source_criterion": "Medir tamaño del JSON.",
+          "acceptance": "Se registra peso de manifiesto/HTML sin asumir descarga cliente de catálogos.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C05",
+          "source_index": 5,
+          "source_criterion": "Medir tiempo hasta filtros utilizables.",
+          "acceptance": "Se observa disponibilidad de filtros bajo condiciones reproducibles.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C06",
+          "source_index": 6,
+          "source_criterion": "Medir latencia de interacción.",
+          "acceptance": "Filtros/sliders responden sin esperar peticiones de red.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C07",
+          "source_index": 7,
+          "source_criterion": "Medir memoria del navegador.",
+          "acceptance": "Sesión repetida se inspecciona sin afirmar presupuesto universal de memoria.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C08",
+          "source_index": 8,
+          "source_criterion": "Evitar reconstrucciones DOM innecesarias.",
+          "acceptance": "Filtrar trabaja con registros existentes sin reconstruir toda la página.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C09",
+          "source_index": 9,
+          "source_criterion": "Indexar celdas cuando aporte beneficio.",
+          "acceptance": "No se añade indexación compleja para 12 artículos sin justificación medida.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C10",
+          "source_index": 10,
+          "source_criterion": "Reducir recursos visuales pesados.",
+          "acceptance": "Imágenes conservan dimensiones, variantes y carga diferida pertinentes.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C11",
+          "source_index": 11,
+          "source_criterion": "Evitar consultas de pestañas ocultas.",
+          "acceptance": "No hay polling ni trabajo periódico de red en pestaña oculta.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C12",
+          "source_index": 12,
+          "source_criterion": "Evitar descargas repetidas del agregado.",
+          "acceptance": "Interacciones no descargan nuevamente datos o PDFs externos.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C13",
+          "source_index": 13,
+          "source_criterion": "Probar caché fría y caliente.",
+          "acceptance": "Comparaciones distinguen carga fría de caché caliente.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C14",
+          "source_index": 14,
+          "source_criterion": "Probar cambios de publicación simultáneos.",
+          "acceptance": "Build local no bloquea una página pública ya cargada.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C15",
+          "source_index": 15,
+          "source_criterion": "Ensayar 30, 60 y 200 clientes.",
+          "acceptance": "No se afirma capacidad probada de 30/60/200 clientes.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C16",
+          "source_index": 16,
+          "source_criterion": "Validar contenido además de HTTP.",
+          "acceptance": "Producción comprueba estado HTTP y MIME de recursos críticos.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C17",
+          "source_index": 17,
+          "source_criterion": "Medir exportaciones de ambas fuentes.",
+          "acceptance": "Build no incluye exportaciones Qualtrics ni adquisición remota.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C18",
+          "source_index": 18,
+          "source_criterion": "Medir clasificación y supresión.",
+          "acceptance": "Se registra duración de build/verificación en el entorno usado.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C19",
+          "source_index": 19,
+          "source_criterion": "Evitar bloqueo de las diapositivas.",
+          "acceptance": "Tabla y detalles no incorporan librerías gráficas ni red nueva.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P17-C20",
+          "source_index": 20,
+          "source_criterion": "Registrar presupuestos y regresiones.",
+          "acceptance": "Cambios de peso/tiempo se comparan con línea base antes de optimizar.",
+          "evidence_ref": "E-P17",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P18",
+      "title": "Ingeniería DevOps de GitHub Pages",
+      "original_title": "Ingeniería sénior de DevOps",
+      "wave": "C",
+      "prompt": "Ejecuta validación y pruebas antes de Pages, separa PR de deploy y documenta recuperación con hosting existente; sin R/Vite.",
+      "acceptance": "comprobar 20 propiedades del pipeline y declarar comprobaciones remotas pendientes si las hubiera.",
+      "evidence_id": "E-P18",
+      "evidence_expected": "workflow, guía operativa, logs CI y manifiesto servido.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P18-C01",
+          "source_index": 1,
+          "source_criterion": "Separar despliegues privado y público.",
+          "acceptance": "Solo public se sube a Pages, no fuentes privadas.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C02",
+          "source_index": 2,
+          "source_criterion": "Fijar dependencias R.",
+          "acceptance": "CI declara Python 3.12 y build usa biblioteca estándar.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C03",
+          "source_index": 3,
+          "source_criterion": "Fijar dependencias JavaScript.",
+          "acceptance": "Dependencias de QA no se convierten en runtime del sitio.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C04",
+          "source_index": 4,
+          "source_criterion": "Registrar versiones de herramientas.",
+          "acceptance": "Workflow e informe identifican herramientas de pruebas.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C05",
+          "source_index": 5,
+          "source_criterion": "Construir el frontend con Vite.",
+          "acceptance": "Se conserva build.py sin añadir Vite o bundler.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C06",
+          "source_index": 6,
+          "source_criterion": "Incorporar pruebas R a CI.",
+          "acceptance": "CI ejecuta pruebas de contrato, build y método pertinentes.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C07",
+          "source_index": 7,
+          "source_criterion": "Incorporar pruebas JavaScript a CI.",
+          "acceptance": "CI incluye interacción JavaScript mediante headless.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C08",
+          "source_index": 8,
+          "source_criterion": "Incorporar pruebas E2E a CI.",
+          "acceptance": "E2E cubre filtros, idiomas y laboratorio sin proveedores privados.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C09",
+          "source_index": 9,
+          "source_criterion": "Escanear artefactos públicos.",
+          "acceptance": "Inventario y hashes se verifican antes de upload-pages-artifact.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C10",
+          "source_index": 10,
+          "source_criterion": "Mantener paquetes privados restringidos.",
+          "acceptance": "Tests, docs, reviews y paquetes de desarrollo no se sirven.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C11",
+          "source_index": 11,
+          "source_criterion": "Excluir credenciales del repositorio.",
+          "acceptance": "No se añaden tokens y workflow conserva permisos mínimos.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C12",
+          "source_index": 12,
+          "source_criterion": "Configurar un coordinador del panel.",
+          "acceptance": "Concurrencia de deploy está coordinada y PR no despliega.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C13",
+          "source_index": 13,
+          "source_criterion": "Verificar reinicios del servidor.",
+          "acceptance": "Checkout nuevo se construye con comandos documentados sin estado oculto.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C14",
+          "source_index": 14,
+          "source_criterion": "Mantener despliegues ordenados.",
+          "acceptance": "Validación, build, pruebas y verificación preceden a deploy.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C15",
+          "source_index": 15,
+          "source_criterion": "Verificar versión realmente servida.",
+          "acceptance": "Tras publicar se compara manifiesto servido con candidato.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C16",
+          "source_index": 16,
+          "source_criterion": "Preparar reversión del sitio.",
+          "acceptance": "Rollback público se documenta como reconstrucción/redeploy verificado.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C17",
+          "source_index": 17,
+          "source_criterion": "Preparar reversión del panel.",
+          "acceptance": "Recuperación local de public no se llama rollback de un panel ficticio.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C18",
+          "source_index": 18,
+          "source_criterion": "Documentar renovación de secretos.",
+          "acceptance": "Guía remite a permisos GitHub sin copiar credenciales.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C19",
+          "source_index": 19,
+          "source_criterion": "Documentar portabilidad a Connect Cloud.",
+          "acceptance": "Artefacto es portable como archivos estáticos sin Connect Cloud.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P18-C20",
+          "source_index": 20,
+          "source_criterion": "Entregar un procedimiento repetible de operación.",
+          "acceptance": "Operación documenta comandos, entradas y resultados esperados.",
+          "evidence_ref": "E-P18",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P19",
+      "title": "Observabilidad sin seguimiento",
+      "original_title": "Ingeniería sénior de observabilidad",
+      "wave": "C",
+      "prompt": "Diagnostica construcción y releases con revisión/digest y errores claros; no añadas telemetría de visitantes ni un nuevo servicio.",
+      "acceptance": "comprobar 20 señales operativas y su ausencia de datos privados.",
+      "evidence_id": "E-P19",
+      "evidence_expected": "logs de comandos/CI, release.json y guía de diagnóstico.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P19-C01",
+          "source_index": 1,
+          "source_criterion": "Definir códigos operacionales estables.",
+          "acceptance": "Errores distinguen contrato, render, verificación, promoción y comprobación remota.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C02",
+          "source_index": 2,
+          "source_criterion": "Registrar identificador de trabajo.",
+          "acceptance": "Informes usan revisión/candidato, no IDs de visitante.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C03",
+          "source_index": 3,
+          "source_criterion": "Correlacionar trabajo y publicación.",
+          "acceptance": "Resultado de build permite asociar candidato con content_digest.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C04",
+          "source_index": 4,
+          "source_criterion": "Correlacionar publicación y commit.",
+          "acceptance": "source_revision vincula commit limpio o null explicado.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C05",
+          "source_index": 5,
+          "source_criterion": "Medir duración de etapas.",
+          "acceptance": "Tiempos medidos indican etapa/entorno sin telemetría pública.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C06",
+          "source_index": 6,
+          "source_criterion": "Separar error y ausencia de cambios.",
+          "acceptance": "Digest idéntico no se comunica como error o nueva evidencia científica.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C07",
+          "source_index": 7,
+          "source_criterion": "Separar fallo y resultado incierto.",
+          "acceptance": "Falta de confirmación HTTP no se transforma en éxito.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C08",
+          "source_index": 8,
+          "source_criterion": "Mostrar último intento.",
+          "acceptance": "Último intento observado se identifica por CI/informe sin dashboard inventado.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C09",
+          "source_index": 9,
+          "source_criterion": "Mostrar último éxito confirmado.",
+          "acceptance": "Último éxito se referencia con logs/manifiesto sin visitantes.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C10",
+          "source_index": 10,
+          "source_criterion": "Mostrar publicación actualmente servida.",
+          "acceptance": "Cierre compara digest esperado y servido.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C11",
+          "source_index": 11,
+          "source_criterion": "Detectar archivos inconsistentes.",
+          "acceptance": "Verificador identifica archivos ausentes, extra o alterados.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C12",
+          "source_index": 12,
+          "source_criterion": "Detectar contratos incompatibles.",
+          "acceptance": "Contrato incompatible genera diagnóstico y bloquea promoción.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C13",
+          "source_index": 13,
+          "source_criterion": "Señalar credenciales rechazadas sin revelarlas.",
+          "acceptance": "Error de URL no imprime credenciales del valor rechazado.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C14",
+          "source_index": 14,
+          "source_criterion": "Detectar límites de Qualtrics.",
+          "acceptance": "Enlaces no confirmados se registran con fecha/límite sin reintentos masivos.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C15",
+          "source_index": 15,
+          "source_criterion": "Mostrar espera y bloqueo efectivos.",
+          "acceptance": "No se registran cooldowns o sesiones Qualtrics inexistentes.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C16",
+          "source_index": 16,
+          "source_criterion": "Registrar recuperaciones y reversión.",
+          "acceptance": "Fallo de promoción informa restauración o copia recuperable.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C17",
+          "source_index": 17,
+          "source_criterion": "Exportar diagnósticos sanitizados.",
+          "acceptance": "Diagnóstico compartible excluye documentos y valores privados.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C18",
+          "source_index": 18,
+          "source_criterion": "Acotar retención de registros.",
+          "acceptance": "No se almacena telemetría remota y QA queda fuera del sitio.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C19",
+          "source_index": 19,
+          "source_criterion": "Evitar seguimiento individual de estudiantes.",
+          "acceptance": "No se añaden analytics, cookies propias o IDs persistentes.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P19-C20",
+          "source_index": 20,
+          "source_criterion": "Vincular cada error con una recuperación concreta.",
+          "acceptance": "Guía ofrece recuperación para cada clase de fallo implementada.",
+          "evidence_ref": "E-P19",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    },
+    {
+      "id": "P20",
+      "title": "Documentación y reproducibilidad",
+      "original_title": "Documentación sénior y reproducibilidad",
+      "wave": "E",
+      "prompt": "Documenta producto y contratos reales; conserva ES/EN, separa plan de ejecución y entrega evidencias/límites sin promesas no verificadas.",
+      "acceptance": "revisar 20 puntos contra comportamiento final y mantener los pendientes explícitos.",
+      "evidence_id": "E-P20",
+      "evidence_expected": "README, SOURCES, CONTRACTS, guía operativa e informe final.",
+      "contract_ref": "docs/CONTRACTS.md",
+      "criteria": [
+        {
+          "id": "P20-C01",
+          "source_index": 1,
+          "source_criterion": "Explicar la arquitectura de dos productos.",
+          "acceptance": "Arquitectura describe fuentes locales, Python y lector estático, no dos apps nuevas.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C02",
+          "source_index": 2,
+          "source_criterion": "Documentar ambas URLs.",
+          "acceptance": "Se indican URL pública y preview sin inventar panel privado.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C03",
+          "source_index": 3,
+          "source_criterion": "Crear una guía del profesor.",
+          "acceptance": "Guía explica editar datos/destacados/fecha y validar.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C04",
+          "source_index": 4,
+          "source_criterion": "Crear una guía del estudiante.",
+          "acceptance": "Se explica acceder a casos, artículos abiertos, filtros y laboratorio.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C05",
+          "source_index": 5,
+          "source_criterion": "Documentar el último grupo histórico.",
+          "acceptance": "Historia científica se distingue de actualización editorial.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C06",
+          "source_index": 6,
+          "source_criterion": "Incluir ejemplos temporales claros.",
+          "acceptance": "Un ejemplo aclara que reconstruir no vuelve nuevo un artículo antiguo.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C07",
+          "source_index": 7,
+          "source_criterion": "Explicar actualización y espera.",
+          "acceptance": "Actualizar no exige cooldown inexistente de tres minutos.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C08",
+          "source_index": 8,
+          "source_criterion": "Explicar publicación automática.",
+          "acceptance": "Se documenta evento de Pages y gates previos.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C09",
+          "source_index": 9,
+          "source_criterion": "Explicar actualización estudiantil.",
+          "acceptance": "Nuevas versiones aparecen al navegar/recargar, sin polling.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C10",
+          "source_index": 10,
+          "source_criterion": "Documentar las dos fuentes Qualtrics.",
+          "acceptance": "Catálogos institucionales sustituyen dos fuentes Qualtrics ajenas.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C11",
+          "source_index": 11,
+          "source_criterion": "Describir reglas y denominadores.",
+          "acceptance": "Fórmula, supuestos, n por grupo y límites sintéticos están documentados.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C12",
+          "source_index": 12,
+          "source_criterion": "Explicar supresión y sus límites.",
+          "acceptance": "Se explica ausencia de microdatos sin afirmar supresión no implementada.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C13",
+          "source_index": 13,
+          "source_criterion": "Documentar el contrato v2.",
+          "acceptance": "Se documenta manifiesto v1, digest, revisión e inventario/exclusiones.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C14",
+          "source_index": 14,
+          "source_criterion": "Documentar la transición desde v1.",
+          "acceptance": "Se explica rechazo de versiones desconocidas y conservación de rutas.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C15",
+          "source_index": 15,
+          "source_criterion": "Documentar errores habituales.",
+          "acceptance": "Guía cubre JSON, referencias, URL, hash y promoción inválidos.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C16",
+          "source_index": 16,
+          "source_criterion": "Documentar recuperación y reversión.",
+          "acceptance": "Recuperación enumera reconstrucción/redeploy de revisión conocida.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C17",
+          "source_index": 17,
+          "source_criterion": "Explicar renovación de credenciales.",
+          "acceptance": "Se usan permisos existentes sin publicar credenciales.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C18",
+          "source_index": 18,
+          "source_criterion": "Preparar demostración reproducible.",
+          "acceptance": "Valores iniciales y URL permiten reproducir demo ES/EN.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C19",
+          "source_index": 19,
+          "source_criterion": "Registrar versiones metodológicas.",
+          "acceptance": "Método/pruebas se vinculan a revisión Git y límites declarados.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        },
+        {
+          "id": "P20-C20",
+          "source_index": 20,
+          "source_criterion": "Entregar una lista de mantenimiento.",
+          "acceptance": "Checklist distingue 400 aceptaciones de cambios reales y referencia pruebas/pendientes.",
+          "evidence_ref": "E-P20",
+          "status": "pendiente",
+          "evidence_obtained": []
+        }
+      ]
+    }
+  ]
+}
