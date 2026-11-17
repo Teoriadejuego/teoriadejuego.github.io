@@ -358,7 +358,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Autoría de72 nombres conserva orden. Summary mantiene1089×40px en escritorio y354×40px en móvil al abrir; Enter abre/cierra. Dos columnas a1440px y una a390px.",
+      "checks": "Autoría de 72 nombres conserva orden. Summary mantiene 1089×40 px en escritorio y 354×40 px en móvil al abrir; Enter abre/cierra. Dos columnas a 1440 px y una a 390 px.",
       "visual": "Capturas abiertas revisadas: fondo del control coordinado con la lista, marcador nativo y foco visibles.",
       "captures": [
         "qa/micro/16-authors-open-1440.png",
@@ -379,7 +379,7 @@
     ],
     "validation": {
       "build": "26 páginas construidas",
-      "checks": "Tab transfiere el énfasis entre búsqueda, tema y año conservando outline. BuscarPNAS mantiene2 resultados y URL; sin JavaScript siguen disponibles12 artículos.",
+      "checks": "Tab transfiere el énfasis entre búsqueda, tema y año conservando outline. Buscar PNAS mantiene 2 resultados y URL; sin JavaScript siguen disponibles 12 artículos.",
       "visual": "Revisados foco de búsqueda en escritorio y de tema en móvil; etiqueta subrayada en verde y placeholder diferenciado del valor.",
       "captures": [
         "qa/micro/17-filters-1440.png",
@@ -387,7 +387,28 @@
       ]
     },
     "before_commit": "d96d287730aaec6b5c2452722cbccd23895791e0",
-    "commit": null,
+    "commit": "f07d9b6f4a0fdd4624ac2fa1c218e59e4f6ea6ab",
     "implementation": "Focus-within refuerza con verde y subrayado la etiqueta del control activo, sin cambiar su geometría. El placeholder tiene gris explícito y opacidad completa; la lógica de filtros permanece intacta."
+  },
+  {
+    "id": 18,
+    "title": "Estado sin resultados mejor compuesto",
+    "observation": "El estado vacío de publicaciones es un bloque de fondo claro con poco contraste de jerarquía respecto al resto del catálogo.",
+    "prompt": "Afina espaciado, medida de lectura y borde del mensaje sin resultados para reconocerlo como respuesta al filtrado. Mantén su texto existente y la acción de restablecer ya disponible, sin inventar recomendaciones ni duplicar controles. Comprueba búsqueda sin coincidencias y recuperación al restablecer en móvil.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Búsqueda sin coincidencias muestra0 artículos y la acción existente de restablecer. Tras limpiar vuelven los12 artículos; texto original y URL funcional conservados. Sin desbordamiento a390px.",
+      "visual": "Revisada la respuesta vacía en móvil: medida contenida, borde fino y señal lateral; sin recomendaciones ni controles duplicados.",
+      "captures": [
+        "qa/micro/18-empty-mobile.png",
+        "qa/micro/18-recovered-mobile.png"
+      ]
+    },
+    "before_commit": "f07d9b6f4a0fdd4624ac2fa1c218e59e4f6ea6ab",
+    "commit": null,
+    "implementation": "El mensaje vacío tiene padding más compacto, límite de60 caracteres de medida, borde suave y una línea lateral verde. El texto y el botón de limpiar existente permanecen sin cambios."
   }
 ]
