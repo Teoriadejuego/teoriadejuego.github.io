@@ -231,5 +231,28 @@
     "before_commit": "d032f5cce6bb2210fd78f722a95d8f93ed35a331",
     "commit": "8eb7d911930555603795b33b1429821c329567d0",
     "implementation": "Mejora progresiva con subgrid en escritorio: cada tarjeta comparte nueve filas de tamaño natural, incluido un subgrid para sus tres parejas de evidencia. Se mantienen el DOM, la disposición móvil y el fallback flex existentes, sin alturas fijas ni recortes."
+  },
+  {
+    "id": 11,
+    "title": "Fechas de trayectoria más fáciles de recorrer",
+    "observation": "Las fechas de la trayectoria son pequeñas y tienen poco peso frente al texto que organizan.",
+    "prompt": "Refina el peso tipográfico y la alineación de las fechas de la cronología para que sirvan como puntos de orientación visual. Conserva números tabulares, anchuras adaptables y todos los datos. No añadas líneas, iconos ni adornos. Verifica el perfil a 320px, al 200% y en impresión CSS.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Nueve fechas conservadas, cifras tabulares, peso 600 y primera línea alineada. Perfil sin overflow a 320/1440 px; a 200% la descripción pasa debajo de la fecha sin solaparse. Impresión CSS comprobada.",
+      "visual": "Inspeccionadas cronologías de móvil, texto ampliado e impresión. La primera prueba de 200% dejó una columna de texto excesivamente estrecha; se corrigió con flex-wrap y base relativa del contenido.",
+      "captures": [
+        "qa/micro/11-timeline-320.png",
+        "qa/micro/11-timeline-1440.png",
+        "qa/micro/11-timeline-text200.png",
+        "qa/micro/11-timeline-print.png"
+      ]
+    },
+    "before_commit": "23fca29200d51b92a31b10add14f6800c87ef68e",
+    "commit": null,
+    "implementation": "Las fechas ganan peso 600, tamaño ligeramente mayor y alineación de primera línea. La cronología conserva columnas a tamaño normal y permite que la descripción pase a la fila siguiente cuando el texto ampliado necesita más espacio, sin cambiar datos ni añadir adornos."
   }
 ]
