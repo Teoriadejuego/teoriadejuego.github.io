@@ -2,7 +2,7 @@
 
 This guide covers the Spanish/English portfolio at https://teoriadejuego.github.io. It uses a standard-library Python build and static GitHub Pages hosting. There is no private web application, participant database, login, background polling or visitor analytics service.
 
-The implementation contract is [CONTRACTS.md](CONTRACTS.md). The [adapted plan](ADAPTED_PLAN.md) records acceptance criteria, not completed tests. **Integration note:** the commands below are the agreed interfaces; their successful execution must be recorded before the release is declared verified.
+The implementation contract is [CONTRACTS.md](CONTRACTS.md). The [adapted plan](ADAPTED_PLAN.md) records acceptance criteria and their evidence-backed assessment; it is not a claim of 400 independent tests. Record actual command and deployment results when applying this guide to a new release.
 
 ## Edit public content
 
@@ -128,6 +128,8 @@ Verification rejects missing/extra files, tampering, symlinks and path escapes. 
 ## Deploy and confirm
 
 Inspect the diff and working tree, run the release gates, and commit the reviewed source changes. Building from a clean committed tree allows `source_revision` to identify the release. Push the intended commit to `main` using the existing GitHub account; the Pages workflow builds and checks before deployment. A pull-request check must not deploy. The workflow also supports its configured manual dispatch.
+
+The `validate` job checks the candidate before uploading only `public/`. The `deploy` job requires successful validation and is restricted to `main` outside pull requests. Workflow concurrency serialises runs for the same ref. The final `confirm` job rebuilds the expected output from the same clean commit, then compares its manifest, revision and all served bytes with production. It allows six bounded attempts separated by ten seconds for propagation. A failed confirmation means a deployment was attempted but the served result was not verified; it does not automatically roll back the host. Review the diagnostic and follow the recovery procedure below.
 
 ```sh
 git status --short

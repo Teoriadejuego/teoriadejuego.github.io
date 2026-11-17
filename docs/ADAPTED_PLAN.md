@@ -1,17 +1,17 @@
 # Plan adaptado: 20 perfiles y 400 criterios
 
-Fecha de evaluación: 18 de noviembre de 2026. Base de adaptación: `32d65db`; plan aprobado inicialmente en `67b7d0a`. **Candidato local evaluado. Pendientes: CI, publicación remota y comprobación específica de dos contextos simultáneos.**
+Fecha de evaluación: 18 de noviembre de 2026. Base de adaptación: `32d65db`; plan aprobado inicialmente en `67b7d0a`. **Candidato `301465d` enviado a main. Pendientes: ejecución CI y confirmación del sitio servido.**
 
 El registro canónico es [adapted-plan.json](adapted-plan.json); la implementación sigue [CONTRACTS.md](CONTRACTS.md). Los perfiles son perspectivas de revisión, no personas externas consultadas. La numeración conserva correspondencia con el adjunto. No se afirman 400 defectos, cambios o tests independientes.
 
 ## Estados
 
 - **preservado** (83): Comportamiento o contenido existente conservado, con fuente/resultado de línea base identificado.
-- **verificado** (180): Comprobación concreta ejecutada u observación comunicada y acotada en la evidencia.
+- **verificado** (181): Comprobación concreta ejecutada u observación comunicada y acotada en la evidencia.
 - **cambiado** (39): Implementación inspeccionada; no implica que todas sus pruebas o el despliegue estén cerrados.
 - **documentado** (70): Procedimiento o decisión descritos y revisados; no equivale a su ejecución.
 - **limitado** (9): No se mide o garantiza la pretensión amplia; se declara el alcance posible.
-- **pendiente** (19): Falta una prueba, integración o confirmación requerida.
+- **pendiente** (18): Falta una prueba, integración o confirmación requerida.
 
 ## Alcance y coordinación
 
@@ -104,9 +104,9 @@ Wrapper completo confirmado: Chromium 1234 y Firefox 159, 10 casos × ES/EN por 
 
 **Referencia:** `tests/privacy_browser.py`, `assets/app.js`, `qa/browser-suite.json`.
 
-Wrapper completo confirmado: 26 rutas en cada navegador; Chromium 122 peticiones y Firefox 160. Cero intentos externos/mutables, escritura storage/cookies, llamadas al portapapeles y errores JS. Búsqueda inerte, filtros inválidos, parámetros ajenos, fragmentos, historial e idioma verificados. El escenario de dos contextos simultáneos todavía está pendiente.
+Tras añadir la prueba de dos contextos vivos, privacy_browser.py vuelve a pasar por separado: Chromium 128 peticiones y Firefox 168, 26 rutas en ambos. Cero intentos externos/mutables, escritura storage/cookies, llamadas al portapapeles y errores JS. URLs PNAS y networks permanecen independientes; modificar el primer contexto y restablecer el segundo conserva URL, controles e IDs visibles del otro en ambas direcciones, sin peticiones adicionales. También cubre búsqueda inerte, filtros inválidos, parámetros ajenos, fragmentos, historial e idioma.
 
-**Origen del resultado:** Mensaje del coordinador, 2026-11-18; servidor local 8078.
+**Origen del resultado:** Resultado confirmado por coordinador/agente de navegador, 2026-11-18; código inspeccionado en tests/privacy_browser.py, commit candidato 301465d.
 
 - Tráfico observado durante la prueba; no certificación universal de privacidad.
 
@@ -128,11 +128,6 @@ Workflow nuevo implementado e inspeccionado (E-CI-SOURCE), pero falta ejecución
 
 No se ha confirmado aún despliegue de este candidato ni manifiesto/bytes servidos. La URL pública anterior no demuestra esta entrega.
 
-### E-SUITE-PENDING — pendiente
-
-**Referencia:** `tools/check_browser.py`, `tests/browser_check.py`, `tests/round2_check.py`, `tests/round3_check.py`.
-
-Suite de siete checks Chromium/Firefox completa y confirmada (E-SUITE). Solo permanece pendiente aquí el criterio específico de dos contextos simultáneos con estados URL distintos, encargado al agente de navegador.
 
 ### E-LIMITS — límite explícito
 
@@ -979,8 +974,8 @@ Oleada: D. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-PRIVACY`.
 5. **P16-C05 · verificado** — Repetir reset/menú no rompe estado ni foco.
    Evidencia: `E-SCI`.
-6. **P16-C06 · pendiente** — Dos contextos mantienen URL propia sin bloqueo ni storage compartido.
-   Evidencia: `E-SUITE-PENDING`, `E-PRIVACY`.
+6. **P16-C06 · verificado** — Dos contextos mantienen URL propia sin bloqueo ni storage compartido.
+   Evidencia: `E-PRIVACY`.
 7. **P16-C07 · verificado** — Bloquear red externa no rompe lectura, filtros ni laboratorio locales.
    Evidencia: `E-PRIVACY`.
 8. **P16-C08 · verificado** — Build fallido conserva salida anterior sin servir candidato parcial.

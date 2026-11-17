@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "candidato local evaluado; pendientes CI, publicación remota y prueba específica de dos contextos",
+  "status": "candidato enviado a main; CI y verificación remota pendientes",
   "date": "2026-11-18",
   "base_revision": "32d65db",
   "source_attachment": "Texto pegado.txt (75c6674a-16d7-429a-be50-1c91e0d02db2)",
@@ -32,7 +32,7 @@
     "Carga de 30/60/200 estudiantes y velocidad de exportación → mediciones locales declaradas de bytes, build e interacción; no se infiere capacidad de hosting.",
     "Dashboard de telemetría → logs de comandos/CI y manifiesto, sin seguimiento de visitantes."
   ],
-  "evidence_policy": "Evidencia compartida y acotada, no 400 tests independientes. Unitarias completas, suite Chromium/Firefox y medición local confirmadas. CI, publicación remota y dos contextos simultáneos permanecen pendientes. Omisiones y límites figuran por referencia.",
+  "evidence_policy": "Evidencia compartida y acotada, no 400 tests independientes. Unitarias, suite Chromium/Firefox, aislamiento de dos contextos y medición local confirmados. Candidato 301465d en main; CI y confirmación pública permanecen pendientes. Omisiones y límites se conservan.",
   "limits": [
     "Sin entrevistas ni estudio representativo de usuarios.",
     "Sin certificación WCAG.",
@@ -3936,9 +3936,8 @@
           "source_criterion": "Probar cooldown entre pestañas.",
           "acceptance": "Dos contextos mantienen URL propia sin bloqueo ni storage compartido.",
           "evidence_ref": "E-P16",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
-            "E-SUITE-PENDING",
             "E-PRIVACY"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -5238,8 +5237,8 @@
         "assets/app.js",
         "qa/browser-suite.json"
       ],
-      "result": "Wrapper completo confirmado: 26 rutas en cada navegador; Chromium 122 peticiones y Firefox 160. Cero intentos externos/mutables, escritura storage/cookies, llamadas al portapapeles y errores JS. Búsqueda inerte, filtros inválidos, parámetros ajenos, fragmentos, historial e idioma verificados. El escenario de dos contextos simultáneos todavía está pendiente.",
-      "source": "Mensaje del coordinador, 2026-11-18; servidor local 8078.",
+      "result": "Tras añadir la prueba de dos contextos vivos, privacy_browser.py vuelve a pasar por separado: Chromium 128 peticiones y Firefox 168, 26 rutas en ambos. Cero intentos externos/mutables, escritura storage/cookies, llamadas al portapapeles y errores JS. URLs PNAS y networks permanecen independientes; modificar el primer contexto y restablecer el segundo conserva URL, controles e IDs visibles del otro en ambas direcciones, sin peticiones adicionales. También cubre búsqueda inerte, filtros inválidos, parámetros ajenos, fragmentos, historial e idioma.",
+      "source": "Resultado confirmado por coordinador/agente de navegador, 2026-11-18; código inspeccionado en tests/privacy_browser.py, commit candidato 301465d.",
       "limits": [
         "Tráfico observado durante la prueba; no certificación universal de privacidad."
       ]
@@ -5270,16 +5269,6 @@
         "tools/release.py"
       ],
       "result": "No se ha confirmado aún despliegue de este candidato ni manifiesto/bytes servidos. La URL pública anterior no demuestra esta entrega."
-    },
-    "E-SUITE-PENDING": {
-      "type": "pendiente",
-      "paths": [
-        "tools/check_browser.py",
-        "tests/browser_check.py",
-        "tests/round2_check.py",
-        "tests/round3_check.py"
-      ],
-      "result": "Suite de siete checks Chromium/Firefox completa y confirmada (E-SUITE). Solo permanece pendiente aquí el criterio específico de dos contextos simultáneos con estados URL distintos, encargado al agente de navegador."
     },
     "E-LIMITS": {
       "type": "límite explícito",
@@ -5377,9 +5366,10 @@
   "status_counts": {
     "documentado": 70,
     "preservado": 83,
-    "verificado": 180,
-    "pendiente": 19,
+    "verificado": 181,
+    "pendiente": 18,
     "cambiado": 39,
     "limitado": 9
-  }
+  },
+  "candidate_revision": "301465dc1483304db00b5247b21c3b261512957c"
 }
