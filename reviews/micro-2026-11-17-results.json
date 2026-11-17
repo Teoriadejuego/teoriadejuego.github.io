@@ -155,7 +155,29 @@
       ]
     },
     "before_commit": "11a4f8b4d905478f08e863fe6a1cf336769571dc",
-    "commit": null,
+    "commit": "81e46cb8a853b8000781f656805a2a552ec29ff1",
     "implementation": "Los dos retratos comparten una única regla de esquinas 4/4/20/4 px, basada en la portada. Se eliminan los radios divergentes del perfil y móvil sin alterar fotos, encuadres, bordes, medidas ni créditos."
+  },
+  {
+    "id": 8,
+    "title": "Etiquetas técnicas con ritmo uniforme",
+    "observation": "Las etiquetas de tecnologías heredan el interlineado general y producen cajas poco ajustadas al texto pequeño.",
+    "prompt": "Ajusta interlineado y padding de las etiquetas técnicas para obtener una altura óptica consistente y una lectura más limpia. Conserva su carácter informativo sin hacerlas parecer botones, el salto de línea de palabras largas y el contraste. Inspecciona una tarjeta con varias etiquetas y texto al 200%.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Altura consistente de etiquetas de una línea; color y carácter no interactivo conservados. Sin overflow a 320/390/1440 px con texto al 200%, incluido un término largo insertado solo como fixture de prueba.",
+      "visual": "Tarjeta SONAR revisada en móvil y escritorio y etiquetas ampliadas al 200%; cajas más ajustadas con separación legible.",
+      "captures": [
+        "qa/micro/08-card-390.png",
+        "qa/micro/08-card-1440.png",
+        "qa/micro/08-tags-text200.png"
+      ]
+    },
+    "before_commit": "81e46cb8a853b8000781f656805a2a552ec29ff1",
+    "commit": null,
+    "implementation": "Las etiquetas técnicas usan interlineado 1,35 y padding relativo a su fuente, para conservar proporción al ampliar texto. Se mantienen borde, color, wrapping y ausencia de estados de botón."
   }
 ]
