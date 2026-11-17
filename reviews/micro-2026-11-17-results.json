@@ -17,6 +17,26 @@
       ]
     },
     "before_commit": "a46580765f50696d6fdc220fbef3a94ccc0399fc",
+    "commit": "9b489188469e0f70fead993b398e12645f0aace4"
+  },
+  {
+    "id": 2,
+    "title": "Línea activa de navegación estable",
+    "observation": "El enlace activo añade borde y cambia el padding respecto a sus vecinos.",
+    "prompt": "Reserva el mismo espacio para el indicador inferior en todos los enlaces de navegación y muestra su color solo donde corresponda. Iguala padding y alineación óptica del enlace activo con sus vecinos. Añade un hover discreto distinguible del estado activo, sin movimiento ni cambios de ancho. Conserva el separador de idioma y el foco.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Padding y altura uniformes en los siete enlaces; hover sin cambios de ancho ni altura a1440 y390px.",
+      "visual": "Indicador activo verde y hover gris azulado diferenciados; separador de idioma y foco conservados.",
+      "captures": [
+        "qa/micro/02-nav-1440.png",
+        "qa/micro/02-nav-390.png"
+      ]
+    },
+    "before_commit": "9b489188469e0f70fead993b398e12645f0aace4",
     "commit": null
   }
 ]
