@@ -202,7 +202,34 @@
       ]
     },
     "before_commit": "14f7746518040e16468e17bdbb3d8522d1c787bf",
-    "commit": null,
+    "commit": "d032f5cce6bb2210fd78f722a95d8f93ed35a331",
     "implementation": "Hasta 760 px las zonas visuales de tarjetas pasan de 250 a 230 px y de 25 a 15 px de padding. Se consolida la altura de escritorio en la regla base, conservando colores por proyecto y sin tocar visuales de cabecera de casos."
+  },
+  {
+    "id": 10,
+    "title": "Comparación visual de perfiles para empresas",
+    "observation": "Las tres columnas para empresas desalinean sus bloques cuando los textos tienen diferente longitud.",
+    "prompt": "Alinea los bloques principales de las tres columnas de encaje profesional en escritorio: título, descripción, evidencias y enlace final. Utiliza una solución de rejilla progresiva como subgrid con fallback legible, sin alturas fijas, sin truncar texto y sin reordenar el DOM. Mantén una columna natural en móvil y revisa español e inglés.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Nueve filas alineadas entre las tres tarjetas a 1024/1440 px en ES y EN, también al duplicar el texto. DOM intacto; móvil conserva flex en una columna. Fallback flex comprobado retirando únicamente la regla @supports en el navegador de prueba.",
+      "visual": "Revisadas rejillas ES/EN de escritorio, móvil, texto al 200% y fallback. Un enlace inglés multilínea detectado en la primera prueba se corrigió alineando el inicio de su fila. Las capturas aisladas ocultan cabecera y skip solo durante la toma para evitar oclusiones ajenas al bloque.",
+      "captures": [
+        "qa/micro/10-fit-es-1440.png",
+        "qa/micro/10-fit-en-1440.png",
+        "qa/micro/10-fit-es-390.png",
+        "qa/micro/10-fit-en-390.png",
+        "qa/micro/10-fit-es-text200.png",
+        "qa/micro/10-fit-en-text200.png",
+        "qa/micro/10-fit-es-fallback.png",
+        "qa/micro/10-fit-en-fallback.png"
+      ]
+    },
+    "before_commit": "d032f5cce6bb2210fd78f722a95d8f93ed35a331",
+    "commit": null,
+    "implementation": "Mejora progresiva con subgrid en escritorio: cada tarjeta comparte nueve filas de tamaño natural, incluido un subgrid para sus tres parejas de evidencia. Se mantienen el DOM, la disposición móvil y el fallback flex existentes, sin alturas fijas ni recortes."
   }
 ]

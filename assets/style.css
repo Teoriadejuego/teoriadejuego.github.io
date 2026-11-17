@@ -54,6 +54,8 @@ html:not(.js) .lab,html:not(.js) .print-button{display:none}
 html:not(.js) .filters,html:not(.js) .filter-summary{display:none}summary{min-height:44px;padding:8px 0;cursor:pointer}
 
 .fit-evidence{font-size:.9rem;margin:22px 0}.fit-evidence dt{font-weight:650;margin-top:14px}.fit-evidence dd{margin:4px 0 0;color:var(--muted)}.fit-grid article{display:flex;flex-direction:column}.fit-grid article>a{margin-top:auto}
+/* Shared content-sized rows: heading, description, three evidence pairs, link. */
+@supports(grid-template-rows:subgrid){@media(min-width:761px){.fit-grid{row-gap:0}.fit-grid article{display:grid;grid-template-rows:subgrid;grid-row:span 9;row-gap:0}.fit-grid article>h3{margin:0 0 18px}.fit-grid article>p{margin:0 0 8px}.fit-grid .fit-evidence{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:0;margin:0}.fit-grid article>a{margin:22px 0 0;align-self:start}}}
 
 .case-actions{margin:24px 0 12px;gap:12px}.case-actions .button{font-size:.88rem;padding:10px 15px}
 
