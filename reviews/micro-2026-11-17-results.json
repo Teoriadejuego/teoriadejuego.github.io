@@ -297,7 +297,30 @@
       ]
     },
     "before_commit": "2523ed5cd1bf28a1003277eb91fc659a901769a0",
-    "commit": null,
+    "commit": "7ff83fcb3339911e7b823daed976d96b96458da3",
     "implementation": "El pie de PBIS incorpora una acción textual bilingüe de ampliación con área de 44 px; la imagen conserva su enlace y gana un foco exterior teal de 3 px. Se mantienen exactamente archivo, proporción, procedencia, datos sintéticos y fecha de captura."
+  },
+  {
+    "id": 14,
+    "title": "Año y título de publicación alineados",
+    "observation": "El año y el título de cada referencia parten de alturas ópticas ligeramente distintas en escritorio.",
+    "prompt": "Ajusta solo la alineación vertical del año respecto a la primera línea del título de publicación en el diseño de dos columnas. Conserva la distribución móvil de una columna, títulos multilínea, cifras tabulares y contenidos. Revisa referencias largas en español e inglés.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Doce referencias ES/EN: primera línea del año y del título alineada con diferencia inferior a 1px en 1024/1440 px, comprobada con marcadores temporales de baseline. Móvil conserva año encima del título y cifras tabulares; sin overflow.",
+      "visual": "Inspeccionadas referencias extensas ES/EN en escritorio y móvil; los títulos multilínea conservan su distribución y el año se alinea únicamente en dos columnas.",
+      "captures": [
+        "qa/micro/14-publication-es-390.png",
+        "qa/micro/14-publication-es-1440.png",
+        "qa/micro/14-publication-en-390.png",
+        "qa/micro/14-publication-en-1440.png"
+      ]
+    },
+    "before_commit": "7ff83fcb3339911e7b823daed976d96b96458da3",
+    "commit": null,
+    "implementation": "A partir de 761 px, las dos columnas de cada publicación comparten la primera línea de base mediante align-items:first baseline. No se alteran márgenes, contenidos, tamaños ni distribución móvil."
   }
 ]
