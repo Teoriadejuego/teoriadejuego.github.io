@@ -1,22 +1,122 @@
 [
-  {"id":1,"title":"Cabecera sin transparencias que interfieran","observation":"En las capturas con scroll se leen restos del contenido a través de la cabecera blanca al 97 %.","prompt":"Haz opaco el fondo de la cabecera fija para eliminar la superposición visual del contenido que pasa por debajo. Conserva altura, borde inferior, navegación, posición responsive y paleta. Revisa una página desplazada en escritorio y móvil."},
-  {"id":2,"title":"Línea activa de navegación estable","observation":"El enlace activo añade borde y cambia el padding respecto a sus vecinos.","prompt":"Reserva el mismo espacio para el indicador inferior en todos los enlaces de navegación y muestra su color solo donde corresponda. Iguala padding y alineación óptica del enlace activo con sus vecinos. Añade un hover discreto distinguible del estado activo, sin movimiento ni cambios de ancho. Conserva el separador de idioma y el foco."},
-  {"id":3,"title":"Estado abierto del menú reconocible","observation":"El botón Menú conserva la misma apariencia al abrirse; aria-expanded ya informa correctamente a tecnologías de apoyo.","prompt":"Da al botón del menú móvil un estado abierto visual mediante aria-expanded: fondo y borde de la paleta que distingan abierto de cerrado sin cambiar dimensiones. Mantén contraste, foco y comportamiento de Escape. No cambies JavaScript ni texto."},
-  {"id":4,"title":"Respuesta visual de botones secundarios","observation":"Los botones outline fuera del hero conservan un fondo transparente al pasar el puntero.","prompt":"Define un hover claro y sobrio para botones outline sobre fondos claros y para botones blancos, conservando el tratamiento especial sobre el hero oscuro. Usa solo color de fondo, borde y texto; nada de elevación o escalado. Comprueba acciones de portada, contratación y casos."},
-  {"id":5,"title":"Foco de botones legible sobre ambos fondos","observation":"El foco global dorado puede afinarse en los distintos fondos y bordes de los botones.","prompt":"Refina el foco visible de los botones y controles de menú con una separación clara del borde y contraste verificable sobre blanco, azul y verde. No elimines el outline, no afectes al foco del resto de enlaces ni añadas movimiento. Mantén la adaptación a colores forzados y comprueba navegación con Tab."},
-  {"id":6,"title":"Acciones de portada alineadas en móvil","observation":"A 390 px las dos acciones de portada se apilan con anchos distintos.","prompt":"Alinea las acciones del hero en una columna de ancho coherente en móviles estrechos, con separación compacta y área táctil conservada. Limita el cambio a la portada y a pantallas de hasta480px; conserva la disposición horizontal de escritorio y deja que el texto ampliado envuelva sin recorte."},
-  {"id":7,"title":"Encuadre fotográfico coherente","observation":"El retrato principal y el retrato del perfil usan remates geométricos distintos.","prompt":"Unifica de forma sutil el tratamiento de borde y esquinas del retrato en portada y perfil, tomando como referencia la identidad actual. Mantén el rostro, recorte, proporción, tamaños responsive, créditos y archivos originales. No generes ni retoques fotografías. Verifica escritorio, móvil e impresión CSS."},
-  {"id":8,"title":"Etiquetas técnicas con ritmo uniforme","observation":"Las etiquetas de tecnologías heredan el interlineado general y producen cajas poco ajustadas al texto pequeño.","prompt":"Ajusta interlineado y padding de las etiquetas técnicas para obtener una altura óptica consistente y una lectura más limpia. Conserva su carácter informativo sin hacerlas parecer botones, el salto de línea de palabras largas y el contraste. Inspecciona una tarjeta con varias etiquetas y texto al200%."},
-  {"id":9,"title":"Diagramas de tarjetas proporcionados al móvil","observation":"Las ilustraciones de tarjeta mantienen250px de alto también en móvil, aunque el diagrama interior ocupa175px.","prompt":"Reduce discretamente la altura y el padding de las zonas visuales de tarjetas solo en móvil para mejorar la proporción entre diagrama y contenido. Garantiza que esquemas, flechas y etiquetas queden completos. Mantén los colores por proyecto y las alturas uniformes dentro de cada breakpoint; no alteres los visuales de cabecera de casos."},
-  {"id":10,"title":"Comparación visual de perfiles para empresas","observation":"Las tres columnas para empresas desalinean sus bloques cuando los textos tienen diferente longitud.","prompt":"Alinea los bloques principales de las tres columnas de encaje profesional en escritorio: título, descripción, evidencias y enlace final. Utiliza una solución de rejilla progresiva como subgrid con fallback legible, sin alturas fijas, sin truncar texto y sin reordenar el DOM. Mantén una columna natural en móvil y revisa español e inglés."},
-  {"id":11,"title":"Fechas de trayectoria más fáciles de recorrer","observation":"Las fechas de la trayectoria son pequeñas y tienen poco peso frente al texto que organizan.","prompt":"Refina el peso tipográfico y la alineación de las fechas de la cronología para que sirvan como puntos de orientación visual. Conserva números tabulares, anchuras adaptables y todos los datos. No añadas líneas, iconos ni adornos. Verifica el perfil a320px, al200% y en impresión CSS."},
-  {"id":12,"title":"Navegación local de casos con respuesta clara","observation":"El índice lateral tiene enlaces planos y puede diferenciar mejor el área que responde al puntero y al teclado.","prompt":"Mejora de forma contenida hover y foco del índice local de los casos mediante un fondo suave y alineación uniforme. Respeta la jerarquía respecto a la navegación principal, el mínimo táctil y el formato horizontal móvil. Evita indicar como actual una sección que no se esté siguiendo realmente."},
-  {"id":13,"title":"Captura de producto consultable a tamaño completo","observation":"La captura de PBIS es útil pero sus detalles se vuelven pequeños en el ancho del caso y en móvil.","prompt":"Permite abrir la captura de PBIS a su tamaño original con un enlace accesible en la propia imagen y una acción textual discreta en el pie, bilingüe. Mantén la advertencia de datos sintéticos, procedencia y fecha. Usa el activo existente, sin modal ni dependencia nueva, y haz perceptible el foco de la imagen enlazada."},
-  {"id":14,"title":"Año y título de publicación alineados","observation":"El año y el título de cada referencia parten de alturas ópticas ligeramente distintas en escritorio.","prompt":"Ajusta solo la alineación vertical del año respecto a la primera línea del título de publicación en el diseño de dos columnas. Conserva la distribución móvil de una columna, títulos multilínea, cifras tabulares y contenidos. Revisa referencias largas en español e inglés."},
-  {"id":15,"title":"Acción de lectura prioritaria en publicaciones","observation":"El acceso al artículo y la descarga de cita tienen casi el mismo peso visual.","prompt":"Distingue tipográficamente el primer enlace de lectura o acceso al artículo dentro de cada publicación frente a las acciones bibliográficas auxiliares. Conserva enlaces subrayados, el orden editorial y el área táctil; no añadas tarjetas, iconos o afirmaciones nuevas de acceso abierto."},
-  {"id":16,"title":"Autoría desplegada con estado visible","observation":"La lista de autoría tiene fondo propio pero el control conserva una apariencia casi idéntica abierto y cerrado.","prompt":"Refina el estado abierto del desplegable de autoría con tipografía o color de fondo discreto en su summary, coordinado con la lista. Conserva el indicador nativo, teclado, orden de autores y dos columnas responsive. Evita que cambien sus dimensiones al abrirse."},
-  {"id":17,"title":"Filtros con foco visual de conjunto","observation":"El campo enfocado no refuerza visualmente la asociación con su etiqueta.","prompt":"Usa focus-within para destacar de forma sutil la etiqueta del filtro que se está usando, conservando el outline de su control. Ajusta el tratamiento de placeholder si hace falta para separarlo claramente del valor introducido. No cambies lógica, URL, opciones ni comportamiento sin JavaScript."},
-  {"id":18,"title":"Estado sin resultados mejor compuesto","observation":"El estado vacío de publicaciones es un bloque de fondo claro con poco contraste de jerarquía respecto al resto del catálogo.","prompt":"Afina espaciado, medida de lectura y borde del mensaje sin resultados para reconocerlo como respuesta al filtrado. Mantén su texto existente y la acción de restablecer ya disponible, sin inventar recomendaciones ni duplicar controles. Comprueba búsqueda sin coincidencias y recuperación al restablecer en móvil."},
-  {"id":19,"title":"Separación entre leyenda y resultado del laboratorio","observation":"La leyenda del gráfico y su lectura numérica comparten una zona con jerarquía poco marcada.","prompt":"Diferencia visualmente el resultado numérico del laboratorio de la leyenda mediante espaciado y un separador sobrio. Conserva cifras tabulares, contraste, todos los supuestos y cálculos. No cambies tamaños del gráfico ni uses color para sugerir éxito estadístico; revisa valores positivos, negativos y cercanos a cero."},
-  {"id":20,"title":"Pie de página ordenado en pantallas pequeñas","observation":"Los enlaces del pie saltan de línea según su longitud y pueden terminar con un reparto poco equilibrado.","prompt":"Ordena los enlaces del pie en una rejilla móvil legible y predecible, con espacio táctil suficiente, manteniendo el flujo de escritorio. Permite envolver los textos largos y el texto ampliado sin recortes. Conserva destinos, nombres, información de actualización y créditos."}
+  {
+    "id": 1,
+    "title": "Cabecera sin transparencias que interfieran",
+    "observation": "En las capturas con scroll se leen restos del contenido a través de la cabecera blanca al 97 %.",
+    "prompt": "Haz opaco el fondo de la cabecera fija para eliminar la superposición visual del contenido que pasa por debajo. Conserva altura, borde inferior, navegación, posición responsive y paleta. Revisa una página desplazada en escritorio y móvil."
+  },
+  {
+    "id": 2,
+    "title": "Línea activa de navegación estable",
+    "observation": "El enlace activo añade borde y cambia el padding respecto a sus vecinos.",
+    "prompt": "Reserva el mismo espacio para el indicador inferior en todos los enlaces de navegación y muestra su color solo donde corresponda. Iguala padding y alineación óptica del enlace activo con sus vecinos. Añade un hover discreto distinguible del estado activo, sin movimiento ni cambios de ancho. Conserva el separador de idioma y el foco."
+  },
+  {
+    "id": 3,
+    "title": "Estado abierto del menú reconocible",
+    "observation": "El botón Menú conserva la misma apariencia al abrirse; aria-expanded ya informa correctamente a tecnologías de apoyo.",
+    "prompt": "Da al botón del menú móvil un estado abierto visual mediante aria-expanded: fondo y borde de la paleta que distingan abierto de cerrado sin cambiar dimensiones. Mantén contraste, foco y comportamiento de Escape. No cambies JavaScript ni texto."
+  },
+  {
+    "id": 4,
+    "title": "Respuesta visual de botones secundarios",
+    "observation": "Los botones outline fuera del hero conservan un fondo transparente al pasar el puntero.",
+    "prompt": "Define un hover claro y sobrio para botones outline sobre fondos claros y para botones blancos, conservando el tratamiento especial sobre el hero oscuro. Usa solo color de fondo, borde y texto; nada de elevación o escalado. Comprueba acciones de portada, contratación y casos."
+  },
+  {
+    "id": 5,
+    "title": "Foco de botones legible sobre ambos fondos",
+    "observation": "El foco global dorado puede afinarse en los distintos fondos y bordes de los botones.",
+    "prompt": "Refina el foco visible de los botones y controles de menú con una separación clara del borde y contraste verificable sobre blanco, azul y verde. No elimines el outline, no afectes al foco del resto de enlaces ni añadas movimiento. Mantén la adaptación a colores forzados y comprueba navegación con Tab."
+  },
+  {
+    "id": 6,
+    "title": "Acciones de portada alineadas en móvil",
+    "observation": "A 390 px las dos acciones de portada se apilan con anchos distintos.",
+    "prompt": "Alinea las acciones del hero en una columna de ancho coherente en móviles estrechos, con separación compacta y área táctil conservada. Limita el cambio a la portada y a pantallas de hasta 480px; conserva la disposición horizontal de escritorio y deja que el texto ampliado envuelva sin recorte."
+  },
+  {
+    "id": 7,
+    "title": "Encuadre fotográfico coherente",
+    "observation": "El retrato principal y el retrato del perfil usan remates geométricos distintos.",
+    "prompt": "Unifica de forma sutil el tratamiento de borde y esquinas del retrato en portada y perfil, tomando como referencia la identidad actual. Mantén el rostro, recorte, proporción, tamaños responsive, créditos y archivos originales. No generes ni retoques fotografías. Verifica escritorio, móvil e impresión CSS."
+  },
+  {
+    "id": 8,
+    "title": "Etiquetas técnicas con ritmo uniforme",
+    "observation": "Las etiquetas de tecnologías heredan el interlineado general y producen cajas poco ajustadas al texto pequeño.",
+    "prompt": "Ajusta interlineado y padding de las etiquetas técnicas para obtener una altura óptica consistente y una lectura más limpia. Conserva su carácter informativo sin hacerlas parecer botones, el salto de línea de palabras largas y el contraste. Inspecciona una tarjeta con varias etiquetas y texto al 200%."
+  },
+  {
+    "id": 9,
+    "title": "Diagramas de tarjetas proporcionados al móvil",
+    "observation": "Las ilustraciones de tarjeta mantienen 250px de alto también en móvil, aunque el diagrama interior ocupa 175px.",
+    "prompt": "Reduce discretamente la altura y el padding de las zonas visuales de tarjetas solo en móvil para mejorar la proporción entre diagrama y contenido. Garantiza que esquemas, flechas y etiquetas queden completos. Mantén los colores por proyecto y las alturas uniformes dentro de cada breakpoint; no alteres los visuales de cabecera de casos."
+  },
+  {
+    "id": 10,
+    "title": "Comparación visual de perfiles para empresas",
+    "observation": "Las tres columnas para empresas desalinean sus bloques cuando los textos tienen diferente longitud.",
+    "prompt": "Alinea los bloques principales de las tres columnas de encaje profesional en escritorio: título, descripción, evidencias y enlace final. Utiliza una solución de rejilla progresiva como subgrid con fallback legible, sin alturas fijas, sin truncar texto y sin reordenar el DOM. Mantén una columna natural en móvil y revisa español e inglés."
+  },
+  {
+    "id": 11,
+    "title": "Fechas de trayectoria más fáciles de recorrer",
+    "observation": "Las fechas de la trayectoria son pequeñas y tienen poco peso frente al texto que organizan.",
+    "prompt": "Refina el peso tipográfico y la alineación de las fechas de la cronología para que sirvan como puntos de orientación visual. Conserva números tabulares, anchuras adaptables y todos los datos. No añadas líneas, iconos ni adornos. Verifica el perfil a 320px, al 200% y en impresión CSS."
+  },
+  {
+    "id": 12,
+    "title": "Navegación local de casos con respuesta clara",
+    "observation": "El índice lateral tiene enlaces planos y puede diferenciar mejor el área que responde al puntero y al teclado.",
+    "prompt": "Mejora de forma contenida hover y foco del índice local de los casos mediante un fondo suave y alineación uniforme. Respeta la jerarquía respecto a la navegación principal, el mínimo táctil y el formato horizontal móvil. Evita indicar como actual una sección que no se esté siguiendo realmente."
+  },
+  {
+    "id": 13,
+    "title": "Captura de producto consultable a tamaño completo",
+    "observation": "La captura de PBIS ya se puede ampliar, pero la indicación textual está integrada en el pie y su acción puede hacerse más reconocible.",
+    "prompt": "Haz más reconocible la ampliación de la captura de PBIS: conserva el enlace existente sobre la imagen y añade una acción textual discreta y explícita en el pie, en español e inglés. Mantén datos sintéticos, procedencia y fecha. No añadas modal ni dependencias; refina el foco visible del enlace de imagen sin cambiar la captura."
+  },
+  {
+    "id": 14,
+    "title": "Año y título de publicación alineados",
+    "observation": "El año y el título de cada referencia parten de alturas ópticas ligeramente distintas en escritorio.",
+    "prompt": "Ajusta solo la alineación vertical del año respecto a la primera línea del título de publicación en el diseño de dos columnas. Conserva la distribución móvil de una columna, títulos multilínea, cifras tabulares y contenidos. Revisa referencias largas en español e inglés."
+  },
+  {
+    "id": 15,
+    "title": "Acción de lectura prioritaria en publicaciones",
+    "observation": "El acceso al artículo y la descarga de cita tienen casi el mismo peso visual.",
+    "prompt": "Distingue tipográficamente el primer enlace de lectura o acceso al artículo dentro de cada publicación frente a las acciones bibliográficas auxiliares. Conserva enlaces subrayados, el orden editorial y el área táctil; no añadas tarjetas, iconos o afirmaciones nuevas de acceso abierto."
+  },
+  {
+    "id": 16,
+    "title": "Autoría desplegada con estado visible",
+    "observation": "La lista de autoría tiene fondo propio pero el control conserva una apariencia casi idéntica abierto y cerrado.",
+    "prompt": "Refina el estado abierto del desplegable de autoría con tipografía o color de fondo discreto en su summary, coordinado con la lista. Conserva el indicador nativo, teclado, orden de autores y dos columnas responsive. Evita que cambien sus dimensiones al abrirse."
+  },
+  {
+    "id": 17,
+    "title": "Filtros con foco visual de conjunto",
+    "observation": "El campo enfocado no refuerza visualmente la asociación con su etiqueta.",
+    "prompt": "Usa focus-within para destacar de forma sutil la etiqueta del filtro que se está usando, conservando el outline de su control. Ajusta el tratamiento de placeholder si hace falta para separarlo claramente del valor introducido. No cambies lógica, URL, opciones ni comportamiento sin JavaScript."
+  },
+  {
+    "id": 18,
+    "title": "Estado sin resultados mejor compuesto",
+    "observation": "El estado vacío de publicaciones es un bloque de fondo claro con poco contraste de jerarquía respecto al resto del catálogo.",
+    "prompt": "Afina espaciado, medida de lectura y borde del mensaje sin resultados para reconocerlo como respuesta al filtrado. Mantén su texto existente y la acción de restablecer ya disponible, sin inventar recomendaciones ni duplicar controles. Comprueba búsqueda sin coincidencias y recuperación al restablecer en móvil."
+  },
+  {
+    "id": 19,
+    "title": "Separación entre leyenda y resultado del laboratorio",
+    "observation": "La leyenda del gráfico y su lectura numérica comparten una zona con jerarquía poco marcada.",
+    "prompt": "Diferencia visualmente el resultado numérico del laboratorio de la leyenda mediante espaciado y un separador sobrio. Conserva cifras tabulares, contraste, todos los supuestos y cálculos. No cambies tamaños del gráfico ni uses color para sugerir éxito estadístico; revisa valores positivos, negativos y cercanos a cero."
+  },
+  {
+    "id": 20,
+    "title": "Pie de página ordenado en pantallas pequeñas",
+    "observation": "Los enlaces del pie saltan de línea según su longitud y pueden terminar con un reparto poco equilibrado.",
+    "prompt": "Ordena los enlaces del pie en una rejilla móvil legible y predecible, con espacio táctil suficiente, manteniendo el flujo de escritorio. Permite envolver los textos largos y el texto ampliado sin recortes. Conserva destinos, nombres, información de actualización y créditos."
+  }
 ]
