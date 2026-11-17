@@ -111,5 +111,27 @@
     "before_commit": "ca6c74f4d043520d8888e5de1140775921db7a4d",
     "commit": "5aa5ca854745772fbe7525683b9502de3c5a86f0",
     "implementation": "Foco de 3 px separado 4 px del borde, con contorno azul y separación blanca sobre fondos claros. En el hero y bandas oscuras se invierten los tonos; el resto de enlaces conserva su foco y colores forzados usa Highlight sin sombra."
+  },
+  {
+    "id": 6,
+    "title": "Acciones de portada alineadas en móvil",
+    "observation": "A 390 px las dos acciones de portada se apilan con anchos distintos.",
+    "prompt": "Alinea las acciones del hero en una columna de ancho coherente en móviles estrechos, con separación compacta y área táctil conservada. Limita el cambio a la portada y a pantallas de hasta 480px; conserva la disposición horizontal de escritorio y deja que el texto ampliado envuelva sin recorte.",
+    "changes": [
+      "assets/style.css"
+    ],
+    "validation": {
+      "build": "26 páginas construidas",
+      "checks": "Anchos iguales a 320/390/480 px, disposición horizontal a 1440 px, objetivos de al menos 48 px y texto de botones al 200% sin recorte.",
+      "visual": "Portada a 390 y 1440 px y acciones con texto al 200% inspeccionadas. Botones móviles alineados y texto multilínea centrado.",
+      "captures": [
+        "qa/micro/06-hero-390.png",
+        "qa/micro/06-hero-1440.png",
+        "qa/micro/06-hero-text200.png"
+      ]
+    },
+    "before_commit": "9aeed40668c857e037e7c5d85d3182f30f3f28cd",
+    "commit": null,
+    "implementation": "Rejilla de una columna exclusivamente para las acciones del hero hasta 480 px, con separación de 12 px. Los botones ocupan el mismo ancho y admiten texto multilínea centrado sin perder su área táctil."
   }
 ]
