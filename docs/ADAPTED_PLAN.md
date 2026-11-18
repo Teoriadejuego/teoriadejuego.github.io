@@ -1,17 +1,19 @@
 # Plan adaptado: 20 perfiles y 400 criterios
 
-Fecha de evaluación: 18 de noviembre de 2026. Base de adaptación: `32d65db`; plan aprobado inicialmente en `67b7d0a`. **CI y producción verificadas para `301465d`. Solo dos criterios esperan la confirmación automática de `87d4916` (run 44201541791, en curso).**
+Fecha de cierre: 18 de noviembre de 2026. Base de adaptación: `32d65db`; plan aprobado inicialmente en `67b7d0a`. **Completado con límites: 400 criterios clasificados y cero pendientes.**
+
+Código publicado y verificado: `ee405a5b41da3a7ff2fb17c341eb342c4dd6111e`. CI final: [44205177989](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44205177989), con `validate`, `deploy` y `confirm` correctos. El posterior commit de este informe no se atribuye a la web servida.
 
 El registro canónico es [adapted-plan.json](adapted-plan.json); la implementación sigue [CONTRACTS.md](CONTRACTS.md). Los perfiles son perspectivas de revisión, no personas externas consultadas. La numeración conserva correspondencia con el adjunto. No se afirman 400 defectos, cambios o tests independientes.
 
 ## Estados
 
 - **preservado** (83): Comportamiento o contenido existente conservado, con fuente/resultado de línea base identificado.
-- **verificado** (197): Comprobación concreta ejecutada u observación comunicada y acotada en la evidencia.
+- **verificado** (199): Comprobación concreta ejecutada u observación comunicada y acotada en la evidencia.
 - **cambiado** (39): Implementación inspeccionada; no implica que todas sus pruebas o el despliegue estén cerrados.
 - **documentado** (70): Procedimiento o decisión descritos y revisados; no equivale a su ejecución.
 - **limitado** (9): No se mide o garantiza la pretensión amplia; se declara el alcance posible.
-- **pendiente** (2): Falta una prueba, integración o confirmación requerida.
+- **pendiente** (0): Falta una prueba, integración o confirmación requerida.
 
 ## Alcance y coordinación
 
@@ -40,6 +42,15 @@ El registro canónico es [adapted-plan.json](adapted-plan.json); la implementaci
 - R, Vite, dos despliegues y Connect Cloud → Python estándar, mejora progresiva y GitHub Pages existentes.
 - Carga de 30/60/200 estudiantes y velocidad de exportación → mediciones locales declaradas de bytes, build e interacción; no se infiere capacidad de hosting.
 - Dashboard de telemetría → logs de comandos/CI y manifiesto, sin seguimiento de visitantes.
+
+## Intentos de infraestructura y resolución
+
+- **87d4916 · run 44201541791 · cancelados por el coordinador**: Descarga APT del mirror Ubuntu AWS excesivamente lenta; el segundo intento se canceló como obsoleto al sustituir candidato. Sin fallo del código web demostrado; deploy/confirm no completados.
+- **955dfe2 · run 44203442849 · timeout de instalación APT**: El límite de cinco minutos venció antes de tests/deploy. Fijar ubuntu-24.04 no resolvió la lentitud del mirror; no demuestra incompatibilidad de Ubuntu 26 ni defecto del portfolio.
+- **c32fd77 · run 44204424060 · fallo de configuración Firefox/HOME**: La imagen oficial evitó APT. Pasaron 100 unitarias, build/static/release y cinco suites Chromium; Firefox no arrancó por proceso root con HOME propiedad de pwuser. No se atribuyen siete suites completas ni despliegue a este intento.
+- **ee405a5 · run 44205177989 · success validate/deploy/confirm**: Imagen oficial fijada por digest, UID 1001, pip --user y preflight de ambos navegadores. Todas las puertas conservadas y ejecutadas; 100 unitarias, siete suites, publicación y confirmación de 52 archivos.
+
+La solución final conserva todas las pruebas. Imagen oficial Playwright Python v1.65.2-noble fijada por SHA-256 `38dd67fc654b56b3cba611e4c8eb71cd33750e1cd29eea2a5dc00b484817a75f`, UID 1001 y preflight Chromium/Firefox. Ningún intento cancelado o fallido se presenta como despliegue confirmado.
 
 ## Evidencias compartidas
 
@@ -77,15 +88,15 @@ Contrato offline/read-only, tipos estrictos, referencias, traducciones, autoría
 
 **Referencia:** `build.py`, `tests/check_static.py`, `tools/release.py`, `tests/test_build.py`, `.gitattributes`.
 
-Coordinador confirma build con static check integrado y release local: 26 páginas, 1.27 s, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Staging, LF y validación previa inspeccionados. Tests de builds aislados incluidos en la suite 100 OK con 7 omisiones Windows; véase E-UNIT.
+Build local inicial: 26 páginas, 1.27 s. Build final en validate Linux: 0.184 s; reconstrucción independiente en confirm: 0.416 s. Los tres mantienen digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Validación previa, staging limpio, static check interno, UTF-8/LF, inventario y recuperación cubiertos por inspección y tests aislados; véanse E-UNIT y E-CI.
 
-**Origen del resultado:** Mensaje del coordinador, 2026-11-18; candidato de trabajo no atribuido aún a commit final.
+**Origen del resultado:** Resultados locales previos y log_summary del run final 44205177989. Los tiempos son observaciones, no comparativa controlada entre equipos.
 
 ### E-RELEASE — prueba local ejecutada
 
-**Referencia:** `tests/test_release.py`, `tools/release.py`.
+**Referencia:** `tests/test_release.py`, `tools/release.py`, `qa/ci-44205177989.json`.
 
-37 tests: 32 ejecutados OK y 5 enlaces simbólicos reales omitidos por privilegios Windows. Incluye hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas. Dos pruebas simulan detector linklike; las reales requieren CI Linux. En el run Linux 44200941155 también pasan las pruebas de symlink real que Windows omitía; véase E-CI.
+37 tests de artefacto/promoción: ejecución local OK con cinco omisiones de symlink por Windows; en CI Linux final se ejecutan también esos casos reales. Hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas cubiertos. El verificador remoto añade 12 fixtures de transporte; la verificación pública real se registra aparte en E-REMOTE.
 
 **Comando ejecutado:** `python -m unittest discover -s tests -p test_release.py`.
 
@@ -116,12 +127,6 @@ Tras añadir la prueba de dos contextos vivos, privacy_browser.py vuelve a pasar
 
 Agente confirma capturas ES/EN a 320/1440 y 320 con texto 200%, sin overflow. Revisor inspeccionó además ES 320 texto 200% y EN 320: valores completos, etiquetas con numerosos saltos en el extremo estrecho. Fixture propia verificó Enter y colores forzados. No constituye certificación WCAG.
 
-### E-CI-PENDING — pendiente
-
-**Referencia:** `.github/workflows/pages.yml`.
-
-Solo falta el job confirm automático del run 44201541791 para 87d49162722d045e2be07d0ee5b883fbb0f0d14b. Implementado: checkout del mismo SHA, build reproducible y verify-remote con GITHUB_SHA y seis intentos acotados. Run aún en curso; P09-C15 y P14-C11 siguen pendientes hasta su resultado.
-
 ### E-LIMITS — límite explícito
 
 **Referencia:** `docs/CONTRACTS.md`, `docs/OPERATIONS.md`.
@@ -136,9 +141,9 @@ Sin entrevistas ni frecuencia real de usuarios; sin certificación WCAG, garant�
 
 ### E-UNIT — suite unitaria local confirmada
 
-**Referencia:** `qa/unit-results.txt`, `tests/test_content_contract.py`, `tests/test_build.py`, `tests/test_release.py`, `tests/test_remote_release.py`.
+**Referencia:** `qa/unit-results.txt`, `tests/test_content_contract.py`, `tests/test_build.py`, `tests/test_release.py`, `tests/test_remote_release.py`, `qa/ci-44205177989.json`.
 
-100 pruebas en 31.145 s: OK, 7 omitidas por permisos Windows para enlaces simbólicos. Se inspeccionó qa/unit-results.txt. Cubre contratos editoriales, builds aislados, fuentes intactas, LF/determinismo, fallos de render/verificación/promoción y hashes. No supone ejecución CI Linux. Incluye 12 casos del verificador remoto con transporte simulado: esquema estricto, revisión e I/O. No hacen peticiones reales ni confirman producción. Confirmación Linux CI: las mismas 100 pruebas pasan en 8.530 s con una sola omisión de junction Windows; los enlaces simbólicos reales sí se ejecutan (E-CI).
+Ejecución local: 100 pruebas en 31.145 s, OK con siete omisiones Windows de symlinks. Ejecución CI final Linux: las mismas 100 pruebas en 5.759 s, OK con una omisión de junction Windows; symlinks reales sí ejecutados. Cubre contratos, fuentes intactas, builds aislados y fallos, determinismo/LF, recuperación y hashes. Incluye 12 casos de transporte remoto simulado; la comprobación de producción real está en E-REMOTE.
 
 **Comando ejecutado:** `python -m unittest discover -s tests -p "test_*.py"`.
 
@@ -158,13 +163,13 @@ Tres suites amplias pasadas y resultados JSON inspeccionados: 26 páginas a 1440
 
 **Referencia:** `.github/workflows/pages.yml`, `requirements-dev.txt`, `tools/check_browser.py`, `tools/fetch_axe.py`.
 
-Workflow inspeccionado: validate previo a deploy, PR excluidas de publicación, acciones por SHA, permisos separados y grupo de concurrencia. Primer run real validado en E-CI. Nuevo job confirm posterior a deploy en 87d49162722d045e2be07d0ee5b883fbb0f0d14b aún pendiente: no se atribuye al primer run.
+Workflow final inspeccionado y ejecutado: runner ubuntu-24.04; imagen oficial Playwright Python v1.65.2-noble fijada por SHA-256 38dd67fc654b56b3cba611e4c8eb71cd33750e1cd29eea2a5dc00b484817a75f; usuario 1001, pip --user y preflight Chromium/Firefox. validate mantiene 100 unitarias, axe, build/static/release y siete suites antes de deploy. PR excluida de publicación, acciones fijadas por SHA, permisos separados, concurrencia y job confirm posterior con revisión esperada.
 
 ### E-SUITE — suite integral local confirmada
 
-**Referencia:** `qa/browser-suite.json`, `tools/check_browser.py`.
+**Referencia:** `qa/browser-suite.json`, `tools/check_browser.py`, `qa/ci-44205177989.json`.
 
-Siete checks con returncode 0: cinco suites Chromium y métodos/privacidad Firefox. Registro JSON inspeccionado. Axe 4.14.1 en siete rutas: cero violaciones detectadas, sin equivaler a certificación WCAG.
+Siete checks locales con returncode 0 y siete checks confirmados otra vez en CI final: cinco suites Chromium y métodos/privacidad Firefox. Axe 4.14.1 en siete rutas: cero violaciones detectadas, sin equivaler a certificación WCAG.
 
 **Comando ejecutado:** `python tools/check_browser.py --firefox`.
 
@@ -182,27 +187,49 @@ Windows 11, Python 3.12.10, Playwright 1.65.2, Chromium 151.0.7922.34; viewport 
 - No existe una serie histórica comparable de latencia previa; no se afirma una mejora porcentual.
 - Duración de build local registrada en E-BUILD; no se aisló un benchmark separado del verificador de hashes.
 
-### E-CI — ejecución CI y despliegue reales confirmados
+### E-CI — CI final completa y despliegue confirmados
 
-**Referencia:** `qa/ci-44200941155-validate.log`, `.github/workflows/pages.yml`.
+**Referencia:** `qa/ci-44205177989.json`, `.github/workflows/pages.yml`.
 
-Run 44200941155 success para 301465dc1483304db00b5247b21c3b261512957c. Linux: 100 pruebas en 8.530 s, OK con una omisión exclusiva de junction Windows; symlinks reales ejecutados. Build 26 páginas en 0.194 s, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Static check, release local y siete suites de navegador pasan; después upload/deploy correctos. Logs inspeccionados.
+Run 44205177989 success en ee405a5b41da3a7ff2fb17c341eb342c4dd6111e: validate, deploy y confirm completados. Linux: 100 pruebas en 5.759 s, OK con una omisión exclusiva de junction Windows; symlinks reales ejecutados. Build de validación: 26 páginas en 0.184 s; static check, release y siete suites Chromium/Firefox correctos. Build independiente de confirmación: 0.416 s. Ambos generan digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a.
 
-**Origen del resultado:** [GitHub Actions 44200941155](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44200941155). Resultado de deploy comunicado por coordinador.
+**Origen del resultado:** [GitHub Actions 44205177989](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44205177989); JSON de jobs y log_summary inspeccionados.
 
-- Este primer run no incluye todavía el job confirm automático.
-- La omisión de junction es específica de plataforma; no se presenta como ejecutada en Linux.
+- La prueba de junction Windows no se ejecuta en Linux; no se oculta esta omisión.
+- Tiempos observados en estos runners, sin garantía de rendimiento universal.
 
-### E-REMOTE — verificación pública real confirmada
+### E-REMOTE — producción final verificada automáticamente y desde el coordinador
 
-**Referencia:** `qa/remote-release.json`, `tools/release.py`.
+**Referencia:** `qa/remote-release.json`, `qa/ci-44205177989.json`, `tools/release.py`.
 
-Exit 0 comunicado por coordinador; JSON inspeccionado: source_revision 301465dc1483304db00b5247b21c3b261512957c, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a; 52 archivos con HTTP 200, tamaños, hashes y MIME pertinentes verificados. .nojekyll se comprueba localmente y no se exige por HTTP.
+Confirmación automática CI y ejecución adicional del coordinador con exit 0. JSON inspeccionado: source_revision ee405a5b41da3a7ff2fb17c341eb342c4dd6111e, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a; 52 archivos HTTP 200 con bytes, hashes y MIME pertinentes verificados. .nojekyll sigue siendo sentinel local, excluido de peticiones HTTP.
 
-**Comando ejecutado:** `python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision 301465dc1483304db00b5247b21c3b261512957c`.
+**Comando ejecutado:** `python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision ee405a5b41da3a7ff2fb17c341eb342c4dd6111e`.
 
-- Observación fechada de esta versión servida, no garantía perpetua ni firma criptográfica.
-- La confirmación automática del siguiente commit sigue pendiente.
+- Observación fechada de la versión servida, no disponibilidad perpetua ni firma criptográfica.
+- El commit documental posterior no se atribuye a la web desplegada: la fuente pública verificada es ee405a5b41da3a7ff2fb17c341eb342c4dd6111e.
+
+### E-AUTO-CONFIRM — confirmación automática posterior al deploy ejecutada
+
+**Referencia:** `qa/ci-44205177989.json`, `.github/workflows/pages.yml`, `tools/release.py`.
+
+Job confirm success: checkout del SHA publicado, reconstrucción independiente y verify-remote --expected-revision GITHUB_SHA. Log REMOTE_CONFIRMED registra ee405a5b41da3a7ff2fb17c341eb342c4dd6111e y 52 archivos con digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Se conservan reintentos acotados para propagación CDN; no se retiró ninguna puerta de pruebas.
+
+**Origen del resultado:** Run 44205177989, job confirm, completado 2026-11-18T00:12:09Z.
+
+### E-DELIVERY — revisión de entrega y smoke público
+
+**Referencia:** `qa/adaptation-delivery-check.json`.
+
+Informe HTML: 20 perfiles, 400 criterios, filtros de estados, anclas y móvil 320 px. Smoke público: laboratorio ES/EN, recuperación de filtros, 404 anidada y móvil 390 px; sin errores JavaScript. Integridad ZIP comprobada. Esta prueba se realizó sobre el informe provisional; los recuentos finales de JSON/Markdown se validan estructuralmente en este cierre.
+
+### E-INFRA — historial de intentos y resolución de infraestructura
+
+**Referencia:** `qa/ci-44201541791-attempt1.json`, `qa/ci-44203442849.json`, `qa/ci-44204424060.json`, `qa/ci-44205177989.json`.
+
+Dos cancelaciones del run 87 por instalación lenta; timeout APT en 955; fallo Firefox/HOME en c32; resolución en ee405a5 mediante contenedor oficial fijado y UID 1001 con preflight. Los intentos incompletos no se cuentan como pruebas aprobadas ni como fallos científicos. Detalle en infrastructure_attempts.
+
+**Origen del resultado:** Estados/logs conservados en QA y mensajes del coordinador; no se ocultan reintentos ni se debilitaron gates.
 
 ## P01 — Dirección de producto del portfolio
 
@@ -650,8 +677,8 @@ Oleada: B. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-RELEASE`.
 14. **P09-C14 · verificado** — Reconstrucción idéntica conserva bytes y digest verificables.
    Evidencia: `E-RELEASE`.
-15. **P09-C15 · pendiente** — CI coordina despliegues y detecta candidato servido obsoleto.
-   Evidencia: `E-CI`, `E-CI-SOURCE`, `E-CI-PENDING`, `E-REMOTE`.
+15. **P09-C15 · verificado** — CI coordina despliegues y detecta candidato servido obsoleto.
+   Evidencia: `E-CI`, `E-CI-SOURCE`, `E-AUTO-CONFIRM`, `E-REMOTE`.
 16. **P09-C16 · documentado** — El flujo no utiliza force-push ni sobrescritura remota ajena.
    Evidencia: `E-OPS`.
 17. **P09-C17 · verificado** — Reintentar valida candidato completo y no reutiliza salida parcial.
@@ -897,8 +924,8 @@ Oleada: C. Contrato: `docs/CONTRACTS.md`.
    Evidencia: `E-RELEASE`.
 10. **P14-C10 · verificado** — Promoción no toca fuentes ni archivos ajenos a salida/temporales propios.
    Evidencia: `E-RELEASE`.
-11. **P14-C11 · pendiente** — Workflow coordina despliegues y comprueba candidato esperado.
-   Evidencia: `E-CI`, `E-CI-SOURCE`, `E-CI-PENDING`, `E-REMOTE`.
+11. **P14-C11 · verificado** — Workflow coordina despliegues y comprueba candidato esperado.
+   Evidencia: `E-CI`, `E-CI-SOURCE`, `E-AUTO-CONFIRM`, `E-REMOTE`.
 12. **P14-C12 · verificado** — Reintento idéntico mantiene digest sin duplicar contenido.
    Evidencia: `E-RELEASE`.
 13. **P14-C13 · verificado** — source_revision es SHA limpio de 40 caracteres o null cuando no atribuible.
@@ -1224,6 +1251,6 @@ Oleada: E. Contrato: `docs/CONTRACTS.md`.
 20. **P20-C20 · documentado** — Checklist distingue 400 aceptaciones de cambios reales y referencia pruebas/pendientes.
    Evidencia: `E-PLAN`.
 
-## Lectura del resultado
+## Lectura del cierre
 
-Los estados solo afirman lo indicado en las referencias. La primera versión ya tiene CI y verificación pública; no se atribuye a ella el nuevo job automático aún pendiente. Usuarios reales, certificación, capacidad, heap y disponibilidad futura de enlaces conservan los límites declarados. No existe una serie histórica comparable de latencia para afirmar una mejora porcentual.
+Cero pendientes no significa 400 tests ni certificación universal. Hay 199 criterios verificados, 83 preservados, 70 documentados, 39 cambiados y nueve limitados. Se conservan límites sobre usuarios reales, certificación, capacidad, heap, comparativas históricas de latencia, tiempo aislado de verificación y disponibilidad futura de enlaces. CI final ejecutó 100 unitarias (una omisión de junction Windows en Linux), siete suites de navegador y confirmación automática de 52 archivos públicos.

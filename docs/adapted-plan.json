@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "CI y producción verificadas en 301465d; dos criterios de confirmación automática pendientes del run 44201541791",
+  "status": "completado_con_limites",
   "date": "2026-11-18",
   "base_revision": "32d65db",
   "source_attachment": "Texto pegado.txt (75c6674a-16d7-429a-be50-1c91e0d02db2)",
@@ -32,7 +32,7 @@
     "Carga de 30/60/200 estudiantes y velocidad de exportación → mediciones locales declaradas de bytes, build e interacción; no se infiere capacidad de hosting.",
     "Dashboard de telemetría → logs de comandos/CI y manifiesto, sin seguimiento de visitantes."
   ],
-  "evidence_policy": "Evidencia compartida y acotada, no 400 tests independientes. CI Linux y producción confirmadas para 301465d. Solo P09-C15/P14-C11 esperan job confirm automático de 87d4916; no se anticipa su resultado. Omisiones y límites permanecen explícitos.",
+  "evidence_policy": "400 criterios evaluados con evidencia compartida, no 400 tests independientes. Todos tienen clasificación explícita; cero pendientes. CI, despliegue y confirmación automática/pública reales para ee405a5. Los nueve límites conservan incertidumbres de usuarios, certificación, capacidad, memoria, medición y disponibilidad externa.",
   "limits": [
     "Sin entrevistas ni estudio representativo de usuarios.",
     "Sin certificación WCAG.",
@@ -2267,11 +2267,11 @@
           "source_criterion": "Detectar modificaciones concurrentes.",
           "acceptance": "CI coordina despliegues y detecta candidato servido obsoleto.",
           "evidence_ref": "E-P09",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
             "E-CI",
             "E-CI-SOURCE",
-            "E-CI-PENDING",
+            "E-AUTO-CONFIRM",
             "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -3488,11 +3488,11 @@
           "source_criterion": "Detectar carreras sobre la rama.",
           "acceptance": "Workflow coordina despliegues y comprueba candidato esperado.",
           "evidence_ref": "E-P14",
-          "status": "pendiente",
+          "status": "verificado",
           "evidence_obtained": [
             "E-CI",
             "E-CI-SOURCE",
-            "E-CI-PENDING",
+            "E-AUTO-CONFIRM",
             "E-REMOTE"
           ],
           "assessment_scope": "Ver las evidencias referenciadas: inspección, preservación, documentación y ejecución son categorías distintas."
@@ -5207,17 +5207,18 @@
         "tests/test_build.py",
         ".gitattributes"
       ],
-      "result": "Coordinador confirma build con static check integrado y release local: 26 páginas, 1.27 s, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Staging, LF y validación previa inspeccionados. Tests de builds aislados incluidos en la suite 100 OK con 7 omisiones Windows; véase E-UNIT.",
-      "source": "Mensaje del coordinador, 2026-11-18; candidato de trabajo no atribuido aún a commit final."
+      "result": "Build local inicial: 26 páginas, 1.27 s. Build final en validate Linux: 0.184 s; reconstrucción independiente en confirm: 0.416 s. Los tres mantienen digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Validación previa, staging limpio, static check interno, UTF-8/LF, inventario y recuperación cubiertos por inspección y tests aislados; véanse E-UNIT y E-CI.",
+      "source": "Resultados locales previos y log_summary del run final 44205177989. Los tiempos son observaciones, no comparativa controlada entre equipos."
     },
     "E-RELEASE": {
       "type": "prueba local ejecutada",
       "paths": [
         "tests/test_release.py",
-        "tools/release.py"
+        "tools/release.py",
+        "qa/ci-44205177989.json"
       ],
       "command": "python -m unittest discover -s tests -p test_release.py",
-      "result": "37 tests: 32 ejecutados OK y 5 enlaces simbólicos reales omitidos por privilegios Windows. Incluye hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas. Dos pruebas simulan detector linklike; las reales requieren CI Linux. En el run Linux 44200941155 también pasan las pruebas de symlink real que Windows omitía; véase E-CI.",
+      "result": "37 tests de artefacto/promoción: ejecución local OK con cinco omisiones de symlink por Windows; en CI Linux final se ejecutan también esos casos reales. Hashes independientes, límites, JSON estricto, alteración, promoción/restauración y fuentes intactas cubiertos. El verificador remoto añade 12 fixtures de transporte; la verificación pública real se registra aparte en E-REMOTE.",
       "limits": [
         "La ejecución local no sustituye verificación remota, ahora registrada por separado en E-REMOTE.",
         "No prueba terminación abrupta del proceso ni atomicidad universal."
@@ -5260,13 +5261,6 @@
       ],
       "result": "Agente confirma capturas ES/EN a 320/1440 y 320 con texto 200%, sin overflow. Revisor inspeccionó además ES 320 texto 200% y EN 320: valores completos, etiquetas con numerosos saltos en el extremo estrecho. Fixture propia verificó Enter y colores forzados. No constituye certificación WCAG."
     },
-    "E-CI-PENDING": {
-      "type": "pendiente",
-      "paths": [
-        ".github/workflows/pages.yml"
-      ],
-      "result": "Solo falta el job confirm automático del run 44201541791 para 87d49162722d045e2be07d0ee5b883fbb0f0d14b. Implementado: checkout del mismo SHA, build reproducible y verify-remote con GITHUB_SHA y seis intentos acotados. Run aún en curso; P09-C15 y P14-C11 siguen pendientes hasta su resultado."
-    },
     "E-LIMITS": {
       "type": "límite explícito",
       "paths": [
@@ -5290,10 +5284,11 @@
         "tests/test_content_contract.py",
         "tests/test_build.py",
         "tests/test_release.py",
-        "tests/test_remote_release.py"
+        "tests/test_remote_release.py",
+        "qa/ci-44205177989.json"
       ],
       "command": "python -m unittest discover -s tests -p \"test_*.py\"",
-      "result": "100 pruebas en 31.145 s: OK, 7 omitidas por permisos Windows para enlaces simbólicos. Se inspeccionó qa/unit-results.txt. Cubre contratos editoriales, builds aislados, fuentes intactas, LF/determinismo, fallos de render/verificación/promoción y hashes. No supone ejecución CI Linux. Incluye 12 casos del verificador remoto con transporte simulado: esquema estricto, revisión e I/O. No hacen peticiones reales ni confirman producción. Confirmación Linux CI: las mismas 100 pruebas pasan en 8.530 s con una sola omisión de junction Windows; los enlaces simbólicos reales sí se ejecutan (E-CI).",
+      "result": "Ejecución local: 100 pruebas en 31.145 s, OK con siete omisiones Windows de symlinks. Ejecución CI final Linux: las mismas 100 pruebas en 5.759 s, OK con una omisión de junction Windows; symlinks reales sí ejecutados. Cubre contratos, fuentes intactas, builds aislados y fallos, determinismo/LF, recuperación y hashes. Incluye 12 casos de transporte remoto simulado; la comprobación de producción real está en E-REMOTE.",
       "limits": [
         "En Windows se omitieron siete pruebas de links; en Linux se ejecutaron symlinks reales y se omitió únicamente junction Windows.",
         "No prueba terminación abrupta del proceso ni atomicidad universal."
@@ -5323,16 +5318,17 @@
         "tools/check_browser.py",
         "tools/fetch_axe.py"
       ],
-      "result": "Workflow inspeccionado: validate previo a deploy, PR excluidas de publicación, acciones por SHA, permisos separados y grupo de concurrencia. Primer run real validado en E-CI. Nuevo job confirm posterior a deploy en 87d49162722d045e2be07d0ee5b883fbb0f0d14b aún pendiente: no se atribuye al primer run."
+      "result": "Workflow final inspeccionado y ejecutado: runner ubuntu-24.04; imagen oficial Playwright Python v1.65.2-noble fijada por SHA-256 38dd67fc654b56b3cba611e4c8eb71cd33750e1cd29eea2a5dc00b484817a75f; usuario 1001, pip --user y preflight Chromium/Firefox. validate mantiene 100 unitarias, axe, build/static/release y siete suites antes de deploy. PR excluida de publicación, acciones fijadas por SHA, permisos separados, concurrencia y job confirm posterior con revisión esperada."
     },
     "E-SUITE": {
       "type": "suite integral local confirmada",
       "paths": [
         "qa/browser-suite.json",
-        "tools/check_browser.py"
+        "tools/check_browser.py",
+        "qa/ci-44205177989.json"
       ],
       "command": "python tools/check_browser.py --firefox",
-      "result": "Siete checks con returncode 0: cinco suites Chromium y métodos/privacidad Firefox. Registro JSON inspeccionado. Axe 4.14.1 en siete rutas: cero violaciones detectadas, sin equivaler a certificación WCAG."
+      "result": "Siete checks locales con returncode 0 y siete checks confirmados otra vez en CI final: cinco suites Chromium y métodos/privacidad Firefox. Axe 4.14.1 en siete rutas: cero violaciones detectadas, sin equivaler a certificación WCAG."
     },
     "E-PERF": {
       "type": "medición local confirmada e inspeccionada",
@@ -5352,30 +5348,59 @@
       ]
     },
     "E-CI": {
-      "type": "ejecución CI y despliegue reales confirmados",
+      "type": "CI final completa y despliegue confirmados",
       "paths": [
-        "qa/ci-44200941155-validate.log",
+        "qa/ci-44205177989.json",
         ".github/workflows/pages.yml"
       ],
-      "result": "Run 44200941155 success para 301465dc1483304db00b5247b21c3b261512957c. Linux: 100 pruebas en 8.530 s, OK con una omisión exclusiva de junction Windows; symlinks reales ejecutados. Build 26 páginas en 0.194 s, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Static check, release local y siete suites de navegador pasan; después upload/deploy correctos. Logs inspeccionados.",
-      "source": "[GitHub Actions 44200941155](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44200941155). Resultado de deploy comunicado por coordinador.",
+      "result": "Run 44205177989 success en ee405a5b41da3a7ff2fb17c341eb342c4dd6111e: validate, deploy y confirm completados. Linux: 100 pruebas en 5.759 s, OK con una omisión exclusiva de junction Windows; symlinks reales ejecutados. Build de validación: 26 páginas en 0.184 s; static check, release y siete suites Chromium/Firefox correctos. Build independiente de confirmación: 0.416 s. Ambos generan digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a.",
+      "source": "[GitHub Actions 44205177989](https://github.com/Teoriadejuego/teoriadejuego.github.io/actions/runs/44205177989); JSON de jobs y log_summary inspeccionados.",
       "limits": [
-        "Este primer run no incluye todavía el job confirm automático.",
-        "La omisión de junction es específica de plataforma; no se presenta como ejecutada en Linux."
+        "La prueba de junction Windows no se ejecuta en Linux; no se oculta esta omisión.",
+        "Tiempos observados en estos runners, sin garantía de rendimiento universal."
       ]
     },
     "E-REMOTE": {
-      "type": "verificación pública real confirmada",
+      "type": "producción final verificada automáticamente y desde el coordinador",
       "paths": [
         "qa/remote-release.json",
+        "qa/ci-44205177989.json",
         "tools/release.py"
       ],
-      "command": "python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision 301465dc1483304db00b5247b21c3b261512957c",
-      "result": "Exit 0 comunicado por coordinador; JSON inspeccionado: source_revision 301465dc1483304db00b5247b21c3b261512957c, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a; 52 archivos con HTTP 200, tamaños, hashes y MIME pertinentes verificados. .nojekyll se comprueba localmente y no se exige por HTTP.",
+      "command": "python tools/release.py verify-remote --url https://teoriadejuego.github.io --expected-revision ee405a5b41da3a7ff2fb17c341eb342c4dd6111e",
+      "result": "Confirmación automática CI y ejecución adicional del coordinador con exit 0. JSON inspeccionado: source_revision ee405a5b41da3a7ff2fb17c341eb342c4dd6111e, digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a; 52 archivos HTTP 200 con bytes, hashes y MIME pertinentes verificados. .nojekyll sigue siendo sentinel local, excluido de peticiones HTTP.",
       "limits": [
-        "Observación fechada de esta versión servida, no garantía perpetua ni firma criptográfica.",
-        "La confirmación automática del siguiente commit sigue pendiente."
+        "Observación fechada de la versión servida, no disponibilidad perpetua ni firma criptográfica.",
+        "El commit documental posterior no se atribuye a la web desplegada: la fuente pública verificada es ee405a5b41da3a7ff2fb17c341eb342c4dd6111e."
       ]
+    },
+    "E-AUTO-CONFIRM": {
+      "type": "confirmación automática posterior al deploy ejecutada",
+      "paths": [
+        "qa/ci-44205177989.json",
+        ".github/workflows/pages.yml",
+        "tools/release.py"
+      ],
+      "result": "Job confirm success: checkout del SHA publicado, reconstrucción independiente y verify-remote --expected-revision GITHUB_SHA. Log REMOTE_CONFIRMED registra ee405a5b41da3a7ff2fb17c341eb342c4dd6111e y 52 archivos con digest d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a. Se conservan reintentos acotados para propagación CDN; no se retiró ninguna puerta de pruebas.",
+      "source": "Run 44205177989, job confirm, completado 2026-11-18T00:12:09Z."
+    },
+    "E-DELIVERY": {
+      "type": "revisión de entrega y smoke público",
+      "paths": [
+        "qa/adaptation-delivery-check.json"
+      ],
+      "result": "Informe HTML: 20 perfiles, 400 criterios, filtros de estados, anclas y móvil 320 px. Smoke público: laboratorio ES/EN, recuperación de filtros, 404 anidada y móvil 390 px; sin errores JavaScript. Integridad ZIP comprobada. Esta prueba se realizó sobre el informe provisional; los recuentos finales de JSON/Markdown se validan estructuralmente en este cierre."
+    },
+    "E-INFRA": {
+      "type": "historial de intentos y resolución de infraestructura",
+      "paths": [
+        "qa/ci-44201541791-attempt1.json",
+        "qa/ci-44203442849.json",
+        "qa/ci-44204424060.json",
+        "qa/ci-44205177989.json"
+      ],
+      "result": "Dos cancelaciones del run 87 por instalación lenta; timeout APT en 955; fallo Firefox/HOME en c32; resolución en ee405a5 mediante contenedor oficial fijado y UID 1001 con preflight. Los intentos incompletos no se cuentan como pruebas aprobadas ni como fallos científicos. Detalle en infrastructure_attempts.",
+      "source": "Estados/logs conservados en QA y mensajes del coordinador; no se ocultan reintentos ni se debilitaron gates."
     }
   },
   "status_definitions": {
@@ -5387,14 +5412,61 @@
     "pendiente": "Falta una prueba, integración o confirmación requerida."
   },
   "status_counts": {
-    "documentado": 70,
     "preservado": 83,
-    "verificado": 197,
+    "verificado": 199,
     "cambiado": 39,
+    "documentado": 70,
     "limitado": 9,
-    "pendiente": 2
+    "pendiente": 0
   },
-  "candidate_revision": "301465dc1483304db00b5247b21c3b261512957c",
-  "confirmed_revision": "301465dc1483304db00b5247b21c3b261512957c",
-  "pending_automatic_confirmation_revision": "87d49162722d045e2be07d0ee5b883fbb0f0d14b"
+  "candidate_revision": "ee405a5b41da3a7ff2fb17c341eb342c4dd6111e",
+  "confirmed_revision": "ee405a5b41da3a7ff2fb17c341eb342c4dd6111e",
+  "infrastructure_attempts": [
+    {
+      "revision": "87d49162722d045e2be07d0ee5b883fbb0f0d14b",
+      "run": 44201541791,
+      "attempts": [
+        1,
+        2
+      ],
+      "result": "cancelados por el coordinador",
+      "detail": "Descarga APT del mirror Ubuntu AWS excesivamente lenta; el segundo intento se canceló como obsoleto al sustituir candidato. Sin fallo del código web demostrado; deploy/confirm no completados.",
+      "evidence": [
+        "qa/ci-44201541791-attempt1.json",
+        "qa/ci-44201541791-attempt2.json"
+      ]
+    },
+    {
+      "revision": "955dfe2880cfd79cf9b8c5529c05a6320c673b56",
+      "run": 44203442849,
+      "result": "timeout de instalación APT",
+      "detail": "El límite de cinco minutos venció antes de tests/deploy. Fijar ubuntu-24.04 no resolvió la lentitud del mirror; no demuestra incompatibilidad de Ubuntu 26 ni defecto del portfolio.",
+      "evidence": [
+        "qa/ci-44203442849.json"
+      ]
+    },
+    {
+      "revision": "c32fd776647dc058d28843f672befd3c047cb14e",
+      "run": 44204424060,
+      "result": "fallo de configuración Firefox/HOME",
+      "detail": "La imagen oficial evitó APT. Pasaron 100 unitarias, build/static/release y cinco suites Chromium; Firefox no arrancó por proceso root con HOME propiedad de pwuser. No se atribuyen siete suites completas ni despliegue a este intento.",
+      "evidence": [
+        "qa/ci-44204424060.json"
+      ]
+    },
+    {
+      "revision": "ee405a5b41da3a7ff2fb17c341eb342c4dd6111e",
+      "run": 44205177989,
+      "result": "success validate/deploy/confirm",
+      "detail": "Imagen oficial fijada por digest, UID 1001, pip --user y preflight de ambos navegadores. Todas las puertas conservadas y ejecutadas; 100 unitarias, siete suites, publicación y confirmación de 52 archivos.",
+      "evidence": [
+        "qa/ci-44205177989.json",
+        "qa/remote-release.json"
+      ]
+    }
+  ],
+  "public_source_revision": "ee405a5b41da3a7ff2fb17c341eb342c4dd6111e",
+  "confirmed_ci_run": 44205177989,
+  "content_digest": "d466c20e7debd9e7865dbeeca615b6d0c81c89cc438b62fd27ce9db7f1b78a5a",
+  "documentation_commit_note": "El cierre documental posterior puede tener otro SHA y no requiere republicar: la web probada y servida corresponde a ee405a5b41da3a7ff2fb17c341eb342c4dd6111e."
 }
