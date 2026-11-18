@@ -42,6 +42,7 @@ python -m playwright install chromium firefox
 ```
 
 The development requirements pin Playwright and greenlet. For a host that already has a compatible Chromium executable, the existing browser scripts accept `PLAYWRIGHT_CHROMIUM_EXECUTABLE`; avoid assuming that a developer's absolute Windows path exists elsewhere. CI installs its own browsers.
+The CI container runs as user 1001, matching ownership of the hosted workspace/home, and installs Python packages with `--user`. A preflight checks home ownership and launches both browser runtimes before the longer suites. This avoids Firefox rejecting a root process whose home belongs to a different user; it does not change the local user's home or browser session.
 
 The editorial validator is `tools.content_contract`. Its public interfaces are `ContentError`, `load_content(root)`, `validate_content(content)` and `validate_site_url(value)`. Loading/validation performs no writes or network calls. It rejects unknown fields, unsafe IDs or URL schemes, credentials in URLs, missing translations, invalid types, duplicate IDs, broken references and inconsistent author order. Treat a failure as a request to correct the source, not permission to bypass validation.
 
