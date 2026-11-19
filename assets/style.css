@@ -86,3 +86,7 @@ h1,h2,h3{overflow-wrap:anywhere}.publication .authors{max-width:78ch}.publicatio
 .brand{white-space:normal;max-width:100%;overflow-wrap:anywhere}
 
 .timeline li>div{flex:1 1 10em;min-width:0;overflow-wrap:anywhere}
+
+/* A quieter homepage: two readable cases, without decorative diagrams or tags. */
+.hero-simple:before{display:none}.hero-simple h1{font-size:clamp(2.5rem,4.2vw,3.9rem);max-width:20ch}.hero-simple .hero-inner{padding:48px 0;gap:48px}.featured-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}.featured-work{border-top:2px solid #137673;padding-top:24px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}.featured-work h3{font-family:Georgia,'Times New Roman',serif;font-size:1.8rem;font-weight:400;margin-bottom:16px}.featured-work .contribution{font-size:.94rem;color:#35516a}.featured-work>.link{margin-top:auto;font-weight:600;min-height:44px;display:inline-flex;align-items:center}.collection-link{margin:28px 0 0}.collection-link a{display:inline-flex;min-height:44px;align-items:center}.home-research .research-row h3{font-size:1.45rem}.home-projects h2,.home-research h2{max-width:26ch}
+@media(min-width:761px){.hero-simple .portrait{max-width:240px;align-self:center}}@media(max-width:760px){.featured-work-grid{grid-template-columns:1fr;gap:32px}.hero-simple .hero-inner{gap:26px;padding:32px 0}}

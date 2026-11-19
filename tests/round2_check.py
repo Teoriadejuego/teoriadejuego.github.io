@@ -26,8 +26,11 @@ with sync_playwright() as p:
   bib=(ROOT/'public/downloads'/(item['id']+'.bib')).read_text(encoding='utf8')
   assert item['doi'] in bib and item['title'] in bib
   assert all(author['family']+', '+author['given'] in bib for author in item['author_parts'])
+ page.goto(BASE+'profile/',wait_until='networkidle')
+ assert page.locator('.nav [aria-current="page"]').inner_text()=='Perfil'
  page.goto(BASE+'for-teams/',wait_until='networkidle')
- assert page.locator('.nav [aria-current="page"]').inner_text()=='Para equipos'
+ assert page.locator('.nav a:not(.lang)').all_text_contents()==['Proyectos','Publicaciones','Perfil','Contacto']
+ assert page.locator('.nav [aria-current="page"]').count()==0
  assert page.locator('.fit-grid h3').count()==3 and page.locator('.fit-grid h2').count()==0
  # Stubbing prevents access to the user's real Windows clipboard.
  page.evaluate("Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async value=>{window.copiedEmail=value}}})")
@@ -55,7 +58,10 @@ with sync_playwright() as p:
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(width,route)
  page.set_viewport_size({'width':1440,'height':1000})
  page.goto(BASE,wait_until='networkidle')
- assert len(set(page.locator('.work .visual').evaluate_all('(els)=>els.map(e=>Math.round(e.getBoundingClientRect().height))')))==1
+ assert page.locator('.featured-work').count()==2
+ assert page.locator('.featured-work .contribution').count()==2
+ assert page.locator('.research-row').count()==2
+ assert page.locator('.proof,.capabilities,.work .visual').count()==0
  for route,name in [('', 'home'),('for-teams/','for-teams'),('projects/pbis/','pbis'),('publications/','publications')]:
   page.goto(BASE+route,wait_until='networkidle')
   page.screenshot(path=str(ROOT/'qa'/f'{name}-desktop-r2.png'),full_page=True)
