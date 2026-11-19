@@ -90,3 +90,30 @@ h1,h2,h3{overflow-wrap:anywhere}.publication .authors{max-width:78ch}.publicatio
 /* A quieter homepage: two readable cases, without decorative diagrams or tags. */
 .hero-simple:before{display:none}.hero-simple h1{font-size:clamp(2.5rem,4.2vw,3.9rem);max-width:20ch}.hero-simple .hero-inner{padding:48px 0;gap:48px}.featured-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}.featured-work{border-top:2px solid #137673;padding-top:24px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}.featured-work h3{font-family:Georgia,'Times New Roman',serif;font-size:1.8rem;font-weight:400;margin-bottom:16px}.featured-work .contribution{font-size:.94rem;color:#35516a}.featured-work>.link{margin-top:auto;font-weight:600;min-height:44px;display:inline-flex;align-items:center}.collection-link{margin:28px 0 0}.collection-link a{display:inline-flex;min-height:44px;align-items:center}.home-research .research-row h3{font-size:1.45rem}.home-projects h2,.home-research h2{max-width:26ch}
 @media(min-width:761px){.hero-simple .portrait{max-width:240px;align-self:center}}@media(max-width:760px){.featured-work-grid{grid-template-columns:1fr;gap:32px}.hero-simple .hero-inner{gap:26px;padding:32px 0}}
+
+/* Small editorial illustrations, shared by the bilingual catalogues. */
+.editorial-thumb {
+  display: block;
+  width: 76px;
+  height: 76px;
+  flex: none;
+  border-radius: 6px;
+}
+.featured-heading, .research-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.featured-heading h3, .research-heading h3 { margin: 4px 0 0; }
+.featured-heading .meta { margin: 0; }
+.work > .editorial-thumb, .fit-grid .editorial-thumb { margin-bottom: 16px; }
+.publication .editorial-thumb { width: 58px; height: 58px; margin-top: 10px; }
+.related-case .editorial-thumb { display: inline-block; width: 44px; height: 44px; vertical-align: middle; margin-inline-end: 10px; }
+@media (max-width: 760px) {
+  .featured-heading, .research-heading { gap: 12px; }
+  .research-heading .editorial-thumb { width: 60px; height: 60px; }
+  .publication .year { display: flex; align-items: center; gap: 12px; }
+  .publication .editorial-thumb { width: 42px; height: 42px; margin: 0; order: -1; }
+}
+@media print { .editorial-thumb { display: none !important; } }

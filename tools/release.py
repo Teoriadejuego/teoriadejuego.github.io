@@ -20,6 +20,16 @@ if str(ROOT) not in sys.path:
 ASSETS = (
     'app.js', 'favicon.svg', 'hero.webp', 'pbis-product.webp',
     'portrait-400.webp', 'portrait-800.webp', 'portrait.webp',
+    'thumb-airplanes.webp',
+    'thumb-arco.webp',
+    'thumb-climate.webp',
+    'thumb-cooperation.webp',
+    'thumb-delay.webp',
+    'thumb-networks.webp',
+    'thumb-pbis.webp',
+    'thumb-sonar.webp',
+    'thumb-teenslab.webp',
+    'thumb-voting.webp',
     'social-en.jpg', 'social-es.jpg', 'style.css',
 )
 TEXT_SUFFIXES = {'.html', '.css', '.js', '.svg', '.json', '.xml', '.txt', '.bib'}
