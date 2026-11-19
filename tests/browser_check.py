@@ -48,7 +48,7 @@ with sync_playwright() as p:
  page.get_by_role('button',name='Menú',exact=True).click();assert page.locator('#navigation').is_visible()
  page.keyboard.press('Escape');assert not page.locator('#navigation').is_visible();assert page.locator('.menu-toggle').evaluate('(e)=>e===document.activeElement')
  page.get_by_role('button',name='Menú',exact=True).click()
- page.get_by_role('link',name='English',exact=True).click();assert '/en/' in page.url
+ page.get_by_role('link',name='Read this page in English',exact=True).click();assert '/en/' in page.url
  page.goto(BASE+'profile/');page.emulate_media(media='print');assert not page.locator('.site-header').is_visible();assert page.locator('h1').is_visible();page.emulate_media(media='screen')
  keyboard=browser.new_page();keyboard.goto(BASE);keyboard.keyboard.press('Tab');assert keyboard.locator('.skip').evaluate('(e)=>e===document.activeElement')
  assert not errors,errors
