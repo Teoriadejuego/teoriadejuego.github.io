@@ -13,7 +13,7 @@ with sync_playwright() as p:
  assert page.locator('.site-header').evaluate('(e)=>getComputedStyle(e).position')=='relative'
  assert page.locator('.case-aside').evaluate('(e)=>getComputedStyle(e).position')=='static'
  assert page.locator('.case-top').get_attribute('data-project')=='arco'
- assert page.locator('.case-top .visual').evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgb(233, 243, 241)'
+ assert page.locator('.case-top .visual').evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgb(228, 235, 221)'
  nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
  np=nojs.new_page();np.goto(BASE+'/',wait_until='networkidle')
  assert not np.locator('.menu-toggle').is_visible()
