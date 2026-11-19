@@ -2,6 +2,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 import json, os
+from urllib.parse import parse_qs, urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=os.environ.get('TEST_BASE_URL','http://127.0.0.1:8078').rstrip('/')+'/'
@@ -40,7 +41,9 @@ with sync_playwright() as p:
  page.evaluate("Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw new Error('simulated denial')}}})")
  page.locator('[data-copy-email]').click()
  assert 'Selecciona la dirección' in page.locator('.copy-status').inner_text()
- assert page.locator('.contact-link').get_attribute('href')=='mailto:aalfonsoc@gmail.com'
+ contact_url=urlsplit(page.locator('.contact-link').get_attribute('href'))
+ assert (contact_url.scheme, contact_url.path)==('mailto', 'aalfonsoc@gmail.com')
+ assert parse_qs(contact_url.query).get('subject')
  page.goto(BASE+'lab/',wait_until='networkidle')
  for selector,value in [('#sample','20'),('#noise','8'),('#effect','5')]:
   page.locator(selector).fill(value);page.locator(selector).dispatch_event('input')
