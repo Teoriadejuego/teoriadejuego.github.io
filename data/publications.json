@@ -49,6 +49,25 @@
       "url": "https://www.sciencedirect.com/science/article/pii/S221480432600159X",
       "kind": "published",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Gratificación diferida",
+        "Creatividad",
+        "Adolescencia"
+      ],
+      "en": [
+        "Delayed gratification",
+        "Creativity",
+        "Adolescence"
+      ]
+    },
+    "repository": {
+      "url": "https://zenodo.org/records/13720112",
+      "label": {
+        "es": "Datos · Zenodo",
+        "en": "Data · Zenodo"
+      }
     }
   },
   {
@@ -449,6 +468,25 @@
       "url": "https://researchonline.lse.ac.uk/id/eprint/137840/1/pnas.202504632.pdf",
       "kind": "published",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Cooperación",
+        "Acción colectiva",
+        "Incentivos"
+      ],
+      "en": [
+        "Cooperation",
+        "Collective action",
+        "Incentives"
+      ]
+    },
+    "repository": {
+      "url": "https://researchonline.lse.ac.uk/id/eprint/137840/1/pnas.202504632.pdf",
+      "label": {
+        "es": "Repositorio · LSE",
+        "en": "Repository · LSE"
+      }
     }
   },
   {
@@ -496,7 +534,26 @@
         "given": "Miguel",
         "family": "Hernando de Larramendi"
       }
-    ]
+    ],
+    "keywords": {
+      "es": [
+        "Comportamiento electoral",
+        "Insatisfacción política",
+        "Túnez"
+      ],
+      "en": [
+        "Voting behaviour",
+        "Political dissatisfaction",
+        "Tunisia"
+      ]
+    },
+    "repository": {
+      "url": "https://hdl.handle.net/10433/26388",
+      "label": {
+        "es": "Repositorio · UPO",
+        "en": "Repository · UPO"
+      }
+    }
   },
   {
     "id": "baking",
@@ -565,6 +622,25 @@
       "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/5445/1/Baking_JPEMicro.pdf",
       "kind": "manuscript",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Preferencias económicas",
+        "Educación secundaria",
+        "Adolescencia"
+      ],
+      "en": [
+        "Economic preferences",
+        "Secondary education",
+        "Adolescence"
+      ]
+    },
+    "repository": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/5445/1/Baking_JPEMicro.pdf",
+      "label": {
+        "es": "Repositorio · Loyola",
+        "en": "Repository · Loyola"
+      }
     }
   },
   {
@@ -725,6 +801,25 @@
       "url": "https://naos-be.zcu.cz/server/api/core/bitstreams/c46eb5a5-2445-41dc-9aa1-bcc531a0edf9/content",
       "kind": "published",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Adolescencia",
+        "Preferencias económicas",
+        "Capacidades cognitivas"
+      ],
+      "en": [
+        "Adolescence",
+        "Economic preferences",
+        "Cognitive abilities"
+      ]
+    },
+    "repository": {
+      "url": "https://naos-be.zcu.cz/server/api/core/bitstreams/c46eb5a5-2445-41dc-9aa1-bcc531a0edf9/content",
+      "label": {
+        "es": "Repositorio · ZČU",
+        "en": "Repository · ZČU"
+      }
     }
   },
   {
@@ -770,6 +865,25 @@
       "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1301952/full",
       "kind": "published",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Riesgo",
+        "Aviones de papel",
+        "Aprendizaje experimental"
+      ],
+      "en": [
+        "Risk",
+        "Paper airplanes",
+        "Experimental learning"
+      ]
+    },
+    "repository": {
+      "url": "https://mpra.ub.uni-muenchen.de/108541/",
+      "label": {
+        "es": "Preprint · MPRA",
+        "en": "Preprint · MPRA"
+      }
     }
   },
   {
@@ -818,7 +932,26 @@
         "given": "Angel",
         "family": "Sánchez"
       }
-    ]
+    ],
+    "keywords": {
+      "es": [
+        "Cambio climático",
+        "Grupos grandes",
+        "Experimentos de comportamiento"
+      ],
+      "en": [
+        "Climate change",
+        "Large groups",
+        "Behavioural experiments"
+      ]
+    },
+    "repository": {
+      "url": "https://hdl.handle.net/10016/46641",
+      "label": {
+        "es": "Repositorio · UC3M",
+        "en": "Repository · UC3M"
+      }
+    }
   },
   {
     "id": "teen-experiments",
@@ -897,6 +1030,25 @@
       "url": "https://rednie.eco.unc.edu.ar/files/DT/214.pdf",
       "kind": "preprint",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Adolescencia",
+        "Diseño experimental",
+        "Recogida de datos"
+      ],
+      "en": [
+        "Adolescence",
+        "Experimental design",
+        "Data collection"
+      ]
+    },
+    "repository": {
+      "url": "https://rednie.eco.unc.edu.ar/files/DT/214.pdf",
+      "label": {
+        "es": "Documento de trabajo · RedNIE",
+        "en": "Working paper · RedNIE"
+      }
     }
   },
   {
@@ -983,6 +1135,25 @@
       "url": "https://zaguan.unizar.es/record/128014/files/texto_completo.pdf",
       "kind": "published",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Redes sociales",
+        "Influencia triádica",
+        "Compatibilidad"
+      ],
+      "en": [
+        "Social networks",
+        "Triadic influence",
+        "Compatibility"
+      ]
+    },
+    "repository": {
+      "url": "https://zaguan.unizar.es/record/128014/files/texto_completo.pdf",
+      "label": {
+        "es": "Repositorio · Zaragoza",
+        "en": "Repository · Zaragoza"
+      }
     }
   },
   {
@@ -1042,6 +1213,25 @@
       "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4444/1/Dice%20papeer.pdf",
       "kind": "manuscript",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Honestidad",
+        "Engaño",
+        "Experimentos con dados"
+      ],
+      "en": [
+        "Honesty",
+        "Cheating",
+        "Die-roll experiments"
+      ]
+    },
+    "repository": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4444/1/Dice%20papeer.pdf",
+      "label": {
+        "es": "Repositorio · Loyola",
+        "en": "Repository · Loyola"
+      }
     }
   },
   {
@@ -1116,6 +1306,25 @@
       "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4110/1/Exposure%20to%20the%20COVID-19pandemic%20environment%20andgenerosity.pdf",
       "kind": "published",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Generosidad",
+        "COVID-19",
+        "Preferencias sociales"
+      ],
+      "en": [
+        "Generosity",
+        "COVID-19",
+        "Social preferences"
+      ]
+    },
+    "repository": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4110/1/Exposure%20to%20the%20COVID-19pandemic%20environment%20andgenerosity.pdf",
+      "label": {
+        "es": "Repositorio · Loyola",
+        "en": "Repository · Loyola"
+      }
     }
   },
   {
@@ -1175,6 +1384,25 @@
       "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/7550/1/MPRA_paper_103976.pdf",
       "kind": "preprint",
       "checked": "2026-11-19"
+    },
+    "keywords": {
+      "es": [
+        "Voluntariado",
+        "Empleo",
+        "Experimento de campo"
+      ],
+      "en": [
+        "Volunteering",
+        "Employment",
+        "Field experiment"
+      ]
+    },
+    "repository": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/7550/1/MPRA_paper_103976.pdf",
+      "label": {
+        "es": "Documento de trabajo · Loyola",
+        "en": "Working paper · Loyola"
+      }
     }
   }
 ]

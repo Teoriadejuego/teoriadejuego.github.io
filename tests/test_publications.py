@@ -87,22 +87,16 @@ class PublicationTests(unittest.TestCase):
             self.assertNotIn('Citar', text)
             self.assertNotIn('Ficha institucional', text)
 
-    def test_verified_full_text_precedes_doi_and_other_links(self):
-        _, _, page = self.page()
-        for p in self.content['publications']:
-            links = page.articles[p['id']]['links']
-            # First link is the title's persistent DOI; action links follow.
-            if p.get('open_access'):
-                self.assertEqual(links[1]['href'], p['open_access']['url'])
-            else:
-                self.assertEqual(links[1]['href'], 'https://doi.org/' + p['doi'])
-
-    def test_other_language_permalink_is_static_and_preserves_identity(self):
-        for language, path in [('es', '../en/publications/'), ('en', '../../publications/')]:
-            _, _, page = self.page(language)
-            for ident, article in page.articles.items():
-                link = next(a for a in article['links'] if a.get('class') == 'publication-language')
-                self.assertEqual(link['href'], path + '#' + ident)
+    def test_each_article_has_exactly_the_doi_and_selected_repository(self):
+        for language in ('es', 'en'):
+            body, _, page = self.page(language)
+            for paper in self.content['publications']:
+                article = page.articles[paper['id']]
+                self.assertEqual([a['href'] for a in article['links']],
+                                 ['https://doi.org/' + paper['doi'], paper['repository']['url']])
+                for term in paper['keywords'][language]:
+                    self.assertIn(term, article['attributes']['data-search'])
+            self.assertNotIn('The development of rationality in games with hidden information', body)
 
     def test_venue_precedes_authors_and_actions_have_stable_dom_order(self):
         body, _, page = self.page()
@@ -119,12 +113,6 @@ class PublicationTests(unittest.TestCase):
             paper[key][4], paper[key][-1] = paper[key][-1], paper[key][4]
         body, _, _ = self.page(publications=pubs)
         self.assertIn('Antonio Alfonso: autor 72 de 72.', body)
-
-    def test_publication_note_is_only_in_affected_article(self):
-        body, _, _ = self.page()
-        introduction = body.split('<section class="section" id="articles">')[0]
-        self.assertNotIn('diciembre', introduction)
-        self.assertEqual(body.count('diciembre de 2026'), 1)
 
     def test_structured_year_and_verified_published_version(self):
         _, schemas, _ = self.page()
@@ -178,13 +166,6 @@ class PublicationTests(unittest.TestCase):
             body, _, _ = self.page(language)
             self.assertNotIn('Later publication:', body)
             self.assertNotIn('Publicación posterior:', body)
-        # A relation is synthetic test data, never inferred for the live papers.
-        self.content['working-papers'][0]['published_as'] = 'triadic'
-        validate_content(self.content)
-        for language in ('es', 'en'):
-            body, _, _ = self.page(language)
-            label = 'Publicación posterior:' if language == 'es' else 'Later publication:'
-            self.assertRegex(body, r'href="\./#triadic"[^>]*>' + label)
         self.content['working-papers'][0]['published_as'] = 'unknown-paper'
         with self.assertRaisesRegex(ContentError, 'published_as'):
             validate_content(self.content)

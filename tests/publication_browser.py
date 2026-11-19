@@ -62,25 +62,22 @@ def main():
                 article.locator('summary').click()
                 assert article.locator('.authors-list li').count() == 72
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1')
-                assert article.locator('.pub-links a').first.get_attribute('href').endswith('/pnas.202504632.pdf')
-                other = article.locator('.publication-language')
-                title = article.locator('h2').inner_text()
-                other.click()
-                page.wait_for_load_state('networkidle')
-                assert urlsplit(page.url).fragment == 'private-solutions'
-                assert page.locator('#private-solutions h2').inner_text() == title
+                assert article.get_by_role('link').count() == 2
+                assert article.get_by_role('link', name='DOI', exact=True).count() == 1
+                assert article.locator('.pub-links a').last.get_attribute('href').endswith('/pnas.202504632.pdf')
+                term = 'cooperación' if language == 'es' else 'cooperation'
+                page.locator('#pub-search').fill(term)
+                assert article.is_visible()
                 records.append({'language': language, 'years': years, 'topic_search': True, 'action_labels_excluded': True})
             nojs = browser.new_context(java_script_enabled=False, viewport={'width': 320, 'height': 800})
             nojs.route('**/*', guard)
             plain = nojs.new_page()
             plain.goto(BASE + '/publications/#triadic', wait_until='networkidle')
-            plain.locator('#triadic .publication-language').click()
-            plain.wait_for_load_state('networkidle')
-            assert urlsplit(plain.url).path.endswith('/en/publications/') and urlsplit(plain.url).fragment == 'triadic'
-            assert plain.locator('#triadic').is_visible()
+            assert plain.locator('#triadic').get_by_role('link').count() == 2
+            assert plain.locator('#triadic .paper-keywords').is_visible()
             assert not errors, errors
             assert not violations, violations
-            print(json.dumps({'publications': records, 'mobile_width': 320, 'no_js_permalink': True, 'page_errors': errors}))
+            print(json.dumps({'publications': records, 'mobile_width': 320, 'no_js_links': True, 'page_errors': errors}))
         finally:
             browser.close()
 

@@ -156,6 +156,15 @@ def _links(value, path):
         _url(item["url"], field + ".url")
 
 
+def _paper_details(item, path):
+    _localized(item["keywords"], path + ".keywords", lists=True)
+    repo = item["repository"]
+    field = path + ".repository"
+    _object(repo, field, {"url", "label"})
+    _url(repo["url"], field + ".url")
+    _localized(repo["label"], field + ".label")
+
+
 def validate_content(content: dict) -> None:
     """Validate all six catalogues, preserving their values and editorial order."""
     _object(content, "content", CATALOGUES)
@@ -182,7 +191,8 @@ def validate_content(content: dict) -> None:
     publications = content["publications"]
     for i, item in enumerate(publications):
         path = f"data/publications.json[{i}]"
-        _object(item, path, {"id", "doi", "year", "topic", "title", "authors", "author_parts", "journal", "volume", "issue", "pages", "summary", "links"}, {"version", "open_access"})
+        _object(item, path, {"id", "doi", "year", "topic", "title", "authors", "author_parts", "journal", "volume", "issue", "pages", "summary", "links", "keywords", "repository"}, {"version", "open_access"})
+        _paper_details(item, path)
         _slug(item["id"], path + ".id")
         _doi(item["doi"], path + ".doi")
         _year(item["year"], path + ".year")
@@ -287,7 +297,8 @@ def validate_content(content: dict) -> None:
 
     for i, item in enumerate(content["working-papers"]):
         path = f"data/working-papers.json[{i}]"
-        _object(item, path, {"title", "year", "authors", "url", "status"}, {"pdf", "published_as"})
+        _object(item, path, {"title", "year", "authors", "url", "status", "keywords", "repository"}, {"pdf", "published_as"})
+        _paper_details(item, path)
         _text(item["title"], path + ".title")
         _year(item["year"], path + ".year")
         _text(item["authors"], path + ".authors")

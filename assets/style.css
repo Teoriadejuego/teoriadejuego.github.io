@@ -224,3 +224,5 @@ fieldset.filters{border:0;padding:0;min-width:0}
   .timeline li > div { flex: 1 1 0; }
   .principles > div { break-inside: avoid; }
 }
+
+.paper-keywords { font-size: .9rem; color: var(--muted); margin: 10px 0; }

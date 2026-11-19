@@ -21,7 +21,10 @@ def bilingual(es="Texto público", en="Public text"):
 
 def fixture():
     """Small synthetic corpus, intentionally not the production record counts."""
+    paper_fields = {"keywords": bilingual(["Experimento"], ["Experiment"]),
+                    "repository": {"url": "https://example.org/archive", "label": bilingual()}}
     publication = {
+        **paper_fields,
         "id": "historical-study", "doi": "10.1234/example.1", "year": 1901,
         "topic": "experiments", "title": "A documented experiment",
         "authors": ["Ana García López", "Ben Smith"],
@@ -46,7 +49,7 @@ def fixture():
         "site": {"schema_version": 1, "updated": "2024-02-29", "home_projects": ["public-tool"], "home_publications": ["historical-study"]},
         "projects": [project, research], "publications": [publication],
         "software": [{"title": "Example", "repo": "example_repo", "description": bilingual(), "stage": bilingual()}],
-        "working-papers": [{"title": "Work in progress", "year": 2099, "authors": "Ana García López; Ben Smith", "url": "https://doi.org/10.1234/working.1", "status": bilingual()}],
+        "working-papers": [{**copy.deepcopy(paper_fields), "title": "Work in progress", "year": 2099, "authors": "Ana García López; Ben Smith", "url": "https://doi.org/10.1234/working.1", "status": bilingual()}],
         "resources": [{"title": "Teaching instructions", "url": "https://example.org/record?id=42", "pdf": "https://example.org/paper%20%281%29.pdf"}],
     }
 

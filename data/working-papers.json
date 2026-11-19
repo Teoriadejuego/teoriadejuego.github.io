@@ -7,6 +7,25 @@
     "status": {
       "es": "Preprint · SSRN",
       "en": "Preprint · SSRN"
+    },
+    "keywords": {
+      "es": [
+        "Redes de aula",
+        "Equilibrio estructural",
+        "Relaciones dirigidas"
+      ],
+      "en": [
+        "Classroom networks",
+        "Structural balance",
+        "Directed ties"
+      ]
+    },
+    "repository": {
+      "url": "https://www.ssrn.com/abstract=7687098",
+      "label": {
+        "es": "Repositorio · SSRN",
+        "en": "Repository · SSRN"
+      }
     }
   },
   {
@@ -18,6 +37,25 @@
     "status": {
       "es": "Documento de trabajo · Loyola",
       "en": "Working paper · Loyola"
+    },
+    "keywords": {
+      "es": [
+        "Información privada",
+        "Racionalidad",
+        "Teoría de la mente"
+      ],
+      "en": [
+        "Private information",
+        "Rationality",
+        "Theory of mind"
+      ]
+    },
+    "repository": {
+      "url": "https://repositorio.uloyola.es/handle/20.500.12412/6585",
+      "label": {
+        "es": "Repositorio · Loyola",
+        "en": "Repository · Loyola"
+      }
     }
   }
 ]
