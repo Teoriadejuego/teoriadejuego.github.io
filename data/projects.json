@@ -134,7 +134,8 @@
     "seo_title": {
       "es": "ARCO: visualización de datos educativos",
       "en": "ARCO: educational data visualisation"
-    }
+    },
+    "listed": false
   },
   {
     "id": "pbis",
@@ -201,6 +202,64 @@
       "en": "PBIS: school indicators and networks"
     },
     "source": "https://github.com/ProyectoPBIS/pbis-visualizador"
+  },
+  {
+    "id": "rihm",
+    "title": "RIHM",
+    "kind": "software",
+    "repo": "rihm",
+    "demo": "https://teoriadejuego.github.io/rihm/",
+    "tags": [
+      "R / Shiny",
+      "JavaScript"
+    ],
+    "status": {
+      "es": "Laboratorio de decisiones · herramienta docente",
+      "en": "Decision lab · teaching tool"
+    },
+    "role": {
+      "es": "Desarrollo del publicador en Shiny y del panel de consulta para el alumnado.",
+      "en": "Development of the Shiny publishing tool and the student dashboard."
+    },
+    "heading": {
+      "es": "De las decisiones individuales al resultado del grupo",
+      "en": "From individual choices to group results"
+    },
+    "summary": {
+      "es": "El profesorado publica los resultados de un experimento de reparto. El alumnado compara las decisiones de su clase con una referencia internacional.",
+      "en": "Teachers publish the results of an allocation experiment. Students compare their class’s decisions with an international reference group."
+    },
+    "problem": {
+      "es": "Después de un experimento en clase, el alumnado quiere saber cómo ha decidido el grupo. Las respuestas individuales deben quedar en el entorno de investigación.",
+      "en": "After a classroom experiment, students want to see how the group made its choices. Individual responses belong in the research environment."
+    },
+    "work": {
+      "es": "El docente actualiza los resultados desde un panel privado en Shiny. El panel público, escrito en JavaScript, lee la última publicación y permite comparar los resultados agregados desde el navegador.",
+      "en": "The teacher updates the results in a private Shiny panel. A public JavaScript dashboard reads the latest release so students can compare group results in their browser."
+    },
+    "evidence": {
+      "es": "El repositorio documenta las reglas de clasificación y el tratamiento de grupos pequeños. El panel público permite consultar la última actualización.",
+      "en": "The repository documents the classification rules and how small groups are handled. The public dashboard displays the latest published results."
+    },
+    "value": {
+      "es": "Este diseño permite que un equipo revise y publique cifras y que otros equipos las consulten sin acceder a las respuestas originales.",
+      "en": "This design lets one team review and publish figures that other teams can explore without accessing the original responses."
+    },
+    "inspect": {
+      "es": [
+        "Abre el panel del alumnado y compara la clase con el grupo de referencia.",
+        "Consulta en el repositorio cómo se calculan los agregados y cuándo se ocultan los recuentos pequeños."
+      ],
+      "en": [
+        "Open the student dashboard and compare the class with the reference group.",
+        "Inspect how the repository calculates aggregates and when it suppresses small counts."
+      ]
+    },
+    "related": "sonar",
+    "seo_title": {
+      "es": "RIHM: publicación y consulta de resultados experimentales",
+      "en": "RIHM: publishing and exploring experimental results"
+    }
   },
   {
     "id": "networks",

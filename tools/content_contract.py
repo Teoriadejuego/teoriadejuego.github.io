@@ -245,7 +245,9 @@ def validate_content(content: dict) -> None:
     translated = {"heading", "summary", "status", "role", "problem", "work", "evidence", "value", "seo_title"}
     for i, item in enumerate(projects):
         path = f"data/projects.json[{i}]"
-        _object(item, path, translated | {"id", "title", "kind", "tags", "inspect", "related"}, {"repo", "demo", "doi", "source", "additional_links"})
+        _object(item, path, translated | {"id", "title", "kind", "tags", "inspect", "related"}, {"repo", "demo", "doi", "source", "additional_links", "listed"})
+        if "listed" in item and type(item["listed"]) is not bool:
+            _fail(path + ".listed", "expected a boolean")
         _slug(item["id"], path + ".id")
         _slug(item["related"], path + ".related")
         _localized(item["title"], path + ".title", allow_plain=True)

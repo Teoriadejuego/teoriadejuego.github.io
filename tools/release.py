@@ -27,6 +27,7 @@ ASSETS = (
     'thumb-delay.webp',
     'thumb-networks.webp',
     'thumb-pbis.webp',
+    'thumb-rihm.webp',
     'thumb-sonar.webp',
     'thumb-teenslab.webp',
     'thumb-voting.webp',

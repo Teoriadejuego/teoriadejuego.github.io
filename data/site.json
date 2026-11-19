@@ -2,8 +2,8 @@
   "schema_version": 1,
   "updated": "2026-11-19",
   "home_projects": [
-    "sonar",
-    "arco"
+    "pbis",
+    "rihm"
   ],
   "home_publications": [
     "private-solutions",

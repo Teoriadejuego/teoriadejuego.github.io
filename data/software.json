@@ -24,19 +24,6 @@
     }
   },
   {
-    "title": "RIHM",
-    "repo": "rihm",
-    "demo": "https://teoriadejuego.github.io/rihm/",
-    "description": {
-      "es": "Separación de un publicador docente en Shiny y un panel estático Quarto para consultar resultados agregados.",
-      "en": "A Shiny teacher publisher separated from a static Quarto dashboard for aggregate results."
-    },
-    "stage": {
-      "es": "Herramienta docente",
-      "en": "Teaching tool"
-    }
-  },
-  {
     "title": {
       "es": "Arquitectura de datos y ciencia abierta",
       "en": "Data architecture and open science"
