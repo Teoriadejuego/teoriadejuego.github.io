@@ -56,7 +56,7 @@ def inspect_case(page, lang, n, delta, sd, axis_limit):
     rounded_value(values["lab-upper"], hi, lang)
 
     interval = page.locator("#interval").inner_text()
-    match = re.fullmatch(r"\[([^;]+); ([^\]]+)\]", interval)
+    match = re.fullmatch(r"\[([^;]+); ([^\]]+)\] " + ("points" if lang == "en" else "puntos"), interval)
     assert match, interval
     assert match.groups() == (values["lab-lower"], values["lab-upper"])
     title = page.locator("#chart-title").text_content()

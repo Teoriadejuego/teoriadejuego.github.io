@@ -15,8 +15,8 @@
     "title": "AERO-RISK",
     "repo": "aero_risk",
     "description": {
-      "es": "Cuadernos Python, datos sintéticos y análisis reproducible de una tarea de riesgo con aviones de papel.",
-      "en": "Python notebooks, synthetic data and reproducible analysis of a paper-airplane risk task."
+      "es": "Explorar una tarea de riesgo en Python: cuadernos para ejecutar, datos sintéticos y análisis reproducible con aviones de papel.",
+      "en": "Explore a risk task in Python: runnable notebooks, synthetic data and reproducible analysis with paper airplanes."
     },
     "stage": {
       "es": "Simulación docente · 128 registros sintéticos",

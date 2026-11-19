@@ -182,7 +182,7 @@ def validate_content(content: dict) -> None:
     publications = content["publications"]
     for i, item in enumerate(publications):
         path = f"data/publications.json[{i}]"
-        _object(item, path, {"id", "doi", "year", "topic", "title", "authors", "author_parts", "journal", "volume", "issue", "pages", "summary", "links"}, {"version"})
+        _object(item, path, {"id", "doi", "year", "topic", "title", "authors", "author_parts", "journal", "volume", "issue", "pages", "summary", "links"}, {"version", "open_access"})
         _slug(item["id"], path + ".id")
         _doi(item["doi"], path + ".doi")
         _year(item["year"], path + ".year")
@@ -197,6 +197,23 @@ def validate_content(content: dict) -> None:
         if "version" in item:
             _localized(item["version"], path + ".version")
         _links(item["links"], path + ".links")
+        if "open_access" in item:
+            access = item["open_access"]
+            field = path + ".open_access"
+            _object(access, field, {"url", "kind", "checked"})
+            _url(access["url"], field + ".url")
+            _text(access["kind"], field + ".kind")
+            if access["kind"] not in {"published", "manuscript", "preprint"}:
+                _fail(field + ".kind", "unknown full-text version")
+            if access["url"] not in {a["url"] for a in item["links"]}:
+                _fail(field + ".url", "must identify a listed publication link")
+            _text(access["checked"], field + ".checked")
+            try:
+                valid_date = date.fromisoformat(access["checked"]).isoformat() == access["checked"]
+            except ValueError:
+                valid_date = False
+            if not valid_date:
+                _fail(field + ".checked", "expected an ISO calendar date")
         _array(item["authors"], path + ".authors", nonempty=True)
         _array(item["author_parts"], path + ".author_parts", nonempty=True)
         for j, author in enumerate(item["authors"]):
@@ -270,7 +287,7 @@ def validate_content(content: dict) -> None:
 
     for i, item in enumerate(content["working-papers"]):
         path = f"data/working-papers.json[{i}]"
-        _object(item, path, {"title", "year", "authors", "url", "status"}, {"pdf"})
+        _object(item, path, {"title", "year", "authors", "url", "status"}, {"pdf", "published_as"})
         _text(item["title"], path + ".title")
         _year(item["year"], path + ".year")
         _text(item["authors"], path + ".authors")
@@ -282,14 +299,20 @@ def validate_content(content: dict) -> None:
         _url(item["url"], path + ".url")
         if "pdf" in item:
             _url(item["pdf"], path + ".pdf")
+        if "published_as" in item:
+            _slug(item["published_as"], path + ".published_as")
+            if item["published_as"] not in publication_ids:
+                _fail(path + ".published_as", "must reference a catalogued publication")
     _unique([p["url"] for p in content["working-papers"]], "data/working-papers.json.url")
     for i, item in enumerate(content["resources"]):
         path = f"data/resources.json[{i}]"
-        _object(item, path, {"title", "url"}, {"pdf"})
+        _object(item, path, {"title", "url"}, {"pdf", "language"})
         _text(item["title"], path + ".title")
         _url(item["url"], path + ".url")
         if "pdf" in item:
             _url(item["pdf"], path + ".pdf")
+        if "language" in item and item["language"] not in ("es", "en"):
+            raise ContentError(path + ".language: expected es or en")
     _unique([p["url"] for p in content["resources"]], "data/resources.json.url")
 
 

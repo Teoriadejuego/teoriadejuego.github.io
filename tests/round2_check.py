@@ -49,7 +49,7 @@ with sync_playwright() as p:
  page.locator('#effect').fill('-5');page.locator('#effect').dispatch_event('input')
  assert '-0,04' in page.locator('#interval').inner_text()
  assert 'debajo de cero' in page.locator('#interpretation').inner_text()
- assert page.locator('.resource-group').count()==2 and page.locator('.resource-list li').count()==14
+ assert page.locator('.resource-group').count()==3 and page.locator('.resource-list li').count()==14
  for width in [320,810]:
   page.set_viewport_size({'width':width,'height':900})
   for file in (ROOT/'public').rglob('index.html'):

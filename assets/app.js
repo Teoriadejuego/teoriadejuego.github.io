@@ -4,6 +4,23 @@ const setMenu=(open,restore=false)=>{menu?.setAttribute('aria-expanded',String(o
 menu?.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu?.getAttribute('aria-expanded')==='true'){setMenu(false,true)}});
 nav?.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+document.addEventListener('click', event => {
+  if (menu?.getAttribute('aria-expanded') === 'true' && !event.target.closest('.menu-toggle, .nav')) {
+    setMenu(false, nav.contains(document.activeElement));
+  }
+});
+const caseNav = document.querySelector('.case-nav');
+if (caseNav) {
+  const languageLink = document.querySelector('a.lang');
+  const syncCaseSection = () => {
+    const destination = new URL(languageLink.href);
+    const sections = [...caseNav.querySelectorAll('a')];
+    destination.hash = sections.some(link => link.hash === location.hash) ? location.hash : '';
+    languageLink.href = destination.href;
+  };
+  syncCaseSection();
+  window.addEventListener('hashchange', syncCaseSection);
+}
 let lastFocused=document.activeElement;document.addEventListener('focusin',e=>{lastFocused=e.target});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.nav,.menu-toggle'))lastFocused=null});
 window.matchMedia('(max-width:760px)').addEventListener('change',e=>{const active=document.activeElement===document.body?lastFocused:document.activeElement;if(e.matches)setMenu(false,!!nav?.contains(active));else{setMenu(false);if(active===menu)nav?.querySelector('a')?.focus()}});
 document.querySelector('.print-button')?.addEventListener('click',()=>window.print());
@@ -14,7 +31,7 @@ if(search){
  const read=()=>{const q=new URLSearchParams(location.search);search.value=q.get('q')||'';for(const [control,key] of [[topic,'topic'],[year,'year']]){const value=q.get(key)||'';control.value=[...control.options].some(o=>o.value===value)?value:''}};
  const languageLink=document.querySelector('a.lang');
  const syncLanguage=()=>{if(!languageLink)return;const url=new URL(languageLink.href);url.search=location.search;for(const [key,value] of [['q',search.value.trim()],['topic',topic.value],['year',year.value]]){if(value)url.searchParams.set(key,value);else url.searchParams.delete(key)}url.hash=location.hash;languageLink.href=url.href};
- const filter=(sync=true)=>{let n=0;for(const row of rows){const show=normal(row.textContent+' '+(row.dataset.search||'')).includes(normal(search.value.trim()))&&(!topic.value||row.dataset.topic===topic.value)&&(!year.value||row.dataset.year===year.value);row.hidden=!show;if(show)n++}count.textContent=en?`${n} of ${rows.length} articles`:`${n} de ${rows.length} artículos`;empty.hidden=n!==0;reset.hidden=!search.value&&!topic.value&&!year.value;
+ const filter=(sync=true)=>{let n=0;for(const row of rows){const show=normal(row.dataset.search||'').includes(normal(search.value.trim()))&&(!topic.value||row.dataset.topic===topic.value)&&(!year.value||row.dataset.year===year.value);row.hidden=!show;if(show)n++}count.textContent=en?`${n} of ${rows.length} articles`:`${n} de ${rows.length} artículos`;empty.hidden=n!==0;reset.hidden=!search.value&&!topic.value&&!year.value;
   if(sync){const url=new URL(location.href);for(const [key,value] of [['q',search.value.trim()],['topic',topic.value],['year',year.value]]){if(value)url.searchParams.set(key,value);else url.searchParams.delete(key)}history.replaceState(null,'',url)}
   syncLanguage();
  };
@@ -31,14 +48,16 @@ if(lab){
  const controls=[[n,'n',200],[delta,'delta',3],[noise,'sd',15]],languageLink=document.querySelector('a.lang');
  const readLab=()=>{const params=new URLSearchParams(location.search);for(const [el,key,fallback] of controls){const raw=params.get(key),value=raw===null||raw.trim()===''?fallback:Number(raw),min=Number(el.min),max=Number(el.max),step=Number(el.step);el.value=String(Number.isFinite(value)?Math.min(max,Math.max(min,min+Math.round((value-min)/step)*step)):fallback)}};
  const syncLab=()=>{const url=new URL(location.href);for(const [el,key,fallback] of controls){if(Number(el.value)===fallback)url.searchParams.delete(key);else url.searchParams.set(key,el.value)}history.replaceState(null,'',url);if(languageLink){const target=new URL(languageLink.href);target.search='';for(const [,key] of controls)if(url.searchParams.has(key))target.searchParams.set(key,url.searchParams.get(key));target.hash=url.hash;languageLink.href=target.href}};
+ let previousScale=null;
  const update=()=>{
   const size=Number(n.value),effect=Number(delta.value),sd=Number(noise.value),se=Math.sqrt(2*sd*sd/size),half=1.96*se,lo=effect-half,hi=effect+half;
   document.querySelector('#sample-value').textContent=format(size,0);document.querySelector('#effect-value').textContent=format(effect);document.querySelector('#noise-value').textContent=format(sd,0);
   document.querySelector('#estimate').textContent=`${format(effect)} ${en?'points':'puntos'}`;
-  document.querySelector('#interval').textContent=`[${bound(lo)}; ${bound(hi)}]`;
+  document.querySelector('#interval').textContent=`[${bound(lo)}; ${bound(hi)}] ${en?'points':'puntos'}`;
   for(const [id,value] of [['lab-n',format(size,0)],['lab-delta',format(effect)],['lab-sd',format(sd,0)],['lab-se',format(se,2)],['lab-lower',bound(lo)],['lab-upper',bound(hi)]]){const cell=document.getElementById(id);if(cell)cell.textContent=value}
   document.querySelector('#interpretation').textContent=hi<0?(en?'Under these assumptions, the interval lies below zero. Whether a negative difference is useful depends on the outcome being measured.':'Bajo estos supuestos, el intervalo queda por debajo de cero. Que una diferencia negativa sea útil depende del indicador medido.'):lo>0?(en?'Under these assumptions, the interval lies above zero. Statistical separation alone does not establish business value.':'Bajo estos supuestos, el intervalo queda por encima de cero. La separación estadística no demuestra por sí sola valor para el negocio.'):(en?'The interval includes zero: these inputs leave substantial uncertainty about the direction of the effect.':'El intervalo incluye el cero: con estos valores persiste incertidumbre sobre la dirección del efecto.');
   const scale=Math.max(20,Math.ceil(Math.max(Math.abs(lo),Math.abs(hi))/10)*10),x=v=>250+200*v/scale;
+  const scaleNote=document.querySelector('#lab-scale-note');if(scaleNote)scaleNote.textContent=previousScale!==null&&previousScale!==scale?(en?`Axis scale changed from ±${format(previousScale,0)} to ±${format(scale,0)} points since the previous setting.`:`La escala del eje ha cambiado de ±${format(previousScale,0)} a ±${format(scale,0)} puntos respecto al ajuste anterior.`):(en?`Axis scale: −${format(scale,0)} to +${format(scale,0)} points.`:`Escala del eje: −${format(scale,0)} a +${format(scale,0)} puntos.`);previousScale=scale;
   document.querySelector('#ci-negative').textContent='−'+format(scale,0);document.querySelector('#ci-positive').textContent='+'+format(scale,0);
   document.querySelector('#ci-line').setAttribute('x1',x(lo));document.querySelector('#ci-line').setAttribute('x2',x(hi));
   document.querySelector('#point').setAttribute('cx',x(effect));

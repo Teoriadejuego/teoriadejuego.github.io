@@ -19,7 +19,7 @@ def main():
     axe = Path(os.environ.get('AXE_SCRIPT', str(ROOT / 'qa/axe.min.js')))
     if not axe.is_file():
         raise SystemExit('AXE_REQUIRED: run python tools/fetch_axe.py before browser validation')
-    checks = [(name, 'chromium') for name in ['browser_check.py', 'round2_check.py', 'round3_check.py', 'scientific_browser.py', 'privacy_browser.py']]
+    checks = [(name, 'chromium') for name in ['browser_check.py', 'round2_check.py', 'round3_check.py', 'profile_micro_browser.py', 'publication_browser.py', 'scientific_browser.py', 'privacy_browser.py']]
     if args.firefox:
         checks += [(name, 'firefox') for name in ['scientific_browser.py', 'privacy_browser.py']]
     results = []

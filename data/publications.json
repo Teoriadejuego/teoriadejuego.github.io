@@ -21,10 +21,10 @@
     "links": [
       {
         "label": {
-          "es": "Texto completo abierto",
-          "en": "Open full text"
+          "es": "Texto completo abierto · editorial",
+          "en": "Open full text · publisher"
         },
-        "url": "https://doi.org/10.1016/j.socec.2026.102668"
+        "url": "https://www.sciencedirect.com/science/article/pii/S221480432600159X"
       }
     ],
     "version": {
@@ -44,7 +44,12 @@
         "given": "M.P.",
         "family": "Ramos-Sosa"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://www.sciencedirect.com/science/article/pii/S221480432600159X",
+      "kind": "published",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "private-solutions",
@@ -137,8 +142,8 @@
     "links": [
       {
         "label": {
-          "es": "Repositorio LSE",
-          "en": "LSE repository"
+          "es": "Ficha institucional · LSE",
+          "en": "Institutional record · LSE"
         },
         "url": "https://researchonline.lse.ac.uk/id/eprint/137840/"
       },
@@ -439,7 +444,12 @@
         "given": "Thomas",
         "family": "Hills"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://researchonline.lse.ac.uk/id/eprint/137840/1/pnas.202504632.pdf",
+      "kind": "published",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "voting",
@@ -463,8 +473,8 @@
     "links": [
       {
         "label": {
-          "es": "Repositorio RIO · UPO",
-          "en": "RIO repository · UPO"
+          "es": "Ficha institucional · RIO, UPO",
+          "en": "Institutional record · RIO, UPO"
         },
         "url": "https://hdl.handle.net/10433/26388"
       }
@@ -512,15 +522,15 @@
     "links": [
       {
         "label": {
-          "es": "Repositorio Loyola",
-          "en": "Loyola repository"
+          "es": "Ficha institucional · Loyola",
+          "en": "Institutional record · Loyola"
         },
         "url": "https://repositorio.uloyola.es/handle/20.500.12412/5445"
       },
       {
         "label": {
-          "es": "Descargar PDF · repositorio",
-          "en": "Download PDF · repository"
+          "es": "PDF · Loyola",
+          "en": "PDF · Loyola"
         },
         "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/5445/1/Baking_JPEMicro.pdf"
       }
@@ -550,7 +560,12 @@
         "given": "María José Vázquez-De",
         "family": "Francisco"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/5445/1/Baking_JPEMicro.pdf",
+      "kind": "manuscript",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "teenslab",
@@ -597,15 +612,15 @@
       },
       {
         "label": {
-          "es": "Repositorio Loyola",
-          "en": "Loyola repository"
+          "es": "Ficha institucional · Loyola",
+          "en": "Institutional record · Loyola"
         },
         "url": "https://repositorio.uloyola.es/handle/20.500.12412/5492"
       },
       {
         "label": {
-          "es": "Descargar PDF · repositorio",
-          "en": "Download PDF · repository"
+          "es": "PDF · Loyola",
+          "en": "PDF · Loyola"
         },
         "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/5492/1/ScData_TeensLab%20%282%29.pdf"
       },
@@ -705,7 +720,12 @@
         "given": "Pablo",
         "family": "Brañas-Garza"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://naos-be.zcu.cz/server/api/core/bitstreams/c46eb5a5-2445-41dc-9aa1-bcc531a0edf9/content",
+      "kind": "published",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "airplanes",
@@ -734,8 +754,8 @@
       },
       {
         "label": {
-          "es": "Preprint · MPRA",
-          "en": "Preprint · MPRA"
+          "es": "Ficha de preprint · MPRA, LMU",
+          "en": "Preprint record · MPRA, LMU"
         },
         "url": "https://mpra.ub.uni-muenchen.de/108541/"
       }
@@ -745,7 +765,12 @@
         "given": "Antonio",
         "family": "Alfonso"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2024.1301952/full",
+      "kind": "published",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "climate",
@@ -770,8 +795,8 @@
     "links": [
       {
         "label": {
-          "es": "Texto completo abierto",
-          "en": "Open full text"
+          "es": "Artículo editorial",
+          "en": "Publisher article"
         },
         "url": "https://doi.org/10.1088/2632-072X/ad2372"
       }
@@ -821,15 +846,22 @@
     "links": [
       {
         "label": {
-          "es": "Preprint abierto · OSF",
-          "en": "Open preprint · OSF"
+          "es": "PDF de trabajo · RedNIE",
+          "en": "Working-paper PDF · RedNIE"
+        },
+        "url": "https://rednie.eco.unc.edu.ar/files/DT/214.pdf"
+      },
+      {
+        "label": {
+          "es": "Ficha de preprint · PsyArXiv",
+          "en": "Preprint record · PsyArXiv"
         },
         "url": "https://osf.io/preprints/psyarxiv/zphx9"
       }
     ],
     "version": {
-      "es": "Versión previa a la publicación, disponible en PsyArXiv.",
-      "en": "Pre-publication version available on PsyArXiv."
+      "es": "Versión de trabajo anterior al artículo: RedNIE, documento 214 (febrero de 2023), con manuscrito fechado en noviembre de 2022. PsyArXiv conserva otra ficha de preprint.",
+      "en": "Pre-publication working paper: RedNIE paper 214 (February 2023), with a manuscript dated November 2022. PsyArXiv hosts another preprint record."
     },
     "author_parts": [
       {
@@ -860,7 +892,12 @@
         "given": "María J.",
         "family": "Vázquez-De Francisco"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://rednie.eco.unc.edu.ar/files/DT/214.pdf",
+      "kind": "preprint",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "triadic",
@@ -895,15 +932,15 @@
       },
       {
         "label": {
-          "es": "Repositorio Loyola",
-          "en": "Loyola repository"
+          "es": "Ficha institucional · Loyola",
+          "en": "Institutional record · Loyola"
         },
         "url": "https://repositorio.uloyola.es/handle/20.500.12412/4102"
       },
       {
         "label": {
-          "es": "Descargar PDF · repositorio",
-          "en": "Download PDF · repository"
+          "es": "PDF · Loyola",
+          "en": "PDF · Loyola"
         },
         "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4102/1/social_networks_link_prediction_revised.pdf"
       }
@@ -941,7 +978,12 @@
         "given": "Angel",
         "family": "Sánchez"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://zaguan.unizar.es/record/128014/files/texto_completo.pdf",
+      "kind": "published",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "honesty",
@@ -965,15 +1007,15 @@
     "links": [
       {
         "label": {
-          "es": "Repositorio Loyola",
-          "en": "Loyola repository"
+          "es": "Ficha institucional · Loyola",
+          "en": "Institutional record · Loyola"
         },
         "url": "https://repositorio.uloyola.es/handle/20.500.12412/4444"
       },
       {
         "label": {
-          "es": "Descargar PDF · repositorio",
-          "en": "Download PDF · repository"
+          "es": "PDF · Loyola",
+          "en": "PDF · Loyola"
         },
         "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4444/1/Dice%20papeer.pdf"
       }
@@ -995,7 +1037,12 @@
         "given": "Ma Carmen",
         "family": "López-Martín"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4444/1/Dice%20papeer.pdf",
+      "kind": "manuscript",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "generosity",
@@ -1022,15 +1069,15 @@
     "links": [
       {
         "label": {
-          "es": "Repositorio Loyola",
-          "en": "Loyola repository"
+          "es": "Ficha institucional · Loyola",
+          "en": "Institutional record · Loyola"
         },
         "url": "https://repositorio.uloyola.es/handle/20.500.12412/4110"
       },
       {
         "label": {
-          "es": "Descargar PDF · repositorio",
-          "en": "Download PDF · repository"
+          "es": "PDF · Loyola",
+          "en": "PDF · Loyola"
         },
         "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4110/1/Exposure%20to%20the%20COVID-19pandemic%20environment%20andgenerosity.pdf"
       }
@@ -1064,7 +1111,12 @@
         "given": "J.",
         "family": "Kovářík"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/4110/1/Exposure%20to%20the%20COVID-19pandemic%20environment%20andgenerosity.pdf",
+      "kind": "published",
+      "checked": "2026-11-19"
+    }
   },
   {
     "id": "volunteering",
@@ -1088,15 +1140,15 @@
     "links": [
       {
         "label": {
-          "es": "Repositorio Loyola",
-          "en": "Loyola repository"
+          "es": "Ficha institucional · Loyola",
+          "en": "Institutional record · Loyola"
         },
         "url": "https://repositorio.uloyola.es/handle/20.500.12412/7550"
       },
       {
         "label": {
-          "es": "Descargar PDF · repositorio",
-          "en": "Download PDF · repository"
+          "es": "PDF · Loyola",
+          "en": "PDF · Loyola"
         },
         "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/7550/1/MPRA_paper_103976.pdf"
       }
@@ -1118,6 +1170,11 @@
         "given": "Dunia",
         "family": "López-Pintado"
       }
-    ]
+    ],
+    "open_access": {
+      "url": "https://repositorio.uloyola.es/bitstream/20.500.12412/7550/1/MPRA_paper_103976.pdf",
+      "kind": "preprint",
+      "checked": "2026-11-19"
+    }
   }
 ]

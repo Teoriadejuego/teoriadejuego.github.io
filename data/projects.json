@@ -5,13 +5,13 @@
     "kind": "software",
     "repo": "sonar-2026",
     "tags": [
-      "React",
-      "FastAPI",
-      "Python",
       {
         "es": "Experimentación",
         "en": "Experimentation"
-      }
+      },
+      "FastAPI",
+      "React",
+      "Python"
     ],
     "status": {
       "es": "Proyecto de investigación · 2026",
@@ -30,8 +30,8 @@
       "en": "Infrastructure to study honesty and social norms: a mobile experience, treatment allocation, decision recording and analysis."
     },
     "problem": {
-      "es": "Ejecutar un experimento fuera del laboratorio exige que la interfaz, los incentivos y los registros respeten un mismo protocolo.",
-      "en": "Running an experiment outside the lab requires the interface, incentives and records to follow the same protocol."
+      "es": "La persona participante decide qué número declarar de su primera tirada privada. SONAR estudia cómo cambia ese reporte cuando se muestra una norma descriptiva fija, frente a un control sin norma visible.",
+      "en": "The participant decides which number to report from their first private roll. SONAR studies how that report changes under a fixed descriptive norm, compared with a control without a visible norm."
     },
     "work": {
       "es": "El repositorio documenta un frontend React, backend FastAPI y una lógica experimental resuelta en servidor. El recorrido conecta consentimiento, comprensión, tarea, reporte y salida.",
@@ -60,7 +60,16 @@
     "seo_title": {
       "es": "SONAR: diseño de experimentos digitales",
       "en": "SONAR: digital experiment design"
-    }
+    },
+    "additional_links": [
+      {
+        "label": {
+          "es": "Protocolo SONAR · metodología de 2 mayo 2026",
+          "en": "SONAR protocol · methodology dated 2 May 2026"
+        },
+        "url": "https://github.com/Teoriadejuego/sonar-2026/blob/877f9415e5ce49a889710a671c606b2c90e26a43/docs/METHODOLOGY.md"
+      }
+    ]
   },
   {
     "id": "arco",
@@ -69,15 +78,15 @@
     "repo": "arco",
     "demo": "https://teoriadejuego.github.io/arco/DEMO.html",
     "tags": [
-      "JavaScript",
+      {
+        "es": "Flujos de datos",
+        "en": "Data workflows"
+      },
       {
         "es": "Visualización",
         "en": "Visualisation"
       },
-      {
-        "es": "Flujos de datos",
-        "en": "Data workflows"
-      }
+      "JavaScript"
     ],
     "status": {
       "es": "Herramientas en evaluación · datos simulados",
@@ -113,11 +122,11 @@
     },
     "inspect": {
       "es": [
-        "Abre la demostración guiada y recorre SALMER, DOVELA y CLAVE.",
+        "En la demo, pulsa «Ir a la encuesta» y responde como una estudiante ficticia; después recorre la preparación y la consulta.",
         "Observa cómo cambian los datos y las vistas entre recogida, preparación y consulta. El ejemplo usa datos simulados."
       ],
       "en": [
-        "Open the guided demonstration and explore SALMER, DOVELA and CLAVE.",
+        "In the demo, choose “Ir a la encuesta” (go to the survey) and answer as a fictional student; then follow preparation and exploration.",
         "Inspect how data and views change between collection, preparation and exploration. The example uses simulated data."
       ]
     },
@@ -132,9 +141,8 @@
     "title": "PBIS",
     "kind": "software",
     "repo": "pbis-poc",
-    "demo": "https://teoriadejuego.github.io/pbis-poc/DEMO.html#guia",
+    "demo": "https://proyectopbis.github.io/pbis-visualizador/DEMO.html#demo",
     "tags": [
-      "HTML / JavaScript",
       {
         "es": "Redes",
         "en": "Networks"
@@ -142,7 +150,8 @@
       {
         "es": "Visualización",
         "en": "Visualisation"
-      }
+      },
+      "HTML / JavaScript"
     ],
     "status": {
       "es": "Prototipo en evaluación · demo sintética",
@@ -169,8 +178,8 @@
       "en": "Hierarchical exploration, relationship networks, local import and a guided demonstration with 1,512 simulated students. The information supports professional judgement."
     },
     "evidence": {
-      "es": "Código y demo pública con estudiantes y respuestas sintéticos. Permite inspeccionar filtros, niveles de consulta y contexto de los indicadores.",
-      "en": "Public code and demonstration with synthetic students and responses. It supports inspection of filters, exploration levels and indicator context."
+      "es": "Código y demo pública con estudiantes y respuestas sintéticos. La captura de aula que aparece debajo permite reconocer los filtros y el contexto de los indicadores antes de abrir la demo.",
+      "en": "Public code and a demonstration with synthetic students and responses. The classroom screenshot below helps you identify the filters and indicator context before opening the demo."
     },
     "value": {
       "es": "Transformar indicadores complejos en recorridos de análisis claros, conservando denominadores y datos pendientes.",
@@ -178,11 +187,11 @@
     },
     "inspect": {
       "es": [
-        "Sigue el acceso de demostración indicado en la guía y carga los datos demo desde la aplicación.",
+        "Abre la demo: los datos simulados se cargan directamente. Elige un centro, un curso y un aula para comparar las vistas.",
         "Compara las vistas de centro, aula y estudiante; revisa filtros, denominadores y datos pendientes. Son ejemplos sintéticos."
       ],
       "en": [
-        "Follow the demo access shown in the guide and load the application’s demo data.",
+        "Open the demo: simulated data loads directly. Choose a school, year and classroom to compare the views.",
         "Compare school, class and student views; review filters, denominators and missing data. These are synthetic examples."
       ]
     },
@@ -190,7 +199,8 @@
     "seo_title": {
       "es": "PBIS: indicadores y redes educativas",
       "en": "PBIS: school indicators and networks"
-    }
+    },
+    "source": "https://github.com/ProyectoPBIS/pbis-visualizador"
   },
   {
     "id": "networks",
@@ -228,8 +238,8 @@
       "en": "A study of 13 schools, over 3,000 students and 60,000 reported relationships compares network signals with individual attributes."
     },
     "problem": {
-      "es": "Identificar qué información ayuda a predecir relaciones positivas y negativas en una red social.",
-      "en": "Identify which information helps predict positive and negative relationships in a social network."
+      "es": "Identificar qué información ayuda a predecir relaciones positivas y negativas en una red social. Aquí, «compatibilidad» alude a la afinidad social entre dos estudiantes: sus relaciones con terceros sirven como aproximación, no como test individual de selección.",
+      "en": "Identify which information helps predict positive and negative relationships in a social network. Here, “compatibility” refers to social affinity between two students: their relationships with others act as a proxy, not as an individual selection test."
     },
     "work": {
       "es": "El equipo comparó influencia triádica, atributos personales y representaciones de la red mediante modelos predictivos.",
@@ -291,8 +301,8 @@
       "en": "Understand incentives before intervening."
     },
     "summary": {
-      "es": "Un experimento internacional estudia cómo las alternativas privadas interactúan con la cooperación y la desigualdad.",
-      "en": "An international experiment studies how private alternatives interact with cooperation and inequality."
+      "es": "Un experimento realizado en 34 países —el alcance geográfico de la comparación— estudia cómo las alternativas privadas interactúan con la cooperación y la desigualdad.",
+      "en": "An experiment conducted in 34 countries—the geographical scope of the comparison—studies how private alternatives interact with cooperation and inequality."
     },
     "problem": {
       "es": "Las soluciones individuales pueden competir con una solución colectiva, incluso cuando esta última beneficia al conjunto.",
@@ -333,12 +343,12 @@
     "doi": "10.1038/s41597-024-04298-6",
     "tags": [
       {
-        "es": "Datos abiertos",
-        "en": "Open data"
-      },
-      {
         "es": "Medición",
         "en": "Measurement"
+      },
+      {
+        "es": "Datos abiertos",
+        "en": "Open data"
       },
       "Scientific Data"
     ],
@@ -363,8 +373,8 @@
       "en": "Comparisons across people and contexts require defined measures and data that can be interpreted outside the original team."
     },
     "work": {
-      "es": "El estudio reúne tareas experimentales y variables complementarias en una fuente documentada: 5.890 participantes iniciales de 33 centros. 609 no completaron todo el cuestionario; la muestra disponible varía por medida.",
-      "en": "The study brings experimental tasks and supplementary variables together in a documented resource: 5,890 initial participants across 33 institutions. 609 did not complete the full questionnaire; the available sample varies by measure."
+      "es": "El estudio reúne tareas experimentales y variables complementarias en una fuente documentada. 609 participantes no completaron todo el cuestionario; la muestra disponible varía por medida.",
+      "en": "The study brings experimental tasks and supplementary variables together in a documented resource. 609 participants did not complete the full questionnaire; the available sample varies by measure."
     },
     "evidence": {
       "es": "Artículo en Scientific Data, versiones editoriales e institucionales abiertas y dataset con variables, tareas y código de análisis en Zenodo.",

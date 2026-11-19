@@ -117,3 +117,83 @@ h1,h2,h3{overflow-wrap:anywhere}.publication .authors{max-width:78ch}.publicatio
   .publication .editorial-thumb { width: 42px; height: 42px; margin: 0; order: -1; }
 }
 @media print { .editorial-thumb { display: none !important; } }
+
+@media (max-width: 760px) {
+  .home-projects .collection-link { margin-top: 12px; }
+}
+
+/* Project catalogue and case evidence */
+.project-index .work:focus-within{outline:2px solid var(--teal);outline-offset:8px}
+.work .case-audience{font-weight:600;font-size:.94rem;line-height:1.55;margin:6px 0 8px}
+.project-acronyms{display:block;font-size:.88rem;color:var(--muted);margin-top:4px}
+.software-list .tool-name{font-weight:600;margin:-8px 0 12px;color:var(--teal)}
+.study-scale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px;margin:20px 0;padding:16px 0;border-block:1px solid #c4d6df}
+.study-scale dt{font-size:.88rem;color:var(--muted)}
+.study-scale dd{margin:4px 0 0;font-weight:600;font-size:1.08rem;overflow-wrap:anywhere}
+@media(max-width:420px){.study-scale{grid-template-columns:1fr}
+}
+@media(forced-colors:active){.project-index .work:focus-within{outline-color:Highlight}
+.study-scale{border-color:CanvasText}
+}
+
+
+
+/* Profile, team and experiment details */
+/* Profile, teams and lab micro-improvements 51–70, 73, 79, 89. */
+.thesis-record{margin-top:8px!important}
+.fit-grid+.hiring-facts{margin-top:40px}
+
+.lab-start{max-width:70ch;margin:16px 0 24px}
+.control-help{font-size:.85rem;margin-top:6px}
+.control-help summary{color:var(--ink)}
+.control-help p{margin:10px 0 0}
+.lab-sample-help{margin:24px 0 12px}
+.lab-sample-help p{max-width:75ch}
+
+.lab-values .lab-group-heading th{text-align:left;width:auto;white-space:normal;font-weight:700;background:#e3edf2;border-top:2px solid #8faebc}
+.lab-values .lab-calculated tr:not(.lab-group-heading){background:#fff}
+
+@media print{.timeline li>div>p:first-child,.text-list li>strong{break-after:avoid;page-break-after:avoid}
+.timeline li>div>small{orphans:2;widows:2}
+.timeline li>div{break-inside:avoid;page-break-inside:avoid}
+.lab-values .lab-group-heading th{background:transparent}
+}
+
+
+
+/* Publication index and reading links */
+/* Publication refinements: maintain the editorial type and existing palette. */
+fieldset.filters{border:0;padding:0;min-width:0}
+
+.filters legend{font-size:.9rem;font-weight:600;padding:0;margin-bottom:12px;color:var(--ink)}
+
+.publication-content{min-width:0}
+
+.publication:target{outline:1px solid #8aa9a7;outline-offset:5px;border-radius:3px}
+
+.publication h2[lang="en"]{overflow-wrap:normal;word-break:normal;hyphens:auto;text-wrap:pretty}
+
+.publication .author-position{display:block;margin-top:5px;color:var(--ink)}
+
+.publication .authors-list{padding-inline-start:3.2em;padding-inline-end:1.2em;column-gap:3.2em}
+
+.publication .authors-list li{padding-inline-start:.45em}
+
+@media(max-width:760px){
+ .filters>div:first-of-type{grid-column:1/-1}
+
+ .publication .year{justify-content:space-between}
+
+ .publication .year .editorial-thumb{order:0;margin-inline-start:12px}
+
+}
+
+@media(forced-colors:active){.publication:target{outline-color:Highlight}
+}
+
+@media print {
+  html:has(.profile-top) { font-size: 10pt; }
+  .timeline li { padding: 5pt 0; }
+  .timeline li > div { flex: 1 1 0; }
+  .principles > div { break-inside: avoid; }
+}

@@ -70,6 +70,15 @@ with sync_playwright() as p:
  for route,name in [('', 'home'),('for-teams/','teams'),('publications/','publications'),('lab/','lab'),('projects/pbis/','pbis')]:
   page.goto(BASE+'/'+route,wait_until='networkidle')
   page.screenshot(path=str(ROOT/f'qa/{name}-desktop-r3.png'),full_page=True)
+ # Decode the shipped assets instead of trusting the HTML size attributes.
+ for thumbnail in sorted((ROOT/'public/assets').glob('thumb-*.webp')):
+  dimensions = page.evaluate("""async url => {
+    const image = new Image();
+    image.src = url;
+    await image.decode();
+    return [image.naturalWidth, image.naturalHeight];
+  }""", BASE+'/assets/'+thumbnail.name)
+  assert dimensions == [224, 224], (thumbnail.name, dimensions)
  asset_bytes=sum(f.stat().st_size for f in (ROOT/'assets').iterdir() if f.is_file())
  assert asset_bytes<550000,asset_bytes
  assert not errors,errors

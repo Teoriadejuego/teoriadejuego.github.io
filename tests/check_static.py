@@ -78,6 +78,15 @@ for f,p in pages.items():
    target=target/'index.html'
   assert target.exists(),('Missing link target',route,href)
   if u.fragment and target in pages:assert unquote(u.fragment) in pages[target].ids,('Missing anchor',route,href)
+# A thumbnail must appear on both language editions of the published site.
+thumbnail_files = set((ROOT/'assets').glob('thumb-*.webp'))
+for language in ('es', 'en'):
+ used = {
+  (path.parent / image['src']).resolve()
+  for path, page in pages.items() if page.lang == language
+  for image in page.images if image.get('class') == 'editorial-thumb'
+ }
+ assert used == thumbnail_files, ('Editorial thumbnail inventory', language, used ^ thumbnail_files)
 for locale in ['', 'en/']:
  s=(ROOT/locale/'publications/index.html').read_text(encoding='utf8')
  assert s.count('class="publication"')==PUB_COUNT
