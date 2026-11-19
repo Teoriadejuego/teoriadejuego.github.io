@@ -83,12 +83,12 @@ MOTIFS = {
  'volunteering': 'sonar',
 }
 
-def thumbnail(current, item_id):
+def thumbnail(current, item_id, *, loading='lazy'):
  motif = MOTIFS.get(item_id)
  if not motif:
   return ''
  src = rel(current, f'assets/thumb-{motif}.webp')
- return f'<img class="editorial-thumb" src="{src}" width="224" height="224" alt="" loading="lazy" decoding="async">'
+ return f'<img class="editorial-thumb" src="{src}" width="224" height="224" alt="" loading="{loading}" decoding="async">'
 
 def work_card(p,lang,current):
  return f'''<article class="work" data-kind="{p['kind']}" data-project="{p['id']}">{thumbnail(current,p["id"])}<p class="work-type">{t('Software y herramientas','Software and tools',lang) if p['kind']=='software' else t('Investigación publicada','Published research',lang)}</p><p class="meta">{esc(loc(p['status'],lang))}</p><h3>{link(rel(current,route(lang,'projects/'+p['id']+'/')),loc(p['title'],lang))}</h3><p class="summary">{esc(loc(p['summary'],lang))}</p><div class="tags">{''.join('<span class="tag">'+esc(loc(s,lang))+'</span>' for s in p['tags'])}</div>{link(rel(current,route(lang,'projects/'+p['id']+'/')),t('Ver el caso: ','Explore: ',lang)+loc(p['title'],lang),'link')}</article>'''
@@ -122,7 +122,7 @@ def publication_page(lang):
   doi_url='https://doi.org/'+p['doi'];same_doi=next((a for a in p['links'] if a['url']==doi_url),None)
   doi_label=(loc(same_doi['label'],lang)+' · DOI') if same_doi else t('Artículo · DOI','Paper · DOI',lang)
   actions=[link(doi_url,doi_label)]+[link(a['url'],loc(a['label'],lang)) for a in p['links'] if a['url']!=doi_url]+[link(rel(c,'downloads/'+p['id']+'.bib'),t('Citar · BibTeX','Cite · BibTeX',lang))]
-  entries.append(f'''<article class="publication" id="{p['id']}" data-search="{esc(p['doi']+' '+' '.join(authors),quote=True)}" data-topic="{p['topic']}" data-year="{p['year']}"><div class="year">{p['year']}{thumbnail(c,p["id"])}</div><div><h2 lang="en">{link('https://doi.org/'+p['doi'],p['title'])}</h2><p class="authors">{authorhtml}</p>{fullauthors}<p class="venue">{esc(venue)}</p><p class="summary">{esc(p['summary'][lang])}</p><div class="pub-links">{''.join(actions)}</div>{'<p class="version">'+esc(loc(p['version'],lang))+'</p>' if p.get('version') else ''}</div></article>''')
+  entries.append(f'''<article class="publication" id="{p['id']}" data-search="{esc(p['doi']+' '+' '.join(authors),quote=True)}" data-topic="{p['topic']}" data-year="{p['year']}"><div class="year">{p['year']}{thumbnail(c,p["id"],loading="eager")}</div><div><h2 lang="en">{link('https://doi.org/'+p['doi'],p['title'])}</h2><p class="authors">{authorhtml}</p>{fullauthors}<p class="venue">{esc(venue)}</p><p class="summary">{esc(p['summary'][lang])}</p><div class="pub-links">{''.join(actions)}</div>{'<p class="version">'+esc(loc(p['version'],lang))+'</p>' if p.get('version') else ''}</div></article>''')
   schemas.append({'@context':'https://schema.org','@type':'ScholarlyArticle','@id':'https://doi.org/'+p['doi'],'name':p['title'],'description':loc(p['summary'],lang),'identifier':{'@type':'PropertyValue','propertyID':'DOI','value':p['doi']},'url':'https://doi.org/'+p['doi'],'author':[dict({'@type':'Person','name':a,'givenName':parts['given'],'familyName':parts['family']},**({'@id':BASE+'/#antonio-alfonso'} if a in ['Antonio Alfonso','Antonio Alfonso-Costillo','A. Alfonso'] else {})) for a,parts in zip(authors,p['author_parts'])],'isPartOf':{'@type':'Periodical','name':p['journal']}})
  opts=[('experiments',t('Experimentos','Experiments',lang)),('networks',t('Redes','Networks',lang)),('data',t('Datos abiertos','Open data',lang)),('behavior',t('Comportamiento','Behaviour',lang))]
  working=''.join(f'''<article class="research-row"><p class="status-label">{loc(w['status'],lang)} · {w['year']}</p><h3>{link(w['url'],w['title'])}</h3><p class="small">{esc(w['authors'])}</p>{link(w['pdf'],t('Descargar PDF · Loyola','Download PDF · Loyola',lang)) if w.get('pdf') else ''}</article>''' for w in WORKING)
